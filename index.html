@@ -17,7 +17,10 @@
     <script src="//code-ya.jivosite.com/widget/dIrCWbDFXD" async></script>
     <script src="https://unpkg.com/@popperjs/core@2" defer></script>
     <script src="https://unpkg.com/tippy.js@6" defer></script>
-  
+    
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script defer src="./js/channels.js"></script>
+    <script defer src="./js/modal.js"></script>
  <link
  rel="stylesheet"
  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
@@ -140,7 +143,37 @@
             </div>
 
         </section>
+        <!-- modals -->
+     <section>
 
+        <!-- старт+кино -->
+        <div class="bg-modal" id="pack-5b504edcb2de77e82f591f1a">
+            <button class="modal-btn">X</button>
+            <div class="modal-content" >
+            <div class="modal-box">
+                    <div class="channels_list"></div>
+                 </div>
+            </div>
+        </div>
+         <!-- хит+тв -->
+         <div class="bg-modal" id="pack-630f5b1c944a765510046e89">
+            <button class="modal-btn">X</button>
+            <div class="modal-content" >
+            <div class="modal-box">
+                    <div class="channels_list"></div>
+                 </div>
+            </div>
+        </div>
+         <!-- Ультра+кино -->
+         <div class="bg-modal" id="pack-5e7b7e70acb10bd8ce882ef1">
+            <button class="modal-btn">X</button>
+            <div class="modal-content" >
+            <div class="modal-box">
+                    <div class="channels_list"></div>
+                 </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -160,7 +193,7 @@
                         <!-- <div class="tarif-icon"></div> -->
                         <p class="tarif-name">СТАРТ</p>
                         <p class="tarif-price">499 <span style="font-size: 0.75rem;">руб/мес</span></p>
-    
+                      
                         <div class="tarif-param">
                             <p class="tarif-speed">100 Мбит/с</p>
                             <p class="tarif-channels"><span style="font-size: 1.1rem; font-weight: 900;"></p>
@@ -196,19 +229,13 @@
                         <div class="tarif-options-description">
                             <ul class="tarif-options-list">
                                 <li>АКЦИЯ: 6 месяцев в подарок</li>
-                              
                                 <li>Всё под рукой: интернет, ТВ и онлайн-кинотеатр</li>
                             </ul>
-    
                         </div>
                         <button class="choose-btn">Выбрать</button>
                     </div>
                 </div>
-    
-               
-    
-            
-    
+
                 <div class="swiper-slide tarif-option ">
                     <div class="tarif-slider-description">
                         <!-- <div class="tarif-promo" >
@@ -250,17 +277,23 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
-                     <!-- <div class="swiper-slide tarif-option"> -->
-                        <!-- <div class="tarif-slider-description">  -->
+                    <div class="swiper-slide tarif-option"> 
+                      <div class="tarif-slider-description"> 
                             <!-- <div class="tarif-promo" style="display: none;">
                                 Выгодно
                             </div> -->
-                            <!-- <div class="tarif-icon"></div>
+                            <!-- <div class="tarif-icon"></div> -->
                             <p class="tarif-name">СТАРТ+ТВ</p>
                             <p class="tarif-price">599 <span style="font-size: 0.75rem;">руб/мес</span></p>
                             <div class="tarif-param">
                                 <p class="tarif-speed">100 Мбит/с</p>
-                                <p class="tarif-channels" data-target="#modal1" id="startTv">150 ТВ каналов</p>
+                                <div class="tarif"  data-package="5b504edcb2de77e82f591f1a">
+                                    <script>
+                                        idPackages.push("5b504edcb2de77e82f591f1a");
+                                    </script>
+                                    <a class="channels_link" data-target="#pack-xxxxx" href="#pack-5b504edcb2de77e82f591f1a">Спиок каналов</a>
+                                   
+                                </div>
                                 <p class="tarif-movie"><span style="font-size: 1.1rem; font-weight: 900;">- </span>
                                 </p>
                             </div>
@@ -272,9 +305,9 @@
                                 </ul>
                             </div>
                             <button class="choose-btn">Выбрать</button>
-                        </div> -->
+                        </div>
             
-                    <!-- </div> -->
+                    </div>
                     <div class="swiper-slide tarif-option">
                         <div class="tarif-slider-description">
                             <!-- <div class="tarif-promo">
@@ -283,10 +316,16 @@
                             <!-- <div class="tarif-icon"></div> -->
                             <p class="tarif-name">СТАРТ+КИНО</p>
                             <p class="tarif-price">689<span style="font-size: 0.75rem;">руб/мес</span></p>
+          
                             <div class="tarif-param">
                                 <p class="tarif-speed">100 Мбит/с</p>
-                                <p class="tarif-channels" data-target="#modal1" id="startKino">150 ТВ-каналов</p>
-                                <p class="tarif-movie"  id="video0">1 видеоервисов из 3
+                                <div class="tarif"  data-package="5b504edcb2de77e82f591f1a">
+                                    <script>
+                                        idPackages.push("5b504edcb2de77e82f591f1a");
+                                    </script>
+                                    <a class="channels_link" data-target="#pack-xxxxx" href="#pack-5b504edcb2de77e82f591f1a">150 ТВ-каналов</a>
+                                    
+                                </div>                                <p class="tarif-movie"  id="video0">1 видеоервисов из 3
                                 </p>
                             </div>
                             <div class="tarif-options-description">
@@ -309,8 +348,13 @@
                             <p class="tarif-price">749 <span style="font-size: 0.75rem;">руб/мес</span></p>
                             <div class="tarif-param">
                                 <p class="tarif-speed">250 Мбит/с</p>
-                                <p class="tarif-channels"  data-target="#modal1" id="hitTv">230 ТВ-каналов</p>
-                                <p class="tarif-movie" id="video1">1 из 3 видеосервисов
+                                <div class="tarif"  data-package="630f5b1c944a765510046e89">
+                                    <script>
+                                        idPackages.push("630f5b1c944a765510046e89");
+                                    </script>
+                                    <a class="channels_link" data-target="#pack-xxxxx" href="#pack-630f5b1c944a765510046e89">Спиок каналов</a>
+                                   
+                                </div>                                <p class="tarif-movie" id="video1">1 из 3 видеосервисов
                                 </p>
                             </div>
                             <div class="tarif-options-description">
@@ -334,8 +378,13 @@
                             <p class="tarif-price">899 <span style="font-size: 0.75rem;">руб/мес</span></p>
                             <div class="tarif-param">
                                 <p class="tarif-speed">350 Мбит/с</p>
-                                <p class="tarif-channels" data-target="#modal1" id="ultraKino">270 ТВ-каналов</p>
-                                <p class="tarif-movie"  id="video2">2 из 4 видеосервисов
+                                <div class="tarif"  data-package="5e7b7e70acb10bd8ce882ef1">
+                                    <script>
+                                        idPackages.push("5e7b7e70acb10bd8ce882ef1");
+                                    </script>
+                                    <a class="channels_link" data-target="#pack-xxxxx" href="#pack-5e7b7e70acb10bd8ce882ef1">Спиок каналов</a>
+                                   
+                                </div>                                <p class="tarif-movie"  id="video2">2 из 4 видеосервисов
                                 </p>
                             </div>
                             <div class="tarif-options-description">
@@ -397,8 +446,9 @@
             <div class="modal-tv">
                 <div class="modal-header">
                 </div>
+                <div class="channels_list"></div>
                 <div class="output"></div>
-             
+                
                 <span id="close-tv" class="modal-close">X</span>
             </div>
         </div>

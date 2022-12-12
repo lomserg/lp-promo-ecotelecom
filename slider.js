@@ -1,11 +1,9 @@
-document.addEventListener('click', e => {
-    console.log(e)
-})
+
 // форма
 const closeFormModal = document.getElementById('closeForm');
 const modalBg = document.querySelector(".modal-bg");
-let modal = document.querySelector(".modal");
-console.log(closeFormModal)
+// let modal = document.querySelector(".modal");
+
 
 
 function activeBgSecond() {
@@ -103,89 +101,90 @@ function removeSelected() {
 }
 
 
-const output = document.querySelector('.output')
-const url = `https://docs.google.com/spreadsheets/d/`
-const ssid = `1ZYLHnnLVPCmr8vp_J7RXCy_7Cjm7Bh8FyO6_6ufNupo`
-const query = `/gviz/tq?`
-const formatUrl = `tqx=out:json`
-const startKino = 'sheet=startKino'
-const startTv = 'sheet=startTv'
-const hitTv = 'sheet=hitTv'
-const ultraKino = 'sheet=ultraKino'
-const megaKino = 'sheet=megaKino'
-const endpoint = `${url}${ssid}${query}`
-const lastUrl = `${url}${ssid}${query}&${formatUrl}&${hitTv}`
-// кнопки
-const btns = document.querySelectorAll('[data-target]')
-console.log(btns)
-const btn = document.getElementById('getTv')
+// const output = document.querySelector('.output')
+// const url = `https://docs.google.com/spreadsheets/d/`
+// const ssid = `1ZYLHnnLVPCmr8vp_J7RXCy_7Cjm7Bh8FyO6_6ufNupo`
+// const query = `/gviz/tq?`
+// const formatUrl = `tqx=out:json`
+// const startKino = 'sheet=startKino'
+// const startTv = 'sheet=startTv'
+// const hitTv = 'sheet=hitTv'
+// const ultraKino = 'sheet=ultraKino'
+// const megaKino = 'sheet=megaKino'
+// const endpoint = `${url}${ssid}${query}`
+// const lastUrl = `${url}${ssid}${query}&${formatUrl}&${hitTv}`
+// // кнопки
+// const btns = document.querySelectorAll('[data-target]')
+// console.log(btns)
+// const btn = document.getElementById('getTv')
 
 // функция для кнопок
 
 //let buttons = document.querySelectorAll('.btn-tarif');
-let modalBgTv = document.querySelector(".modal-bg-tv")
-let modalTv = document.querySelector(".modal-tv")
-const closeTv = document.getElementById('close-tv');
+// let modalBgTv = document.querySelector(".modal-bg-tv")
+// let modalTv = document.querySelector(".modal-tv")
+
+// const closeTv = document.getElementById('close-tv');
 
 // const modal_container = document.getElementById('modal-container');
 // const modal = document.querySelector('#modal')
-const overlayTv = document.querySelector('#overlay')
+// const overlayTv = document.querySelector('#overlay')
 
 // TODO: 3. Create a click event listener for the open-modal-btn that adds the class "open" to the modal
 
-btns.forEach(e => e.addEventListener("click", activeBgTv, false));
+// btns.forEach(e => e.addEventListener("click", activeBgTv, false));
 
-function activeBgTv(event) {
-    modalBgTv.classList.add('bg-active')
+// function activeBgTv(event) {
+//     modalBgTv.classList.add('bg-active')
 
 
-    function checkEventTarget (event) {
-        if(event.target.id == 'startTv') {
-            console.log(event.target.id)
-            return `${url}${ssid}${query}&${formatUrl}&${startTv}`
-       } else if(event.target.id === 'hitTv') {
-        return `${url}${ssid}${query}&${formatUrl}&${hitTv}`
-       }  else if(event.target.id === 'startKino') {
-        return `${url}${ssid}${query}&${formatUrl}&${startKino}`
-        }   else if(event.target.id === 'ultraKino') {
-        return `${url}${ssid}${query}&${formatUrl}&${ultraKino}`
-       } else if(event.target.id === 'megaKino') {
-        return `${url}${ssid}${query}&${formatUrl}&${megaKino}`
-       }
-    }
+    // function checkEventTarget (event) {
+    //     if(event.target.id == 'startTv') {
+    //         console.log(event.target.id)
+    //         return `${url}${ssid}${query}&${formatUrl}&${startTv}`
+    //    } else if(event.target.id === 'hitTv') {
+    //     return `${url}${ssid}${query}&${formatUrl}&${hitTv}`
+    //    }  else if(event.target.id === 'startKino') {
+    //     return `${url}${ssid}${query}&${formatUrl}&${startKino}`
+    //     }   else if(event.target.id === 'ultraKino') {
+    //     return `${url}${ssid}${query}&${formatUrl}&${ultraKino}`
+    //    } else if(event.target.id === 'megaKino') {
+    //     return `${url}${ssid}${query}&${formatUrl}&${megaKino}`
+    //    }
+    // }
 
-    fetch(checkEventTarget(event))
-    .then(res => res.text())
-    .then(data => {
-       const temp = data.substring(47).slice(0,-2)
-        const json = JSON.parse(temp)
-        const rows = json.table.rows
-        rows.forEach((row) => {
-            const div = document.createElement('div')
-            div.classList.add('tv')
-           const temp1 = row.c
-           temp1.forEach((cell) => {
-            const box = document.createElement('div')
-         box.textContent = cell.v
+    // fetch(checkEventTarget(event))
+    // .then(res => res.text())
+    // .then(data => {
+    //    const temp = data.substring(47).slice(0,-2)
+    //     const json = JSON.parse(temp)
+    //     const rows = json.table.rows
+    //     rows.forEach((row) => {
+    //         const div = document.createElement('div')
+    //         div.classList.add('tv')
+    //        const temp1 = row.c
+    //        temp1.forEach((cell) => {
+    //         const box = document.createElement('div')
+    //      box.textContent = cell.v
           
             
             
-            box.classList.add('box')
-            div.appendChild(box)
+    //         box.classList.add('box')
+    //         div.appendChild(box)
            
-           } )
-           output.appendChild(div)
-        })
+    //        } )
+    //        output.appendChild(div)
+    //     })
         
-    })
-}
+    // })
+// }
 
 
 
-closeTv.addEventListener('click', e => {
-    modalBgTv.classList.remove('bg-active')
-    output.innerHTML = '';
-})
+// closeTv.addEventListener('click', e => {
+//     modalBgTv.classList.remove('bg-active')
+//     output.innerHTML = '';
+// })
 
 
 
