@@ -32,7 +32,7 @@ content.forEach(function(channelId, i) {
         img;
     for (var j = 0; j < channels.length; j++) {
         if (channels[j].id === channelId) {
-            img = '<img src="' + channels[j].info.mediaInfo.thumbnails[0].url + '?width=90&height=60" />';
+            img = '<img src="' + channels[j].info.mediaInfo.thumbnails[0].url + '?width=100&height=70" />';
              child.innerHTML = img + channels[j].info.metaInfo.title.slice(4);
             container.appendChild(child);
             length++;
