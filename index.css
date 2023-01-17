@@ -458,6 +458,7 @@ position: relative;
     text-align: center;
 }
 /* header */
+
 .header {
     height: 2rem;
 
@@ -610,6 +611,18 @@ position: relative;
     grid-column: 2;
 }
 
+.hero-img {
+    background-image: url(./img/main_image.png);
+    width: 529px;
+    height: 529px;
+}
+@media (max-width: 700px) {
+    .hero-img {
+        background-image: url(./img/main_image_mobile.png);
+        width: 529px;
+        height: 529px;
+    }
+  }
 /* ------------------- */
 /* tabs         */
 /* ------------------- */
@@ -1622,7 +1635,7 @@ input {
     justify-content: space-around;
     z-index: 20;
     padding: 1.5rem 1rem 1.5rem 1.5rem;
-    position: relative;  
+    position: relative;
     font-size: 0.9rem
 }
 
