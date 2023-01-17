@@ -611,6 +611,18 @@ position: relative;
     grid-column: 2;
 }
 
+.hero-img {
+    background-image: url(./img/main_image.png);
+    width: 529px;
+    height: 529px;
+}
+@media (max-width: 700px) {
+    .hero-img {
+        background-image: url(./img/main_image_mobile.png);
+        width: 529px;
+        height: 529px;
+    }
+  }
 /* ------------------- */
 /* tabs         */
 /* ------------------- */
