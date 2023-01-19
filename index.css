@@ -645,7 +645,7 @@ position: relative;
     opacity: .88;
     background-size: cover;
     min-height: -webkit-fill-available;
-    overflow-x: auto;
+    /* overflow-x: auto; */
   }
   .hero-vh {
     height: 80vh;
