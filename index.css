@@ -627,6 +627,7 @@ position: relative;
     text-align: center;
     width: 100%;
     height: 100vh;
+  
     min-height: -webkit-fill-available;
     background: radial-gradient(circle, rgba(63,96,161,1) 21%, rgba(63,96,161,1) 63%);
   }
@@ -635,15 +636,20 @@ position: relative;
     position: absolute;
     left: 0;
     top: 0;
-    bottom: 0;
-    right: 0;
+    width: 100%;
+    height: 100%;
     background-position: center;
     background-image: url('./img/sngovik_wide.png');
     background-size: cover;
+    /* background-attachment: fixed; */
+    opacity: .88;
+    background-size: cover;
+    min-height: -webkit-fill-available;
+    overflow-x: hidden;
   }
-  /* .hero-vh {
+  .hero-vh {
     height: 80vh;
-  } */
+  }
 .hero-content {
     display: flex;
     flex-direction: column;
@@ -743,9 +749,9 @@ position: relative;
 }
 
 @media (max-width: 600px) {
-    /* .hero-vh {
+    .hero-vh {
         height: 100vh;
-      } */
+      }
     .hero-content {
         display: flex;
         flex-direction: column;
