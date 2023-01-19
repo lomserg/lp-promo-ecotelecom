@@ -627,7 +627,7 @@ position: relative;
     text-align: center;
     width: 100%;
     height: 100vh;
-    overflow-x: hidden;
+  
     min-height: -webkit-fill-available;
     background: radial-gradient(circle, rgba(63,96,161,1) 21%, rgba(63,96,161,1) 63%);
   }
@@ -645,7 +645,7 @@ position: relative;
     opacity: .88;
     background-size: cover;
     min-height: -webkit-fill-available;
-    /* overflow-x: auto; */
+    overflow-x: hidden;
   }
   .hero-vh {
     height: 80vh;
