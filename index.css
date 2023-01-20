@@ -803,10 +803,10 @@ body {
         top: 10px;
     }
     .hero-tarif-item {
-        width: 220px;
-        height: 144px;
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
+        width: 200px;
+        height: 115px;
+        padding: 1rem 1.2rem;
+        font-size: .9rem;
     }
     .hero-tarif-item img {
         width: 80%;
