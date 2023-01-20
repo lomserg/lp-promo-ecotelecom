@@ -859,7 +859,7 @@ body {
     height: 529px;
 }
 
-@media (max-width: 380px) {
+/* @media (max-width: 380px) {
     .hero-new{
         min-height: -webkit-fill-available;
         height: 117%;
@@ -868,7 +868,7 @@ body {
         min-height: -webkit-fill-available;
         padding: 20em 0;
         
-    }
+    } */
 }
 @media (max-width: 700px) {
     .hero-img {
