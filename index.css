@@ -42,6 +42,9 @@
 html {
     min-height: -webkit-fill-available;
 }
+body {
+    height: 100%;
+}
 @font-face {
     font-family: GilroyExtraBold;
     src:url("./fonts/Gilroy.ttf");
@@ -594,6 +597,21 @@ position: relative;
 /* ------------------- */
 /* hero         */
 /* ------------------- */
+
+body {
+    min-height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
+  }
+  
+  html {
+    height: -webkit-fill-available;
+  }
+
+
+
+
+
 .header-menu {
     justify-content: space-between;
     padding-top: 1rem;
