@@ -1368,7 +1368,7 @@ body {
 .tarif-promo {
     position: absolute;
     color: #fff;
-    background-color: orange;
+    background-color: #D11F26;
     top: -15px;
     margin-left: auto;
     margin-right: auto;
@@ -1382,7 +1382,7 @@ body {
 
 
   .choose-btn {
-    background: #8dc63f;
+    background: rgba(0,159,174,1) 100%;
     height: 40px;
     font-size: 1.2rem;
     text-transform: uppercase;
