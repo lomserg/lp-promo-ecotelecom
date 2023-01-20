@@ -39,7 +39,9 @@
     --fw-bold: 700;
     --fw-medium: 500;
 }
-
+html {
+    min-height: -webkit-fill-available;
+}
 @font-face {
     font-family: GilroyExtraBold;
     src:url("./fonts/Gilroy.ttf");
@@ -629,8 +631,8 @@ position: relative;
     height: 100vh;
   
     min-height: -webkit-fill-available;
-    background: radial-gradient(circle, rgba(63,96,161,1) 21%, rgba(63,96,161,1) 63%);
-  }
+    background: rgb(132,204,218);
+    background: radial-gradient(circle, rgba(132,204,218,1) 21%, rgba(0,159,174,1) 63%);  }
   .hero-new:before {
     content: '';
     position: absolute;
