@@ -868,8 +868,8 @@ body {
         min-height: -webkit-fill-available;
         padding: 20em 0;
         
-    } */
-}
+    }
+} */
 @media (max-width: 700px) {
     .hero-img {
         background-image: url(./img/main_image_mobile.png);
