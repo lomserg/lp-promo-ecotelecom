@@ -237,7 +237,13 @@
                         </div>
                         <!-- <div class="tarif-icon"></div> -->
                         <p class="tarif-name">СТАРТ</p>
-                        <p class="tarif-price">375 <span style="font-size: 0.75rem;">₽/мес</span></p>                      
+                        <div class="tarif-price-container">
+                            <p class="tarif-price">375</p>
+                            <div class="tarif-price-promo">
+                                <p class="cross-prices"> 449</p>
+                                <span style="font-size: 0.75rem;">₽/мес</span>
+                            </div>
+                        </div>                      
                         <div class="tarif-param">
                             <p class="tarif-speed">100 Мбит/с</p>
                             <p class="tarif-channels"><span style="font-size: 1.1rem; font-weight: 900;"></p>
@@ -263,7 +269,13 @@
                         </div>
                         <!-- <div class="tarif-icon"></div> -->
                         <p class="tarif-name">ХИТ</p>
-                        <p class="tarif-price">449 <span style="font-size: 0.75rem;">₽/мес</span></p>
+                        <div class="tarif-price-container">
+                            <p class="tarif-price">449</p>
+                            <div class="tarif-price-promo">
+                                <p class="cross-prices"> 599</p>
+                                <span style="font-size: 0.75rem;">₽/мес</span>
+                            </div>
+                        </div>  
     
                         <div class="tarif-param">
                             <p class="tarif-speed">250 Мбит/с</p>
@@ -321,6 +333,43 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
+                    <div class="swiper-slide tarif-option ">
+                        <div class="tarif-slider-description">
+                            <div class="tarif-promo" >
+                                Акция
+                            </div>
+                            <!-- <div class="tarif-icon"></div> -->
+                            <p class="tarif-name">ХИТ+ТВ</p>
+                            <div class="tarif-price-container">
+                                <p class="tarif-price">559</p>
+                                <div class="tarif-price-promo">
+                                    <p class="cross-prices"> 749</p>
+                                    <span style="font-size: 0.75rem;">₽/мес</span>
+                                </div>
+                            </div>
+                      
+                            <div class="tarif-param">
+                                <p class="tarif-speed">250 Мбит/с</p>
+                                <div class="tarif"  data-package="630f5b1c944a765510046e89">
+                                    <script>
+                                        idPackages.push("630f5b1c944a765510046e89");
+                                    </script>
+                                    <a class="channels_link" data-target="#pack-xxxxx" href="#pack-630f5b1c944a765510046e89">220 ТВ-каналов</a>
+                                   
+                                </div>                                <p class="tarif-movie" id="video1">PREMIER
+                                </p>
+                            </div>
+                            <div class="tarif-options-description">
+                                <ul class="tarif-options-list">
+                                    <li>АКЦИЯ: 25% скидка на 12 месяцев</li>
+                              
+                                    <li>Быстрый интернет, кино и ТВ для всей семьи</li>
+                                </ul>
+                            </div>
+                            <button class="choose-btn">Выбрать</button>
+                        </div>
+                    </div>
+
                     <div class="swiper-slide tarif-option"> 
                       <div class="tarif-slider-description"> 
                             <!-- <div class="tarif-promo" style="display: none;">
@@ -382,42 +431,7 @@
                             <button class="choose-btn">Выбрать</button>
                         </div>
                     </div>
-                    <div class="swiper-slide tarif-option ">
-                        <div class="tarif-slider-description">
-                            <div class="tarif-promo" >
-                                Акция
-                            </div>
-                            <!-- <div class="tarif-icon"></div> -->
-                            <p class="tarif-name">ХИТ+ТВ</p>
-                            <div class="tarif-price-container">
-                                <p class="tarif-price">559</p>
-                                <div class="tarif-price-promo">
-                                    <p class="cross-prices"> 599</p>
-                                    <span style="font-size: 0.75rem;">₽/мес</span>
-                                </div>
-                            </div>
-                      
-                            <div class="tarif-param">
-                                <p class="tarif-speed">250 Мбит/с</p>
-                                <div class="tarif"  data-package="630f5b1c944a765510046e89">
-                                    <script>
-                                        idPackages.push("630f5b1c944a765510046e89");
-                                    </script>
-                                    <a class="channels_link" data-target="#pack-xxxxx" href="#pack-630f5b1c944a765510046e89">220 ТВ-каналов</a>
-                                   
-                                </div>                                <p class="tarif-movie" id="video1">PREMIER
-                                </p>
-                            </div>
-                            <div class="tarif-options-description">
-                                <ul class="tarif-options-list">
-                                    <li>АКЦИЯ: 25% скидка на 12 месяцев</li>
-                              
-                                    <li>Быстрый интернет, кино и ТВ для всей семьи</li>
-                                </ul>
-                            </div>
-                            <button class="choose-btn">Выбрать</button>
-                        </div>
-                    </div>
+                  
             
                     <div class="swiper-slide tarif-option ">
                         <div class="tarif-slider-description">
@@ -693,7 +707,7 @@
                 </div>
                 <div class="accordion-item">
                     <div class="accordion-item-header fs-400">
-                        Условия подключения по акции «6 месяцев в подарок»
+                        Условия подключения по акции «Горячее предложение»
                     </div>
                     <div class="accordion-item-body">
                         <div class="accordion-item-body-content">
@@ -701,22 +715,18 @@
 
                             <ul class="flow">
                                 <li>
-                                    Заявки на подключение по акции принимаются до 31.12.22, подключение проводится до 13.01.22 включительно.
+                                    Заявки на подключение по акции принимаются до 12.03.23, подключение проводится до 15.03.23 включительно.
+
                                 </li>
                                 <li>
-                                    Акция проводится для новых абонентов-физических лиц и действует по адресам, где не
-                                    предоставлялись услуги «Экотелеком» в течение 5 месяцев до момента подключения,
-                                    кроме ЖК «Кленовые Аллеи» (пос. Десёновское), ЖК «Цветочные поляны» (пос.
-                                    Филимонковское), ЖК «Новая Звезда» (п. Коммунарка), ЖК «Новоград Павлино» (г.
-                                    Балашиха) и ЖК «Кварталы 21/19» (г. Москва).
+                                    Акция проводится для новых абонентов-физических лиц и действует по адресам, где не предоставлялись услуги «Экотелеком» в течение 5 месяцев до момента подключения, кроме ЖК «Кленовые Аллеи» (пос. Десёновское), ЖК «Цветочные Поляны» (пос. Филимонковское), ЖК «Гарден Парк» и ЖК «Новая Звезда» (п. Коммунарка), ЖК «Новоград Павлино» (г. Балашиха), ЖК «Кварталы 21/19» (г. Москва), ЖК «Весенний» (г. Подольск), ЖК «Позитив» (пос. Московский) и ул. Военный городок, д. 42 (г. Одинцово).
                                 </li>
-                              
+
                                 <li>
-                                    При подключении на лицевой счет необходимо внести авансовый платеж в размере не
-                                    менее 1500 ₽.
+                                    При подключении по акции на лицевой счет необходимо внести авансовый платеж в размере не менее 1000 рублей.
                                 </li>
                                 <li>
-В акции участвуют тарифы: «ХИТ» и «ХИТ+ТВ».                                </li>
+                                    Цена указана на первые 12 месяцев с учетом скидки («ХИТ» — 449 ₽/мес, «ХИТ+ТВ» — 559 ₽/мес), с 13 месяца услуги предоставляются на условиях действующих тарифных планов.                           </li>
                                 <li>
                                     Оборудование и дополнительные услуги при подключении по акции предоставляются на
                                     стандартных

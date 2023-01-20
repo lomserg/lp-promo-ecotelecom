@@ -597,7 +597,9 @@ position: relative;
 /* ------------------- */
 /* hero         */
 /* ------------------- */
-
+.primary-navigation {
+    display: none;
+}
 body {
     min-height: 100vh;
     /* mobile viewport bug fix */
@@ -1480,7 +1482,7 @@ body {
 }
   .swiper {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
   }
 
   .swiper-button-prev {
