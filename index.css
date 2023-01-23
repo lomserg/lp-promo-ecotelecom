@@ -751,6 +751,10 @@ body {
     .hero-content {
         padding-top: 5em;
     }
+    .hero-new:before {
+   
+        background-image: url('./img/steam_desctop.png');
+    }
 }
 @media (max-width: 900px) {
     .hero-title-first {

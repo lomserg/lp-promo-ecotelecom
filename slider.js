@@ -27,7 +27,7 @@ function showCheckout(e) {
 
     const product = e.target.parentElement.childNodes[5].innerHTML
     let price = parseInt(e.target.parentElement.childNodes[7].innerHTML)
-
+    console.log(e.target)
     checkout.innerHTML = `
    
     <div class="total-price">
