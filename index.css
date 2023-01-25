@@ -1400,7 +1400,7 @@ body {
   }
 
   .choose-btn:hover{
-    background: #84b440;
+    background: rgba(132,204,218,1);
   }
 
 
@@ -1432,7 +1432,7 @@ body {
   }
 
   .tarif-slider-description.selected {
-    background-color: #582d7b;
+    background-color: hsl(var(--clr-dark-blue));
     color: #fff;
 
   }
