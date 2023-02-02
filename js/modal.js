@@ -1,7 +1,7 @@
 
 const chanelBtns = document.querySelectorAll('.channels_link')
 const ultaKino = []
-console.log(ultaKino.push("5e7b7e70acb10bd8ce882ef1"))
+// console.log(ultaKino.push("5e7b7e70acb10bd8ce882ef1"))
 // const modalTairif = document.getElementById('pack-630f5b1c944a765510046e89')
 // console.log(modalTairif)
 
@@ -50,14 +50,14 @@ chanelBtns.forEach(btn => {
         getModal.addEventListener('click', (e) => {
             getModal.classList.remove("active")
             document.body.style.overflow = "auto"; // ADD THIS LINE
-    document.body.style.height = "auto"; // ADD THIS LINE
+    document.body.style.height = "100%"; // ADD THIS LINE
         })
         closeModal = document.querySelectorAll('.modal-btn')
                 closeModal.forEach(link => {
             link.addEventListener('click', () => {
                 getModal.classList.remove("active")
                 document.body.style.overflow = "auto"; // ADD THIS LINE
-    document.body.style.height = "auto"; // ADD THIS LINE
+    document.body.style.height = "100%"; // ADD THIS LINE
              })
         })
         
