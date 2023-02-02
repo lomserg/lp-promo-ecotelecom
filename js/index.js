@@ -132,6 +132,12 @@ let content7860 = '<a class="phoneid" href="tel: +74998017860">+7 499 801-78-60<
 
 console.log(phone);
 
+let whatsapp = document.getElementById("whatsapp-link");
+//.getAttribute("href").split("=")
+// let whatsappNumber = parseInt(whatsapp[1])
+
+console.log(whatsapp.href)
+
 // closeX.addEventListener('click', () => {
 //     modal_container.classList.remove('show');
 // })
@@ -140,7 +146,7 @@ const queryString = window.location.search;
 
 console.log(queryString);
 
-let paramString = queryString.split('=')[1];
+let paramString = queryString.split('=')[3];
 // let paramSource = paramString.split('=')[1];
 
 console.log(typeof (paramString))
@@ -148,6 +154,9 @@ console.log(typeof (queryString))
 
 let utmOpm = paramString.split('&');
 console.log(utmOpm[0])
+
+let watsapp_7850 = "https://api.whatsapp.com/send/?phone=79166063084";
+let watsapp_7851 = "https://api.whatsapp.com/send/?phone=79778373538";
 
 
 let opm_7850 = "opm_7850";
@@ -168,6 +177,7 @@ let opm_7860 = "opm_7860";
 
 if (utmOpm[0].includes(opm_7850)) {
     phone.innerHTML = content7850
+    whatsapp.href = watsapp_7850
 } else if (utmOpm[0].includes(opm_7851)) {
     phone.innerHTML = content7851
 } else if (utmOpm[0].includes(opm_7852)) {
@@ -182,8 +192,6 @@ if (utmOpm[0].includes(opm_7850)) {
     phone.innerHTML = content7856
 } else if (utmOpm[0].includes(opm_7857)) {
     phone.innerHTML = content7857
-} else if (utmOpm[0].includes(opm_7858)) {
-    phone.innerHTML = content7858
 } else if (utmOpm[0].includes(opm_7859)) {
     phone.innerHTML = content7859
 } else if (utmOpm[0].includes(opm_7860)) {

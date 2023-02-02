@@ -50,14 +50,14 @@ chanelBtns.forEach(btn => {
         getModal.addEventListener('click', (e) => {
             getModal.classList.remove("active")
             document.body.style.overflow = "auto"; // ADD THIS LINE
-    document.body.style.height = "auto"; // ADD THIS LINE
+    document.body.style.height = "100%"; // ADD THIS LINE
         })
         closeModal = document.querySelectorAll('.modal-btn')
                 closeModal.forEach(link => {
             link.addEventListener('click', () => {
                 getModal.classList.remove("active")
                 document.body.style.overflow = "auto"; // ADD THIS LINE
-    document.body.style.height = "auto"; // ADD THIS LINE
+                document.body.style.height = "100%"; // ADD THIS LINE
              })
         })
         

@@ -14,7 +14,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/4af22d591d.js" crossorigin="anonymous" defer></script>
-    <script src="//code-ya.jivosite.com/widget/dIrCWbDFXD" async></script>
+
     <script src="https://unpkg.com/@popperjs/core@2" defer></script>
     <script src="https://unpkg.com/tippy.js@6" defer></script>
     
@@ -60,7 +60,10 @@
                     <li><a href="#">Вакансии</a></li>
                     <li><a href="#">Отзывы</a></li>
                  </ul>
-            </nav>
+            </nav><div class="whatsapp">
+                <a id="whatsapp-link" href="https://api.whatsapp.com/send/?phone=79852639403" target="">
+                <img class="" alt="" src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"></a>
+            </div>
             <div class="phone">
                 <a style="text-decoration: none;" class="phoneid" href="tel:+74998017799">+7 499 801-77-99</a>
             </div>
@@ -500,7 +503,7 @@
 
         <div class="modal-bg">
             <div class="modal">
-                <form action="./php/form1.php" method="post"  id="form2"  name="call-form">
+                <form action="./php/telegram.php" method="post"  id="form2"  name="call-form">
                     <p style="font-weight: bold; margin-bottom: 1rem; text-align: center;">Заявка на подключение</p>
                     <label class="fs-200" for="name1">Имя</label>
                     <input type="text" name="name" id="name1" class="field" required>
@@ -508,6 +511,7 @@
                     <input type="tel" class="field " data-tel-input maxlength="18" name="number" id="phone1" required />
                     <label class="fs-200" for="adr11">Адрес</label>
                     <input type="text" class="field" name="address" id="adr11" required>
+                    <input type="hidden" name="utm_source" value="<?php echo isset($_GET['utm_source']) ? $_GET['utm_source'] : ''; ?>">
                     <button type="submit" class="btn" style="width:80%; margin-left: 2rem;" name="call-submit"
                         onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();ym(49966909,'reachGoal','form-submit')">Отправить</button>
                     <input autocomplete="off" type="hidden" name="call-control" class="call-control" value="0">
@@ -744,7 +748,14 @@
             <div class="contact-box">
 
                 <!-- <h2 class="fs-600" style="margin: 2rem 0;">Заявка на подключение</h2> -->
-                <form action="./php/form1.php" method="post" id="form1" name="call-form">
+                <form action="./php/telegram.php" method="post" id="form1" name="call-form">
+                    <!-- hidden -->
+                    <input type="hidden" name="utm_source" value="<?php $utm_source = $_GET['utm_source']; echo $utm_source; ?>">
+      			<input type="hidden" name="utm_medium" value="<?php $utm_medium = $_GET['utm_medium']; echo $utm_medium; ?>">
+      			<input type="hidden" name="utm_campaign" value="<?php $utm_campaign = $_GET['utm_campaign']; echo $utm_campaign; ?>">
+      			<input type="hidden" name="utm_content" value="<?php $utm_content = $_GET['utm_content']; echo $utm_content; ?>">
+      			<input type="hidden" name="utm_term" value="<?php $utm_term = $_GET['utm_term']; echo $utm_term; ?>">
+
                     <label class="fs-200" for="name1">Имя</label>
                     <input type="text" name="name" id="name1" class="field" required>
                     <label class="fs-200" for="phone1">Телефон</label>

@@ -474,6 +474,9 @@ position: relative;
     height: 2rem;
 
 }
+.whatsapp img{
+    width: 40px;
+}
 
 .header-content {
     display: grid;
@@ -522,6 +525,10 @@ position: relative;
         height: 5rem;
 
     }
+    .whatsapp img{
+        width: 70px;
+    }
+    
 
     .logo-header {
         background-image: url(img/logo.svg);
