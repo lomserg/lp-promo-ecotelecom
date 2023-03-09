@@ -61,7 +61,7 @@
                     <li><a href="#">Отзывы</a></li>
                  </ul>
             </nav><div class="whatsapp">
-                <a id="whatsapp-link" href="https://api.whatsapp.com/send/?phone=79852639403" target="">
+                <a id="whatsapp-link" href="https://api.whatsapp.com/send/?phone=79166063084" target="">
                 <img class="" alt="" src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"></a>
             </div>
             <div class="phone">
@@ -237,7 +237,7 @@
                             Акция
                         </div>
                         <!-- <div class="tarif-icon"></div> -->
-                        <p class="tarif-name">ХИТ</p>
+                        <p class="tarif-name">СТАРТ</p>
                         <p class="tarif-price">375 <span style="font-size: 0.75rem;">₽/мес</span></p>
     
                         <div class="tarif-param">
