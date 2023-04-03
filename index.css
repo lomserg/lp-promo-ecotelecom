@@ -774,6 +774,10 @@ background: radial-gradient(to top, rgba(169, 169, 50, 1.0), rgba(56, 124, 44, 1
     .hero-title-container {
         width: 30vw;
     }
+
+    .hero-img-container {
+        height: 550px;
+    }
     /* .hero-new:before {
         background-size: 50%;
         
@@ -899,11 +903,7 @@ background: radial-gradient(to top, rgba(169, 169, 50, 1.0), rgba(56, 124, 44, 1
     }
 } */
 @media (max-width: 700px) {
-    .hero-img {
-        background-image: url(./img/main_image_mobile.png);
-        width: 529px;
-        height: 529px;
-    }
+    
   }
 /* ------------------- */
 /* tabs         */
