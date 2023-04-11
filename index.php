@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <meta property="og:url" content="https://intet.ru.net" />
+    <meta property="og:image" content="https://intet.ru.net/img/logo.svg" />
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins&family=Roboto&display=swap"
         rel="stylesheet">
@@ -225,7 +227,7 @@
                         </div>
                         <!-- <div class="tarif-icon"></div> -->
                         <p class="tarif-name">СТАРТ</p>
-                        <p class="tarif-price">375 <span style="font-size: 0.75rem;">₽/мес</span></p>
+                        <p class="tarif-price">444 <span style="font-size: 0.75rem;">₽/мес</span></p>
     
                         <div class="tarif-param">
                             <p class="tarif-speed">100 Мбит/с</p>
@@ -234,7 +236,7 @@
     
                         <div class="tarif-options-description">
                             <ul class="tarif-options-list">
-                                <li>АКЦИЯ: 25% скидка на 12 месяцев</li>
+                                <li>АКЦИЯ: скидка на 12 месяцев</li>
                                 <li>Всё под рукой: интернет, ТВ и онлайн-кинотеатр</li>
                             </ul>
     
@@ -250,16 +252,16 @@
                         </div>
                         <!-- <div class="tarif-icon"></div> -->
                         <p class="tarif-name">ХИТ</p>
-                        <p class="tarif-price">449 <span style="font-size: 0.75rem;">₽/мес</span></p>
+                        <p class="tarif-price">555 <span style="font-size: 0.75rem;">₽/мес</span></p>
     
                         <div class="tarif-param">
-                            <p class="tarif-speed">250 Мбит/с</p>
+                            <p class="tarif-speed">300 Мбит/с</p>
                         
                         </div>
     
                         <div class="tarif-options-description">
                             <ul class="tarif-options-list">
-                                <li>АКЦИЯ: 25% скидка на 12 месяцев</li>
+                                <li>АКЦИЯ: скидка на 12 месяцев</li>
                                 <li>Всё под рукой: интернет, ТВ и онлайн-кинотеатр</li>
                             </ul>
     
@@ -280,14 +282,14 @@
                             <p class="tarif-speed">500 Мбит/с</p>
                         
                         </div>
-    
+
                         <div class="tarif-options-description">
                             <ul class="tarif-options-list">
                                 <li>-20% при оплате на 12 месяцев</li>
-                               
+
                                 <li>Максимум скорости. Всё летает</li>
                             </ul>
-    
+
                         </div>
                         <button class="choose-btn">Выбрать</button>
                     </div>
@@ -316,21 +318,21 @@
                               </div>
                               <!-- <div class="tarif-icon"></div> -->
                               <p class="tarif-name">ХИТ+ТВ</p>
-                              <p class="tarif-price">599 <span style="font-size: 0.75rem;">₽/мес</span></p>
+                              <p class="tarif-price">666 <span style="font-size: 0.75rem;">₽/мес</span></p>
                               <div class="tarif-param">
-                                <p class="tarif-speed">250 Мбит/с</p>
+                                <p class="tarif-speed">300 Мбит/с</p>
                                 <div class="tarif"  data-package="630f5b1c944a765510046e89">
                                     <script>
                                         idPackages.push("630f5b1c944a765510046e89");
                                     </script>
-                                    <a class="channels_link" data-target="#pack-xxxxx" href="#pack-630f5b1c944a765510046e89">210 ТВ-каналов</a>
+                                    <a class="channels_link" data-target="#pack-xxxxx" href="#pack-630f5b1c944a765510046e89">220 ТВ-каналов</a>
                                    
                                 </div>                                <p class="tarif-movie" id="video1">PREMIER
                                 </p>
                             </div>
                               <div class="tarif-options-description">
                                   <ul class="tarif-options-list">
-                                    <li>АКЦИЯ: 25% скидка на 12 месяцев</li>
+                                    <li>АКЦИЯ: скидка на 12 месяцев</li>
                                     
                                       <li>Интернет и стартовый пакет ТВ-каналов</li>
                                   </ul>
@@ -347,7 +349,7 @@
                             </div> -->
                             <!-- <div class="tarif-icon"></div> -->
                             <p class="tarif-name">СТАРТ+ТВ</p>
-                            <p class="tarif-price">599 <span style="font-size: 0.75rem;">₽/мес</span></p>
+                            <p class="tarif-price">649 <span style="font-size: 0.75rem;">₽/мес</span></p>
                             <div class="tarif-param">
                                 <p class="tarif-speed">100 Мбит/с</p>
                                 <div class="tarif"  data-package="5b504edcb2de77e82f591f1a">
@@ -378,7 +380,7 @@
                             </div> -->
                             <!-- <div class="tarif-icon"></div> -->
                             <p class="tarif-name">СТАРТ+КИНО</p>
-                            <p class="tarif-price">689 <span style="font-size: 0.75rem;">₽/мес</span></p>
+                            <p class="tarif-price">699 <span style="font-size: 0.75rem;">₽/мес</span></p>
           
                             <div class="tarif-param">
                                 <p class="tarif-speed">100 Мбит/с</p>
@@ -410,7 +412,7 @@
                             </div> -->
                             <!-- <div class="tarif-icon"></div> -->
                             <p class="tarif-name">УЛЬТРА+КИНО</p>
-                            <p class="tarif-price">879 <span style="font-size: 0.75rem;">₽/мес</span></p>
+                            <p class="tarif-price">899 <span style="font-size: 0.75rem;">₽/мес</span></p>
                             <div class="tarif-param">
                                 <p class="tarif-speed">350 Мбит/с</p>
                                 <div class="tarif"  data-package="5e7b7e70acb10bd8ce882ef1">
