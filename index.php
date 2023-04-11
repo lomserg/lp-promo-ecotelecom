@@ -71,27 +71,14 @@
     </header>
     <div class="container">
         <div class="hero-content hero-vh">
-            <div class="hero-main-title">
-                <img class="img-hero" src="./img/red_rectangle.png" alt="">
-                <h1 class="hero-title-first">ГОРЯЧЕЕ</h1>
-                <h3 class="hero-title-second">ПРЕДЛОЖЕНИЕ</h3>
+            <!-- <div class="hero-main-title">
+
+                <h1 class="hero-title-first">ВЫГОДНАЯ</h1>
+                <h3 class="hero-title-second">КОМБИНАЦИЯ</h3>
+            </div> -->
+            <div class="hero-title-container"></div>
             </div>
-            <div class="hero-tarifs">
-                <div class="hero-tarif-item-container first-tarif-item">
-                    <div class="hero-tarif-item">
-                        <h3>100 Мбит/с</h3>
-                    </div>
-                    <div class="hero-tarif-price price-one">375 <span class="hero-tarif-price-rub">Р/мес</span></div>
-                </div>
-           
-                <div class="hero-tarif-item-container second-tarif-item">
-                    <div class="hero-tarif-item">
-                        <h3>250 Мбит/с</h3>
-                        <h3>210 каналов</h3>
-                        <img src="./img/logo_Premier.png" alt="">
-                        <div class="hero-tarif-price price-second">599 <span class="hero-tarif-price-rub">Р/мес</span></div>
-                    </div>
-                </div>
+            <div class="hero-img-container"></div>
             </div>
         </div>
 
