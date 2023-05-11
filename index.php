@@ -52,7 +52,7 @@
  <noscript><div><img src="https://mc.yandex.ru/watch/47175648" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
  <!-- /Yandex.Metrika counter -->
 
-<section class="hero-new fixed-wrapper">
+<!-- <section class="hero-new fixed-wrapper">
     <header class="header-home">
         <div class="header-menu flex container">
             <a class="logo-white" href="#"></a>
@@ -73,11 +73,11 @@
     </header>
     <div class="container">
         <div class="hero-content hero-vh">
-            <!-- <div class="hero-main-title">
+             <div class="hero-main-title">
 
                 <h1 class="hero-title-first">ВЫГОДНАЯ</h1>
                 <h3 class="hero-title-second">КОМБИНАЦИЯ</h3>
-            </div> -->
+            </div> 
             <div class="hero-title-container"></div>
             </div>
             <div class="hero-img-container"></div>
@@ -85,31 +85,53 @@
         </div>
 
 
-        <!-- <div class="subtitle">Оставь заявку и стань частью команды</div> -->
+        <div class="subtitle">Оставь заявку и стань частью команды</div> 
     </div>
-</section>
+</section> -->
 
 
         <!-- header  -->
         <!-- <header class="header">
             <div class="header-content">
                 <div class="logo-header"></div>
+                </nav><div class="whatsapp">
+                <a id="whatsapp-link" href="https://api.whatsapp.com/send/?phone=79166063084" target="">
+                <img class="" alt="" src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"></a>
+            </div>
                 <div class="phone">
                     <a style="text-decoration: none;" class="phoneid" href="tel:+74995055551">+7 499 505-55-51</a>
                 </div>
 
             </div>
         </header> -->
+        <header class="header-home container">
+            <div class="header-menu flex container">
+                <a class="logo-header" href="#"></a>
+                <nav class="primary-navigation">
+                     <ul role="list" class="nav-list flex">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                     </ul>
+                </nav>
+                <div class="whatsapp">
+                    <a id="whatsapp-link" href="https://api.whatsapp.com/send/?phone=79166063084" target="">
+                    <img class="" alt="" src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"></a>
+                </div>
+                <div class="phone text-dark">
+                    <a style="text-decoration: none;" class="phoneid text-dark" href="tel:+74998017799">+7 499 801-77-99</a>
+                </div>
+            </div>
+        </header>
         <!-- hero section flex -->
-        <!-- <section class="hero ">
+        <section class="hero container">
         <div class="flex" style=" align-items: center">
-            <div class="hero-txt flex flex-row flow" style="width:50%;">
+            <div class="hero-txt flex flex-row flow">
                 <div class="hero-txt-cta flow">
                     <h1 class="fs-900">
-                        <p class="text-dark-blue">Скидка 50%</p>
+                        <p class="text-dark-blue">Выгодная комбинация</p>
                     </h1>
-                    <p style="width:80%;">Оставьте заявку на подключение услуг и получите 50% скидку на три
-                        месяца</p>
+                    <p>При подключении по акции вы получаете скидку на целый год</p>
 
                 </div>
                 <a href="#" class="btn">Жми тут!</a>
@@ -137,7 +159,7 @@
                 <img src="img/hero-img.png" alt="">
             </div>
         </div>
-    </section> -->
+    </section>
         <!-- hero section grid -->
 
         <!-- <section style="margin-top: 2rem;" class="hero grid-container container">
@@ -176,7 +198,7 @@
                 
             </div>
 
-        </section> -->
+        </section>
         <!-- modals -->
      <section>
 
