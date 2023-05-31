@@ -734,6 +734,12 @@ body {
         margin-top: 2rem;
         width: 80%;
     }
+
+    .hero__right img {
+        /* height: 100%; */
+        display: block;
+        width: 100%;
+    }
 }
 
 /* old hero css */
