@@ -46,9 +46,7 @@
     --fw-bold: 700;
     --fw-medium: 500;
 }
-html {
-    /* min-height: -webkit-fill-available; */
-}
+
 body {
     height: 100%;
 }
@@ -608,11 +606,7 @@ position: relative;
 .primary-navigation {
     display: none;
 }
-body {
-    /* min-height: 100vh; */
-    /* mobile viewport bug fix */
-    /* min-height: -webkit-fill-available; */
-  }
+
   
   html {
     height: -webkit-fill-available;
@@ -647,19 +641,87 @@ body {
     color: #fff;
 }
 /* hero */
-.hero-new {
+
+
+.bg-hero {
     background-color: #4BC4D0;
-    /* background-image: url(./img/woman.png);
-    background-position: bottom right;
+    position: relative;
+    background-image: url(./img/woman2.png);
+    background-size: 49%;
+    background-position: bottom right 120px;
     background-repeat: no-repeat;
-    background-size: 40%;
-     */
+    /* height: 70vh; */
 }
 
+
+.wave {
+    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+    height: 80vw;
+    position: relative;
+    /* background: aqua; */
+}
+
+ .waves__wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.waves {
+    position:relative;
+    width: 100%;
+    height:15vh;
+    margin-bottom:-10px; /*Fix for safari gap*/
+    min-height:100px;
+    max-height:150px;
+  }
+  
+
+  
+  /* Animation */
+  
+  .parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }
+  /*Shrinking for mobile*/
+  @media (max-width: 768px) {
+    .waves {
+      height:40px;
+      min-height:40px;
+    }
+  
+  
+  }
 .hero__wrapper {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
+    z-index: 22;
+    padding-bottom: 4rem;
 }
 
 .hero__title {
@@ -715,25 +777,34 @@ body {
     justify-content: center;
 }
 .hero__description-right {
-    color: #fff;
+    background: hsla(0, 0%, 100%, 0.2);
+    color: #F5F5FA;
+    padding: 1rem;
     text-align: center;
     font-family: 'Roboto';
+    border-radius: 16px;
 }
 
 @media (max-width:1100px) {
     .hero__title {
         font-size: 24px;
     }
-
+    .logo-white {
+        height: 80px;
+        width: 100px;
+    }
     .hero__wrapper {
         flex-direction: column;
         align-items: center;
+        padding-bottom: 18rem;
+    }
+    .bg-hero {
+        background-image: url(./img/woman2.png);
+        background-size: 100%;
+        background-position: bottom center;
+
     }
 
-    .hero__right {
-        margin-top: 2rem;
-        width: 80%;
-    }
 
     .hero__right img {
         /* height: 100%; */
@@ -742,48 +813,16 @@ body {
     }
 }
 
+@media (min-width: 1680px) {
+    .bg-hero {
+        background-size: 45%;
+    }
+    .hero__wrapper {
+        padding-bottom: 9rem;
+    }
+}
 /* old hero css */
-.hero-txt {
-    display: grid;
-    grid-template-columns: 5px minmax(350px, auto) 5px;
-    grid-template-rows: 2fr auto auto;
-}
 
-.hero-txt-cta {
-    grid-row: 1;
-    grid-column: 2;
-}
-
-.hero-txt a {
-    grid-row: 2;
-    grid-column: 2;
-}
-
-.info-blocks {
-    grid-row: 3;
-    grid-column: 2;
-}
-
-.hero-img {
-    background-image: url(./img/main_image.png);
-    width: 529px;
-    height: 529px;
-}
-
-/* @media (max-width: 380px) {
-    .hero-new{
-        min-height: -webkit-fill-available;
-        height: 117%;
-    }
-    .hero-new:before{
-        min-height: -webkit-fill-available;
-        padding: 20em 0;
-        
-    }
-} */
-@media (max-width: 700px) {
-    
-  }
 /* ------------------- */
 /* tabs         */
 /* ------------------- */
