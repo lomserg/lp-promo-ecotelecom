@@ -104,61 +104,66 @@
 
             </div>
         </header> -->
-        <header class="header-home container">
-            <div class="header-menu flex container">
-                <a class="logo-header" href="#"></a>
-                <nav class="primary-navigation">
-                     <ul role="list" class="nav-list flex">
-                        <li><a href="#">О нас</a></li>
-                        <li><a href="#">Вакансии</a></li>
-                        <li><a href="#">Отзывы</a></li>
-                     </ul>
-                </nav>
-                <div class="whatsapp">
-                    <a id="whatsapp-link" href="https://api.whatsapp.com/send/?phone=79166063084" target="">
-                    <img class="" alt="" src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"></a>
-                </div>
-                <div class="phone text-dark">
-                    <a style="text-decoration: none;" class="phoneid text-dark" href="tel:+74998017799">+7 499 801-77-99</a>
-                </div>
-            </div>
-        </header>
+        
         <!-- hero section flex -->
-        <section class="hero container">
-        <div class="flex" style=" align-items: center">
-            <div class="hero-txt flex flex-row flow">
-                <div class="hero-txt-cta flow">
-                    <h1 class="fs-900">
-                        <p class="text-dark-blue">Выгодная комбинация</p>
-                    </h1>
-                    <p>При подключении по акции вы получаете скидку на целый год</p>
-
-                </div>
-                <a href="#" class="btn">Жми тут!</a>
-
-                <div class="info-blocks">
-                    <div class="info-block">
-                        <p class="info-block-feature fs-300 uppercase fw-bold">500 <span
-                                style="font-size:.5rem;">Мбит/с</span></p>
-                        <p class="info-block-text fs-100">интернет</p>
-                        <div class="info-block-line"></div>
+        <section class="hero-new fixed-wrapper bg-hero">
+            <header class="header-home container">
+                <div class="header-menu flex container">
+                    <a class="logo-header" href="#"></a>
+                    <nav class="primary-navigation">
+                         <ul role="list" class="nav-list flex">
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Вакансии</a></li>
+                            <li><a href="#">Отзывы</a></li>
+                         </ul>
+                    </nav>
+                    <div class="whatsapp">
+                        <a id="whatsapp-link" href="https://api.whatsapp.com/send/?phone=79166063084" target="">
+                        <img class="" alt="" src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"></a>
                     </div>
-                    <div class="info-block">
-                        <p class="info-block-feature fs-300 uppercase fw-bold">300 +</p>
-                        <p class="info-block-text fs-100">тв-каналов</p>
-                        <div class="info-block-line"></div>
-                    </div>
-                    <div class="info-block">
-                        <p class="info-block-feature fs-300 uppercase fw-bold">10000 +</p>
-                        <p class="info-block-text fs-100 ">фильмов</p>
-                        <div class="info-block-line"></div>
+                    <div class="phone text-dark">
+                        <a style="text-decoration: none;" class="phoneid" href="tel:+74998017799">+7 499 801-77-99</a>
                     </div>
                 </div>
+            </header>
+            <div class="hero__wrapper container">
+                <div class="hero__left">
+                    <h1 class="hero__title">Всё включено</h1>
+                    <div class="hero__description">
+                        <div class="hero__description-left">
+                            <p class="hero__description__first">300</p>
+                            <p class="hero__description__second">МБИТ/С</p>
+                            <div class="hero__description__dotes"><img src="./img/dotes.svg" alt=""></div>
+                            <p class="hero__description__first">220</p>
+                            <p class="hero__description__second">каналов</p>
+                            <div class="hero__description__dotes"><img src="./img/dotes.svg" alt=""></div>
+                            <img src="./img/logo_Premier_w.png" alt="">
+                        </div>
+                        <div class="hero__description-right">
+                            <p>Пользуйся бесплатно</p>
+                            <p>До 31 августа</p>
+                        </div>
+                    </div>
+                    <div><a href="#tarifs__section" class="btn bg-orange">Подробнее</a></div>
+                </div>
+                <div class="hero__right">
+                    <!-- <img src="./img/woman2.png" alt=""> -->
+                </div>
             </div>
-            <div class="hero-img" style="width:50%">
-                <img src="img/hero-img.png" alt="">
-            </div>
-        </div>
+            <div class="waves__wrapper"> 
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+                </svg>
+                </div>
     </section>
         <!-- hero section grid -->
 
@@ -199,7 +204,7 @@
             </div>
 
         </section>
-        <!-- modals -->
+       -->
      <section>
 
         <!-- старт+кино -->
@@ -244,12 +249,12 @@
                 
                 <div class="swiper-slide tarif-option ">
                     <div class="tarif-slider-description">
-                        <div class="tarif-promo" >
+                        <!-- <div class="tarif-promo" >
                             Акция
-                        </div>
+                        </div> -->
                         <!-- <div class="tarif-icon"></div> -->
                         <p class="tarif-name">СТАРТ</p>
-                        <p class="tarif-price">444 <span style="font-size: 0.75rem;">₽/мес</span></p>
+                        <p class="tarif-price">549 <span style="font-size: 0.75rem;">₽/мес</span></p>
     
                         <div class="tarif-param">
                             <p class="tarif-speed">100 Мбит/с</p>
@@ -258,8 +263,8 @@
     
                         <div class="tarif-options-description">
                             <ul class="tarif-options-list">
-                                <li>АКЦИЯ: скидка на 12 месяцев</li>
-                                <li>Всё под рукой: интернет, ТВ и онлайн-кинотеатр</li>
+                                <li>-20% при оплате на 12 месяцев</li>
+                                <li>Стартовый тариф для повседневных задач</li>
                             </ul>
     
                         </div>
@@ -274,7 +279,7 @@
                         </div>
                         <!-- <div class="tarif-icon"></div> -->
                         <p class="tarif-name">ХИТ</p>
-                        <p class="tarif-price">555 <span style="font-size: 0.75rem;">₽/мес</span></p>
+                        <p class="tarif-price">0 <span style="font-size: 0.75rem;">₽/мес</span></p>
     
                         <div class="tarif-param">
                             <p class="tarif-speed">300 Мбит/с</p>
@@ -283,8 +288,8 @@
     
                         <div class="tarif-options-description">
                             <ul class="tarif-options-list">
-                                <li>АКЦИЯ: скидка на 12 месяцев</li>
-                                <li>Всё под рукой: интернет, ТВ и онлайн-кинотеатр</li>
+                                <li>Акция "Всё включено"</li>
+                                <li>Оптимальный интернет для работы и отдыха</li>
                             </ul>
     
                         </div>
@@ -340,7 +345,7 @@
                               </div>
                               <!-- <div class="tarif-icon"></div> -->
                               <p class="tarif-name">ХИТ+ТВ</p>
-                              <p class="tarif-price">666 <span style="font-size: 0.75rem;">₽/мес</span></p>
+                              <p class="tarif-price">0 <span style="font-size: 0.75rem;">₽/мес</span></p>
                               <div class="tarif-param">
                                 <p class="tarif-speed">300 Мбит/с</p>
                                 <div class="tarif"  data-package="630f5b1c944a765510046e89">
@@ -354,7 +359,7 @@
                             </div>
                               <div class="tarif-options-description">
                                   <ul class="tarif-options-list">
-                                    <li>АКЦИЯ: скидка на 12 месяцев</li>
+                                    <li>Акция "Всё включено"</li>
                                     
                                       <li>Интернет и стартовый пакет ТВ-каналов</li>
                                   </ul>
@@ -703,7 +708,7 @@
                 </div>
                 <div class="accordion-item">
                     <div class="accordion-item-header fs-400">
-                        Условия подключения по акции «ВЫГОДНАЯ КОМБИНАЦИЯ»
+                        Условия подключения по акции «ВСЁ ВКЛЮЧЕНО»
                     </div>
                     <div class="accordion-item-body">
                         <div class="accordion-item-body-content">
@@ -711,25 +716,28 @@
 
                             <ul class="flow">
                                 <li>
-                                    Заявки на подключение по акции принимаются до 04.06.23, подключение проводится до 11.06.23 включительно.
+                                    Заявки на подключение по акции принимаются до 13.08.23, подключение проводится до 20.08.23
+включительно.
                                 </li>
                                 <li>
                                     Акция проводится для новых абонентов-физических лиц и действует по адресам, где не предоставлялись услуги «Экотелеком» в течение 5 месяцев до момента подключения, кроме ЖК «Кленовые Аллеи» (пос. Десёновское), ЖК «Цветочные Поляны» (пос. Филимонковское), ЖК «Гарден Парк» и ЖК «Новая Звезда» (п. Коммунарка), ЖК «Новоград Павлино» (г. Балашиха), ЖК «Кварталы 21/19» (г. Москва), ЖК «Весенний» (г. Подольск), ЖК «Позитив» (пос. Московский) и ул. Военный городок, д. 42 (г. Одинцово).
                                 </li>
 
                                 <li>
-                                    Цена указана на первые 12 месяцев с учетом скидки («СТАРТ» - 444 ₽/мес, «ХИТ» - 555 ₽/мес, «ХИТ+ТВ» - 666 ₽/мес), с 13 месяца услуги предоставляются на условиях действующих тарифных планов.
+                                    Бесплатный доступ к услугам предоставляется с момента подключения до 31.08.23.
+включительно.
                                 </li>
                                 <li>
-                                    В акции участвуют тарифы: «СТАРТ», «ХИТ» и «ХИТ+ТВ».
+                                    В акции участвуют тарифы «ХИТ» и «ХИТ+ТВ», с 01.09.23 услуги предоставляются на условиях
+                                    действующих тарифных планов.
                                </li>
                                 <li>
                                     Оборудование и дополнительные услуги при подключении по акции предоставляются на
                                     стандартных
                                     условиях.
                                 </li>
-                                <li>Деньги, внесенные авансовым платежом на счет при подключении по акции, возврату не
-                                    подлежат.</li>
+                                <li>При подключении по акции на лицевой счет необходимо внести авансовый платеж в размере не
+                                    менее 1000 рублей.</li>
                             </ul>
 
 
