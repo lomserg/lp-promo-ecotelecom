@@ -11,14 +11,7 @@
     --clr-blue: 224, 73%, 62%;
     --clr-dark: 230, 35%, 7%;
     --clr-white: 0, 0%, 100%;
-    --gradient: 
-    linear-gradient(
-       45deg,
-     rgba(169, 169, 50, 1.0),
-     rgba(56, 124, 44, 1.0),
-     rgba(169, 169, 50, 1.0),
-     rgba(56, 124, 44, 1.0)
-     );
+
     /* font-sizes */
     --fs-900: clamp(2rem, 6vw + 1rem, 9.375rem);
     /* 48px */
@@ -644,88 +637,23 @@ position: relative;
 
 
 .bg-hero {
-    background-color: #4BC4D0;
-    position: relative;
-    background-image: url(./img/woman2.png);
-    background-size: 49%;
-    background-position: bottom right 120px;
-    background-repeat: no-repeat;
-    /* height: 70vh; */
+    background: rgb(244,169,37);
+
 }
 
 
-.wave {
-    background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
-    height: 80vw;
-    position: relative;
-    /* background: aqua; */
-}
 
- .waves__wrapper {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-}
-.waves {
-    position:relative;
-    width: 100%;
-    height:15vh;
-    margin-bottom:-10px; /*Fix for safari gap*/
-    min-height:100px;
-    max-height:150px;
-  }
-  
-
-  
-  /* Animation */
-  
-  .parallax > use {
-    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
-  }
-  .parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
-  }
-  .parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
-  }
-  .parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
-  }
-  .parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-  }
-  @keyframes move-forever {
-    0% {
-     transform: translate3d(-90px,0,0);
-    }
-    100% { 
-      transform: translate3d(85px,0,0);
-    }
-  }
-  /*Shrinking for mobile*/
-  @media (max-width: 768px) {
-    .waves {
-      height:40px;
-      min-height:40px;
-    }
-  
-  
-  }
 .hero__wrapper {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
     z-index: 22;
     padding-bottom: 4rem;
+    align-items: center;
 }
 
 .hero__title {
-    background: #EE2A24;
+    background: radial-gradient(65.38% 65.38% at 50.00% 100.00%, #59943D 0%, #6D9F30 100%);
     padding: 1rem 1.3rem;
     color: #fff;
     text-transform: uppercase;
@@ -751,13 +679,17 @@ position: relative;
     align-items: center;
     margin: 2rem 0;
     justify-content: center;
+    flex-direction: column;
 }
 
 .hero__description-left {
     display: flex;
-    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    object-fit: contain;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
 .hero__description__first {
     font-size: 48px;
     font-family: 'GilroyExtraBold';
@@ -765,26 +697,21 @@ position: relative;
     text-align: center;
     line-height: 1;
 }
+
 .hero__description__second {
     font-size: 16px;
     font-family: 'GilroyExtraBold';
-    color: #000;
+    color: #fff;
     text-align: center;
 }
 
-.hero__description__dotes {
-    display: flex;
-    justify-content: center;
-}
-.hero__description-right {
-    background: hsla(0, 0%, 100%, 0.2);
-    color: #F5F5FA;
-    padding: 1rem;
-    text-align: center;
-    font-family: 'Roboto';
-    border-radius: 16px;
-}
+.circle {
+    
+    border-radius: 50%;
+    border: solid 3px #fff;
+    padding: 2rem;
 
+}
 @media (max-width:1100px) {
     .hero__title {
         font-size: 24px;
@@ -796,15 +723,12 @@ position: relative;
     .hero__wrapper {
         flex-direction: column;
         align-items: center;
-        padding-bottom: 18rem;
-    }
-    .bg-hero {
-        background-image: url(./img/woman2.png);
-        background-size: 100%;
-        background-position: bottom center;
-
     }
 
+    .hero__right {
+        margin-top: 2rem;
+        width: 80%;
+    }
 
     .hero__right img {
         /* height: 100%; */
@@ -813,14 +737,7 @@ position: relative;
     }
 }
 
-@media (min-width: 1680px) {
-    .bg-hero {
-        background-size: 45%;
-    }
-    .hero__wrapper {
-        padding-bottom: 9rem;
-    }
-}
+
 /* old hero css */
 
 /* ------------------- */
@@ -1097,7 +1014,9 @@ position: relative;
 
 }
 
-
+.tarif-speed,.tarif-movie {
+    color: #000;
+}
 
 /* tarif grid */
 .content {
@@ -1358,7 +1277,8 @@ position: relative;
     text-align: center;
     padding: 1rem;
     border-radius: 15px;
-    background: #F5F5FA;
+    color: #fff;
+    background: #222d38;
   }
   .swiper-wrapper {
     padding-top: 2rem;
