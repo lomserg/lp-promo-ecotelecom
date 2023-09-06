@@ -26,7 +26,11 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
   />
-  
+  <script src="https://unpkg.com/@popperjs/core@2" defer></script>
+    <script src="https://unpkg.com/tippy.js@6" defer></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/phoneinput.js" defer></script>
+    <script src="slider.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <!-- <script src="https://unpkg.com/@popperjs/core@2" defer></script>
   <script src="https://unpkg.com/tippy.js@6" defer></script> -->
@@ -106,7 +110,7 @@
     </div>
 </section>
 
-
+<section>
         <!-- header  -->
         <!-- <header class="header">
             <div class="header-content">
@@ -230,7 +234,7 @@
 
 <section class="tarifs__section" id="tarifs__section"> 
         <h2 id="tarif_block" class="section-title fs-600">Тарифы</h2>
-        <h3  class="t-center fs-400">Интернет</h2>
+        <h3  class="t-center fs-400">Интернет</h3>
         <!--tab section-->
         <div class="swiper tarifs-slider-container2 container">
             <!-- Additional required wrapper -->
@@ -509,7 +513,7 @@
 
         <div class="modal-bg">
             <div class="modal">
-                <form action="./php/form1.php" method="post"  id="form2"  name="call-form">
+                <form action="./php/form1.php" method="post"  id="form2"  name="call-form" onsubmit="return validateForm();">
                     <p style="font-weight: bold; margin-bottom: 1rem; text-align: center;">Заявка на подключение</p>
                     <label class="fs-200" for="name1">Имя</label>
                     <input type="text" name="name" id="name1" class="field" required>
@@ -678,7 +682,7 @@
                                 — Не надо держать в голове очередную дату оплаты
                                 — Интернет не закончится в самый неподходящий момент
                             </p>
-                            </p>
+                        
                         </div>
                     </div>
                 </div>
@@ -789,11 +793,7 @@
         </footer>
 
 
-    <script src="https://unpkg.com/@popperjs/core@2" defer></script>
-    <script src="https://unpkg.com/tippy.js@6" defer></script>
-    <script src="js/index.js" defer></script>
-    <script src="js/phoneinput.js"></script>
-    <script src="slider.js"></script>
+    
 
     <!-- BEGIN JIVOSITE CODE {literal} -->
     <script type='text/javascript'>
@@ -848,19 +848,22 @@
         gtag('js', new Date());
         gtag('config', 'UA-105675668-1');
     </script>
-    <!-- Andata Code-->
-    <script type="application/javascript">;
-        (function(a, n, da, ta) {
-        a.andataVersion = '1.0'; a.andataHost = n;
-        var p = '//'; n += '/i/_auto/'; var s = '/dp.js';
-        var js = document.createElement(ta);
-        js.charset="UTF-8"; js.async = 1; js.src = p+n+da+s;
-        var js2 = document.getElementsByTagName(ta)[0]; js2.parentNode.insertBefore(js, js2);
-        })(window, 'mdeploy.andata.ru',
-        'ekotelekom_zisej',
-        'script');
-        </script>
-        <!-- End Andata Code -->
+   <script>
+    function validateForm() {
+        var name = document.getElementById("name1").value;
+        var phone = document.getElementById("phone1").value;
+        var address = document.getElementById("adr11").value;
+console.log(name)
+        if (name === "" || phone === "" || address === "") {
+            alert("Пожалуйста, заполните все поля.");
+            return false; // Prevent form submission
+        }
+
+        // You can add more specific validation here if needed (e.g., phone number format).
+        
+        return true; // Allow form submission if all fields are filled.
+    }
+</script>
 </body>
 
 </html>
