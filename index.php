@@ -118,10 +118,8 @@
       <div class="hero__wrapper container">
         <div class="hero__left">
           <div style="text-align: center">
-            <h1 class="hero__title">СОБЕРИ УРОЖАЙ СКИДОК</h1>
-            <h3 class="text-white" style="margin-top: 2rem">
-              2 ОНЛАЙН-КИНОТЕАТРА
-            </h3>
+            <h1 class="hero__title">Раздаем интернет всем!</h1>
+            <h3 class="hero__title--sub">и 2 ОНЛАЙН-КИНОТЕАТРА</h3>
           </div>
           <div class="hero__description">
             <div class="hero__description-left">
@@ -150,7 +148,7 @@
           </div>
         </div>
         <div class="hero__right">
-          <img src="./img/man.png" alt="" />
+          <img src="./img/man_main.png" alt="" />
         </div>
       </div>
     </section>
@@ -185,7 +183,7 @@
       </div>
     </section>
 
-    <section class="tarifs__section">
+    <section class="tarifs__section" id="tarifs__section">
       <h2 id="tarif_block" class="section-title fs-600">Тарифы</h2>
       <h3 class="t-center fs-400">Интернет</h3>
       <!--tab section-->
@@ -209,7 +207,7 @@
 
               <div class="tarif-options-description">
                 <ul class="tarif-options-list">
-                  <li>"Урожай скидок" на 6 месяцев</li>
+                  <li>"Раздаем интернет всем" на 6 месяцев</li>
                   <li>Стартовый тариф для повседневных задач</li>
                 </ul>
               </div>
@@ -232,7 +230,7 @@
 
               <div class="tarif-options-description">
                 <ul class="tarif-options-list">
-                  <li>"Урожай скидок" на 6 месяцев</li>
+                  <li>"Раздаем интернет всем" на 6 месяцев</li>
                   <li>Оптимальный интернет для работы и отдыха</li>
                 </ul>
               </div>
@@ -254,7 +252,7 @@
 
               <div class="tarif-options-description">
                 <ul class="tarif-options-list">
-                  <li>"Урожай скидок" на 6 месяцев</li>
+                  <li>"Раздаем интернет всем" на 6 месяцев</li>
 
                   <li>Максимум скорости. Всё летает</li>
                 </ul>
@@ -267,10 +265,10 @@
         <!-- If we need pagination -->
 
         <!-- <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>-->
+            <div class="swiper-button-prev"></div>-->
         <div class="swiper-pagination"></div>
       </div>
-      <div class="swiper-container" id="tarifs__section">
+      <div class="swiper-container">
         <h2 class="t-center fs-400">Интернет+ТВ</h2>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -304,7 +302,7 @@
                 </div>
                 <div class="tarif-options-description">
                   <ul class="tarif-options-list">
-                    <li>"Урожай скидок" на 6 месяцев</li>
+                    <li>"Раздаем интернет всем" на 6 месяцев</li>
 
                     <li>Интернет и стартовый пакет ТВ-каналов</li>
                   </ul>
@@ -316,8 +314,8 @@
             <div class="swiper-slide tarif-option">
               <div class="tarif-slider-description">
                 <!-- <div class="tarif-promo" style="display: none;">
-                                  Выгодно
-                              </div> -->
+                                Выгодно
+                            </div> -->
                 <!-- <div class="tarif-icon"></div> -->
                 <p class="tarif-name">СТАРТ+ТВ</p>
                 <p class="tarif-price">
@@ -353,8 +351,8 @@
             <div class="swiper-slide tarif-option">
               <div class="tarif-slider-description">
                 <!-- <div class="tarif-promo">
-                                  Выгодно
-                              </div> -->
+                                Выгодно
+                            </div> -->
                 <!-- <div class="tarif-icon"></div> -->
                 <p class="tarif-name">СТАРТ+КИНО</p>
                 <p class="tarif-price">
@@ -412,7 +410,7 @@
                 </div>
                 <div class="tarif-options-description">
                   <ul class="tarif-options-list">
-                    <li>"Урожай скидок" на 6 месяцев</li>
+                    <li>"Раздаем интернет всем" на 6 месяцев</li>
 
                     <li>Интернет, ультра ТВ и кинотеатр на выбор</li>
                   </ul>
@@ -689,14 +687,14 @@
         </div>
         <div class="accordion-item">
           <div class="accordion-item-header fs-400">
-            Условия подключения по акции «Урожай скидок»
+            Условия подключения по акции «Раздаем интернет всем»
           </div>
           <div class="accordion-item-body">
             <div class="accordion-item-body-content">
               <ul class="flow">
                 <li>
-                  Заявки на подключение по акции принимаются до 13.10.23,
-                  подключение проводится до 20.10.23 включительно.
+                  Заявки на подключение по акции принимаются до 13 декабря 2023,
+                  подключение производится до 20 декабря 2023 включительно.
                 </li>
                 <li>
                   Акция проводится для новых абонентов-физических лиц и
