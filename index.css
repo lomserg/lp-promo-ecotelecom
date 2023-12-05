@@ -653,6 +653,42 @@ html {
   font-weight: 200;
   margin-bottom: 1rem;
 }
+@media (max-width: 900px) {
+  .hero__new-text h1 {
+    font-size: 32px;
+    width: 67%;
+  }
+  .hero__new-text {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero__new-text h3 {
+    width: 60%;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero__new-text h1 {
+    font-size: 24px;
+    width: 90%;
+  }
+
+  .hero__new-text h3 {
+    width: 90%;
+    font-size: 16px;
+  }
+  .bg-hero::before {
+    background-position: 70% 90%;
+  }
+  .logo-white {
+    background: url(./img/logo_w_small.svg);
+    background-repeat: no-repeat;
+    height: 45px;
+  }
+}
 /* 
 .bg-hero {
   background: radial-gradient(
