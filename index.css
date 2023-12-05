@@ -606,7 +606,54 @@ html {
   color: #fff;
 }
 /* hero */
+.header-home {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.bg-hero {
+  position: relative;
+  width: 100vw;
+  height: 90vh;
+  padding: 5em 0;
+}
+.bg-hero::before {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: url(./img/hits_ny_promo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40% 90%;
+  filter: brightness(80%);
+}
+.hero__new-text {
+  font-family: "GilroyExtraBold";
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+.hero__new-text h1 {
+  font-size: 48px;
+  color: #fff;
+  font-family: "GilroyExtraBold";
+  width: 40%;
+}
 
+.hero__new-text h3 {
+  color: #ffc955;
+  width: 40%;
+  font-size: 28px;
+  font-weight: 200;
+  margin-bottom: 1rem;
+}
+/* 
 .bg-hero {
   background: radial-gradient(
     120.16% 64.01% at 78.96% 42.91%,
@@ -725,7 +772,7 @@ html {
   }
 
   .hero__right img {
-    /* height: 100%; */
+  
     display: block;
     width: 100%;
   }
@@ -739,7 +786,7 @@ html {
     font-size: 14px;
     width: 80%;
   }
-}
+} */
 
 /* old hero css */
 
