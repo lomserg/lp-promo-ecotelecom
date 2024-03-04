@@ -19,6 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
+    <script defer src="./js/channels.js"></script>
     <script
       src="https://kit.fontawesome.com/4af22d591d.js"
       crossorigin="anonymous"
@@ -26,11 +27,11 @@
     ></script>
     <script src="//code-ya.jivosite.com/widget/dIrCWbDFXD" async></script>
 
-    <script
+    <!-- <script
       defer
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
-    ></script>
-    <script defer src="./js/channels.js"></script>
+    ></script> -->
+
     <script defer src="./js/modal.js"></script>
     <link
       rel="stylesheet"
@@ -228,28 +229,8 @@
       <!-- старт+кино -->
       <div class="bg-modal" id="pack-5b504edcb2de77e82f591f1a">
         <button class="modal-btn">X</button>
-        <div class="modal-content">
-          <div class="modal-box">
-            <div class="channels_list"></div>
-          </div>
-        </div>
-      </div>
-      <!-- хит+тв -->
-      <div class="bg-modal" id="pack-630f5b1c944a765510046e89">
-        <button class="modal-btn">X</button>
-        <div class="modal-content">
-          <div class="modal-box">
-            <div class="channels_list"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Ультра+кино -->
-      <div class="bg-modal" id="pack-5e7b7e70acb10bd8ce882ef1">
-        <button class="modal-btn">X</button>
-        <div class="modal-content">
-          <div class="modal-box">
-            <div class="channels_list"></div>
-          </div>
+        <div id="modal" class="modal-content">
+          <div class="channels-list"></div>
         </div>
       </div>
     </section>
@@ -350,7 +331,10 @@
           <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide tarif-option">
-              <div class="tarif-slider-description">
+              <div
+                class="tarif-slider-description"
+                data-package="5b504edcb2de77e82f591f1a"
+              >
                 <!-- <div class="tarif-promo" style="display: none;">
                                   Выгодно
                               </div> -->
@@ -361,14 +345,11 @@
                 </p>
                 <div class="tarif-param">
                   <p class="tarif-speed">100 Мбит/с</p>
-                  <div class="tarif" data-package="5b504edcb2de77e82f591f1a">
-                    <script>
-                      idPackages.push("5b504edcb2de77e82f591f1a");
-                    </script>
-                    <a
-                      class="channels_link"
-                      data-target="#pack-xxxxx"
-                      href="#pack-5b504edcb2de77e82f591f1a"
+                  <div
+                    class="tarif channels-item"
+                    data-package="5b504edcb2de77e82f591f1a"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
                       >120 ТВ-каналов</a
                     >
                   </div>
@@ -399,14 +380,11 @@
 
                 <div class="tarif-param">
                   <p class="tarif-speed">100 Мбит/с</p>
-                  <div class="tarif" data-package="5b504edcb2de77e82f591f1a">
-                    <script>
-                      idPackages.push("5b504edcb2de77e82f591f1a");
-                    </script>
-                    <a
-                      class="channels_link"
-                      data-target="#pack-xxxxx"
-                      href="#pack-5b504edcb2de77e82f591f1a"
+                  <div
+                    class="tarif channels-item"
+                    data-package="5b504edcb2de77e82f591f1a"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
                       >120 ТВ-каналов</a
                     >
                   </div>
@@ -434,14 +412,11 @@
                 </p>
                 <div class="tarif-param">
                   <p class="tarif-speed">300 Мбит/с</p>
-                  <div class="tarif" data-package="630f5b1c944a765510046e89">
-                    <script>
-                      idPackages.push("630f5b1c944a765510046e89");
-                    </script>
-                    <a
-                      class="channels_link"
-                      data-target="#pack-xxxxx"
-                      href="#pack-630f5b1c944a765510046e89"
+                  <div
+                    class="tarif channels-item"
+                    data-package="630f5b1c944a765510046e89"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
                       >220 ТВ-каналов</a
                     >
                   </div>
@@ -468,14 +443,11 @@
                 </p>
                 <div class="tarif-param">
                   <p class="tarif-speed">350 Мбит/с</p>
-                  <div class="tarif" data-package="5e7b7e70acb10bd8ce882ef1">
-                    <script>
-                      idPackages.push("5e7b7e70acb10bd8ce882ef1");
-                    </script>
-                    <a
-                      class="channels_link"
-                      data-target="#pack-xxxxx"
-                      href="#pack-5e7b7e70acb10bd8ce882ef1"
+                  <div
+                    class="tarif channels-item"
+                    data-package="5e7b7e70acb10bd8ce882ef1"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
                       >270 ТВ-каналов</a
                     >
                   </div>
@@ -974,7 +946,7 @@
     /></noscript>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=UA-105675668-1"
     ></script>
@@ -986,8 +958,8 @@
       }
       gtag("js", new Date());
       gtag("config", "UA-105675668-1");
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
       function validateForm() {
         var name = document.getElementById("name1").value;
         var phone = document.getElementById("phone1").value;
@@ -995,13 +967,12 @@
         console.log(name);
         if (name === "" || phone === "" || address === "") {
           alert("Пожалуйста, заполните все поля.");
-          return false; // Prevent form submission
+          return false; 
         }
 
-        // You can add more specific validation here if needed (e.g., phone number format).
 
-        return true; // Allow form submission if all fields are filled.
-      }
-    </script>
+        return true; 
+      } 
+    </script>-->
   </body>
 </html>

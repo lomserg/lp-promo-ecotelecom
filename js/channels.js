@@ -1,70 +1,76 @@
+document.addEventListener("DOMContentLoaded", function () {
+  function declOfNum(n) {
+    return n % 10 === 1 && n % 100 !== 11
+      ? "канал"
+      : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)
+      ? "канала"
+      : "каналов";
+  }
 
-var idPackages = [],
-App = {
-    host: location.protocol + "//fe.smotreshka.tv"
-},
-ApplicationConfig = {
-                    host: "//fe.smotreshka.tv",
-                };
-App.renderChannelsList = function(place, data) {
-var channelsPlace = document.getElementById(place),
-    innerContent = '<div>';
+  function getAll(channels, box) {
+    fetch("//fe.smotreshka.tv/channels")
+      .then((response) => response.json())
+      .then((data) => {
+        let block = "";
 
-data.forEach(function (item, i) {
-    var imgSrc = item.info.mediaInfo.thumbnails[0].url;
-    if(i === 60) {
-    }
-    innerContent += '<img src="' + imgSrc + '?width=100&height=57" />'; 
-    if(i === 59 || i === data.length - 1) {
-    }
-})
-channelsPlace.innerHTML = innerContent;
-}
-App.renderPackageChannelsList = function(id, content) {
-var container = document.querySelector('#pack-' + id + ' .channels_list'),
-    btn = document.querySelector('#btn-' + id + '.channels_link'),
-    length = 0;
-if (!container && !btn) return;
-content.length
-content.forEach(function(channelId, i) {
-    var channels = App.allChannels,
-        child = document.createElement('span'),
-        img;
-    for (var j = 0; j < channels.length; j++) {
-        if (channels[j].id === channelId) {
-            img = '<img src="' + channels[j].info.mediaInfo.thumbnails[0].url + '?width=100&height=70" />';
-             child.innerHTML = img + channels[j].info.metaInfo.title.slice(4);
-            container.appendChild(child);
-            length++;
-            break;
-        }
-    }
-});
-if(idPackages) {
-                $.each(idPackages, function(key, idPackage) {
-                    $.getJSON(ApplicationConfig.host+"/v2/offers/"+idPackage, function(data) {
-                        var countChannelItem = $(".about-item[data-package='"+idPackage+"']").find(".channels-amount span");
-                        countChannelItem.html(data.content.length);
-                    });
-                });
+        data.channels.forEach(function (item) {
+          channels.forEach((el) => {
+            if (item.id === el.channelId) {
+              block += `<div class="channels_item" data-name="${item.info.metaInfo.title.slice(
+                4
+              )}"><img src="${
+                item.info.mediaInfo.thumbnails[0].url
+              }?width=70&height=40" title="${item.info.metaInfo.title.slice(
+                4
+              )}" alt="${item.info.metaInfo.title.slice(4)}" data-id="${
+                item.id
+              }" /></div>`;
             }
-}
-$(document).ready(function () {
-$.ajax({
-    url: App.host + "/channels"
-}).done(function(data) {
-    App.allChannels = data.channels;
-//    App.renderChannelsList('all-channels', App.allChannels);
-    
-    $.ajax({
-        url: App.host + "/v2/offers"
-    }).done(function(data) {
-        var offers = data.offers;
-        offers.forEach(function(offer, i) {
-            var id = offer.id,
-                content = offer.content;
-            App.renderPackageChannelsList(offer.id, offer.content);
-        })
+          });
+        });
+        box.innerHTML += block;
+      })
+      .catch((error) => console.error("Error fetching channels:", error));
+  }
+
+  function getPack(options) {
+    const id = options.id,
+      box = options.box,
+      block = options.block;
+
+    fetch(`//fe.smotreshka.tv/offers/v3/${id}/showcase-channels`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (box) {
+          getAll(data.channels, box);
+        } else {
+          let num;
+          block.textContent.length === 0
+            ? (num = data.channels.length)
+            : (num = block.textContent);
+          block.innerHTML = `<strong>${num}</strong> ${declOfNum(num)}`;
+        }
+      })
+      .catch((error) => console.error("Error fetching pack:", error));
+  }
+
+  const channelsItems = document.querySelectorAll(".channels-item");
+  channelsItems.forEach(function (item) {
+    getPack({
+      id: item.dataset.package,
+      block: item.querySelector(".channels-amount"),
     });
-});
+  });
+
+  document.addEventListener("click", function (event) {
+    if (event.target.classList.contains("trigger")) {
+      const packageId = event.target.closest(".channels-item").dataset.package;
+      const channelsList = document.querySelector(".channels-list");
+      channelsList.innerHTML = "";
+      getPack({
+        id: packageId,
+        box: channelsList,
+      });
+    }
+  });
 });
