@@ -24,10 +24,6 @@
     <script src="https://unpkg.com/@popperjs/core@2" defer></script>
     <script src="https://unpkg.com/tippy.js@6" defer></script>
 
-    <script
-      defer
-      src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
-    ></script>
     <script defer src="./js/channels.js"></script>
     <script defer src="./js/modal.js"></script>
     <link
@@ -82,103 +78,56 @@
     ></noscript>
     <!-- /Yandex.Metrika counter -->
 
-    <section class="hero-new fixed-wrapper bg-hero">
-      <header class="header-home container">
-        <div class="header-menu flex container">
-          <a class="logo-header" href="#"></a>
-          <nav class="primary-navigation">
-            <ul role="list" class="nav-list flex">
-              <li><a href="#">О нас</a></li>
-              <li><a href="#">Вакансии</a></li>
-              <li><a href="#">Отзывы</a></li>
-            </ul>
-          </nav>
-          <div class="whatsapp">
-            <a
-              id="whatsapp-link"
-              href="https://api.whatsapp.com/send/?phone=79912256610"
-              target=""
-            >
-              <img
-                class=""
-                alt=""
-                src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"
-            /></a>
-          </div>
-          <div class="phone text-dark">
-            <a
-              style="text-decoration: none"
-              class="phoneid"
-              href="tel:+74998017799"
-              >+7 499 801-77-99</a
-            >
-          </div>
+    <header class="header-home container">
+      <div class="header-menu flex container">
+        <a class="logo-header" href="#"></a>
+        <nav class="primary-navigation">
+          <ul role="list" class="nav-list flex">
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Вакансии</a></li>
+            <li><a href="#">Отзывы</a></li>
+          </ul>
+        </nav>
+        <div class="whatsapp">
+          <a
+            id="whatsapp-link"
+            href="https://api.whatsapp.com/send/?phone=79912256610"
+            target=""
+          >
+            <img
+              class=""
+              alt=""
+              src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"
+          /></a>
         </div>
-      </header>
-      <div class="hero__wrapper container">
-        <div class="hero__left">
-          <div style="text-align: center">
-            <h1 class="hero__title">Раздаем интернет всем!</h1>
-            <h3 class="hero__title--sub">и 2 ОНЛАЙН-КИНОТЕАТРА</h3>
-          </div>
-          <div class="hero__description">
-            <div class="hero__description-left">
-              <img src="./img/logo_Premier_w.png" alt="" />
-              <img src="./img/logo_start.png" alt="" />
-              <img src="./img/logo_amediateka.png" alt="" />
-              <img src="./img/logo_moretv.png" alt="" />
-            </div>
-            <div class="hero__description-left" style="margin-top: 2rem">
-              <div class="hero__description-props circle">
-                <p class="hero__description__first">350</p>
-                <p class="hero__description__second">МБИТ/С</p>
-              </div>
-              <div class="hero__description-props circle">
-                <p class="hero__description__first">270</p>
-                <p class="hero__description__second">КАНАЛОВ</p>
-              </div>
-              <div class="hero__description-props">
-                <p class="hero__description__first">600</p>
-                <p class="hero__description__second">РУБ/МЕС</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <a href="#tarifs__section" class="btn bg-orange">Подробнее</a>
-          </div>
+        <div class="phone text-dark">
+          <a
+            style="text-decoration: none"
+            class="phoneid"
+            href="tel:+74998017799"
+            >+7 499 801-77-99</a
+          >
         </div>
-        <div class="hero__right">
-          <img src="./img/man_main.png" alt="" />
+      </div>
+    </header>
+    <section style="margin-top: 2rem" class="hero grid-container container">
+      <div class="hero-txt">
+        <div class="hero-txt-cta flow">
+          <h1 class="text-dark-blue">Интернет и ТВ от 435 ₽/мес</h1>
+          <p class="fs-300">Успей подключиться!</p>
+          <a href="#tarif_block" class="btn">Подробнее</a>
         </div>
+      </div>
+      <div class="hero-img">
+        <img src="img/main.png" alt="" />
       </div>
     </section>
 
     <section>
-      <!-- старт+кино -->
       <div class="bg-modal" id="pack-5b504edcb2de77e82f591f1a">
         <button class="modal-btn">X</button>
-        <div class="modal-content">
-          <div class="modal-box">
-            <div class="channels_list"></div>
-          </div>
-        </div>
-      </div>
-      <!-- хит+тв -->
-      <div class="bg-modal" id="pack-630f5b1c944a765510046e89">
-        <button class="modal-btn">X</button>
-        <div class="modal-content">
-          <div class="modal-box">
-            <div class="channels_list"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Ультра+кино -->
-      <div class="bg-modal" id="pack-5e7b7e70acb10bd8ce882ef1">
-        <button class="modal-btn">X</button>
-        <div class="modal-content">
-          <div class="modal-box">
-            <div class="channels_list"></div>
-          </div>
+        <div id="modal" class="modal-content">
+          <div class="channels-list"></div>
         </div>
       </div>
     </section>
@@ -194,11 +143,11 @@
 
           <div class="swiper-slide tarif-option">
             <div class="tarif-slider-description">
-              <div class="tarif-promo">Акция</div>
+              <!-- <div class="tarif-promo">Акция</div> -->
               <!-- <div class="tarif-icon"></div> -->
               <p class="tarif-name">СТАРТ</p>
               <p class="tarif-price">
-                370 <span style="font-size: 0.75rem">₽/мес</span>
+                549 <span style="font-size: 0.75rem">₽/мес</span>
               </p>
 
               <div class="tarif-param">
@@ -207,8 +156,8 @@
 
               <div class="tarif-options-description">
                 <ul class="tarif-options-list">
-                  <li>"Раздаем интернет всем" на 6 месяцев</li>
-                  <li>Стартовый тариф для повседневных задач</li>
+                  <!-- <li>-20% при оплате на 12 месяцев</li>
+                  <li>Стартовый тариф для повседневных задач</li> -->
                 </ul>
               </div>
               <button class="choose-btn">Выбрать</button>
@@ -230,13 +179,15 @@
 
               <div class="tarif-options-description">
                 <ul class="tarif-options-list">
-                  <li>"Раздаем интернет всем" на 6 месяцев</li>
-                  <li>Оптимальный интернет для работы и отдыха</li>
+                  <!-- <li>Акция "Новогодние хиты"</li>
+                  <li>Бесплатный доступ к услугам до 29.02.24</li> -->
+                  <!-- <li>Оптимальный интернет для работы и отдыха</li> -->
                 </ul>
               </div>
               <button class="choose-btn">Выбрать</button>
             </div>
           </div>
+
           <div class="swiper-slide tarif-option">
             <div class="tarif-slider-description">
               <div class="tarif-promo">Акция</div>
@@ -252,9 +203,9 @@
 
               <div class="tarif-options-description">
                 <ul class="tarif-options-list">
-                  <li>"Раздаем интернет всем" на 6 месяцев</li>
-
-                  <li>Максимум скорости. Всё летает</li>
+                  <!-- <li>"Раздаем интернет всем" на 6 месяцев</li> -->
+                  <!-- <li>-20% при оплате на 12 месяцев</li>
+                  <li>Максимум скорости. Всё летает</li> -->
                 </ul>
               </div>
               <button class="choose-btn">Выбрать</button>
@@ -276,7 +227,78 @@
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
+            <div class="swiper-slide tarif-option">
+              <div
+                class="tarif-slider-description"
+                data-package="5b504edcb2de77e82f591f1a"
+              >
+                <!-- <div class="tarif-promo" style="display: none;">
+                                  Выгодно
+                              </div> -->
+                <!-- <div class="tarif-icon"></div> -->
+                <p class="tarif-name">СТАРТ+ТВ</p>
+                <p class="tarif-price">
+                  649 <span style="font-size: 0.75rem">₽/мес</span>
+                </p>
+                <div class="tarif-param">
+                  <p class="tarif-speed">100 Мбит/с</p>
+                  <div
+                    class="tarif channels-item"
+                    data-package="5b504edcb2de77e82f591f1a"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
+                      >120 ТВ-каналов</a
+                    >
+                  </div>
+                  <p class="tarif-movie">
+                    <span style="font-size: 1.1rem; font-weight: 900">- </span>
+                  </p>
+                </div>
+                <div class="tarif-options-description">
+                  <ul class="tarif-options-list">
+                    <!-- <li>-20% при оплате на 12 месяцев</li>
 
+                    <li>Интернет и стартовый пакет ТВ-каналов</li> -->
+                  </ul>
+                </div>
+                <button class="choose-btn">Выбрать</button>
+              </div>
+            </div>
+            <div class="swiper-slide tarif-option">
+              <div class="tarif-slider-description">
+                <!-- <div class="tarif-promo">
+                                  Выгодно
+                              </div> -->
+                <!-- <div class="tarif-icon"></div> -->
+                <p class="tarif-name">СТАРТ+КИНО</p>
+                <p class="tarif-price">
+                  699 <span style="font-size: 0.75rem">₽/мес</span>
+                </p>
+
+                <div class="tarif-param">
+                  <p class="tarif-speed">100 Мбит/с</p>
+                  <div
+                    class="tarif channels-item"
+                    data-package="5b504edcb2de77e82f591f1a"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
+                      >120 ТВ-каналов</a
+                    >
+                  </div>
+                  <p class="tarif-movie" id="video0">1 видеосервисов из 3</p>
+                </div>
+                <div class="tarif-options-description">
+                  <ul class="tarif-options-list">
+                    <!-- <li>-20% при оплате на 12 месяцев</li>
+
+                    <li>Всё под рукой: интернет, ТВ и онлайн-кинотеатр</li> -->
+                  </ul>
+                </div>
+                <button class="choose-btn">Выбрать</button>
+              </div>
+            </div>
+
+            <!-- end tarif -->
             <div class="swiper-slide tarif-option">
               <div class="tarif-slider-description">
                 <div class="tarif-promo">Акция</div>
@@ -287,14 +309,11 @@
                 </p>
                 <div class="tarif-param">
                   <p class="tarif-speed">300 Мбит/с</p>
-                  <div class="tarif" data-package="630f5b1c944a765510046e89">
-                    <script>
-                      idPackages.push("630f5b1c944a765510046e89");
-                    </script>
-                    <a
-                      class="channels_link"
-                      data-target="#pack-xxxxx"
-                      href="#pack-630f5b1c944a765510046e89"
+                  <div
+                    class="tarif channels-item"
+                    data-package="630f5b1c944a765510046e89"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
                       >220 ТВ-каналов</a
                     >
                   </div>
@@ -302,107 +321,30 @@
                 </div>
                 <div class="tarif-options-description">
                   <ul class="tarif-options-list">
-                    <li>"Раздаем интернет всем" на 6 месяцев</li>
-
-                    <li>Интернет и стартовый пакет ТВ-каналов</li>
+                    <!-- <li>Акция "Новогодние хиты"</li>
+                    <li>Бесплатный доступ к услугам до 29.02.24</li> -->
                   </ul>
                 </div>
                 <button class="choose-btn">Выбрать</button>
               </div>
             </div>
             <!-- end tarif -->
-            <div class="swiper-slide tarif-option">
-              <div class="tarif-slider-description">
-                <!-- <div class="tarif-promo" style="display: none;">
-                                Выгодно
-                            </div> -->
-                <!-- <div class="tarif-icon"></div> -->
-                <p class="tarif-name">СТАРТ+ТВ</p>
-                <p class="tarif-price">
-                  649 <span style="font-size: 0.75rem">₽/мес</span>
-                </p>
-                <div class="tarif-param">
-                  <p class="tarif-speed">100 Мбит/с</p>
-                  <div class="tarif" data-package="5b504edcb2de77e82f591f1a">
-                    <script>
-                      idPackages.push("5b504edcb2de77e82f591f1a");
-                    </script>
-                    <a
-                      class="channels_link"
-                      data-target="#pack-xxxxx"
-                      href="#pack-5b504edcb2de77e82f591f1a"
-                      >120 ТВ-каналов</a
-                    >
-                  </div>
-                  <p class="tarif-movie">
-                    <span style="font-size: 1.1rem; font-weight: 900">- </span>
-                  </p>
-                </div>
-                <div class="tarif-options-description">
-                  <ul class="tarif-options-list">
-                    <li>-20% при оплате на 12 месяцев</li>
-
-                    <li>Интернет и стартовый пакет ТВ-каналов</li>
-                  </ul>
-                </div>
-                <button class="choose-btn">Выбрать</button>
-              </div>
-            </div>
-            <div class="swiper-slide tarif-option">
-              <div class="tarif-slider-description">
-                <!-- <div class="tarif-promo">
-                                Выгодно
-                            </div> -->
-                <!-- <div class="tarif-icon"></div> -->
-                <p class="tarif-name">СТАРТ+КИНО</p>
-                <p class="tarif-price">
-                  699 <span style="font-size: 0.75rem">₽/мес</span>
-                </p>
-
-                <div class="tarif-param">
-                  <p class="tarif-speed">100 Мбит/с</p>
-                  <div class="tarif" data-package="5b504edcb2de77e82f591f1a">
-                    <script>
-                      idPackages.push("5b504edcb2de77e82f591f1a");
-                    </script>
-                    <a
-                      class="channels_link"
-                      data-target="#pack-xxxxx"
-                      href="#pack-5b504edcb2de77e82f591f1a"
-                      >120 ТВ-каналов</a
-                    >
-                  </div>
-                  <p class="tarif-movie" id="video0">1 видеосервисов из 3</p>
-                </div>
-                <div class="tarif-options-description">
-                  <ul class="tarif-options-list">
-                    <li>-20% при оплате на 12 месяцев</li>
-
-                    <li>Всё под рукой: интернет, ТВ и онлайн-кинотеатр</li>
-                  </ul>
-                </div>
-                <button class="choose-btn">Выбрать</button>
-              </div>
-            </div>
 
             <div class="swiper-slide tarif-option">
               <div class="tarif-slider-description">
-                <div class="tarif-promo">Акция</div>
+                <!-- <div class="tarif-promo">Акция</div> -->
                 <!-- <div class="tarif-icon"></div> -->
                 <p class="tarif-name">УЛЬТРА+КИНО</p>
                 <p class="tarif-price">
-                  600 <span style="font-size: 0.75rem">₽/мес</span>
+                  899 <span style="font-size: 0.75rem">₽/мес</span>
                 </p>
                 <div class="tarif-param">
                   <p class="tarif-speed">350 Мбит/с</p>
-                  <div class="tarif" data-package="5e7b7e70acb10bd8ce882ef1">
-                    <script>
-                      idPackages.push("5e7b7e70acb10bd8ce882ef1");
-                    </script>
-                    <a
-                      class="channels_link"
-                      data-target="#pack-xxxxx"
-                      href="#pack-5e7b7e70acb10bd8ce882ef1"
+                  <div
+                    class="tarif channels-item"
+                    data-package="5e7b7e70acb10bd8ce882ef1"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
                       >270 ТВ-каналов</a
                     >
                   </div>
@@ -410,9 +352,9 @@
                 </div>
                 <div class="tarif-options-description">
                   <ul class="tarif-options-list">
-                    <li>"Раздаем интернет всем" на 6 месяцев</li>
+                    <!-- <li>"Раздаем интернет всем" на 6 месяцев</li>
 
-                    <li>Интернет, ультра ТВ и кинотеатр на выбор</li>
+                    <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
                   </ul>
                 </div>
                 <button class="choose-btn">Выбрать</button>
@@ -453,7 +395,7 @@
       <div class="modal-bg">
         <div class="modal">
           <form
-            action="./php/telegram.php"
+            action="./php/form1.php"
             method="post"
             id="form2"
             name="call-form"
