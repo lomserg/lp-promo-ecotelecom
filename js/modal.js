@@ -18,8 +18,7 @@ chanelBtns.forEach((btn) => {
     closeModal.forEach((link) => {
       link.addEventListener("click", () => {
         currentlyModal.classList.remove("active");
-        document.body.style.overflow = "auto"; // ADD THIS LINE
-        document.body.style.height = "100%"; // ADD THIS LINE
+
         document
           .querySelector("body")
           .classList.remove("my-body-noscroll-class");

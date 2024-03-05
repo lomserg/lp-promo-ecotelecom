@@ -1858,3 +1858,6 @@ input {
     right: 20px;
   }
 }
+.my-body-noscroll-class {
+  overflow: hidden;
+}
