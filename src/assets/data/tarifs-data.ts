@@ -59,6 +59,18 @@ const tarifData: TarifType[] = [
     channels: 120,
     movie: null,
   },
+  {
+    name: "старт+кино",
+    promo: true,
+    speed: 100,
+    price: 100,
+    price2: null,
+    description:
+      "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    tv: true,
+    channels: 120,
+    movie: null,
+  },
 ];
 
 export default tarifData;
