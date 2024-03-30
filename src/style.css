@@ -1,3 +1,27 @@
 body {
   background: red;
 }
+.intenet-tv,
+.intenet {
+  display: flex;
+  margin: 1rem;
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 50%;
+  top: 50%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 15px;
+  color: #fff;
+  background: #222d38;
+}

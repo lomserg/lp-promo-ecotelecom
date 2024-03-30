@@ -43,7 +43,7 @@ const tarifData: TarifType[] = [
     price2: null,
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
-    tv: true,
+    tv: false,
     channels: null,
     movie: null,
   },

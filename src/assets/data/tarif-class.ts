@@ -29,6 +29,7 @@ class Modal extends ElementCreator {
     if (this.element) {
       this.element.classList.remove("open");
       this.parentElement.removeChild(this.element);
+      this.element = null; // Reset the element reference
     }
   }
 }
@@ -40,6 +41,7 @@ export default class Tarifs {
   parentElement: HTMLElement;
   modal: Modal | null;
   tv: boolean;
+  htmlElem: HTMLElement | null;
   // Constructor
   constructor(
     data: TarifType[],
@@ -52,8 +54,17 @@ export default class Tarifs {
     this.parentElement = parentElement;
     this.modal = null;
     this.tv = tv;
+    this.htmlElem = this.createHtml();
   }
 
+  createHtml(): HTMLElement {
+    this.htmlElem = document.createElement("div");
+    return this.htmlElem;
+  }
+
+  get getHtml(): HTMLElement {
+    return this.htmlElem || document.createElement("div");
+  }
   populate() {
     this.data.forEach((tarif) => {
       const card: HTMLDivElement = document.createElement("div");
@@ -61,7 +72,7 @@ export default class Tarifs {
       const tarifPrice: HTMLDivElement = document.createElement("div");
       const tarifDescription: HTMLDivElement = document.createElement("div");
       const button: HTMLButtonElement = document.createElement("button");
-      if (this.tv && tarif.channels) {
+      if (this.tv === tarif.tv && tarif.channels) {
         const tvChanels: HTMLParagraphElement = document.createElement("p");
         tvChanels.textContent = tarif.channels.toString();
         tarifName.textContent = tarif.name;
@@ -69,24 +80,49 @@ export default class Tarifs {
         tarifDescription.textContent = tarif.description;
         button.textContent = "Подключить";
         card.append(tarifName, tarifPrice, tarifDescription, tvChanels, button);
+        console.log(card);
         this.parentElement.append(card);
       }
-
+      if (this.tv === false && tarif.tv === false) {
+        tarifName.textContent = tarif.name;
+        tarifPrice.textContent = tarif.price.toString();
+        tarifDescription.textContent = tarif.description;
+        button.textContent = "Подключить";
+        card.append(tarifName, tarifPrice, tarifDescription, button);
+        console.log(card);
+        this.parentElement.append(card);
+      }
       // Add event listener to the button
       button.addEventListener("click", () => {
-        // Create and open modal when button is clicked
-        if (this.modal === null) {
+        if (this.modal === null || !this.modal.element) {
           this.modal = new Modal(this.parentElement, tarif.name, {} as Params);
           this.modal.open();
         } else {
-          this.modal.close();
-          this.modal = new Modal(this.parentElement, tarif.name, {} as Params);
-          this.modal.open();
+          if (this.modal.element.classList.contains("open")) {
+            this.modal.close(); // Close modal if it's open
+          } else {
+            // Get the tarif name associated with the clicked button's parent card
+            const cardTarifName =
+              card.querySelector(".tarif-name")?.textContent;
+            this.modal = new Modal(
+              this.parentElement,
+              cardTarifName || "",
+              {} as Params
+            );
+            this.modal.open(); // Open modal if it's closed
+          }
         }
       });
     });
   }
+
+  // readData() {
+  //   this.data.forEach((tarif) => {
+  //     if (tarif.tv === false) {
+  //       console.log(tarif.name);
+  //     } else {
+  //       console.log(tarif.tv);
+  //     }
+  //   });
+  // }
 }
-
-
-         <script type="application/javascript" src="//tagmanager.andata.ru/api/v1/container/9b91d137-d2ac-4f60-8303-e5be7e7bbb96/published/code.js">            </script>           
