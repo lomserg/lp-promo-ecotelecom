@@ -81,7 +81,6 @@ export default class Tarifs {
         button.textContent = "Подключить";
         card.append(tarifName, tarifPrice, tarifDescription, tvChanels, button);
         console.log(card);
-        this.parentElement.append(card);
       }
       if (this.tv === false && tarif.tv === false) {
         tarifName.textContent = tarif.name;
@@ -90,8 +89,11 @@ export default class Tarifs {
         button.textContent = "Подключить";
         card.append(tarifName, tarifPrice, tarifDescription, button);
         console.log(card);
+      }
+      if (card.children.length > 0) {
         this.parentElement.append(card);
       }
+
       // Add event listener to the button
       button.addEventListener("click", () => {
         if (this.modal === null || !this.modal.element) {
