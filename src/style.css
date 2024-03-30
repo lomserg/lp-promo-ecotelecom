@@ -1,3 +1,22 @@
 body {
   background: red;
 }
+.card {
+  padding: 1rem;
+  background: violet;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 16px;
+}
+
+.internet,
+.internet-tv {
+  display: flex;
+  gap: 1rem;
+}
+.internet {
+  margin-bottom: 1rem;
+}

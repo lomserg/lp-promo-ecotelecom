@@ -27,7 +27,7 @@ const tarifData: TarifType[] = [
     name: "ХИТ",
     promo: true,
     speed: 100,
-    price: 100,
+    price: 599,
     price2: null,
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
@@ -38,12 +38,12 @@ const tarifData: TarifType[] = [
   {
     name: "МЕГА",
     promo: true,
-    speed: 100,
-    price: 100,
+    speed: 500,
+    price: 699,
     price2: null,
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
-    tv: true,
+    tv: false,
     channels: null,
     movie: null,
   },

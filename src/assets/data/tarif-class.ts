@@ -35,18 +35,18 @@ class Modal extends ElementCreator {
 
 const CARD = {
   tag: "div",
-  classNames: "card",
+  classNames: ["card", "swiper-slide"],
 };
 
-const OPTIONS = {
-  tag: "p",
-  classNames: "tarif-options",
-};
+// const OPTIONS = {
+//   tag: "p",
+//   classNames: "tarif-options",
+// };
 
-const BUTTON = {
-  tag: "button",
-  textContent: "Подключить",
-};
+// const BUTTON = {
+//   tag: "button",
+//   textContent: "Подключить",
+// };
 
 export default class Tarifs {
   // Properties
@@ -75,47 +75,84 @@ export default class Tarifs {
       if (card) {
         const cardElem: HTMLDivElement = card.getElement() as HTMLDivElement; // Asserting type to HTMLDivElement
 
-        const tarifName = new ElementCreator({
-          tag: "div",
-          classNames: "tarif-name",
-          textContent: tarif.name,
-        }).getElement() as HTMLDivElement;
-
-        const tarifPrice = new ElementCreator({
-          tag: "div",
-          classNames: "tarif-price",
-          textContent: tarif.price.toString(),
-        }).getElement() as HTMLDivElement;
-
-        const tarifDescription = new ElementCreator({
-          tag: "div",
-          classNames: "tarif-description",
-          textContent: tarif.description,
-        }).getElement() as HTMLDivElement;
-
         const button = new ElementCreator({
           tag: "button",
           classNames: "tarif-button",
           textContent: "Подключить",
         }).getElement() as HTMLButtonElement;
 
-        if (this.tv && tarif.tv && tarif.channels) {
+        if (this.tv === tarif.tv && tarif.channels) {
+          const tarifName = new ElementCreator({
+            tag: "div",
+            classNames: "tarif-name",
+            textContent: tarif.name,
+          }).getElement() as HTMLDivElement;
+          const tarifSpeed = new ElementCreator({
+            tag: "p",
+            classNames: "tarif-speed",
+            textContent: tarif.speed.toString() + " " + "Мбит/c",
+          }).getElement() as HTMLParagraphElement;
+
+          const tarifPrice = new ElementCreator({
+            tag: "p",
+            classNames: "tarif-price",
+            textContent: tarif.price.toString() + " " + "Руб/мес",
+          }).getElement() as HTMLParagraphElement;
+
+          const tarifDescription = new ElementCreator({
+            tag: "div",
+            classNames: "tarif-description",
+            textContent: tarif.description,
+          }).getElement() as HTMLDivElement;
+
           // Check if this.tv and tarif.tv are both true
           const tvChannels = new ElementCreator({
             tag: "p",
             classNames: "tarif-channels",
-            textContent: tarif.channels.toString(),
+            textContent: tarif.channels.toString() + " ТВ-каналов",
           }).getElement() as HTMLParagraphElement;
 
           cardElem.append(
             tarifName,
             tarifPrice,
-            tarifDescription,
+            tarifSpeed,
             tvChannels,
+            tarifDescription,
             button
           );
-        } else if (!this.tv) {
-          cardElem.append(tarifName, tarifPrice, tarifDescription, button);
+        }
+
+        if (this.tv === false && tarif.tv === false) {
+          const tarifName = new ElementCreator({
+            tag: "div",
+            classNames: "tarif-name",
+            textContent: tarif.name,
+          }).getElement() as HTMLDivElement;
+          const tarifSpeed = new ElementCreator({
+            tag: "p",
+            classNames: "tarif-speed",
+            textContent: tarif.speed.toString() + " " + "Мбит/c",
+          }).getElement() as HTMLParagraphElement;
+
+          const tarifPrice = new ElementCreator({
+            tag: "div",
+            classNames: "tarif-price",
+            textContent: tarif.price.toString() + " руб.",
+          }).getElement() as HTMLDivElement;
+
+          const tarifDescription = new ElementCreator({
+            tag: "div",
+            classNames: "tarif-description",
+            textContent: tarif.description,
+          }).getElement() as HTMLDivElement;
+
+          cardElem.append(
+            tarifName,
+            tarifPrice,
+            tarifSpeed,
+            tarifDescription,
+            button
+          );
         }
 
         // Add event listener to the button
@@ -138,8 +175,9 @@ export default class Tarifs {
             this.modal.open();
           }
         });
-
-        this.parentElement.append(cardElem);
+        if (cardElem.children.length > 0) {
+          this.parentElement.append(cardElem);
+        }
       }
     });
   }
