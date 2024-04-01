@@ -15,7 +15,7 @@ const tarifData: TarifType[] = [
     name: "СТАРТ",
     promo: true,
     speed: 100,
-    price: 100,
+    price: 549,
     price2: 1000,
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
@@ -26,8 +26,8 @@ const tarifData: TarifType[] = [
   {
     name: "ХИТ",
     promo: true,
-    speed: 100,
-    price: 599,
+    speed: 300,
+    price: 649,
     price2: null,
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
@@ -51,7 +51,7 @@ const tarifData: TarifType[] = [
     name: "старт+тв",
     promo: true,
     speed: 100,
-    price: 100,
+    price: 649,
     price2: null,
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
@@ -63,12 +63,36 @@ const tarifData: TarifType[] = [
     name: "старт+кино",
     promo: true,
     speed: 100,
-    price: 100,
+    price: 729,
     price2: null,
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: true,
     channels: 120,
+    movie: null,
+  },
+  {
+    name: "хит+тв",
+    promo: true,
+    speed: 300,
+    price: 799,
+    price2: null,
+    description:
+      "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    tv: true,
+    channels: 250,
+    movie: null,
+  },
+  {
+    name: "ультра+кино",
+    promo: true,
+    speed: 350,
+    price: 899,
+    price2: null,
+    description:
+      "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    tv: true,
+    channels: 300,
     movie: null,
   },
 ];
