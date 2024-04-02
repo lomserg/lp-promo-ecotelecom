@@ -1,34 +1,30 @@
-
 // форма
-const closeFormModal = document.getElementById('closeForm');
+const closeFormModal = document.getElementById("closeForm");
 const modalBg = document.querySelector(".modal-bg");
 // let modal = document.querySelector(".modal");
 
-
-
 function activeBgSecond() {
-    modalBg.classList.add('bg-active')
+  modalBg.classList.add("bg-active");
 }
 
-
 // корзина
-const checkout = document.querySelector('.checkout')
-const chooseBtn = document.querySelectorAll('.choose-btn')
+const checkout = document.querySelector(".checkout");
+const chooseBtn = document.querySelectorAll(".choose-btn");
 
 function showCheckout(e) {
-    removeSelected()
+  removeSelected();
 
-    checkout.style.transform = 'translateY(0)'
-    e.target.parentElement.classList.add('selected')
-    e.target.parentElement.childNodes[9].classList.add('selected')
-    
-    checkout.classList.add('checkout-active')
-    //console.log(e.target.parentElement.childNodes)
+  checkout.style.transform = "translateY(0)";
+  e.target.parentElement.classList.add("selected");
+  e.target.parentElement.childNodes[9].classList.add("selected");
 
-    const product = e.target.parentElement.childNodes[5].innerHTML
-    let price = parseInt(e.target.parentElement.childNodes[7].innerHTML)
-    console.log(e.target)
-    checkout.innerHTML = `
+  checkout.classList.add("checkout-active");
+  //console.log(e.target.parentElement.childNodes)
+
+  const product = e.target.parentElement.childNodes[5].innerHTML;
+  let price = parseInt(e.target.parentElement.childNodes[7].innerHTML);
+  console.log(e.target);
+  checkout.innerHTML = `
    
     <div class="total-price">
     <h3>Вы выбрали</h3>
@@ -41,65 +37,51 @@ function showCheckout(e) {
     <i class="fas fa-times"></i>
 </a>`;
 
+  let checkoutBtn = document.querySelector(".checkout-btn");
 
-let checkoutBtn = document.querySelector('.checkout-btn');
+  checkoutBtn.addEventListener("click", () => {
+    modalBg.classList.add("bg-active");
+  });
 
-checkoutBtn.addEventListener('click', () => {
-    modalBg.classList.add('bg-active')
-})
+  const closeBtn = document.querySelector(".close-btn");
 
-const closeBtn = document.querySelector('.close-btn')
+  closeBtn.addEventListener("click", hideCheckout);
 
-closeBtn.addEventListener('click', hideCheckout)
+  function hideCheckout() {
+    e.preventDefault();
 
-function hideCheckout() {
-    e.preventDefault()
-  
-    const selectedElements = document.querySelectorAll('.selected')
-    selectedElements.forEach(item => {
-        item.classList.remove('selected')
-    })
+    const selectedElements = document.querySelectorAll(".selected");
+    selectedElements.forEach((item) => {
+      item.classList.remove("selected");
+    });
 
-    checkout.style.transform = 'translateY(100%)'
-    checkout.classList.remove('checkout-active')
-
-}
-closeFormModal.addEventListener('click', e => {
-    modalBg.classList.remove('bg-active')
-
- })
+    checkout.style.transform = "translateY(100%)";
+    checkout.classList.remove("checkout-active");
+  }
+  closeFormModal.addEventListener("click", (e) => {
+    modalBg.classList.remove("bg-active");
+  });
 } // end showCheckout
 
-const closeBtn = document.querySelector('.close-btn')
-
+const closeBtn = document.querySelector(".close-btn");
 
 function hideCheckout(e) {
-    
-    checkout.classList.remove('checkout-active')
-    checkout.style.transform = 'translateY(100%)'
+  checkout.classList.remove("checkout-active");
+  checkout.style.transform = "translateY(100%)";
 }
 
-closeBtn.addEventListener('click', hideCheckout)
+closeBtn.addEventListener("click", hideCheckout);
 
-
-
-chooseBtn.forEach(item => {
-
-    item.addEventListener('click', showCheckout)
-  
-})
-
-
-
-
+chooseBtn.forEach((item) => {
+  item.addEventListener("click", showCheckout);
+});
 
 function removeSelected() {
-    const selectedElements = document.querySelectorAll('.selected')
-    selectedElements.forEach(item => {
-        item.classList.remove('selected')
-    })
+  const selectedElements = document.querySelectorAll(".selected");
+  selectedElements.forEach((item) => {
+    item.classList.remove("selected");
+  });
 }
-
 
 // const output = document.querySelector('.output')
 // const url = `https://docs.google.com/spreadsheets/d/`
@@ -137,86 +119,79 @@ function removeSelected() {
 // function activeBgTv(event) {
 //     modalBgTv.classList.add('bg-active')
 
-
-    // function checkEventTarget (event) {
-    //     if(event.target.id == 'startTv') {
-    //         console.log(event.target.id)
-    //         return `${url}${ssid}${query}&${formatUrl}&${startTv}`
-    //    } else if(event.target.id === 'hitTv') {
-    //     return `${url}${ssid}${query}&${formatUrl}&${hitTv}`
-    //    }  else if(event.target.id === 'startKino') {
-    //     return `${url}${ssid}${query}&${formatUrl}&${startKino}`
-    //     }   else if(event.target.id === 'ultraKino') {
-    //     return `${url}${ssid}${query}&${formatUrl}&${ultraKino}`
-    //    } else if(event.target.id === 'megaKino') {
-    //     return `${url}${ssid}${query}&${formatUrl}&${megaKino}`
-    //    }
-    // }
-
-    // fetch(checkEventTarget(event))
-    // .then(res => res.text())
-    // .then(data => {
-    //    const temp = data.substring(47).slice(0,-2)
-    //     const json = JSON.parse(temp)
-    //     const rows = json.table.rows
-    //     rows.forEach((row) => {
-    //         const div = document.createElement('div')
-    //         div.classList.add('tv')
-    //        const temp1 = row.c
-    //        temp1.forEach((cell) => {
-    //         const box = document.createElement('div')
-    //      box.textContent = cell.v
-          
-            
-            
-    //         box.classList.add('box')
-    //         div.appendChild(box)
-           
-    //        } )
-    //        output.appendChild(div)
-    //     })
-        
-    // })
+// function checkEventTarget (event) {
+//     if(event.target.id == 'startTv') {
+//         console.log(event.target.id)
+//         return `${url}${ssid}${query}&${formatUrl}&${startTv}`
+//    } else if(event.target.id === 'hitTv') {
+//     return `${url}${ssid}${query}&${formatUrl}&${hitTv}`
+//    }  else if(event.target.id === 'startKino') {
+//     return `${url}${ssid}${query}&${formatUrl}&${startKino}`
+//     }   else if(event.target.id === 'ultraKino') {
+//     return `${url}${ssid}${query}&${formatUrl}&${ultraKino}`
+//    } else if(event.target.id === 'megaKino') {
+//     return `${url}${ssid}${query}&${formatUrl}&${megaKino}`
+//    }
 // }
 
+// fetch(checkEventTarget(event))
+// .then(res => res.text())
+// .then(data => {
+//    const temp = data.substring(47).slice(0,-2)
+//     const json = JSON.parse(temp)
+//     const rows = json.table.rows
+//     rows.forEach((row) => {
+//         const div = document.createElement('div')
+//         div.classList.add('tv')
+//        const temp1 = row.c
+//        temp1.forEach((cell) => {
+//         const box = document.createElement('div')
+//      box.textContent = cell.v
 
+//         box.classList.add('box')
+//         div.appendChild(box)
+
+//        } )
+//        output.appendChild(div)
+//     })
+
+// })
+// }
 
 // closeTv.addEventListener('click', e => {
 //     modalBgTv.classList.remove('bg-active')
 //     output.innerHTML = '';
 // })
 
-
-
 var swiper2 = new Swiper(".tarifs-slider-container2", {
-    loop: false,
-   grabCursor: true,
-   // cssMode: true,
-   //allowTouchMove: true,
+  loop: false,
+  grabCursor: true,
+  // cssMode: true,
+  //allowTouchMove: true,
   //  freeMode: true,
   noSwiping: false,
-    spaceBetween: 20,
-    breakpoints: {
-        0: {
-            slidesPerView: 1.15
-        },
-        550: {
-            slidesPerView: 1.9,
-        },
-        768: {
-            slidesPerView: 3,
-        },
-        991: {
-            slidesPerView: 3,
-        }
-    }, 
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: false,
+  spaceBetween: 20,
+  breakpoints: {
+    0: {
+      slidesPerView: 1.15,
     },
-   
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      }
-})
+    550: {
+      slidesPerView: 1.9,
+    },
+    768: {
+      slidesPerView: 3,
+    },
+    991: {
+      slidesPerView: 3,
+    },
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: false,
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

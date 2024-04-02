@@ -44,7 +44,7 @@ body {
   height: 100%;
 }
 @font-face {
-  font-family: GilroyExtraBold;
+  font-family: "GilroyExtraBold";
   src: url("./fonts/Gilroy.ttf");
 }
 
@@ -448,6 +448,8 @@ select {
 
 .header {
   height: 2rem;
+  position: absolute;
+  top: 10px;
 }
 
 .header-content {
@@ -459,9 +461,9 @@ select {
 }
 
 .logo-header {
-  background-image: url(img/logo_small.svg);
-  height: 26px;
-  width: 27px;
+  background-image: url(img/logo_eco_w.svg);
+  height: 50px;
+  width: 90px;
   grid-column: 2;
   object-fit: contain;
   background-repeat: no-repeat;
@@ -483,7 +485,7 @@ select {
 
 .phone a {
   font-family: "Roboto";
-  color: #000;
+  color: #fff;
   font-size: 0.9rem;
 }
 
@@ -501,7 +503,7 @@ select {
   }
 
   .logo-header {
-    background-image: url(img/logo.svg);
+    background-image: url(img/logo_eco_w.svg);
     height: 60px;
     width: 89px;
     grid-column: 2;
@@ -529,7 +531,7 @@ select {
 
   .phone a {
     font-family: "Roboto";
-    color: #000;
+    color: #fff;
     font-size: 1.5rem;
   }
 
@@ -560,8 +562,9 @@ select {
   margin-top: 1em;
   border-radius: 15px;
   background: hsl(var(--clr-royal-blue));
-  color: #fff;
-  align-self: flex-start;
+  background: #ffe500;
+  color: #000;
+  /* align-self: flex-start; */
   justify-self: center;
   border: none;
   text-decoration: none;
@@ -573,11 +576,42 @@ select {
 /* ------------------- */
 /* hero         */
 /* ------------------- */
-
+.hero__bg {
+  background-image: url(./img/eco-cosmos24.jpg);
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 95% 86%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero__bg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+}
 .primary-navigation {
   display: none;
 }
 
+.hero__bg-title {
+  font-size: 64px;
+  font-family: "GilroyExtraBold";
+  color: #fff;
+  text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  .hero__bg-title {
+    font-size: 44px;
+    text-align: center;
+  }
+  .info-block img {
+    max-width: 100%;
+  }
+}
 html {
   height: -webkit-fill-available;
 }
@@ -597,7 +631,7 @@ html {
   justify-self: end;
   background-color: transparent;
   border: 0;
-  color: #000;
+  color: #fff;
 }
 .nav-list {
   list-style-type: none;
@@ -1531,31 +1565,53 @@ html {
 
 .info-blocks {
   display: flex;
-  align-self: flex-start;
+  margin-top: 2rem;
   justify-content: center;
-  margin: 2rem 0;
+  align-items: center;
 }
 
 .info-block {
-  width: 140px;
-  background: #fff;
-  box-shadow: 0 4px 44px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 10px 10px;
-  margin-right: 10px;
+  width: 120px;
+}
+.info-block-feature,
+.info-block-text {
+  color: #fff;
+  font-family: "GilroyExtraBold";
+  line-height: 1;
+}
+.info-block-feature {
+  font-size: 56px;
 }
 
-.info-block-line {
-  width: 100%;
-  height: 4px;
-  background: hsl(var(--clr-green));
-  border-radius: 40px;
-  margin-top: 10px;
+.info-block-text {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.info-block img {
+  max-width: 60%;
 }
 
 @media (max-width: 600px) {
   .info-block {
     text-align: left;
+  }
+  .info-block {
+    width: 100%;
+  }
+  .info-block img {
+    max-width: 100%;
+  }
+  .info-block-feature {
+    font-size: 36px;
+    text-align: center;
+  }
+  .info-blocks {
+    gap: 10px;
+  }
+  .info-block-text {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
   }
 }
 
