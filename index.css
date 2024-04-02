@@ -1590,6 +1590,11 @@ html {
 .info-block img {
   max-width: 60%;
 }
+.info-block.img {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 @media (max-width: 600px) {
   .info-block {
