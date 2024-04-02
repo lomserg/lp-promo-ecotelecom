@@ -1,8 +1,8 @@
-import tarifData, { TarifType } from "./tarifs-data";
+import { TarifType } from "./tarifs-data";
 import ElementCreator from "../utils/create-element";
 import { Params } from "../utils/create-element";
 import Swiper from "swiper";
-
+import ModalNew from "../modal/modal";
 class Modal extends ElementCreator {
   parentElement: HTMLElement;
 
@@ -134,12 +134,12 @@ export default class Tarifs {
           }).getElement() as HTMLDivElement;
 
           const tvChannels = new ElementCreator({
-            tag: "p",
-            classNames: "tarif-channels",
+            tag: "a",
+            classNames: ["channels_link", "link", "trigger"],
             textContent: tarif.channels
               ? tarif.channels.toString() + " ТВ-каналов"
               : "",
-          }).getElement() as HTMLParagraphElement;
+          }).getElement() as HTMLAnchorElement;
 
           cardElem.append(
             tarifName,
@@ -152,22 +152,30 @@ export default class Tarifs {
 
           // Add event listener to the button
           button.addEventListener("click", () => {
-            if (this.modal === null) {
-              this.modal = new Modal(
-                this.parentElement,
-                tarif.name,
-                {} as Params
-              );
-              this.modal.open();
-            } else {
-              this.modal.close();
-              this.modal = new Modal(
-                this.parentElement,
-                tarif.name,
-                {} as Params
-              );
-              this.modal.open();
-            }
+            const formModal = new ModalNew("form");
+            formModal.modalElement?.classList.add("open");
+            this.parentElement.appendChild(formModal.modalElement!);
+            // if (this.modal === null) {
+            //   this.modal = new Modal(
+            //     this.parentElement,
+            //     tarif.name,
+            //     {} as Params
+            //   );
+            //   this.modal.open();
+            // } else {
+            //   this.modal.close();
+            //   this.modal = new Modal(
+            //     this.parentElement,
+            //     tarif.name,
+            //     {} as Params
+            //   );
+            //   this.modal.open();
+            // }
+          });
+          tvChannels.addEventListener("click", () => {
+            const channelListModal = new ModalNew("channelList");
+            channelListModal.modalElement?.classList.add("open");
+            this.parentElement.appendChild(channelListModal.modalElement!);
           });
 
           swiperWrapperElem.appendChild(cardElem);

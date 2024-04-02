@@ -1,8 +1,7 @@
 import "./style.css";
-import Tarifs from "./assets/data/tarif-class";
-import tarifData from "./assets/data/tarifs-data";
+import Tarifs from "./assets/tarifs/tarif-class";
+import tarifData from "./assets/tarifs/tarifs-data";
 import ElementCreator from "./assets/utils/create-element";
-import Swiper from "swiper";
 import "swiper/swiper-bundle.css";
 
 class App {
