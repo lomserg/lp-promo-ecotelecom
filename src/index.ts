@@ -3,6 +3,7 @@ import Tarifs from "./assets/tarifs/tarif-class";
 import tarifData from "./assets/tarifs/tarifs-data";
 import ElementCreator from "./assets/utils/create-element";
 import "swiper/swiper-bundle.css";
+import Form from "./utils/form/form";
 
 class App {
   constructor() {
@@ -25,8 +26,8 @@ class App {
     const divInternetTv = internettv.getElement() as HTMLDivElement;
     const divInternet = internet.getElement() as HTMLDivElement;
     const body: HTMLBodyElement = document.querySelector("body")!;
-    body.append(divInternet, divInternetTv);
-
+    const form = new Form();
+    body.append(divInternet, divInternetTv, form.getForm());
     const tarifsInternet = new Tarifs(
       tarifData,
       "cards",

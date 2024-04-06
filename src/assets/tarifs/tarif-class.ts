@@ -3,6 +3,7 @@ import ElementCreator from "../utils/create-element";
 import { Params } from "../utils/create-element";
 import Swiper from "swiper";
 import ModalNew from "../modal/modal";
+
 class Modal extends ElementCreator {
   parentElement: HTMLElement;
 

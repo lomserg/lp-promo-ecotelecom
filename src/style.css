@@ -6,6 +6,9 @@
 
 body {
   background: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .card {
   padding: 1rem;
