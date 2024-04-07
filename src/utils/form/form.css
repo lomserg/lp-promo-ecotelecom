@@ -1,0 +1,25 @@
+form {
+  width: 400px;
+}
+
+.form__item,
+.form__adress,
+.form__phone {
+  display: flex;
+  flex-direction: column;
+}
+.form__input {
+  width: 100%;
+  max-width: 425px;
+  min-height: calc(0.9em + (0.8em + 2) + 0.6em);
+  padding: 0.8em;
+  font-size: 0.9em;
+  font-family: "Source Sans 3", sans-serif;
+  outline: none;
+  border: 1px solid #7c7c7c;
+  border-radius: 4px;
+  background: #f9f9f9;
+}
+.form__item > * {
+  align-self: flex-start;
+}

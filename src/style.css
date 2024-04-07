@@ -1,27 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: red;
-}
-.intenet-tv,
-.intenet {
-  display: flex;
-  margin: 1rem;
-}
-
-.modal {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  left: 50%;
-  top: 50%;
-}
-
-.card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  align-items: center;
+}
+.card {
   padding: 1rem;
-  border-radius: 15px;
-  color: #fff;
-  background: #222d38;
+  background: violet;
+  /* width: 300px; */
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 16px;
+}
+
+.internet {
+  margin-bottom: 1rem;
+}
+
+.swiper {
+  width: 900px;
 }
