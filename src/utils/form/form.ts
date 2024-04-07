@@ -1,5 +1,7 @@
 import { FormItem } from "./inputs/inputs";
 import "./form.css";
+import Button from "./inputs/button";
+
 export default class Form {
   form: HTMLFormElement;
   constructor() {
@@ -21,10 +23,12 @@ export default class Form {
       "form__phone",
       "Адресс телефон"
     );
+    const button = new Button("Подключить");
     this.form.append(
       inputName.returnElement(),
       inputAdress.returnElement(),
-      inputPhone.returnElement()
+      inputPhone.returnElement(),
+      button.returnElement()
     );
   }
   getForm() {
