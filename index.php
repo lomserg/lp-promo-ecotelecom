@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -36,65 +36,98 @@
 
   <body>
     <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();
-   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
 
-   ym(47175648, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/47175648" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+      ym(47175648, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/47175648"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
 
-    <header class="header-home container">
-      <div class="header-menu flex container">
-        <a class="logo-header" href="#"></a>
-        <nav class="primary-navigation">
-          <ul role="list" class="nav-list flex">
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Вакансии</a></li>
-            <li><a href="#">Отзывы</a></li>
-          </ul>
-        </nav>
-        <div class="whatsapp">
-          <a
-            id="whatsapp-link"
-            href="https://api.whatsapp.com/send/?phone=79912256610"
-            target=""
-          >
-            <img
-              class=""
-              alt=""
-              src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"
-          /></a>
+    <section class="hero__bg">
+      <header class="header">
+        <div class="header-content">
+          <a class="logo-header" href="#"></a>
+
+          <div class="whatsapp">
+            <a
+              id="whatsapp-link"
+              href="https://api.whatsapp.com/send/?phone=79912256610"
+              target=""
+            >
+              <img
+                class=""
+                alt=""
+                src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"
+            /></a>
+          </div>
+          <div class="phone text-dark">
+            <a
+              style="text-decoration: none"
+              class="phoneid"
+              href="tel:+74998017799"
+              >+7 499 801-77-99</a
+            >
+          </div>
         </div>
-        <div class="phone text-dark">
-          <a
-            style="text-decoration: none"
-            class="phoneid"
-            href="tel:+74998017799"
-            >+7 499 801-77-99</a
-          >
+      </header>
+      <div class="hero__bg-container container">
+        <h1 class="hero__bg-title">Космическая выгода</h1>
+        <a href="#tarif_block" class="btn">Подробнее</a>
+        <div class="info-blocks">
+          <div class="info-block">
+            <div class="info-block-feature fs-300 uppercase fw-bold">350</div>
+            <div class="info-block-text">Мбит/с</div>
+          </div>
+          <div class="info-block">
+            <div class="info-block-feature fs-300 uppercase fw-bold">300</div>
+            <div class="info-block-text">каналов</div>
+          </div>
+          <div class="info-block img">
+            <img src="./img/logo_Premier_w.png" alt="" />
+            <img src="./img/logo_start.png" alt="" />
+            <img src="./img/Amediateka_full_white.png" alt="" />
+          </div>
+          <div class="info-block">
+            <div class="info-block-feature fs-300 uppercase fw-bold">700</div>
+            <div class="info-block-text">₽/мес</div>
+          </div>
         </div>
-      </div>
-    </header>
-    <section style="margin-top: 2rem" class="hero grid-container container">
-      <div class="hero-txt">
-        <div class="hero-txt-cta flow">
-          <h1 class="text-dark-blue">Интернет и ТВ от 435 ₽/мес</h1>
-          <p class="fs-300">Успей подключиться!</p>
-          <a href="#tarif_block" class="btn">Подробнее</a>
-        </div>
-      </div>
-      <div class="hero-img">
-        <img src="img/main.png" alt="" />
       </div>
     </section>
 
@@ -145,7 +178,7 @@
               <!-- <div class="tarif-icon"></div> -->
               <p class="tarif-name">ХИТ</p>
               <p class="tarif-price">
-                435 <span style="font-size: 0.75rem">₽/мес</span>
+                325 <span style="font-size: 0.75rem">₽/мес</span>
               </p>
 
               <div class="tarif-param">
@@ -165,11 +198,11 @@
 
           <div class="swiper-slide tarif-option">
             <div class="tarif-slider-description">
-              <div class="tarif-promo">Акция</div>
+              <!-- <div class="tarif-promo">Акция</div> -->
               <!-- <div class="tarif-icon"></div> -->
               <p class="tarif-name">МЕГА</p>
               <p class="tarif-price">
-                470 <span style="font-size: 0.75rem">₽/мес</span>
+                699 <span style="font-size: 0.75rem">₽/мес</span>
               </p>
 
               <div class="tarif-param">
@@ -203,6 +236,68 @@
           <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide tarif-option">
+              <div class="tarif-slider-description">
+                <div class="tarif-promo">Акция</div>
+                <!-- <div class="tarif-icon"></div> -->
+                <p class="tarif-name">УЛЬТРА+КИНО</p>
+                <p class="tarif-price">
+                  450 <span style="font-size: 0.75rem">₽/мес</span>
+                </p>
+                <div class="tarif-param">
+                  <p class="tarif-speed">350 Мбит/с</p>
+                  <div
+                    class="tarif channels-item"
+                    data-package="5e7b7e70acb10bd8ce882ef1"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
+                      >300 ТВ-каналов</a
+                    >
+                  </div>
+                  <p class="tarif-movie" id="video2">2 из 3 видеосервисов</p>
+                </div>
+                <div class="tarif-options-description">
+                  <ul class="tarif-options-list">
+                    <!-- <li>"Раздаем интернет всем" на 6 месяцев</li>
+
+                    <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
+                  </ul>
+                </div>
+                <button class="choose-btn">Выбрать</button>
+              </div>
+              <!-- end-->
+            </div>
+            <div class="swiper-slide tarif-option">
+              <div class="tarif-slider-description">
+                <div class="tarif-promo">Акция</div>
+                <!-- <div class="tarif-icon"></div> -->
+                <p class="tarif-name">МЕГА+КИНО</p>
+                <p class="tarif-price">
+                  700 <span style="font-size: 0.75rem">₽/мес</span>
+                </p>
+                <div class="tarif-param">
+                  <p class="tarif-speed">500 Мбит/с</p>
+                  <div
+                    class="tarif channels-item"
+                    data-package="5ec3b14fdf29dcff5d5ac065"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
+                      >350 ТВ-каналов</a
+                    >
+                  </div>
+                  <p class="tarif-movie" id="video3">3 из 3 видеосервисов</p>
+                </div>
+                <div class="tarif-options-description">
+                  <ul class="tarif-options-list">
+                    <!-- <li>"Раздаем интернет всем" на 6 месяцев</li>
+
+                    <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
+                  </ul>
+                </div>
+                <button class="choose-btn">Выбрать</button>
+              </div>
+              <!-- end-->
+            </div>
+            <div class="swiper-slide tarif-option">
               <div
                 class="tarif-slider-description"
                 data-package="5b504edcb2de77e82f591f1a"
@@ -222,7 +317,7 @@
                     data-package="5b504edcb2de77e82f591f1a"
                   >
                     <a class="channels_link link trigger" href="#channels"
-                      >120 ТВ-каналов</a
+                      >130 ТВ-каналов</a
                     >
                   </div>
                   <p class="tarif-movie">
@@ -247,7 +342,7 @@
                 <!-- <div class="tarif-icon"></div> -->
                 <p class="tarif-name">СТАРТ+КИНО</p>
                 <p class="tarif-price">
-                  699 <span style="font-size: 0.75rem">₽/мес</span>
+                  729 <span style="font-size: 0.75rem">₽/мес</span>
                 </p>
 
                 <div class="tarif-param">
@@ -257,7 +352,7 @@
                     data-package="5b504edcb2de77e82f591f1a"
                   >
                     <a class="channels_link link trigger" href="#channels"
-                      >120 ТВ-каналов</a
+                      >130 ТВ-каналов</a
                     >
                   </div>
                   <p class="tarif-movie" id="video0">1 видеосервисов из 3</p>
@@ -276,11 +371,11 @@
             <!-- end tarif -->
             <div class="swiper-slide tarif-option">
               <div class="tarif-slider-description">
-                <div class="tarif-promo">Акция</div>
+                <!-- <div class="tarif-promo">Акция</div> -->
                 <!-- <div class="tarif-icon"></div> -->
                 <p class="tarif-name">ХИТ+ТВ</p>
                 <p class="tarif-price">
-                  535<span style="font-size: 0.75rem">₽/мес</span>
+                  799<span style="font-size: 0.75rem">₽/мес</span>
                 </p>
                 <div class="tarif-param">
                   <p class="tarif-speed">300 Мбит/с</p>
@@ -289,7 +384,7 @@
                     data-package="630f5b1c944a765510046e89"
                   >
                     <a class="channels_link link trigger" href="#channels"
-                      >220 ТВ-каналов</a
+                      >250 ТВ-каналов</a
                     >
                   </div>
                   <p class="tarif-movie" id="video1">PREMIER</p>
@@ -304,37 +399,6 @@
               </div>
             </div>
             <!-- end tarif -->
-
-            <div class="swiper-slide tarif-option">
-              <div class="tarif-slider-description">
-                <!-- <div class="tarif-promo">Акция</div> -->
-                <!-- <div class="tarif-icon"></div> -->
-                <p class="tarif-name">УЛЬТРА+КИНО</p>
-                <p class="tarif-price">
-                  899 <span style="font-size: 0.75rem">₽/мес</span>
-                </p>
-                <div class="tarif-param">
-                  <p class="tarif-speed">350 Мбит/с</p>
-                  <div
-                    class="tarif channels-item"
-                    data-package="5e7b7e70acb10bd8ce882ef1"
-                  >
-                    <a class="channels_link link trigger" href="#channels"
-                      >270 ТВ-каналов</a
-                    >
-                  </div>
-                  <p class="tarif-movie" id="video2">2 из 4 видеосервисов</p>
-                </div>
-                <div class="tarif-options-description">
-                  <ul class="tarif-options-list">
-                    <!-- <li>"Раздаем интернет всем" на 6 месяцев</li>
-
-                    <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
-                  </ul>
-                </div>
-                <button class="choose-btn">Выбрать</button>
-              </div>
-            </div>
           </div>
           <!-- If we need pagination -->
           <div class="swiper-pagination"></div>
@@ -370,7 +434,7 @@
       <div class="modal-bg">
         <div class="modal">
           <form
-            action="./php/form1.php"
+            action="./php/telegram2.php"
             method="post"
             id="form2"
             name="call-form"
@@ -382,25 +446,19 @@
               Заявка на подключение
             </p>
             <label class="fs-200" for="name1">Имя</label>
-            <input type="text" name="name" id="name1" class="field" required />
+            <input type="text" name="name1" id="name1" class="field" required />
             <label class="fs-200" for="phone1">Телефон</label>
             <input
               type="tel"
               class="field"
               data-tel-input
               maxlength="18"
-              name="number"
+              name="phone1"
               id="phone1"
               required
             />
             <label class="fs-200" for="adr11">Адрес</label>
-            <input
-              type="text"
-              class="field"
-              name="address"
-              id="adr11"
-              required
-            />
+            <input type="text" class="field" name="adr11" id="adr11" required />
             <button
               type="submit bg-violet"
               class="btn bg-violet"
@@ -604,25 +662,38 @@
         </div>
         <div class="accordion-item">
           <div class="accordion-item-header fs-400">
-            Условия подключения по акции 
+            Условия подключения по акции
           </div>
           <div class="accordion-item-body">
             <div class="accordion-item-body-content">
               <ul class="flow">
                 <li>
-                Заявки на подключение по акции принимаются до 13 апоеля 2024, подключение производится до 20 апреля 2024 включительно.
-
-                </li>
-                <li>
-                Акция проводится для новых абонентов-физических лиц и действует по адресам, где не предоставлялись услуги «Экотелеком» в течение 5 месяцев до момента подключения, кроме ЖК «Кленовые Аллеи» (пос. Десёновское), ЖК «Цветочные поляны» (пос. Филимонковское), ЖК «Новая Звезда» (п. Коммунарка), ЖК «Новоград Павлино» (г. Балашиха), ЖК «Весенний» (г. Подольск), ЖК «Позитив» (пос. Московский), ул. Военный городок, д. 42 (г. Одинцово) и ЖК «Гарден Парк» (п. Коммунарка).
+                  Заявки на подключение по акции принимаются до 13.06.24,
+                  подключение проводится до 20.06.24 включительно.
                 </li>
 
                 <li>
-                Цена на первые 6 месяцев с учетом скидки: «СТАРТ» — 370 ₽/мес.,«ХИТ» — 435 ₽/мес., «МЕГА» — 470 ₽/мес., «ХИТ+ТВ» — 535 ₽/мес., «УЛЬТРА+КИНО» — 600 ₽/мес.). С 7 месяца услуги предоставляются на условиях действующих тарифных планов.
+                  Акция проводится для новых абонентов-физических лиц и
+                  действует по адресам, где не предоставлялись услуги
+                  «Экотелеком» в течение 5 месяцев до момента подключения, кроме
+                  ЖК «Кленовые Аллеи» (Москва, пос. Десёновское), ЖК «Цветочные
+                  поляны» (Москва, пос. Филимонковское), ЖК «Позитив» (Москва,
+                  пос. Московский), ЖК «Новая Звезда» и ЖК «Гарден Парк»
+                  (Москва, п. Коммунарка), ЖК «Новоград Павлино» (Балашиха), ЖК
+                  «Весенний» (Подольск), ул. Военный городок 42 (Одинцово), а
+                  также ЖК «Кутузовская Ривьера», ЖК «Золотые Ключи 2», ул.
+                  Барклая 7к4, Ленинский пр-т 111к1 и пр-т Вернадского 92
+                  (Москва).
+                </li>
+
+                <li>
+                  В акции участвуют тарифы: «ХИТ», «УЛЬТРА+КИНО» и «МЕГА+КИНО».
                 </li>
                 <li>
-                  Оборудование и дополнительные услуги при подключении по акции
-                  предоставляются на стандартных условиях.
+                  Цена на первые 3 месяца с учетом скидки: «ХИТ» — 325
+                  руб./мес., «УЛЬТРА+КИНО» — 450 руб./мес., «МЕГА+КИНО» — 700
+                  руб./мес. С 4 месяца услуги предоставляются на условиях
+                  действующих тарифных планов.
                 </li>
                 <li>
                   При подключении по акции на лицевой счет необходимо внести
@@ -730,7 +801,7 @@
           Продолжая использовать наш сайт, вы даете согласие на обработку файлов
           Cookies и других пользовательских данных
         </p>
-        <p class="footer-fineprint fs-100">© Экотелеком 2023</p>
+        <p class="footer-fineprint fs-100">© Экотелеком 2024</p>
       </div>
       <ul class="social-list">
         <li class="social-item">
