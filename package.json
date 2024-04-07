@@ -61,8 +61,10 @@
     "pattern": "^(master|main|develop){1}$|^(feature|fix|hotfix|release)/.+$",
     "errorMsg": "your own error message"
   },
+
   "description": "",
   "dependencies": {
     "swiper": "^11.1.0"
   }
+
 }
