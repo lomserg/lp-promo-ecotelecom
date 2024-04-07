@@ -2,6 +2,7 @@ import { TarifType } from "./tarifs-data";
 import ElementCreator from "../utils/create-element";
 import { Params } from "../utils/create-element";
 import Swiper from "swiper";
+import ModalTest from "../../utils/modal/modal-form";
 import ModalNew from "../modal/modal";
 
 class Modal extends ElementCreator {
@@ -43,15 +44,6 @@ const CONTAINER = {
   tag: "div",
   classNames: "swiper",
 };
-// const OPTIONS = {
-//   tag: "p",
-//   classNames: "tarif-options",
-// };
-
-// const BUTTON = {
-//   tag: "button",
-//   textContent: "Подключить",
-// };
 
 export default class Tarifs {
   // Properties
@@ -153,25 +145,9 @@ export default class Tarifs {
 
           // Add event listener to the button
           button.addEventListener("click", () => {
-            const formModal = new ModalNew("form");
-            formModal.modalElement?.classList.add("open");
-            this.parentElement.appendChild(formModal.modalElement!);
-            // if (this.modal === null) {
-            //   this.modal = new Modal(
-            //     this.parentElement,
-            //     tarif.name,
-            //     {} as Params
-            //   );
-            //   this.modal.open();
-            // } else {
-            //   this.modal.close();
-            //   this.modal = new Modal(
-            //     this.parentElement,
-            //     tarif.name,
-            //     {} as Params
-            //   );
-            //   this.modal.open();
-            // }
+            const modal = new ModalTest();
+            modal.create();
+            modal.open();
           });
           tvChannels.addEventListener("click", () => {
             const channelListModal = new ModalNew("channelList");
