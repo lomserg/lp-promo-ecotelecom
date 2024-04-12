@@ -45,9 +45,28 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- <script src="https://unpkg.com/@popperjs/core@2" defer></script>
   <script src="https://unpkg.com/tippy.js@6" defer></script> -->
+    <!-- получаем ip адрес -->
+    <script type="text/javascript">
+      var userip;
+    </script>
+    <script
+      type="text/javascript"
+      src="https://www.l2.io/ip.js?var=userip"
+    ></script>
   </head>
 
   <body>
+    <script>
+      setTimeout(function () {
+        if (!sessionStorage.userip) {
+          ym(49966909, "userParams", {
+            IP: userip,
+          });
+          sessionStorage.userip = userip;
+        }
+        console.log("IP:" + userip);
+      }, 3000);
+    </script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
       (function (m, e, t, r, i, k, a) {
