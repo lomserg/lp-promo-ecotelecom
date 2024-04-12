@@ -7,7 +7,8 @@ export interface TarifType {
   description: string;
   tv: boolean;
   channels: number | null;
-  movie: number | null;
+  dataPackage?: string;
+  movie: string | null;
 }
 
 const tarifData: TarifType[] = [
@@ -57,6 +58,7 @@ const tarifData: TarifType[] = [
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: true,
     channels: 120,
+    dataPackage: "5b504edcb2de77e82f591f1a",
     movie: null,
   },
   {
@@ -69,7 +71,8 @@ const tarifData: TarifType[] = [
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: true,
     channels: 120,
-    movie: null,
+    dataPackage: "5b504edcb2de77e82f591f1a",
+    movie: "PREMIER",
   },
   {
     name: "хит+тв",
@@ -81,7 +84,8 @@ const tarifData: TarifType[] = [
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: true,
     channels: 250,
-    movie: null,
+    dataPackage: "630f5b1c944a765510046e89",
+    movie: "1 из 3 видеосервисов",
   },
   {
     name: "ультра+кино",
@@ -93,7 +97,21 @@ const tarifData: TarifType[] = [
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: true,
     channels: 300,
-    movie: null,
+    dataPackage: "5e7b7e70acb10bd8ce882ef1",
+    movie: "2 из 3 видеосервисов",
+  },
+  {
+    name: "мега+кино",
+    promo: true,
+    speed: 500,
+    price: 899,
+    price2: null,
+    description:
+      "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    tv: true,
+    channels: 350,
+    dataPackage: "5ec3b14fdf29dcff5d5ac065",
+    movie: "3 из 3 видеосервисов",
   },
 ];
 

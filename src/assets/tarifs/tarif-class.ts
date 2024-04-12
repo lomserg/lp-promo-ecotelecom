@@ -5,6 +5,33 @@ import Swiper from "swiper";
 import ModalTest from "../../utils/modal/modal-form";
 import ModalNew from "../modal/modal";
 
+interface TvChannelsParams {
+  dataPackage: string;
+  channels: string;
+}
+class TvChannels {
+  constructor(tarif: TvChannelsParams) {
+    const { dataPackage, channels } = tarif;
+    const classNames = ["tarif", "channels-item"];
+
+    // Create the div element
+    const divElement = document.createElement("div");
+    divElement.classList.add(...classNames);
+
+    // Set attributes for the div element
+    divElement.setAttribute("data-package", dataPackage || "");
+
+    // Create the link element
+    const linkElement = document.createElement("a");
+    linkElement.classList.add("channels_link", "link", "trigger");
+    linkElement.textContent = channels ? `${channels} ТВ-каналов` : "";
+    linkElement.href = "#channels";
+
+    // Append the link element to the div
+    divElement.appendChild(linkElement);
+  }
+}
+
 class Modal extends ElementCreator {
   parentElement: HTMLElement;
 
@@ -149,6 +176,7 @@ export default class Tarifs {
             modal.create();
             modal.open();
           });
+
           tvChannels.addEventListener("click", () => {
             const channelListModal = new ModalNew("channelList");
             channelListModal.modalElement?.classList.add("open");
