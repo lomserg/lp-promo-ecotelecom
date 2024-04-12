@@ -56,17 +56,6 @@
   </head>
 
   <body>
-    <script>
-      setTimeout(function () {
-        if (!sessionStorage.userip) {
-          ym(49966909, "userParams", {
-            IP: userip,
-          });
-          sessionStorage.userip = userip;
-        }
-        console.log("IP:" + userip);
-      }, 3000);
-    </script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
       (function (m, e, t, r, i, k, a) {
@@ -94,6 +83,7 @@
         trackLinks: true,
         accurateTrackBounce: true,
         webvisor: true,
+        params: { ip: userip },
       });
     </script>
     <noscript>
