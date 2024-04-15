@@ -488,7 +488,7 @@ select {
   color: #fff;
 }
 .whatsapp {
-  grid-column: 2;
+  grid-column: 3;
 }
 .phone::before {
   font-family: "Font Awesome 5 Free";
@@ -499,6 +499,9 @@ select {
 }
 
 @media (min-width: 600px) {
+  .whatsapp {
+    grid-column: 3;
+  }
   .header {
     height: 5rem;
   }
@@ -674,7 +677,7 @@ html {
 }
 @media (max-width: 600px) {
   .hero__bg-title {
-    font-size: 44px;
+    font-size: 34px;
     text-align: center;
   }
   .info-block img {
