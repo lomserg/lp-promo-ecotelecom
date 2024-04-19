@@ -1,3 +1,4 @@
+import "./channels.js";
 import "./style.css";
 import Tarifs from "./assets/tarifs/tarif-class";
 import tarifData from "./assets/tarifs/tarifs-data";
@@ -48,4 +49,3 @@ class App {
 }
 
 new App();
-

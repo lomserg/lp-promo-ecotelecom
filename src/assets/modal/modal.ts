@@ -13,20 +13,28 @@ export default class ModalNew {
     this.checkType();
     return this.modalElement;
   }
+
   checkType() {
     if (this.modalType === "form") {
       this.form();
+    } else if (this.modalType === "channelList") {
+      this.channelList();
     }
   }
+
   form() {
     const inputName = document.createElement("input");
     const inputEmail = document.createElement("input");
     const inputPhone = document.createElement("input");
     const buttonSubmit = document.createElement("button");
-    this.modalElement?.append(inputName, inputEmail, inputPhone);
+    this.modalElement?.append(inputName, inputEmail, inputPhone, buttonSubmit);
   }
 
-  //   channelModal() {
-  //     return;
-  //   }
+  channelList() {
+    // Create the channels list
+    const channelsListDiv = document.createElement("div");
+    channelsListDiv.classList.add("channels-list");
+
+    this.modalElement?.appendChild(channelsListDiv);
+  }
 }

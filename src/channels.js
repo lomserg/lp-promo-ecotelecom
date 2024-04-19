@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
     return n % 10 === 1 && n % 100 !== 11
       ? "канал"
       : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)
-      ? "канала"
-      : "каналов";
+        ? "канала"
+        : "каналов";
   }
 
   function getAll(channels, box) {
@@ -45,10 +45,14 @@ document.addEventListener("DOMContentLoaded", function () {
           getAll(data.channels, box);
         } else {
           let num;
-          block.textContent.length === 0
-            ? (num = data.channels.length)
-            : (num = block.textContent);
-          block.innerHTML = `<strong>${num}</strong> ${declOfNum(num)}`;
+          if (block && block.textContent) {
+            num = block.textContent;
+          } else {
+            num = data.channels.length.toString();
+          }
+          if (block) {
+            block.innerHTML = `<strong>${num}</strong> ${declOfNum(num)}`;
+          }
         }
       })
       .catch((error) => console.error("Error fetching pack:", error));

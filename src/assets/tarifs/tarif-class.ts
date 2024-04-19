@@ -3,7 +3,7 @@ import ElementCreator from "../utils/create-element";
 import { Params } from "../utils/create-element";
 import Swiper from "swiper";
 import ModalTest from "../../utils/modal/modal-form";
-// import ModalNew from "../modal/modal";
+import ModalNew from "../modal/modal";
 
 interface TvChannelsParams {
   dataPackage: string;
@@ -12,7 +12,11 @@ interface TvChannelsParams {
 class TvChannels {
   divElement: HTMLDivElement;
 
-  constructor(dataPackage: string | null, channels: string | null) {
+  constructor(
+    dataPackage: string | null,
+    channels: string | null,
+    onClick: () => void
+  ) {
     // Convert null values to empty strings
     const pkg = dataPackage || "";
     const chnls = channels || "";
@@ -34,6 +38,8 @@ class TvChannels {
 
     // Append the link element to the div
     this.divElement.appendChild(linkElement);
+    // Add event listener to the link element
+    linkElement.addEventListener("click", onClick);
   }
 }
 
@@ -163,7 +169,13 @@ export default class Tarifs {
           if (tarif.channels !== null) {
             const tvChannels = new TvChannels(
               tarif.dataPackage,
-              tarif.channels
+              tarif.channels,
+              () => {
+                // Create modal with channels list
+                const channelListModal = new ModalNew("channelList");
+                channelListModal.modalElement?.classList.add("open");
+                this.parentElement.appendChild(channelListModal.modalElement!);
+              }
             );
 
             // Append tarifSpeed, tvChannels, and other elements to cardElem
