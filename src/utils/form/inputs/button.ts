@@ -1,3 +1,5 @@
+import ModalTest from "../../modal/modal-form";
+
 export default class Button {
   el: HTMLButtonElement;
   textContent: string;

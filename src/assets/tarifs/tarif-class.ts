@@ -2,7 +2,40 @@ import { TarifType } from "./tarifs-data";
 import ElementCreator from "../utils/create-element";
 import { Params } from "../utils/create-element";
 import Swiper from "swiper";
-import ModalNew from "../modal/modal";
+import ModalTest from "../../utils/modal/modal-form";
+// import ModalNew from "../modal/modal";
+
+interface TvChannelsParams {
+  dataPackage: string;
+  channels: string;
+}
+class TvChannels {
+  divElement: HTMLDivElement;
+
+  constructor(dataPackage: string | null, channels: string | null) {
+    // Convert null values to empty strings
+    const pkg = dataPackage || "";
+    const chnls = channels || "";
+
+    const classNames = ["tarif", "channels-item"];
+
+    // Create the div element
+    this.divElement = document.createElement("div");
+    this.divElement.classList.add(...classNames);
+
+    // Set attributes for the div element
+    this.divElement.setAttribute("data-package", pkg);
+
+    // Create the link element
+    const linkElement = document.createElement("a");
+    linkElement.classList.add("channels_link", "link", "trigger");
+    linkElement.textContent = chnls ? `${chnls} ТВ-каналов` : "";
+    linkElement.href = "#channels";
+
+    // Append the link element to the div
+    this.divElement.appendChild(linkElement);
+  }
+}
 
 class Modal extends ElementCreator {
   parentElement: HTMLElement;
@@ -43,15 +76,6 @@ const CONTAINER = {
   tag: "div",
   classNames: "swiper",
 };
-// const OPTIONS = {
-//   tag: "p",
-//   classNames: "tarif-options",
-// };
-
-// const BUTTON = {
-//   tag: "button",
-//   textContent: "Подключить",
-// };
 
 export default class Tarifs {
   // Properties
@@ -106,77 +130,67 @@ export default class Tarifs {
           textContent: "Подключить",
         }).getElement() as HTMLButtonElement;
 
+        const tarifName = new ElementCreator({
+          tag: "div",
+          classNames: "tarif-name",
+          textContent: tarif.name,
+        }).getElement() as HTMLDivElement;
+
+        const tarifSpeed = new ElementCreator({
+          tag: "p",
+          classNames: "tarif-speed",
+          textContent: tarif.speed.toString() + " " + "Мбит/c",
+        }).getElement() as HTMLParagraphElement;
+
+        const tarifPrice = new ElementCreator({
+          tag: "p",
+          classNames: "tarif-price",
+          textContent: tarif.price.toString() + " " + "Руб/мес",
+        }).getElement() as HTMLParagraphElement;
+
+        const tarifDescription = new ElementCreator({
+          tag: "div",
+          classNames: "tarif-description",
+          textContent: tarif.description,
+        }).getElement() as HTMLDivElement;
+
+        // Check if the tarif matches the TV option and has channels and dataPackage
         if (
-          (this.tv === tarif.tv && tarif.channels) ||
+          (this.tv === tarif.tv && tarif.channels && tarif.dataPackage) ||
           (!this.tv && !tarif.tv)
         ) {
-          const tarifName = new ElementCreator({
-            tag: "div",
-            classNames: "tarif-name",
-            textContent: tarif.name,
-          }).getElement() as HTMLDivElement;
+          // Create TvChannels instance only if tarif.channels is not null
+          if (tarif.channels !== null) {
+            const tvChannels = new TvChannels(
+              tarif.dataPackage,
+              tarif.channels
+            );
 
-          const tarifSpeed = new ElementCreator({
-            tag: "p",
-            classNames: "tarif-speed",
-            textContent: tarif.speed.toString() + " " + "Мбит/c",
-          }).getElement() as HTMLParagraphElement;
-
-          const tarifPrice = new ElementCreator({
-            tag: "p",
-            classNames: "tarif-price",
-            textContent: tarif.price.toString() + " " + "Руб/мес",
-          }).getElement() as HTMLParagraphElement;
-
-          const tarifDescription = new ElementCreator({
-            tag: "div",
-            classNames: "tarif-description",
-            textContent: tarif.description,
-          }).getElement() as HTMLDivElement;
-
-          const tvChannels = new ElementCreator({
-            tag: "a",
-            classNames: ["channels_link", "link", "trigger"],
-            textContent: tarif.channels
-              ? tarif.channels.toString() + " ТВ-каналов"
-              : "",
-          }).getElement() as HTMLAnchorElement;
-
-          cardElem.append(
-            tarifName,
-            tarifPrice,
-            tarifSpeed,
-            tvChannels,
-            tarifDescription,
-            button
-          );
+            // Append tarifSpeed, tvChannels, and other elements to cardElem
+            cardElem.append(
+              tarifName,
+              tarifPrice,
+              tarifSpeed,
+              tvChannels.divElement,
+              tarifDescription,
+              button
+            );
+          } else {
+            // Append other elements excluding tvChannels
+            cardElem.append(
+              tarifName,
+              tarifPrice,
+              tarifSpeed,
+              tarifDescription,
+              button
+            );
+          }
 
           // Add event listener to the button
           button.addEventListener("click", () => {
-            const formModal = new ModalNew("form");
-            formModal.modalElement?.classList.add("open");
-            this.parentElement.appendChild(formModal.modalElement!);
-            // if (this.modal === null) {
-            //   this.modal = new Modal(
-            //     this.parentElement,
-            //     tarif.name,
-            //     {} as Params
-            //   );
-            //   this.modal.open();
-            // } else {
-            //   this.modal.close();
-            //   this.modal = new Modal(
-            //     this.parentElement,
-            //     tarif.name,
-            //     {} as Params
-            //   );
-            //   this.modal.open();
-            // }
-          });
-          tvChannels.addEventListener("click", () => {
-            const channelListModal = new ModalNew("channelList");
-            channelListModal.modalElement?.classList.add("open");
-            this.parentElement.appendChild(channelListModal.modalElement!);
+            const modal = new ModalTest();
+            modal.create();
+            modal.open();
           });
 
           swiperWrapperElem.appendChild(cardElem);
