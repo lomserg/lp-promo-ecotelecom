@@ -6,8 +6,8 @@ export interface TarifType {
   price2: number | null;
   description: string;
   tv: boolean;
-  channels: number | null;
-  dataPackage?: string;
+  channels: string | null;
+  dataPackage: string | null;
   movie: string | null;
 }
 
@@ -22,6 +22,7 @@ const tarifData: TarifType[] = [
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: false,
     channels: null,
+    dataPackage: null,
     movie: null,
   },
   {
@@ -34,6 +35,7 @@ const tarifData: TarifType[] = [
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: false,
     channels: null,
+    dataPackage: null,
     movie: null,
   },
   {
@@ -46,6 +48,7 @@ const tarifData: TarifType[] = [
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: false,
     channels: null,
+    dataPackage: null,
     movie: null,
   },
   {
@@ -57,7 +60,7 @@ const tarifData: TarifType[] = [
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: true,
-    channels: 120,
+    channels: "120",
     dataPackage: "5b504edcb2de77e82f591f1a",
     movie: null,
   },
@@ -70,7 +73,7 @@ const tarifData: TarifType[] = [
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: true,
-    channels: 120,
+    channels: "120",
     dataPackage: "5b504edcb2de77e82f591f1a",
     movie: "PREMIER",
   },
@@ -83,7 +86,7 @@ const tarifData: TarifType[] = [
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: true,
-    channels: 250,
+    channels: "250",
     dataPackage: "630f5b1c944a765510046e89",
     movie: "1 из 3 видеосервисов",
   },
@@ -96,7 +99,7 @@ const tarifData: TarifType[] = [
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: true,
-    channels: 300,
+    channels: "300",
     dataPackage: "5e7b7e70acb10bd8ce882ef1",
     movie: "2 из 3 видеосервисов",
   },
@@ -109,7 +112,7 @@ const tarifData: TarifType[] = [
     description:
       "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
     tv: true,
-    channels: 350,
+    channels: "350",
     dataPackage: "5ec3b14fdf29dcff5d5ac065",
     movie: "3 из 3 видеосервисов",
   },
