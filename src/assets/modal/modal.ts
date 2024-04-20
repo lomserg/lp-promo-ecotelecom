@@ -9,7 +9,11 @@ export default class ModalNew {
 
   createModal() {
     this.modalElement = document.createElement("div");
-    this.modalElement.classList.add("modal");
+    const modalContent = document.createElement("div");
+    modalContent.classList.add("modal-content");
+
+    this.modalElement.classList.add("modal-bg");
+    this.modalElement.append(modalContent);
     this.checkType();
     return this.modalElement;
   }
@@ -35,6 +39,6 @@ export default class ModalNew {
     const channelsListDiv = document.createElement("div");
     channelsListDiv.classList.add("channels-list");
 
-    this.modalElement?.appendChild(channelsListDiv);
+    this.modalElement?.firstChild?.appendChild(channelsListDiv);
   }
 }

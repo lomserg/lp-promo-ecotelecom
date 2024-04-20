@@ -52,3 +52,13 @@
   padding: 3rem;
   position: relative;
 }
+
+.channels-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  max-width: 50ch;
+  height: 550px;
+  min-width: 300px;
+  overflow: auto;
+}
