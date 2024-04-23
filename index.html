@@ -999,34 +999,41 @@
         alt=""
     /></noscript>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-105675668-1"
-    ></script>
-
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-105675668-1");
-    </script> -->
-    <!-- <script>
-      function validateForm() {
-        var name = document.getElementById("name1").value;
-        var phone = document.getElementById("phone1").value;
-        var address = document.getElementById("adr11").value;
-        console.log(name);
-        if (name === "" || phone === "" || address === "") {
-          alert("Пожалуйста, заполните все поля.");
-          return false; 
+    <!-- Top.Mail.Ru counter -->
+    <script type="text/javascript">
+      var _tmr = window._tmr || (window._tmr = []);
+      _tmr.push({
+        id: "3468370",
+        type: "pageView",
+        start: new Date().getTime(),
+        pid: "USER_ID",
+      });
+      (function (d, w, id) {
+        if (d.getElementById(id)) return;
+        var ts = d.createElement("script");
+        ts.type = "text/javascript";
+        ts.async = true;
+        ts.id = id;
+        ts.src = "https://top-fwz1.mail.ru/js/code.js";
+        var f = function () {
+          var s = d.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(ts, s);
+        };
+        if (w.opera == "[object Opera]") {
+          d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+          f();
         }
-
-
-        return true; 
-      } 
-    </script>-->
+      })(document, window, "tmr-code");
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://top-fwz1.mail.ru/counter?id=3468370;js=na"
+          style="position: absolute; left: -9999px"
+          alt="Top.Mail.Ru"
+        /></div
+    ></noscript>
+    <!-- /Top.Mail.Ru counter -->
   </body>
 </html>
