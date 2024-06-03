@@ -577,7 +577,7 @@ select {
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background-image: url(./img/eco-cosmos24.jpg);
+  background-image: url(./img/lion.png);
   height: 90vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -603,9 +603,20 @@ select {
   color: #fff;
   text-transform: uppercase;
 }
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
+  .hero__bg {
+    background-image: url(./img/lion2.png);
+    height: 96vh;
+
+    background-position: 52% 82%;
+
+    align-items: start;
+  }
+  .hero__bg-container {
+    margin-top: 6rem;
+  }
   .hero__bg-title {
-    font-size: 44px;
+    font-size: 30px;
     text-align: center;
   }
   .info-block img {
@@ -1596,6 +1607,12 @@ html {
   gap: 10px;
 }
 
+@media (max-width: 1100px) {
+  .info-blocks {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .info-block {
     text-align: left;
@@ -1611,7 +1628,7 @@ html {
     text-align: center;
   }
   .info-blocks {
-    gap: 10px;
+    display: none;
   }
   .info-block-text {
     margin-top: 5px;
