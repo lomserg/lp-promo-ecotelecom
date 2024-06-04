@@ -577,7 +577,7 @@ select {
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background-image: url(./img/lion.png);
+  background-image: url(./img/lion.jpg);
   height: 90vh;
   background-repeat: no-repeat;
   background-size: cover;
