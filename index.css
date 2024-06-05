@@ -564,63 +564,68 @@ select {
   background: hsl(var(--clr-royal-blue));
   background: #ffe500;
   color: #000;
-  /* align-self: flex-start; */
+  align-self: flex-start;
   justify-self: center;
   border: none;
   text-decoration: none;
   outline: none;
   cursor: pointer;
   transition: 0.3s;
+  /* width: 50%; */
+  text-align: center;
 }
 
 /* ------------------- */
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background-image: url(./img/lion.jpg);
+  /* background-image: url(./img/dog.jpg); */
   height: 90vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 95% 86%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #6d5652;
 }
 .hero__bg-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 800px;
+  /* width: 800px; */
+  gap: 1.5rem;
+}
+.hero-img {
+  max-width: 600px;
 }
 .primary-navigation {
   display: none;
 }
 
 .hero__bg-title {
-  font-size: 64px;
+  font-size: 74px;
   font-family: "GilroyExtraBold";
   color: #fff;
   text-transform: uppercase;
 }
+.hero__bg-subtitle {
+  color: #fff;
+  font-family: "GilroyExtraBold";
+}
 @media (max-width: 1100px) {
-  .hero__bg {
-    background-image: url(./img/lion2.png);
-    height: 96vh;
-
-    background-position: 52% 82%;
-
-    align-items: start;
-  }
   .hero__bg-container {
-    margin-top: 6rem;
+    flex-direction: column;
   }
   .hero__bg-title {
     font-size: 30px;
     text-align: center;
   }
-  .info-block img {
-    max-width: 100%;
+  .hero__bg {
+    /* background-image: url(./img/dog.jpg); */
+
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: #6d5652;
   }
 }
 html {
@@ -661,11 +666,20 @@ html {
   font-size: 3.5rem;
   line-height: 1;
 }
-
+@media (max-width: 1100px) {
+  .hero-txt-cta {
+    margin-top: 6rem;
+    text-align: center;
+  }
+  .btn {
+    align-self: center;
+  }
+}
 @media (max-width: 500px) {
   .hero-txt-cta {
     align-items: center;
     justify-content: center;
+    margin-top: 6rem;
   }
 
   .hero-txt-cta h1 {

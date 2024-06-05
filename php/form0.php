@@ -27,7 +27,7 @@ $myaddr = "op@ecotelecom.ru, lomov@ecotelecom.ru";
 	$headers = "MIME-Version: 1.0\r\n";
 	$headers = "Content-Type: text/plain;charset=utf-8";
   	$headers = "From: promo@ecotelecom.ru";
-	$subj = "=?utf-8?b?".base64_encode('Заявка с лэндинга Акция "Улетное предложение"')."?=";
+	$subj = "=?utf-8?b?".base64_encode('Заявка с лэндинга «Спец»')."?=";
 	$text = "Тариф: ".$vacancy."\nИмя: ".$name." \nТелефон: ".$number." \nГород: ".$city." \nАдрес: ".$address;
 	if (!empty($utm_source)) $text .= "\nИсточник перехода по ссылке:".$utm_source;
 
