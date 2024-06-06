@@ -564,7 +564,7 @@ select {
   background: hsl(var(--clr-royal-blue));
   background: #ffe500;
   color: #000;
-  /* align-self: flex-start; */
+  align-self: flex-start;
   justify-self: center;
   border: none;
   text-decoration: none;
@@ -577,43 +577,61 @@ select {
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background-image: url(./img/lion.jpg);
-  height: 90vh;
+  background-image: linear-gradient(
+    to right top,
+    #036270,
+    #186d7a,
+    #277783,
+    #34828d,
+    #408d97,
+    #418f99,
+    #41909b,
+    #42929d,
+    #388b97,
+    #2c8490,
+    #1f7d8a,
+    #0d7684
+  );
+  /* height: 90vh;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 95% 86%;
+  background-position: 95% 86%; */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .hero__bg-container {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
-  width: 800px;
+  /* width: 800px; */
+  gap: 2rem;
 }
 .primary-navigation {
   display: none;
 }
-
+.hero-img {
+  margin-top: 7rem;
+}
 .hero__bg-title {
-  font-size: 64px;
+  font-size: 45px;
   font-family: "GilroyExtraBold";
   color: #fff;
   text-transform: uppercase;
 }
 @media (max-width: 1100px) {
+  .btn {
+    align-self: center;
+  }
   .hero__bg {
-    background-image: url(./img/lion2.png);
-    height: 96vh;
+    height: auto;
 
-    background-position: 52% 82%;
-
-    align-items: start;
+    align-items: center;
   }
   .hero__bg-container {
     margin-top: 6rem;
+    flex-direction: column;
   }
   .hero__bg-title {
     font-size: 30px;
@@ -621,6 +639,10 @@ select {
   }
   .info-block img {
     max-width: 100%;
+  }
+
+  .hero-img {
+    margin-top: 0;
   }
 }
 html {
@@ -655,12 +677,12 @@ html {
 .hero-txt-cta {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
 }
-.hero-txt-cta h1 {
+/* .hero-txt-cta h1 {
   font-size: 3.5rem;
   line-height: 1;
-}
+} */
 
 @media (max-width: 500px) {
   .hero-txt-cta {
@@ -668,9 +690,9 @@ html {
     justify-content: center;
   }
 
-  .hero-txt-cta h1 {
+  /* .hero-txt-cta h1 {
     font-size: 2.7rem;
-  }
+  } */
 
   .btn {
     align-self: center;
