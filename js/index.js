@@ -15,6 +15,10 @@
 //     console.log(e)
 // })
 
+document.addEventListener("click", (e) => {
+  console.log(e.target);
+});
+
 const accordionItemHeaders = document.querySelectorAll(
   ".accordion-item-header"
 );
