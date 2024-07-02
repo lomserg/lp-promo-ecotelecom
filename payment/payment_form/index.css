@@ -1,0 +1,277 @@
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #dde2ec;
+  font-family: "Roboto", sans-serif;
+  color: #808893;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+  max-width: 100%;
+  /*\  display: block; */
+}
+
+.container {
+  --max-width: 900px;
+  --padding: 1rem;
+  width: min(var(--max-width), 100% - (var(--padding)));
+  margin-inline: auto;
+}
+/* nav */
+.nav {
+  background: #fff;
+}
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+
+.logo-header {
+  background-image: url(img/logo.svg);
+  height: 60px;
+  width: 91px;
+
+  background-repeat: no-repeat;
+}
+.teleru {
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.teleru-text {
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+/* form */
+.form-container {
+  margin: 2rem auto;
+  padding: 3rem;
+  border-radius: 1rem;
+  max-width: 30rem;
+  background-color: white;
+  box-shadow: 0 4rem 4rem -3rem #495161;
+}
+/* 
+.contact-form {
+  color: #667;
+  width: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 15px var(--clr-blue);
+  padding: 40px 30px;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+} */
+
+.contact-form h2 {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form-title {
+  font-size: 2rem;
+  line-height: 2rem;
+  padding-bottom: 2rem;
+}
+
+.form {
+  background-color: #fff;
+}
+
+.label-form {
+  display: block;
+  font-size: 1.125rem;
+  margin-bottom: 0.27rem;
+  text-align: left;
+}
+
+.field {
+  width: 100%;
+  background: #ededed;
+  border: 1px solid #c7c7c7;
+  font-size: 1rem;
+  padding: 0.75rem;
+  outline: none;
+  margin-bottom: 0.5em;
+  color: #000;
+  margin-top: 1.2rem;
+  border-radius: 8px;
+}
+.field:focus::placeholder {
+  color: transparent;
+}
+
+.form-dropdown {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.dropdown-item-info {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* dropdown */
+.dropdown {
+  display: grid;
+  gap: 8px;
+  grid-auto-flow: column;
+  grid-auto-columns: 31%;
+  justify-content: center;
+}
+
+.dropdown-input {
+  width: 16px;
+  height: 16px;
+}
+
+.dropdown-item {
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: #ededed;
+  border: 1px solid #c7c7c7;
+}
+.dropdownNew {
+  position: relative;
+  height: 45px;
+  width: 100%;
+  margin-top: 3.5rem;
+}
+
+.dropdownNew::before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: -70%;
+  z-index: 10;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #333;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(-45deg);
+  pointer-events: none;
+}
+.dropdownNew input {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+}
+
+.dropdownNew .options {
+  position: absolute;
+  top: 0;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.dropdownNew .options div {
+  padding: 10px 20px;
+}
+
+.dropdownNew .options div:hover {
+  background: #8dc63f;
+  color: #fff;
+}
+
+.icon-pay {
+  width: 20px;
+}
+
+label.select-item {
+  margin-left: 1rem;
+}
+
+.btn {
+  background: #8dc63f;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.form-main-title {
+  color: #1a181a;
+  font-size: 24px;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.form-dropdown-title {
+  color: #1a181a;
+  font-size: 18px;
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.form-description {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+}
+
+/* footer */
+
+.footer-pay {
+  background: #000;
+  color: #fff;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 420px) {
+  .form-container {
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+
+  label.select-item {
+    margin-left: 0.5rem;
+  }
+}

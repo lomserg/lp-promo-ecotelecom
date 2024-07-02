@@ -1,0 +1,309 @@
+
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: #dde2ec;
+  font-family: 'Roboto', sans-serif;
+  color: #808893;
+}
+
+.form-container {
+  margin: 6rem auto;
+  padding: 3rem;
+  border-radius: 1rem;
+  max-width: 30rem;
+  background-color: white;
+  box-shadow: 0 4rem 4rem -3rem #495161;
+}
+
+
+
+/* make images easier to work with */
+img,
+picutre {
+  max-width: 100%;
+  /*\  display: block; */
+}
+
+.container {
+  --max-width: 900px;
+  --padding: 1rem;
+  width: min(var(--max-width), 100% - (var(--padding)));
+  margin-inline: auto;
+}
+/* nav */
+.nav {
+  background: #fff;
+
+}
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+ 
+}
+
+.logo-header {
+  background-image: url(img/logo.svg);
+  height: 60px;
+  width: 91px;
+
+  background-repeat: no-repeat;
+}
+/* form */
+.contact-form {
+    color: #667;
+    width: 50%;
+    background-color: #FFF;
+    box-shadow: 0 0 15px var(--clr-blue);
+    padding: 40px 30px;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-form h2{
+  margin-bottom: 1.5rem;
+  
+  }
+  
+  .contact-form-title {
+    font-size: 2rem;
+    line-height: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .form {
+    background-color: #fff;
+  
+  }
+  
+  
+  
+  .label-form {
+    display: block;
+    font-size: 1.125rem;
+    margin-bottom: .27rem;
+    text-align: left;
+  
+  }
+  
+  .field {
+    width: 100%;
+    background: #EDEDED;
+    border: 1px solid #C7C7C7;
+    font-size: 1rem;
+    padding: .75rem;
+    outline: none;
+    margin-bottom: .5em;
+    color: #000;
+    margin-top: 1.2rem;
+    border-radius: 8px;
+  }
+  .field:focus::placeholder {
+    color: transparent;
+  }
+  
+  /* dropdown */
+  label {
+    display: block;
+    padding: 1rem 0 .5rem;
+  }
+  .option {
+    display: none;
+  } 
+
+  .select-group {
+    position: relative;
+  }
+  
+  .dropdown {
+    width: 100%;
+    background: #EDEDED;
+    border: 1px solid #C7C7C7;
+    font-size: 1rem;
+    /* padding: .75rem; */
+    outline: none;
+    margin-bottom: .5em;
+    color: #000;
+    border-radius: 8px;
+    position: absolute;
+  } 
+  
+  .button-dropdown {
+    width: 100%;
+    background: #EDEDED;
+    border: 1px solid #C7C7C7;
+    font-size: 1rem;
+    padding: .75rem;
+    outline: none;
+    margin-bottom: .5em;
+    color: #808893;
+    /* margin-top: 1.2rem; */
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .button-dropdown::after {
+    content: '';
+    background-image: url(./img/arrow_down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    width: .9rem;
+    height: .5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  /* .arrow {
+    background-image: url(./img/arrow_down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    width: .9rem;
+    height: .5rem;
+  } */
+  .select-item {
+    cursor: pointer;
+    color: black;
+    display: flex;
+    padding-left: 8px;
+  }
+  .select-item:hover {
+    background-color: #cac9c9;
+    overflow: hidden;
+  }
+ 
+  .hidden {
+    display: none;
+  }
+  /* .button-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: hsl(var(--clr-black))!important;
+    background: #EDEDED!important;
+    border: 1px solid #C7C7C7;
+    font-size: 1rem;
+    padding: .75rem;
+    outline: none;
+  } */
+  
+  /* #select-label {
+    text-align: left;
+  } */
+  
+  /* .arrow {
+    border:  solid black;
+    border-width:  0 1px 1px 0 ;
+  
+  } */
+  
+  /* .button-dropdown::after{
+    content: '';
+    background-image: url('../img/arrow_down.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    width: .9rem;
+    height: .5rem;
+    transition: transform 0.3s ease-in-out;
+    
+  } */
+  
+  /* .select-item {
+    background-color: #fff;
+    padding: 1rem;
+    color: black;
+    display: flex;
+  } */
+/*   
+  .select-item:hover {
+    background-color: #f2f2f2;
+  }
+   */
+ 
+
+  /* dropdown */
+
+
+  .btn {
+    background: #8DC63F;
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
+
+  .form-main-title {
+    color: #1a181a;
+    font-size: 24px;
+    margin: 0 0 8px;
+    font-weight: 700;
+  }
+
+  .form-dropdown-title {
+    color: #1a181a;
+    font-size: 18px;
+    margin: 0 0 8px;
+    font-weight: 700;
+  }
+
+  .form-description {
+    margin-top: 1rem;
+    font-size: .75rem;
+  }
+
+  /* footer */
+
+  .footer-pay {
+    background: #000;
+    color: #fff;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ @media (max-width: 400px) {
+  .form-container{
+    padding: 1rem;
+    margin: 2rem auto;
+  }
+  
+ 
+ }

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Andata Tag Manager Code -->
+    <script
+      type="application/javascript"
+      src="//tagmanager.andata.ru/api/v1/container/9b91d137-d2ac-4f60-8303-e5be7e7bbb96/published/code.js"
+    ></script>
+    <title>Оплата</title>
+  </head>
+  <body class="app">
+    <header class="nav">
+      <div class="container nav-container">
+        <div class="logo-header"></div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="form-container" id="contact-form">
+        <h2 class="form-main-title">Оплата услуг</h2>
+        <form action="./php/form0.php" method="post" action="">
+          <input
+            type="text"
+            name="vac2"
+            id="vac2"
+            class="field"
+            style="display: none"
+          />
+
+          <!-- <label class="fs-200" for="phone1">Номер договора</label> -->
+          <input
+            type="text"
+            maxlength="10"
+            class="field"
+            name="number"
+            id="num"
+            placeholder="Номер договора"
+            required
+          />
+          <input
+            type="text"
+            maxlength="5"
+            class="field"
+            name="text"
+            id="sum"
+            placeholder="Сумма (руб)."
+            required
+          />
+          <!-- <label class="fs-200" for="email1">Email</label> -->
+          <input
+            type="text"
+            class="field"
+            name="email"
+            id="email1"
+            placeholder="E-mail для чека"
+            required
+          />
+
+          <div class="select-group">
+            <h2 class="form-dropdown-title">Способ оплаты</h2>
+            <button class="button-dropdown" id="button-dropdown">
+              <span id="select-label">Система быстрых платежей</span>
+              <div class="arrow"></div>
+            </button>
+            <div id="dropdown" class="dropdown hidden">
+              <label class="select-item" for="select-sfp"
+                >Система быстрых платежей</label
+              >
+              <input
+                class="option"
+                id="select-sfp"
+                type="radio"
+                name="where"
+                value="sfp"
+              />
+              <label class="select-item" for="select-sberpay">Sberpay</label>
+              <input
+                class="option"
+                id="select-sberpay"
+                type="radio"
+                name="where"
+                value="sberpay"
+              />
+              <label class="select-item" for="select-card"
+                >Банковская карта</label
+              >
+              <input
+                class="option"
+                id="select-card"
+                type="radio"
+                name="where"
+                value="card"
+              />
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="btn bg-violet"
+            style="width: 80%; margin-left: 2rem"
+            name="call-submit"
+          >
+            Оплатить
+          </button>
+          <input
+            autocomplete="off"
+            type="hidden"
+            name="call-control"
+            class="call-control"
+            value="0"
+          />
+          <p class="form-description">
+            Нажимая кнопку, я подтверждаю, что ознакомлен и согласен с Правилами
+            оплаты на сайте
+            <span style="font-weight: 700">www.ecotelecom.ru</span>
+          </p>
+        </form>
+      </div>
+    </main>
+    <div id="andata"></div>
+    <footer class="footer-pay">
+      <p>© Экотелеком 2024</p>
+    </footer>
+    <script src="form.js"></script>
+  </body>
+</html>

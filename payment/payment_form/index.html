@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <link href="index.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesnt work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://cdn.ecotelecom.ru/js/jquery-3.6.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Оплата онлайн</title>
+  </head>
+  <body class="app">
+    <header class="nav">
+      <div class="container nav-container">
+        <div class="logo-header"></div>
+      </div>
+    </header>
+    <main class="container">
+      <div class="teleru">
+        <p class="teleru-text">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores modi
+          vel ut ipsa?
+        </p>
+      </div>
+      <div class="form-container" id="contact-form">
+        <h2 class="form-main-title">Оплата услуг</h2>
+        <form
+          id="payment-form"
+          name="payment-form"
+          action="?action=pay&nolk=1"
+          method="post"
+          accept-charset="utf-8"
+        >
+          <input
+            type="text"
+            name="vac2"
+            id="vac2"
+            class="field"
+            style="display: none"
+          />
+          <input
+            type="text"
+            maxlength="10"
+            class="field"
+            name="title"
+            id="title"
+            placeholder="Номер договора"
+            required=""
+          />
+          <input
+            type="text"
+            maxlength="5"
+            class="field"
+            name="summa"
+            id="summa"
+            placeholder="Сумма (руб)."
+            required=""
+          />
+          <input
+            type="text"
+            class="field"
+            name="email"
+            id="email"
+            placeholder="E-mail для чека"
+          />
+          <div class="form-dropdown">
+            <h2 class="form-dropdown-title">Способ оплаты</h2>
+            <div id="dropdown" class="dropdown">
+              <div class="dropdown-item">
+                <img
+                  alt=""
+                  class="Mg5Rnk"
+                  src="https://cdn.ecotelecom.ru/i/cgi-bin/pay.php/sfp.svg"
+                />
+                <div class="dropdown-item-info">
+                  <input
+                    class="dropdown-input"
+                    id="sfp"
+                    type="radio"
+                    name="payType"
+                    value="sbp"
+                  />
+                  <label class="select-item" for="sfp">СБП</label>
+                </div>
+              </div>
+              <div class="dropdown-item">
+                <img
+                  alt=""
+                  class="Mg5Rnk"
+                  src="https://cdn.ecotelecom.ru/i/cgi-bin/pay.php/sberpay.svg"
+                />
+                <div class="dropdown-item-info">
+                  <input
+                    class="dropdown-input"
+                    id="sberpay"
+                    type="radio"
+                    name="payType"
+                    value="sberpay"
+                  />
+                  <label class="select-item" for="sberpay">Sberpay</label>
+                </div>
+              </div>
+              <div class="dropdown-item">
+                <img
+                  alt=""
+                  class="Mg5Rnk"
+                  src="https://cdn.ecotelecom.ru/i/cgi-bin/pay.php/card.svg"
+                />
+                <div class="dropdown-item-info">
+                  <input
+                    class="dropdown-input"
+                    id="card"
+                    type="radio"
+                    name="payType"
+                    value="card"
+                  />
+                  <label class="select-item" for="card">Картой</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn bg-violet"
+            style="width: 80%; margin-left: 2rem"
+            name="call-submit"
+          >
+            Оплатить
+          </button>
+          <input
+            autocomplete="off"
+            type="hidden"
+            name="call-control"
+            class="call-control"
+            value="0"
+          />
+          <p
+            class=""
+            style="text-align: center; margin-top: 1rem; font-size: 15px"
+          >
+            <a
+              href="https://www.ecotelecom.ru/subscribes/payment/"
+              style="
+                cursor: pointer;
+                text-decoration: none;
+                outline: none;
+                color: #206dc9;
+              "
+              >Все способы оплаты</a
+            >
+          </p>
+        </form>
+      </div>
+    </main>
+    <footer class="footer-pay">
+      <p>© Экотелеком 2023</p>
+    </footer>
+    <script>
+      $(document).ready(function () {
+        const pTypeBtns = $("div.dropdown-item"),
+          sbpBtn = pTypeBtns.first();
+
+        pTypeBtns.each(function (idx) {
+          const btn = $(this);
+          btn.removeClass("selected");
+          btn.find("input").prop("checked", false);
+        });
+        sbpBtn.addClass("selected");
+        sbpBtn.find("input").prop("checked", true);
+      });
+      $("div.dropdown-item").click(function () {
+        if (!$(this).hasClass("selected")) {
+          const btn = $(this),
+            pTypeBtns = $(this).siblings();
+          pTypeBtns.removeClass("selected");
+          pTypeBtns.find("input").prop("checked", false);
+
+          btn.addClass("selected");
+          btn.find("input").prop("checked", true);
+        }
+      });
+    </script>
+  </body>
+</html>
