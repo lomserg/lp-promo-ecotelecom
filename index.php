@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -445,27 +445,59 @@
             >
               Заявка на подключение
             </p>
-            <label class="fs-200" for="name1">Имя</label>
-            <input type="text" name="name1" id="name1" class="field" required />
-            <label class="fs-200" for="phone1">Телефон</label>
+            <label class="fs-200" for="name2">Имя</label>
+            <input type="text" name="name" id="name2" class="field" required />
+            <label class="fs-200" for="phone2">Телефон</label>
             <input
               type="tel"
               class="field"
               data-tel-input
               maxlength="18"
-              name="phone1"
-              id="phone1"
+              name="number"
+              id="phone2"
               required
             />
-            <label class="fs-200" for="adr11">Адрес</label>
-            <input type="text" class="field" name="adr11" id="adr11" required />
+            <label class="fs-200" for="adr12">Адрес</label>
+            <input
+              type="text"
+              class="field"
+              name="address"
+              id="adr12"
+              required
+            />
+
+            <!-- hidden -->
+            <input
+              type="hidden"
+              name="utm_source"
+              value="<?php echo isset($_GET['utm_source']) ? $_GET['utm_source'] : ''; ?>"
+            />
+            <input
+              type="hidden"
+              name="utm_medium"
+              value="<?php echo isset($_GET['utm_medium']) ? $_GET['utm_medium'] : ''; ?>"
+            />
+            <input
+              type="hidden"
+              name="utm_campaign"
+              value="<?php echo isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : ''; ?>"
+            />
+            <input
+              type="hidden"
+              name="utm_content"
+              value="<?php echo isset($_GET['utm_content']) ? $_GET['utm_content'] : ''; ?>"
+            />
+            <input
+              type="hidden"
+              name="utm_term"
+              value="<?php echo isset($_GET['utm_term']) ? $_GET['utm_term'] : ''; ?>"
+            />
+
             <button
-              type="submit bg-violet"
+              type="submit"
               class="btn bg-violet"
               style="width: 80%; margin-left: 2rem"
               name="call-submit"
-              onclick="ym(47175648,'reachGoal','order'); return true;"
-              onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();"
             >
               Отправить
             </button>
