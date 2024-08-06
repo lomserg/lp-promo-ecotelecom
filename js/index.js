@@ -1,38 +1,19 @@
-// const modal_container = document.getElementById('modal-container');
-// const modal = document.querySelector('#modal')
-// const overlay = document.querySelector('#overlay')
-
-// TODO: 3. Create a click event listener for the open-modal-btn that adds the class "open" to the modal
-
-//buttons.forEach(e => e.addEventListener("click", activeBg, false));
-
-// closeX.addEventListener('click', e => {
-//     modalBg.classList.remove('bg-active')
-
-// })
-
-// document.addEventListener('click', e => {
-//     console.log(e)
-// })
-
-document.addEventListener("click", (e) => {
-  console.log(e.target);
-});
-
+// Query the accordion item headers
 const accordionItemHeaders = document.querySelectorAll(
   ".accordion-item-header"
 );
 
+// Add click event listeners to each accordion item header
 accordionItemHeaders.forEach((accordionItemHeader) => {
   accordionItemHeader.addEventListener("click", (event) => {
-    // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
-
+    // Uncomment if you want only one item open at a time
     // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
-    // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
+    // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
     //   currentlyActiveAccordionItemHeader.classList.toggle("active");
     //   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
     // }
 
+    // Toggle active class and adjust max-height
     accordionItemHeader.classList.toggle("active");
     const accordionItemBody = accordionItemHeader.nextElementSibling;
     if (accordionItemHeader.classList.contains("active")) {
@@ -43,6 +24,7 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
   });
 });
 
+// Initialize tooltips with Tippy.js
 tippy("#video0", {
   content:
     "Онлайн-кинотеатр AMEDIATEKA, START или PREMIER на выбор: эксклюзивные премьеры, кино и сериалы",
@@ -70,6 +52,7 @@ tippy("#video3", {
   placement: "bottom",
 });
 
+// Example functions for modal handling (commented out as they may not be relevant to the error)
 // function noScroll() {
 //     window.scrollTo(0, 0)
 // }
@@ -79,12 +62,13 @@ tippy("#video3", {
 //     modal_container.classList.add('show');
 //     modal.classList.add('open')
 //     overlay.classList.add('open')
-
 // }
+
 // closeX.addEventListener('click', e => {
 //     modal.classList.remove('open')
 //     overlay.classList.remove('open')
 // })
+
 // overlay.addEventListener('click', e => {
 //     modal.classList.remove('open')
 //     overlay.classList.remove('open')
@@ -97,39 +81,34 @@ tippy("#video3", {
 
 // buttons.forEach(e => e.addEventListener("click", openForm, false));
 
-// BONUS: Also add the class "open" to the overlay - ok
-
+// Bonus features for modal handling
 // TODO: 4. Create a click event listener for the close-modal-btn that removes the class "open" from the modal
+// BONUS: Also remove the class "open" from the overlay
 
-// BONUS: Also remove the class "open" from the overlay - ok
-
-// BONUS: Add a click event listener to the overlay that removes the class "open" from the modal and the overlay
+// Phone number setup based on URL query string
 let phone = document.querySelector(".phone");
 let contentY =
   '<a class="phoneid" href="tel: +74995055627">+7 499 505-56-27</a>';
 let contentG =
   '<a class="phoneid" href="tel: +74995055612">+7 499 505-56-12</a>';
 
-// closeX.addEventListener('click', () => {
-//     modal_container.classList.remove('show');
-// })
+let queryStringUrl = window.location.search;
 
-const queryString = window.location.search;
-
-let paramString = queryString.split("&")[1];
+let paramString = queryStringUrl.split("&")[1];
 // let paramSource = paramString.split('=')[1];
 
 let ourSubstring = "yandex";
 let ourSubstring2 = "google";
 
-if (queryString.includes(ourSubstring)) {
+if (queryStringUrl.includes(ourSubstring)) {
   phone.innerHTML = contentY;
-} else if (queryString.includes(ourSubstring2)) {
+} else if (queryStringUrl.includes(ourSubstring2)) {
   phone.innerHTML = contentG;
 } else {
   console.log("asdasd.");
 }
 
+// Additional tooltips
 tippy("#tooltip1", {
   content:
     "Видеосервис AMEDIATEKA, START, IVI, PREMIER или «Лучшее от more.tv» на выбор: горячие новинки и классика",
