@@ -110,17 +110,17 @@ let contentG =
 //     modal_container.classList.remove('show');
 // })
 
-const queryString = window.location.search;
+const queryStringUrl = window.location.search;
 
-let paramString = queryString.split("&")[1];
+let paramString = queryStringUrl.split("&")[1];
 // let paramSource = paramString.split('=')[1];
 
 let ourSubstring = "yandex";
 let ourSubstring2 = "google";
 
-if (queryString.includes(ourSubstring)) {
+if (queryStringUrl.includes(ourSubstring)) {
   phone.innerHTML = contentY;
-} else if (queryString.includes(ourSubstring2)) {
+} else if (queryStringUrl.includes(ourSubstring2)) {
   phone.innerHTML = contentG;
 } else {
   console.log("asdasd.");
