@@ -107,26 +107,14 @@
         </div>
       </header>
       <div class="hero__bg-container container">
-        <h1 class="hero__bg-title">Космическая выгода</h1>
-        <a href="#tarif_block" class="btn">Подробнее</a>
-        <div class="info-blocks">
-          <div class="info-block">
-            <div class="info-block-feature fs-300 uppercase fw-bold">350</div>
-            <div class="info-block-text">Мбит/с</div>
-          </div>
-          <div class="info-block">
-            <div class="info-block-feature fs-300 uppercase fw-bold">300</div>
-            <div class="info-block-text">каналов</div>
-          </div>
-          <div class="info-block img">
-            <img src="./img/logo_Premier_w.png" alt="" />
-            <img src="./img/logo_start.png" alt="" />
-            <img src="./img/Amediateka_full_white.png" alt="" />
-          </div>
-          <div class="info-block">
-            <div class="info-block-feature fs-300 uppercase fw-bold">700</div>
-            <div class="info-block-text">₽/мес</div>
-          </div>
+        <div class="hero-txt-cta flow">
+          <h1 class="hero__bg-title">НАЙДЕНЫ СЕКРЕТНЫЕ ТАРИФЫ</h1>
+          <p class="hero__bg-subtitle">Для нашего дома</p>
+          <a href="#tarif_block" class="btn">Подробнее</a>
+        </div>
+
+        <div class="hero-img">
+          <img src="./img/detective.png" alt="" />
         </div>
       </div>
     </section>
@@ -155,7 +143,7 @@
               <!-- <div class="tarif-icon"></div> -->
               <p class="tarif-name">СТАРТ</p>
               <p class="tarif-price">
-                549 <span style="font-size: 0.75rem">₽/мес</span>
+                299 <span style="font-size: 0.75rem">₽/мес</span>
               </p>
 
               <div class="tarif-param">
@@ -174,11 +162,11 @@
 
           <div class="swiper-slide tarif-option">
             <div class="tarif-slider-description">
-              <div class="tarif-promo">Акция</div>
+              <!-- <div class="tarif-promo">Акция</div> -->
               <!-- <div class="tarif-icon"></div> -->
               <p class="tarif-name">ХИТ</p>
               <p class="tarif-price">
-                325 <span style="font-size: 0.75rem">₽/мес</span>
+                399 <span style="font-size: 0.75rem">₽/мес</span>
               </p>
 
               <div class="tarif-param">
@@ -236,68 +224,6 @@
           <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide tarif-option">
-              <div class="tarif-slider-description">
-                <div class="tarif-promo">Акция</div>
-                <!-- <div class="tarif-icon"></div> -->
-                <p class="tarif-name">УЛЬТРА+КИНО</p>
-                <p class="tarif-price">
-                  450 <span style="font-size: 0.75rem">₽/мес</span>
-                </p>
-                <div class="tarif-param">
-                  <p class="tarif-speed">350 Мбит/с</p>
-                  <div
-                    class="tarif channels-item"
-                    data-package="5e7b7e70acb10bd8ce882ef1"
-                  >
-                    <a class="channels_link link trigger" href="#channels"
-                      >300 ТВ-каналов</a
-                    >
-                  </div>
-                  <p class="tarif-movie" id="video2">2 из 3 видеосервисов</p>
-                </div>
-                <div class="tarif-options-description">
-                  <ul class="tarif-options-list">
-                    <!-- <li>"Раздаем интернет всем" на 6 месяцев</li>
-
-                    <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
-                  </ul>
-                </div>
-                <button class="choose-btn">Выбрать</button>
-              </div>
-              <!-- end-->
-            </div>
-            <div class="swiper-slide tarif-option">
-              <div class="tarif-slider-description">
-                <div class="tarif-promo">Акция</div>
-                <!-- <div class="tarif-icon"></div> -->
-                <p class="tarif-name">МЕГА+КИНО</p>
-                <p class="tarif-price">
-                  700 <span style="font-size: 0.75rem">₽/мес</span>
-                </p>
-                <div class="tarif-param">
-                  <p class="tarif-speed">500 Мбит/с</p>
-                  <div
-                    class="tarif channels-item"
-                    data-package="5ec3b14fdf29dcff5d5ac065"
-                  >
-                    <a class="channels_link link trigger" href="#channels"
-                      >350 ТВ-каналов</a
-                    >
-                  </div>
-                  <p class="tarif-movie" id="video3">3 из 3 видеосервисов</p>
-                </div>
-                <div class="tarif-options-description">
-                  <ul class="tarif-options-list">
-                    <!-- <li>"Раздаем интернет всем" на 6 месяцев</li>
-
-                    <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
-                  </ul>
-                </div>
-                <button class="choose-btn">Выбрать</button>
-              </div>
-              <!-- end-->
-            </div>
-            <div class="swiper-slide tarif-option">
               <div
                 class="tarif-slider-description"
                 data-package="5b504edcb2de77e82f591f1a"
@@ -308,7 +234,7 @@
                 <!-- <div class="tarif-icon"></div> -->
                 <p class="tarif-name">СТАРТ+ТВ</p>
                 <p class="tarif-price">
-                  649 <span style="font-size: 0.75rem">₽/мес</span>
+                  449 <span style="font-size: 0.75rem">₽/мес</span>
                 </p>
                 <div class="tarif-param">
                   <p class="tarif-speed">100 Мбит/с</p>
@@ -334,40 +260,6 @@
                 <button class="choose-btn">Выбрать</button>
               </div>
             </div>
-            <div class="swiper-slide tarif-option">
-              <div class="tarif-slider-description">
-                <!-- <div class="tarif-promo">
-                                  Выгодно
-                              </div> -->
-                <!-- <div class="tarif-icon"></div> -->
-                <p class="tarif-name">СТАРТ+КИНО</p>
-                <p class="tarif-price">
-                  729 <span style="font-size: 0.75rem">₽/мес</span>
-                </p>
-
-                <div class="tarif-param">
-                  <p class="tarif-speed">100 Мбит/с</p>
-                  <div
-                    class="tarif channels-item"
-                    data-package="5b504edcb2de77e82f591f1a"
-                  >
-                    <a class="channels_link link trigger" href="#channels"
-                      >130 ТВ-каналов</a
-                    >
-                  </div>
-                  <p class="tarif-movie" id="video0">1 видеосервисов из 3</p>
-                </div>
-                <div class="tarif-options-description">
-                  <ul class="tarif-options-list">
-                    <!-- <li>-20% при оплате на 12 месяцев</li>
-
-                    <li>Всё под рукой: интернет, ТВ и онлайн-кинотеатр</li> -->
-                  </ul>
-                </div>
-                <button class="choose-btn">Выбрать</button>
-              </div>
-            </div>
-
             <!-- end tarif -->
             <div class="swiper-slide tarif-option">
               <div class="tarif-slider-description">
@@ -375,7 +267,7 @@
                 <!-- <div class="tarif-icon"></div> -->
                 <p class="tarif-name">ХИТ+ТВ</p>
                 <p class="tarif-price">
-                  799<span style="font-size: 0.75rem">₽/мес</span>
+                  549<span style="font-size: 0.75rem">₽/мес</span>
                 </p>
                 <div class="tarif-param">
                   <p class="tarif-speed">300 Мбит/с</p>
@@ -398,6 +290,39 @@
                 <button class="choose-btn">Выбрать</button>
               </div>
             </div>
+            <!-- end tarif -->
+            <div class="swiper-slide tarif-option">
+              <div class="tarif-slider-description">
+                <!-- <div class="tarif-promo">Акция</div> -->
+                <!-- <div class="tarif-icon"></div> -->
+                <p class="tarif-name">УЛЬТРА+КИНО</p>
+                <p class="tarif-price">
+                  899 <span style="font-size: 0.75rem">₽/мес</span>
+                </p>
+                <div class="tarif-param">
+                  <p class="tarif-speed">350 Мбит/с</p>
+                  <div
+                    class="tarif channels-item"
+                    data-package="5e7b7e70acb10bd8ce882ef1"
+                  >
+                    <a class="channels_link link trigger" href="#channels"
+                      >300 ТВ-каналов</a
+                    >
+                  </div>
+                  <p class="tarif-movie" id="video2">2 из 3 видеосервисов</p>
+                </div>
+                <div class="tarif-options-description">
+                  <ul class="tarif-options-list">
+                    <!-- <li>"Раздаем интернет всем" на 6 месяцев</li>
+
+                    <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
+                  </ul>
+                </div>
+                <button class="choose-btn">Выбрать</button>
+              </div>
+            </div>
+            <!-- end tarif-->
+
             <!-- end tarif -->
           </div>
           <!-- If we need pagination -->
@@ -434,7 +359,7 @@
       <div class="modal-bg">
         <div class="modal">
           <form
-            action="./php/telegram2.php"
+            action="./php/form1.php"
             method="post"
             id="form2"
             name="call-form"
@@ -445,59 +370,32 @@
             >
               Заявка на подключение
             </p>
-            <label class="fs-200" for="name2">Имя</label>
-            <input type="text" name="name" id="name2" class="field" required />
-            <label class="fs-200" for="phone2">Телефон</label>
+            <label class="fs-200" for="name1">Имя</label>
+            <input type="text" name="name" id="name1" class="field" required />
+            <label class="fs-200" for="phone1">Телефон</label>
             <input
               type="tel"
               class="field"
               data-tel-input
               maxlength="18"
               name="number"
-              id="phone2"
+              id="phone1"
               required
             />
-            <label class="fs-200" for="adr12">Адрес</label>
+            <label class="fs-200" for="adr11">Адрес</label>
             <input
               type="text"
               class="field"
               name="address"
-              id="adr12"
+              id="adr11"
               required
             />
-
-            <!-- hidden -->
-            <input
-              type="hidden"
-              name="utm_source"
-              value="<?php echo isset($_GET['utm_source']) ? $_GET['utm_source'] : ''; ?>"
-            />
-            <input
-              type="hidden"
-              name="utm_medium"
-              value="<?php echo isset($_GET['utm_medium']) ? $_GET['utm_medium'] : ''; ?>"
-            />
-            <input
-              type="hidden"
-              name="utm_campaign"
-              value="<?php echo isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : ''; ?>"
-            />
-            <input
-              type="hidden"
-              name="utm_content"
-              value="<?php echo isset($_GET['utm_content']) ? $_GET['utm_content'] : ''; ?>"
-            />
-            <input
-              type="hidden"
-              name="utm_term"
-              value="<?php echo isset($_GET['utm_term']) ? $_GET['utm_term'] : ''; ?>"
-            />
-
             <button
-              type="submit"
+              type="submit bg-violet"
               class="btn bg-violet"
               style="width: 80%; margin-left: 2rem"
               name="call-submit"
+              onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();ym(49966909,'reachGoal','form-submit')"
             >
               Отправить
             </button>

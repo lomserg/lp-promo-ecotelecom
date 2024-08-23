@@ -569,14 +569,17 @@ select {
   margin-top: 1em;
   border-radius: 15px;
   background: hsl(var(--clr-royal-blue));
-  color: #fff;
-  /* align-self: flex-start; */
+  background: #ffe500;
+  color: #000;
+  align-self: flex-start;
   justify-self: center;
   border: none;
   text-decoration: none;
   outline: none;
   cursor: pointer;
   transition: 0.3s;
+  /* width: 50%; */
+  text-align: center;
 }
 
 /* ------------------- */
@@ -615,9 +618,6 @@ select {
 /* ------------------- */
 /* hero         */
 /* ------------------- */
-.primary-navigation {
-  display: none;
-}
 
 html {
   height: -webkit-fill-available;
@@ -649,39 +649,72 @@ html {
 }
 /* hero */
 .hero__bg {
-  background-image: url(./img/eco-cosmos24.jpg);
-  height: 90vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 95% 86%;
+  /* background-image: url(./img/dog.jpg); */
+  height: auto;
+
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
+  background: rgb(92, 141, 93);
+  background: radial-gradient(
+    circle,
+    rgba(92, 141, 93, 1) 22%,
+    rgba(64, 119, 75, 1) 67%
+  );
 }
 .hero__bg-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
-  width: 800px;
+  width: 1000px;
+  gap: 1.5rem;
+}
+.hero-img {
+  width: 45%;
+  align-self: end;
+}
+
+.hero-img img {
+  max-width: 80%;
+  display: block;
 }
 .primary-navigation {
   display: none;
 }
 
 .hero__bg-title {
-  font-size: 64px;
+  font-size: 74px;
   font-family: "GilroyExtraBold";
   color: #fff;
   text-transform: uppercase;
 }
-@media (max-width: 600px) {
+.hero__bg-subtitle {
+  color: #fff;
+  font-family: "GilroyExtraBold";
+}
+@media (max-width: 1100px) {
+  .hero__bg-container {
+    flex-direction: column;
+    align-items: center;
+  }
   .hero__bg-title {
-    font-size: 34px;
+    font-size: 30px;
     text-align: center;
   }
-  .info-block img {
+  .hero-img {
+    width: 100%;
+    align-self: center;
+  }
+  .hero-img img {
     max-width: 100%;
+  }
+  .hero__bg {
+    /* background-image: url(./img/dog.jpg); */
+
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: #6d5652;
   }
 }
 html {
@@ -717,16 +750,32 @@ html {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 7rem;
+  width: 50%;
+  margin-bottom: 8rem;
 }
 .hero-txt-cta h1 {
   font-size: 3.5rem;
   line-height: 1;
 }
-
+@media (max-width: 1100px) {
+  .hero-txt-cta {
+    margin-top: 5rem;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+  .btn {
+    align-self: center;
+  }
+  .hero-txt-cta h1 {
+    font-size: 3.5rem;
+  }
+}
 @media (max-width: 500px) {
   .hero-txt-cta {
     align-items: center;
     justify-content: center;
+    margin-top: 6rem;
   }
 
   .hero-txt-cta h1 {
@@ -736,9 +785,9 @@ html {
   .btn {
     align-self: center;
   }
-  .flow > * + * {
+  /* .flow > * + * {
     margin-top: 1rem;
-  }
+  } */
 }
 /* ------------------- */
 /* tabs         */
