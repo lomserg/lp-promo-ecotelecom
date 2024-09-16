@@ -410,7 +410,7 @@
       <div class="modal-bg">
         <div class="modal">
           <form
-            action="./php/form1.php"
+            action="./php/telegram.php"
             method="post"
             id="form2"
             name="call-form"
@@ -707,7 +707,7 @@
       <div class="contact-box">
         <!-- <h2 class="fs-600" style="margin: 2rem 0;">Заявка на подключение</h2> -->
         <form
-          action="./php/telegram.php"
+          action="./php/telegram2.php"
           method="post"
           id="form1"
           name="call-form"

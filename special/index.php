@@ -359,7 +359,7 @@
       <div class="modal-bg">
         <div class="modal">
           <form
-            action="./php/form1.php"
+            action="./php/telegram.php"
             method="post"
             id="form2"
             name="call-form"
@@ -370,16 +370,16 @@
             >
               Заявка на подключение
             </p>
-            <label class="fs-200" for="name1">Имя</label>
-            <input type="text" name="name" id="name1" class="field" required />
-            <label class="fs-200" for="phone1">Телефон</label>
+            <label class="fs-200" for="name">Имя</label>
+            <input type="text" name="name" id="name" class="field" required />
+            <label class="fs-200" for="phone">Телефон</label>
             <input
               type="tel"
               class="field"
               data-tel-input
               maxlength="18"
               name="number"
-              id="phone1"
+              id="phone"
               required
             />
             <label class="fs-200" for="adr11">Адрес</label>
@@ -655,71 +655,27 @@
       <h2 style="text-align: center" class="fs-600">Заявка на подключение</h2>
       <div class="contact-box">
         <!-- <h2 class="fs-600" style="margin: 2rem 0;">Заявка на подключение</h2> -->
-        <form
-          action="./php/telegram.php"
-          method="post"
-          id="form1"
-          name="call-form"
-        >
-          <!-- hidden -->
-          <input
-            type="hidden"
-            name="utm_source"
-            value="<?php $utm_source = $_GET['utm_source']; echo $utm_source; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_medium"
-            value="<?php $utm_medium = $_GET['utm_medium']; echo $utm_medium; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_campaign"
-            value="<?php $utm_campaign = $_GET['utm_campaign']; echo $utm_campaign; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_content"
-            value="<?php $utm_content = $_GET['utm_content']; echo $utm_content; ?>"
-          />
-          <input
-            type="hidden"
-            name="utm_term"
-            value="<?php $utm_term = $_GET['utm_term']; echo $utm_term; ?>"
-          />
+        <form action="./php/telegram2.php" method="post" id="form1" name="call-form">
+  <input type="hidden" name="utm_source" value="<?php echo $_GET['utm_source']; ?>" />
+  <input type="hidden" name="utm_medium" value="<?php echo $_GET['utm_medium']; ?>" />
+  <input type="hidden" name="utm_campaign" value="<?php echo $_GET['utm_campaign']; ?>" />
+  <input type="hidden" name="utm_content" value="<?php echo $_GET['utm_content']; ?>" />
+  <input type="hidden" name="utm_term" value="<?php echo $_GET['utm_term']; ?>" />
 
-          <label class="fs-200" for="name1">Имя</label>
-          <input type="text" name="name" id="name1" class="field" required />
-          <label class="fs-200" for="phone1">Телефон</label>
-          <input
-            type="tel"
-            class="field"
-            data-tel-input
-            maxlength="18"
-            name="number"
-            id="phone1"
-            required
-          />
-          <label class="fs-200" for="adr11">Адрес</label>
-          <input type="text" class="field" name="address" id="adr11" required />
-          <button
-            type="submit"
-            class="btn"
-            style="width: 80%; margin-left: 2rem"
-            name="call-submit"
-            onclick="ym(47175648,'reachGoal','order'); return true;"
-            onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();ym(49966909,'reachGoal','form-submit')"
-          >
-            Отправить
-          </button>
-          <input
-            autocomplete="off"
-            type="hidden"
-            name="call-control"
-            class="call-control"
-            value="0"
-          />
-        </form>
+  <label class="fs-200" for="name1">Имя</label>
+  <input type="text" name="name1" id="name1" class="field" required />
+  
+  <label class="fs-200" for="phone1">Телефон</label>
+  <input data-tel-input type="tel" class="field" name="phone1" id="phone1" maxlength="18" required />
+
+  <label class="fs-200" for="adr11">Адрес</label>
+  <input type="text" class="field" name="adr11" id="adr11" required />
+  
+  <button type="submit" class="btn" style="width: 80%; margin-left: 2rem" name="call-submit">
+    Отправить
+  </button>
+</form>
+
       </div>
     </section>
 
