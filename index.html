@@ -604,7 +604,7 @@
               class="btn bg-violet"
               style="width: 80%; margin-left: 2rem"
               name="call-submit"
-              onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();ym(49966909,'reachGoal','form-submit')"
+              onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(49966909, 'reachGoal', 'form-submit'); } return false;"
             >
               Отправить
             </button>
@@ -888,7 +888,7 @@
             class="btn bg-violet"
             style="width: 80%; margin-left: 2rem"
             name="call-submit"
-            onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();ym(49966909,'reachGoal','form-submit')"
+            onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(49966909, 'reachGoal', 'form-submit'); } return false;"
           >
             Отправить
           </button>

@@ -161,7 +161,9 @@ select {
   place-items: center;
   grid-template-columns: minmax(1rem, 1fr);
 }
-
+.error-border {
+  border: 2px solid red;
+}
 /* .grid-container * {
     max-width: 45ch;
 } */
