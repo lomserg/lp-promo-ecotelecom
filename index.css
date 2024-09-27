@@ -584,7 +584,7 @@ select {
 /* ------------------- */
 .hero__bg {
   /* background-image: url(./img/dog.jpg); */
-  height: 90vh;
+  height: auto;
 
   display: flex;
   /* align-items: center; */
@@ -686,6 +686,7 @@ html {
   gap: 1rem;
   margin-top: 7rem;
   width: 50%;
+  margin-bottom: 8rem;
 }
 .hero-txt-cta h1 {
   font-size: 3.5rem;
@@ -693,8 +694,9 @@ html {
 }
 @media (max-width: 1100px) {
   .hero-txt-cta {
-    margin-top: 6rem;
+    margin-top: 5rem;
     text-align: center;
+    margin-bottom: 0px;
   }
   .btn {
     align-self: center;
