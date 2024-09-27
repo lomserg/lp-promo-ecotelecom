@@ -414,7 +414,7 @@
             method="post"
             id="form2"
             name="call-form"
-            onsubmit="return validateForm();"
+            onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(47175648, 'reachGoal', 'order'); } return false;"
           >
             <p
               style="font-weight: bold; margin-bottom: 1rem; text-align: center"
@@ -445,9 +445,7 @@
               type="submit bg-violet"
               class="btn bg-violet"
               style="width: 80%; margin-left: 2rem"
-              name="call-submit"
-              onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();ym(49966909,'reachGoal','form-submit')"
-            >
+              name="call-submit"              >
               Отправить
             </button>
             <input
@@ -711,6 +709,8 @@
           method="post"
           id="form1"
           name="call-form"
+          onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(47175648, 'reachGoal', 'order'); } return false;"
+
         >
           <!-- hidden -->
           <input
@@ -758,8 +758,6 @@
             class="btn"
             style="width: 80%; margin-left: 2rem"
             name="call-submit"
-            onclick="ym(47175648,'reachGoal','order'); return true;"
-            onclick="this.disabled=true;this.value='Sending, please wait...';this.form.submit();ym(49966909,'reachGoal','form-submit')"
           >
             Отправить
           </button>
