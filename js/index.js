@@ -14,6 +14,41 @@
 // document.addEventListener('click', e => {
 //     console.log(e)
 // })
+function validateForm(event, form) {
+  var isValid = true; // Track if the form is valid
+  var name = form.querySelector("input[name='name']");
+  var phone = form.querySelector("input[name='number']");
+  var address = form.querySelector("input[name='address']");
+
+  // Clear previous error styles
+  name.classList.remove("error-border");
+  phone.classList.remove("error-border");
+  address.classList.remove("error-border");
+
+  // Validate name
+  if (name.value.trim() === "") {
+    name.classList.add("error-border"); // Add red border
+    isValid = false; // Mark form as invalid
+  }
+
+  // Validate phone
+  if (
+    phone.value.trim() === "" ||
+    phone.value.length < 10 ||
+    phone.value.length > 18
+  ) {
+    phone.classList.add("error-border"); // Add red border
+    isValid = false; // Mark form as invalid
+  }
+
+  // Validate address
+  if (address.value.trim() === "") {
+    address.classList.add("error-border"); // Add red border
+    isValid = false; // Mark form as invalid
+  }
+
+  return isValid; // Submit form only if isValid is true
+}
 
 const accordionItemHeaders = document.querySelectorAll(
   ".accordion-item-header"

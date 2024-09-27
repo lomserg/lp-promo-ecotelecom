@@ -275,7 +275,10 @@ select {
     grid-column: 3;
   }
 }
-
+/* Style for invalid fields */
+.error-border {
+  border: 2px solid red;
+}
 .container {
   padding-inline: 1em;
   margin-inline: auto;
