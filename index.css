@@ -589,11 +589,12 @@ select {
   display: flex;
   /* align-items: center; */
   justify-content: center;
-  background: rgb(92, 141, 93);
-  background: radial-gradient(
-    circle,
-    rgba(92, 141, 93, 1) 22%,
-    rgba(64, 119, 75, 1) 67%
+  background: rgb(201, 87, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(201, 87, 0, 1) 43%,
+    rgba(251, 186, 3, 1) 79%,
+    rgba(238, 170, 47, 1) 100%
   );
 }
 .hero__bg-container {
