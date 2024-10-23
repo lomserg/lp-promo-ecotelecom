@@ -5,7 +5,7 @@ function getFaqData() {
   fetch("/data/faq.json")
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       if (appElement) makeFaq(appElement, data);
     })
     .catch((err) => console.log(err));
@@ -13,33 +13,44 @@ function getFaqData() {
 getFaqData();
 const makeFaqContainerElement = () => {
   const faqContainer = document.createElement("div");
-  faqContainer.classList.add("faq-container");
+  faqContainer.classList.add("accordion");
   return faqContainer;
 };
 
 const makeFaqItemElement = (faqItem: { question: string; answer: string }) => {
   const { question, answer } = faqItem;
-  console.log(`Question: ${question}, Answer: ${answer}`);
+  // console.log(`Question: ${question}, Answer: ${answer}`);
   const faqItemElement = document.createElement("div");
-  const faqTitleElement = document.createElement("p");
-  const faqContentElement = document.createElement("p");
-  const faqTogleBtnElement = document.createElement("button");
+  const faqItemBodyElement = document.createElement("div");
+  const faqTitleElement = document.createElement("div");
+  const faqContentElement = document.createElement("div");
+  // const faqTogleBtnElement = document.createElement("button");
 
   faqTitleElement.textContent = question;
   faqContentElement.innerHTML = answer;
 
-  faqItemElement.classList.add("faq-item");
-  faqTitleElement.classList.add("faq-item__title");
-  faqContentElement.classList.add("faq-item__content");
-  faqTogleBtnElement.classList.add("faq-item__togle");
-
-  faqTitleElement.appendChild(faqTogleBtnElement);
-  faqItemElement.appendChild(faqTitleElement);
-  faqItemElement.appendChild(faqContentElement);
-
-  faqTogleBtnElement.addEventListener("click", () => {
-    faqItemElement.classList.toggle("open");
+  faqItemElement.classList.add("accordion-item");
+  faqTitleElement.classList.add("accordion-item-header");
+  faqContentElement.classList.add("accordion-item-body-content");
+  faqItemBodyElement.classList.add("accordion-item-body");
+  // faqTogleBtnElement.classList.add("faq-item__togle");
+  faqItemElement.addEventListener("click", () => {
+    console.log("active");
+    faqTitleElement.classList.toggle("active");
+    if (faqTitleElement.classList.contains("active")) {
+      faqItemBodyElement.style.maxHeight =
+        faqItemBodyElement.scrollHeight + "px";
+    } else {
+      faqItemBodyElement.style.maxHeight = "0";
+    }
   });
+  // faqTitleElement.appendChild(faqTogleBtnElement);
+  faqItemElement.appendChild(faqTitleElement);
+  faqItemBodyElement.appendChild(faqContentElement);
+  faqItemElement.appendChild(faqItemBodyElement);
+  // faqTogleBtnElement.addEventListener("click", () => {
+  //   faqItemElement.classList.toggle("open");
+  // });
   return faqItemElement;
 };
 
@@ -48,7 +59,7 @@ const makeFaq = (
   faqItems: { question: string; answer: string }[]
 ) => {
   const container = makeFaqContainerElement();
-  console.log(faqItems);
+  // console.log(faqItems);
   faqItems.forEach((item) => {
     const faqItemElement = makeFaqItemElement(item);
     container.append(faqItemElement);
