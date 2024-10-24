@@ -2,7 +2,8 @@ import "./faq.css";
 const appElement = document.querySelector<HTMLDivElement>("#app");
 
 export function getFaqData() {
-  fetch("/data/faq.json")
+  const baseUrl = import.meta.env.BASE_URL || "/"; // Use the base URL from Vite env
+  fetch(`${baseUrl}data/faq.json`)
     .then((response) => response.json())
     .then((data) => {
       // console.log(data);
