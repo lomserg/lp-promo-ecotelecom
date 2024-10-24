@@ -1,7 +1,7 @@
 import "./faq.css";
 const appElement = document.querySelector<HTMLDivElement>("#app");
 
-function getFaqData() {
+export function getFaqData() {
   fetch("/data/faq.json")
     .then((response) => response.json())
     .then((data) => {
@@ -66,4 +66,4 @@ const makeFaq = (
   });
   parenElement.appendChild(container);
 };
-export default makeFaq;
+export default getFaqData;
