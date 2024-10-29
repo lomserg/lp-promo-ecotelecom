@@ -11,7 +11,6 @@ export function getFaqData() {
     })
     .catch((err) => console.log(err));
 }
-getFaqData();
 const makeFaqContainerElement = () => {
   const faqContainer = document.createElement("div");
   faqContainer.classList.add("accordion");

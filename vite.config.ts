@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 // Vite configuration
 export default defineConfig({
   // Base public path when served in production (adjust if deploying to a subfolder)
-  base: "/vite/",
+  base: "",
 
   // Build options
   build: {

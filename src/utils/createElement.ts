@@ -9,24 +9,47 @@ export function createAndAppendElement(
   options: {
     className?: string;
     textContent?: string;
-  }
+    dataPackage?: string;
+    href?: string;
+    src?: string;
+    alt?: string;
+  } = {}
 ) {
   const element = document.createElement(tag);
+
   if (options.className) {
     element.className = options.className;
   }
   if (options.textContent) {
     element.innerText = options.textContent;
   }
-  // Object.keys(options).forEach((key) => {
-  //   element[key] = options[key];
-  // });
+
+  if (options.href && element instanceof HTMLAnchorElement) {
+    element.href = options.href;
+  }
+
+  if (options.src && element instanceof HTMLImageElement) {
+    element.src = options.src;
+    if (options.alt) {
+      element.alt = options.alt;
+    }
+  }
+
+  if (options.src && element instanceof HTMLIFrameElement) {
+    element.src = options.src;
+  }
+
   parent.appendChild(element);
   return element;
 }
 export function createElement(
   tag: string,
-  options: { className?: string | string[]; textContent?: string; id?: string }
+  options: {
+    className?: string | string[];
+    textContent?: string;
+    dataPackage?: string;
+    id?: string;
+  } = {}
 ) {
   const element = document.createElement(tag);
   if (options.className) {
@@ -37,13 +60,12 @@ export function createElement(
   if (options.textContent) {
     element.innerText = options.textContent;
   }
-
   if (options.id) {
     element.id = options.id;
   }
-  // Object.keys(options).forEach((key) => {
-  //   element[key] = options[key];
-  // });
+  if (options.dataPackage) {
+    element.setAttribute("data-package", options.dataPackage);
+  }
   return element;
 }
 // export default function createAndAppendElement(
