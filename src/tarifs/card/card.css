@@ -494,3 +494,14 @@
   margin-right: 1em;
   text-align: right;
 }
+.swiper-nav-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem; /* Adjust based on layout */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: grey !important;
+  font-size: 1.5rem; /* Size as needed */
+}

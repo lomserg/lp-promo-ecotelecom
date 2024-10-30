@@ -12,12 +12,6 @@ import "./card.css";
 //     <p class="tarif-speed">100 Мбит/с</p>
 //   </div>
 
-//   <div class="tarif-options-description">
-//     <ul class="tarif-options-list">
-//       <!-- <li>-20% при оплате на 12 месяцев</li>
-//       <li>Стартовый тариф для повседневных задач</li> -->
-//     </ul>
-//   </div>
 //   <button class="choose-btn">Выбрать</button>
 // </div>
 // </div>
