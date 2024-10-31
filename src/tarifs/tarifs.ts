@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
 const section = document.createElement("div");
 section.classList.add("tarifs__section");
 const appElement = document.querySelector<HTMLDivElement>("#app");
@@ -41,11 +42,13 @@ export default function getTarifsData(tariffsSection: HTMLElement) {
     })
     .catch((err) => console.log(err));
 }
+
 const makeTarifContainerElement = () => {
   const swiperContainer = document.createElement("div");
   swiperContainer.classList.add("swiper-wrapper");
   return swiperContainer;
 };
+
 const makeTarifWrapper = (isTv: boolean) => {
   const swiperClass = isTv
     ? "tarifs-slider-container2"
@@ -58,19 +61,19 @@ const makeTarifWrapper = (isTv: boolean) => {
 };
 
 const makeTarif = (parenElement: HTMLElement, tarifData: Tariff[]) => {
-  console.log(tarifData[0].tv);
+  // console.log(tarifData[0].tv);
   if (!tarifData.length) return;
   const container = makeTarifContainerElement();
   const wrapper = makeTarifWrapper(tarifData[0].tv);
-  wrapper.classList.add("container");
-  console.log(wrapper);
+  // wrapper.classList.add("container");
+  // console.log(wrapper);
   tarifData.forEach((item) => {
     const faqItemElement = makeCardItemElement(item);
     container.append(faqItemElement);
   });
   wrapper.appendChild(container);
   parenElement.appendChild(wrapper);
-  console.log(wrapper.classList[1]);
+  // console.log(wrapper.classList[1]);
   // Add navigation buttons
   const nextButton = document.createElement("div");
   nextButton.classList.add("swiper-button-next");
@@ -103,12 +106,12 @@ const makeTarif = (parenElement: HTMLElement, tarifData: Tariff[]) => {
         slidesPerView: 3,
       },
       991: {
-        slidesPerView: 3,
+        slidesPerView: 3.3,
       },
     },
     pagination: {
       el: ".swiper-pagination",
-      // clickable: true,
+      clickable: true,
     },
 
     navigation: {
