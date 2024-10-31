@@ -48,6 +48,7 @@ export function createElement(
     className?: string | string[];
     textContent?: string;
     dataPackage?: string;
+    href?: string;
     id?: string;
   } = {}
 ) {

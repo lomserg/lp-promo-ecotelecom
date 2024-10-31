@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   // Base public path when served in production (adjust if deploying to a subfolder)
   base: "",
-
+  // base: "/vite/",
   // Build options
   build: {
     outDir: "dist", // Output directory for build files

@@ -1,17 +1,9 @@
 import { makeCardItemElement } from "./card/card";
-import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
-// import Swiper JS
-
-Swiper.use([Navigation]);
-Swiper.use([Pagination]);
-// import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import {
+  initSlider,
+  makeTarifContainerElement,
+  makeTarifWrapper,
+} from "./helperSliderFunc";
 
 const section = document.createElement("div");
 section.classList.add("tarifs__section");
@@ -43,23 +35,6 @@ export default function getTarifsData(tariffsSection: HTMLElement) {
     .catch((err) => console.log(err));
 }
 
-const makeTarifContainerElement = () => {
-  const swiperContainer = document.createElement("div");
-  swiperContainer.classList.add("swiper-wrapper");
-  return swiperContainer;
-};
-
-const makeTarifWrapper = (isTv: boolean) => {
-  const swiperClass = isTv
-    ? "tarifs-slider-container2"
-    : "tarifs-slider-container";
-
-  const tarifWrapper = document.createElement("div");
-  tarifWrapper.classList.add("swiper");
-  tarifWrapper.classList.add(swiperClass);
-  return tarifWrapper;
-};
-
 const makeTarif = (parenElement: HTMLElement, tarifData: Tariff[]) => {
   // console.log(tarifData[0].tv);
   if (!tarifData.length) return;
@@ -71,8 +46,7 @@ const makeTarif = (parenElement: HTMLElement, tarifData: Tariff[]) => {
     const faqItemElement = makeCardItemElement(item);
     container.append(faqItemElement);
   });
-  wrapper.appendChild(container);
-  parenElement.appendChild(wrapper);
+
   // console.log(wrapper.classList[1]);
   // Add navigation buttons
   const nextButton = document.createElement("div");
@@ -82,41 +56,12 @@ const makeTarif = (parenElement: HTMLElement, tarifData: Tariff[]) => {
   prevButton.classList.add("swiper-button-prev");
   const swiperPagination = document.createElement("div");
   swiperPagination.classList.add("swiper-pagination");
+  wrapper.append(prevButton, nextButton);
+  wrapper.append(container, swiperPagination);
+  parenElement.appendChild(wrapper);
+  // wrapper.appendChild(swiperPagination);
+  // wrapper.appendChild(prevButton);
+  // wrapper.appendChild(nextButton);
 
-  wrapper.appendChild(swiperPagination);
-  wrapper.appendChild(prevButton);
-  wrapper.appendChild(nextButton);
-
-  new Swiper(`.${wrapper.classList[1]}`, {
-    loop: false,
-    grabCursor: true,
-    // cssMode: true,
-    //allowTouchMove: true,
-    //  freeMode: true,
-    noSwiping: false,
-    spaceBetween: 20,
-    breakpoints: {
-      0: {
-        slidesPerView: 1.15,
-      },
-      550: {
-        slidesPerView: 1.9,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      991: {
-        slidesPerView: 3.3,
-      },
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-
-    navigation: {
-      nextEl: `.${wrapper.classList[1]} .swiper-button-next`,
-      prevEl: `.${wrapper.classList[1]} .swiper-button-prev`,
-    },
-  });
+  initSlider(wrapper.classList[1]);
 };

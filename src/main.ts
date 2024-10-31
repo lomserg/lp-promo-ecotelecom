@@ -8,10 +8,10 @@ const appElement = document.querySelector<HTMLDivElement>("#app");
 if (appElement) {
   appElement.appendChild(heroSection);
 
-  appElement.appendChild(createSlider());
+  createSlider();
   const tariffsSection = document.createElement("section");
   tariffsSection.classList.add("tarifs__section");
-  // appElement.appendChild(tariffsSection);
+  appElement.appendChild(tariffsSection);
 
   getTarifsData(tariffsSection); // Load tariffs data
   getFaqData(); // Load FAQ data if applicable

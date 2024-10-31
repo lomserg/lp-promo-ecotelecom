@@ -1,4 +1,5 @@
 import "./card.css";
+import { backgroundModal } from "./modal/modal";
 // <div class="swiper-slide tarif-option">
 // <div class="tarif-slider-description">
 //   <!-- <div class="tarif-promo">Акция</div> -->
@@ -32,17 +33,19 @@ import {
   createElement,
 } from "../../utils/createElement";
 
-const makeCardItemElement = (cardItem: {
+interface Tariff {
   name: string;
   promo?: boolean;
   speed: number;
   price?: number;
   description: string;
-  tv?: boolean;
-  dataPackage?: string | null;
+  tv: boolean;
+  dataPackage: string | null;
   channels: number;
   movie: string | null;
-}) => {
+}
+
+const makeCardItemElement = (cardItem: Tariff) => {
   const { name, price, speed, dataPackage, tv, channels } = cardItem;
   // console.log(`Question: ${question}, Answer: ${answer}`);
 
@@ -77,11 +80,13 @@ const makeCardItemElement = (cardItem: {
       className: "tarif channels-item",
       dataPackage: `${dataPackage}`,
     });
-    createAndAppendElement(tvWraper, "a", {
+    const channelsLink = createElement("a", {
       className: "channels_link link trigger",
       href: "#channels",
       textContent: `${channels} ТВ-каналов`,
     });
+    channelsLink.addEventListener("click", showChannels);
+    tvWraper.appendChild(channelsLink);
     tarifParam.appendChild(tvWraper);
   }
 
@@ -112,3 +117,16 @@ console.log(125 % 10);
 export { makeCardItemElement };
 
 // console.log(slideItem);
+
+function showChannels() {
+  console.log(backgroundModal);
+  if (!backgroundModal.classList.contains("active"))
+    backgroundModal.classList.add("active");
+
+  for (const child of backgroundModal.children) {
+    console.log(child.className);
+    if (child.className === "modal-content") {
+      console.log(child.children[0]);
+    }
+  }
+}
