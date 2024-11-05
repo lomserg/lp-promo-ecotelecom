@@ -53,17 +53,22 @@ const makeCardItemElement = (cardItem: Tariff) => {
     className: "swiper-slide tarif-option",
   });
 
-  const swiperSlideWriper = createElement("div", {
+  const swiperSlideWraper = createElement("div", {
     className: "tarif-slider-description",
   });
-  createAndAppendElement(swiperSlideWriper, "p", {
+  createAndAppendElement(swiperSlideWraper, "p", {
     className: "tarif-name",
     textContent: `${name}`,
   });
-  createAndAppendElement(swiperSlideWriper, "p", {
+  const priceElement = createElement("p", {
     className: "tarif-price",
     textContent: `${price}`,
   });
+  createAndAppendElement(priceElement, "span", {
+    className: "span-price",
+    textContent: ` ₽/мес`,
+  });
+  swiperSlideWraper.appendChild(priceElement);
   const tarifParam = createElement("div", {
     className: "tarif-param",
   });
@@ -92,9 +97,9 @@ const makeCardItemElement = (cardItem: Tariff) => {
 
   // const faqTogleBtnElement = document.createElement("button");
 
-  swiperSlideWriper.appendChild(tarifParam);
-  swiperSlide.appendChild(swiperSlideWriper);
-  createAndAppendElement(swiperSlideWriper, "button", {
+  swiperSlideWraper.appendChild(tarifParam);
+  swiperSlide.appendChild(swiperSlideWraper);
+  createAndAppendElement(swiperSlideWraper, "button", {
     className: "choose-btn",
     textContent: "Выбрать",
   });
@@ -122,7 +127,7 @@ function showChannels() {
   console.log(backgroundModal);
   if (!backgroundModal.classList.contains("active"))
     backgroundModal.classList.add("active");
-
+  document.querySelector("#app")?.appendChild(backgroundModal);
   for (const child of backgroundModal.children) {
     console.log(child.className);
     if (child.className === "modal-content") {

@@ -2,7 +2,7 @@ import {
   createElement,
   //   createAndAppendElement,
 } from "../../../utils/createElement";
-
+import "./modal.css";
 // <div class="bg-modal" id="pack-5b504edcb2de77e82f591f1a">
 //   <button class="modal-btn">X</button>
 //   <div id="modal" class="modal-content">

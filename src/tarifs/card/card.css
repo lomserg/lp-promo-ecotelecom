@@ -22,7 +22,9 @@
 
   overflow-x: hidden;
 }
-
+.span-price {
+  font-size: 0.75rem;
+}
 @media (max-width: 600px) {
   .pricing-table > * + * {
     /*Selects all siblings elements after second <div> element*/
