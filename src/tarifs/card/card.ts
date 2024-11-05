@@ -46,7 +46,7 @@ interface Tariff {
 }
 
 const makeCardItemElement = (cardItem: Tariff) => {
-  const { name, price, speed, dataPackage, tv, channels } = cardItem;
+  const { name, price, speed, dataPackage, tv, channels, movie } = cardItem;
   // console.log(`Question: ${question}, Answer: ${answer}`);
 
   const swiperSlide = createElement("div", {
@@ -94,7 +94,13 @@ const makeCardItemElement = (cardItem: Tariff) => {
     tvWraper.appendChild(channelsLink);
     tarifParam.appendChild(tvWraper);
   }
-
+  if (movie) {
+    const tarifMovie = createElement("p", {
+      className: "tarif-movie",
+      textContent: `${movie}`,
+    });
+    tarifParam.appendChild(tarifMovie);
+  }
   // const faqTogleBtnElement = document.createElement("button");
 
   swiperSlideWraper.appendChild(tarifParam);
@@ -124,7 +130,6 @@ export { makeCardItemElement };
 // console.log(slideItem);
 
 function showChannels() {
-  console.log(backgroundModal);
   if (!backgroundModal.classList.contains("active"))
     backgroundModal.classList.add("active");
   document.querySelector("#app")?.appendChild(backgroundModal);

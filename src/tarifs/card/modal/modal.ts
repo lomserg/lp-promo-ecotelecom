@@ -29,7 +29,18 @@ const channels = createElement("div", {
   className: "channels-list",
 });
 modal.appendChild(channels);
+const deleteModal = () => {
+  backgroundModal.remove(); // Removes the backgroundModal from the DOM entirely
+};
 
+buttonModal.addEventListener("click", deleteModal);
+
+// Close modal on click outside the modal content
+backgroundModal.addEventListener("click", (event) => {
+  if (event.target === backgroundModal) {
+    deleteModal();
+  }
+});
 backgroundModal.append(buttonModal, modal);
 
 export { backgroundModal };

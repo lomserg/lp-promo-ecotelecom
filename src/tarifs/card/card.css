@@ -529,3 +529,14 @@
 .channels_list span img {
   width: 120px;
 }
+
+.table {
+  border-radius: 24px;
+  max-width: 280px;
+  height: 400px; /* Add your fixed height here */
+  color: #fff;
+  background: hsl(var(--clr-dark-blue));
+  padding: 15px;
+  position: relative;
+  overflow-x: hidden;
+}

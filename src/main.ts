@@ -1,4 +1,5 @@
 import "./style.css"; // Your main CSS styles
+import "./channels.js";
 import getFaqData from "./faq/faq"; // If you have an FAQ section
 import heroSection from "./hero/hero"; // Assuming you have a hero section
 import getTarifsData from "./tarifs/tarifs";
