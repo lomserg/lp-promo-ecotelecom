@@ -11,6 +11,7 @@ const appElement = document.querySelector<HTMLDivElement>("#app");
 appElement?.appendChild(section);
 
 interface Tariff {
+  id: number;
   name: string;
   promo?: boolean;
   speed: number;

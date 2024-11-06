@@ -34,6 +34,7 @@ import {
 } from "../../utils/createElement";
 
 interface Tariff {
+  id: number;
   name: string;
   promo?: boolean;
   speed: number;
@@ -46,7 +47,7 @@ interface Tariff {
 }
 
 const makeCardItemElement = (cardItem: Tariff) => {
-  const { name, price, speed, dataPackage, tv, channels, movie } = cardItem;
+  const { id, name, price, speed, dataPackage, tv, channels, movie } = cardItem;
   // console.log(`Question: ${question}, Answer: ${answer}`);
 
   const swiperSlide = createElement("div", {
@@ -105,10 +106,14 @@ const makeCardItemElement = (cardItem: Tariff) => {
 
   swiperSlideWraper.appendChild(tarifParam);
   swiperSlide.appendChild(swiperSlideWraper);
-  createAndAppendElement(swiperSlideWraper, "button", {
+  const button = createElement("button", {
     className: "choose-btn",
     textContent: "Выбрать",
   });
+  button.addEventListener("click", () => {
+    redirect(id);
+  });
+  swiperSlideWraper.appendChild(button);
   return swiperSlide;
 };
 
@@ -140,3 +145,17 @@ function showChannels() {
     }
   }
 }
+
+function redirect(id) {
+  if (id) {
+    window.location.href = `./detail.html?id=${id}`;
+  }
+}
+// listItem.addEventListener("click", async () => {
+//   const success = await fetchPpokemon(pokemonID);
+//   if (success) {
+//     window.location.href = `./detail.html?id=${pokemonID}`;
+//   }
+// });
+// listWrapper.appendChild(listItem);
+// });
