@@ -3,13 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4af22d591d.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
     <title>Document</title>
   </head>
   <body>
-    <div>
-      <h1 id="tariffName"></h1>
+    <div id="detail" class="container">
+      <!-- <h1 id="tariffName"></h1>
       <p id="tariffDescription"></p>
-      <p id="tariffPrice"></p>
+      <p id="tariffPrice"></p> -->
+    </div>
+    <div class="wrapper">
+      <div class="tarif-info__block">
+        <h3>Старт+ТВ</h3>
+        <p>100 Мбит/с</p>
+        <p>120 ТВ каналов</p>
+        <p>599 <span>₽/месяц</span></p>
+      </div>
+      <div class="form__block">
+        <h3>Заявка на подключение</h3>
+        <p>Наши менеджеры проконсультируют и подберут для вас лучшие условия</p>
+        <form
+          action="./php/form1.php"
+          method="post"
+          id="form1"
+          name="call-form"
+        >
+          <label class="fs-200" for="name1">Имя</label>
+          <input type="text" name="name" id="name1" class="field" required="" />
+          <label class="fs-200" for="phone1">Телефон</label>
+          <input
+            type="tel"
+            class="field"
+            data-tel-input=""
+            maxlength="18"
+            name="number"
+            id="phone1"
+            required=""
+          />
+          <label class="fs-200" for="adr11">Адрес</label>
+          <input
+            type="text"
+            class="field"
+            name="address"
+            id="adr11"
+            required=""
+          />
+          <button
+            type="submit bg-violet"
+            class="btn bg-violet"
+            style="width: 80%; margin-left: 2rem"
+            name="call-submit"
+            onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(49966909, 'reachGoal', 'form-submit'); } return false;"
+          >
+            Отправить
+          </button>
+          <input
+            autocomplete="off"
+            type="hidden"
+            name="call-control"
+            class="call-control"
+            value="0"
+          />
+        </form>
+      </div>
     </div>
   </body>
   <script type="module" src="./src/detail.ts"></script>

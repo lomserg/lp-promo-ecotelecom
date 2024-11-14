@@ -1,4 +1,10 @@
-// Fetching the 'id' from the URL
+// import { headerContainer } from "./hero/header/header";
+import { createElement } from "./utils/createElement";
+// import "./hero/hero.css";
+import "./detail.css";
+const appElement = document.querySelector<HTMLDivElement>("#detail");
+const section = document.createElement("div");
+section.classList.add("detail__section"); // Fetching the 'id' from the URL
 let currentTarifId: number | null = null;
 
 // Define the Tariff interface
@@ -27,12 +33,23 @@ function getTariffsData(id: number) {
       const tariff = data.find((item) => item.id === id);
       if (tariff) {
         // Display the tariff details on the page
-        document.querySelector("#tariffName")!.textContent = tariff.name;
-        document.querySelector("#tariffDescription")!.textContent =
-          tariff.description;
-        document.querySelector(
-          "#tariffPrice"
-        )!.textContent = `Price: $${tariff.price}`;
+        const tariffName = createElement("div", {
+          className: "tariffName",
+          textContent: `${tariff.name}`,
+        });
+        const tariffDescription = createElement("div", {
+          className: "tariffDescription",
+          textContent: `${tariff.description}`,
+        });
+        const tariffPrice = createElement("div", {
+          className: "tariffPrice",
+          textContent: `${tariff.price}`,
+        });
+        // document.querySelector("#tariffName")!.textContent = tariff.name;
+        section.appendChild(tariffName);
+        section.appendChild(tariffDescription);
+        section.appendChild(tariffPrice);
+        appElement?.appendChild(section);
         // Display any other relevant details
       } else {
         console.error("Tariff not found");
@@ -40,9 +57,10 @@ function getTariffsData(id: number) {
     })
     .catch((err) => console.error("Error fetching data:", err));
 }
-
 // Main script logic
 document.addEventListener("DOMContentLoaded", () => {
+  // appElement?.appendChild(headerContainer);
+
   const tarifID = new URLSearchParams(window.location.search).get("id");
   const id = parseInt(tarifID || "", 10);
 
