@@ -580,12 +580,11 @@ select {
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background: rgb(201, 87, 0);
+  background: rgb(128, 20, 23);
   background: linear-gradient(
     90deg,
-    rgba(201, 87, 0, 1) 11%,
-    rgba(251, 186, 3, 1) 67%,
-    rgba(238, 170, 47, 1) 100%
+    rgba(128, 20, 23, 1) 0%,
+    rgba(196, 0, 27, 1) 46%
   );
   /* background: rgb(201, 87, 0);
   background: linear-gradient(
@@ -645,7 +644,7 @@ select {
 .hero__title--sub {
   font-size: 24px;
   font-family: "GilroyExtraBold";
-  color: #23262b;
+  color: #fdcf0a;
   font-weight: 700;
   width: 80%;
 }
@@ -706,12 +705,11 @@ html {
     height: auto;
 
     align-items: center;
-    background: rgb(201, 87, 0);
+    background: rgb(128, 20, 23);
     background: linear-gradient(
       180deg,
-      rgba(201, 87, 0, 1) 43%,
-      rgba(251, 186, 3, 1) 79%,
-      rgba(238, 170, 47, 1) 100%
+      rgba(128, 20, 23, 1) 0%,
+      rgba(196, 0, 27, 1) 46%
     );
   }
   .hero__bg-container {
