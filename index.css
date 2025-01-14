@@ -610,17 +610,21 @@ select {
   justify-content: center;
   width: 1200px;
   gap: 2rem;
+  height: 100%;
 }
 
 .primary-navigation {
   display: none;
 }
-
 .hero-img {
-  width: 50%;
-  margin-top: 7rem;
+  background-image: url(./img/1839143497_1b.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  min-height: 405px;
+  align-self: end;
 }
-
 .hero-img img {
   display: block;
 }
@@ -646,7 +650,7 @@ select {
   font-family: "GilroyExtraBold";
   color: #fdcf0a;
   font-weight: 700;
-  width: 80%;
+  width: 88%;
 }
 
 html {
@@ -683,6 +687,7 @@ html {
   flex-direction: column;
   width: 50%;
   margin-top: 4rem;
+  align-self: center;
   /* gap: 1rem; */
 }
 /* .hero-txt-cta h1 {
