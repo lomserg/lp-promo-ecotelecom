@@ -580,11 +580,11 @@ select {
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background: rgb(128, 20, 23);
+  background: rgb(207, 123, 40);
   background: linear-gradient(
     90deg,
-    rgba(128, 20, 23, 1) 0%,
-    rgba(196, 0, 27, 1) 46%
+    rgba(207, 123, 40, 1) 31%,
+    rgba(253, 195, 21, 1) 100%
   );
   /* background: rgb(201, 87, 0);
   background: linear-gradient(
@@ -601,6 +601,7 @@ select {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .hero__bg-container {
@@ -617,20 +618,22 @@ select {
   display: none;
 }
 .hero-img {
-  background-image: url(./img/1839143497_1b.png);
+  background-image: url(./img/01_1.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
-  min-height: 405px;
+  min-height: 575px;
   align-self: end;
+  position: relative;
+  bottom: -58px;
 }
 .hero-img img {
   display: block;
 }
 
 .hero__bg-title {
-  font-size: 55px;
+  font-size: 75px;
   font-family: "GilroyExtraBold";
   color: #fff;
   text-transform: uppercase;
@@ -702,6 +705,7 @@ html {
     margin-top: 1rem;
     align-items: center;
     justify-content: center;
+    width: 90%;
   }
   .btn {
     align-self: center;
@@ -710,11 +714,11 @@ html {
     height: auto;
 
     align-items: center;
-    background: rgb(128, 20, 23);
+    background: rgb(207, 123, 40);
     background: linear-gradient(
       180deg,
-      rgba(128, 20, 23, 1) 0%,
-      rgba(196, 0, 27, 1) 46%
+      rgba(207, 123, 40, 1) 31%,
+      rgba(253, 195, 21, 1) 100%
     );
   }
   .hero__bg-container {
@@ -722,7 +726,7 @@ html {
     flex-direction: column;
   }
   .hero__bg-title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     text-align: center;
   }
   .info-block img {
@@ -736,7 +740,15 @@ html {
     align-items: center;
     justify-content: center;
   }
-
+  .hero-img {
+    background-image: url(./img/01_1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    min-height: 394px;
+    align-self: end;
+  }
   .hero__title--sub {
     width: 100%;
     text-align: center;
@@ -751,10 +763,10 @@ html {
     justify-content: center;
   }
   .hero__bg-bigtitle {
-    font-size: 3rem;
+    font-size: 2rem;
   }
   .hero__bg-title {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   .btn {
@@ -767,225 +779,6 @@ html {
     font-size: 16px;
   }
 }
-/* .header-home {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-.bg-hero {
-  position: relative;
-  width: 100vw;
-  height: 90vh;
-  padding: 5em 0;
-}
-.bg-hero::before {
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: url(./img/hits_ny_promo.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 40% 90%;
-  filter: brightness(80%);
-}
-.hero__new-text {
-  font-family: "GilroyExtraBold";
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 2;
-}
-.hero__new-text h1 {
-  font-size: 48px;
-  color: #fff;
-  font-family: "GilroyExtraBold";
-  width: 40%;
-}
-
-.hero__new-text h3 {
-  color: #ffc955;
-  width: 40%;
-  font-size: 28px;
-  font-weight: 200;
-  margin-bottom: 1rem;
-}
-@media (max-width: 900px) {
-  .hero__new-text h1 {
-    font-size: 32px;
-    width: 67%;
-  }
-  .hero__new-text {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    gap: 1rem;
-  }
-  .hero__new-text h3 {
-    width: 60%;
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 500px) {
-  .hero__new-text h1 {
-    font-size: 24px;
-    width: 90%;
-  }
-
-  .hero__new-text h3 {
-    width: 90%;
-    font-size: 16px;
-  }
-  .bg-hero::before {
-    background-position: 70% 90%;
-  }
-  .logo-white {
-    background: url(./img/logo_w_small.svg);
-    background-repeat: no-repeat;
-    height: 45px;
-  }
-} */
-/* 
-.bg-hero {
-  background: radial-gradient(
-    120.16% 64.01% at 78.96% 42.91%,
-    #da8c8c 0%,
-    #db6e6b 100%
-  );
-}
-
-.hero__wrapper {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-  z-index: 22;
-  padding-bottom: 4rem;
-  align-items: center;
-}
-
-.hero__title {
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(253, 230, 233, 1) 100%
-  );
-  padding: 1rem 1.3rem;
-  color: #231f20;
-  text-transform: uppercase;
-  font-family: "GilroyExtraBold";
-  font-size: 48px;
-  border: 3px solid #fff;
-  border-radius: 16px;
-}
-
-.hero__title--sub {
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(253, 230, 233, 1) 100%
-  );
-  font-family: "GilroyExtraBold";
-  color: #eb8686;
-  border: 3px solid #fff;
-  border-radius: 16px;
-  font-size: 16px;
-  width: 60%;
-  margin-top: -1rem;
-}
-.hero__left {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero__right {
-  width: 40%;
-}
-.hero__right img {
-  height: 100%;
-  display: block;
-}
-
-.hero__description {
-  display: flex;
-  align-items: center;
-  margin: 2rem 0;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.hero__description-left {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  object-fit: contain;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.hero__description__first {
-  font-size: 48px;
-  font-family: "GilroyExtraBold";
-  color: #fff;
-  text-align: center;
-  line-height: 1;
-}
-
-.hero__description__second {
-  font-size: 16px;
-  font-family: "GilroyExtraBold";
-  color: #fff;
-  text-align: center;
-}
-
-.circle {
-  border-radius: 50%;
-  border: solid 3px #fff;
-  padding: 2rem;
-}
-@media (max-width: 1100px) {
-  .hero__title {
-    font-size: 24px;
-  }
-  .hero__title--sub {
-    margin-inline: auto;
-  }
-  .logo-white {
-    height: 80px;
-    width: 100px;
-  }
-  .hero__wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero__right {
-    margin-top: 2rem;
-    width: 80%;
-  }
-
-  .hero__right img {
-  
-    display: block;
-    width: 100%;
-  }
-}
-
-@media (max-width: 1100px) {
-  .hero__title {
-    font-size: 18px;
-  }
-  .hero__title--sub {
-    font-size: 14px;
-    width: 80%;
-  }
-} */
-
-/* old hero css */
 
 /* ------------------- */
 /* tabs         */

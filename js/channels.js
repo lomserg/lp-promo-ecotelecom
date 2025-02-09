@@ -18,17 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
             if (item.id === el.channelId) {
               block += `<div class="channels_item" data-name="${item.info.metaInfo.title.slice(
                 4
-              )}"><img src="${
-                item.info.mediaInfo.thumbnails[0].url
-              }?width=70&height=40" title="${item.info.metaInfo.title.slice(
-                4
-              )}" alt="${item.info.metaInfo.title.slice(4)}" data-id="${
-                item.id
-              }" /></div>`;
+              )}">
+                <img src="${
+                  item.info.mediaInfo.thumbnails[0].url
+                }?width=70&height=40" 
+                     title="${item.info.metaInfo.title.slice(4)}" 
+                     alt="${item.info.metaInfo.title.slice(4)}" 
+                     data-id="${item.id}" />
+              </div>`;
             }
           });
         });
-        box.innerHTML += block;
+
+        if (box) {
+          box.innerHTML += block;
+        } else {
+          console.warn("Box element is null or undefined.");
+        }
       })
       .catch((error) => console.error("Error fetching channels:", error));
   }
@@ -43,12 +49,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((data) => {
         if (box) {
           getAll(data.channels, box);
-        } else {
+        } else if (block) {
           let num;
-          block.textContent.length === 0
-            ? (num = data.channels.length)
-            : (num = block.textContent);
+          if (block.textContent.length === 0) {
+            num = data.channels.length;
+          } else {
+            num = block.textContent;
+          }
           block.innerHTML = `<strong>${num}</strong> ${declOfNum(num)}`;
+        } else {
+          console.warn("Block element is null. Skipping update.");
         }
       })
       .catch((error) => console.error("Error fetching pack:", error));
@@ -56,16 +66,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const channelsItems = document.querySelectorAll(".channels-item");
   channelsItems.forEach(function (item) {
+    let blockElement = item.querySelector(".channels-amount");
+
+    // If .channels-amount doesn't exist, create it dynamically
+    if (!blockElement) {
+      blockElement = document.createElement("div");
+      blockElement.className = "channels-amount";
+      item.appendChild(blockElement);
+    }
+
     getPack({
       id: item.dataset.package,
-      block: item.querySelector(".channels-amount"),
+      block: blockElement,
     });
   });
 
   document.addEventListener("click", function (event) {
     if (event.target.classList.contains("trigger")) {
-      const packageId = event.target.closest(".channels-item").dataset.package;
+      const item = event.target.closest(".channels-item");
+      if (!item) {
+        console.warn("No .channels-item found for trigger click.");
+        return;
+      }
+
+      const packageId = item.dataset.package;
       const channelsList = document.querySelector(".channels-list");
+      if (!channelsList) {
+        console.warn(".channels-list element not found.");
+        return;
+      }
+
       channelsList.innerHTML = "";
       getPack({
         id: packageId,
