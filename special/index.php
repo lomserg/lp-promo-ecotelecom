@@ -87,7 +87,7 @@
           <div class="whatsapp">
             <a
               id="whatsapp-link"
-              href="https://api.whatsapp.com/send/?phone=79912256610"
+              href="https://api.whatsapp.com/send/?phone=79776340477"
               target=""
             >
               <img
@@ -108,13 +108,13 @@
       </header>
       <div class="hero__bg-container container">
         <div class="hero-txt-cta flow">
-          <h1 class="hero__bg-title">НАЙДЕНЫ СЕКРЕТНЫЕ ТАРИФЫ</h1>
-          <p class="hero__bg-subtitle">Для нашего дома</p>
+          <h1 class="hero__bg-title">СЕКРЕТНЫЕ ТАРИФЫ</h1>
+          <p class="hero__bg-subtitle">ДЛЯ ВАШЕГО ДОМА</p>
           <a href="#tarif_block" class="btn">Подробнее</a>
         </div>
 
         <div class="hero-img">
-          <img src="./img/detective.png" alt="" />
+          <img src="./img/hero.png" alt="" />
         </div>
       </div>
     </section>
@@ -143,7 +143,7 @@
               <!-- <div class="tarif-icon"></div> -->
               <p class="tarif-name">СТАРТ</p>
               <p class="tarif-price">
-                299 <span style="font-size: 0.75rem">₽/мес</span>
+                400 <span style="font-size: 0.75rem">₽/мес</span>
               </p>
 
               <div class="tarif-param">
@@ -166,7 +166,7 @@
               <!-- <div class="tarif-icon"></div> -->
               <p class="tarif-name">ХИТ</p>
               <p class="tarif-price">
-                399 <span style="font-size: 0.75rem">₽/мес</span>
+                500 <span style="font-size: 0.75rem">₽/мес</span>
               </p>
 
               <div class="tarif-param">
@@ -234,7 +234,7 @@
                 <!-- <div class="tarif-icon"></div> -->
                 <p class="tarif-name">СТАРТ+ТВ</p>
                 <p class="tarif-price">
-                  449 <span style="font-size: 0.75rem">₽/мес</span>
+                  550 <span style="font-size: 0.75rem">₽/мес</span>
                 </p>
                 <div class="tarif-param">
                   <p class="tarif-speed">100 Мбит/с</p>
@@ -267,7 +267,7 @@
                 <!-- <div class="tarif-icon"></div> -->
                 <p class="tarif-name">ХИТ+ТВ</p>
                 <p class="tarif-price">
-                  549<span style="font-size: 0.75rem">₽/мес</span>
+                  650<span style="font-size: 0.75rem">₽/мес</span>
                 </p>
                 <div class="tarif-param">
                   <p class="tarif-speed">300 Мбит/с</p>
@@ -358,7 +358,7 @@
 
       <div class="modal-bg">
         <div class="modal">
-        <form
+          <form
             action="./php/telegram.php"
             method="post"
             id="form2"
@@ -394,7 +394,8 @@
               type="submit bg-violet"
               class="btn bg-violet"
               style="width: 80%; margin-left: 2rem"
-              name="call-submit"              >
+              name="call-submit"
+            >
               Отправить
             </button>
             <input
@@ -659,7 +660,6 @@
           id="form1"
           name="call-form"
           onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(47175648, 'reachGoal', 'order'); } return false;"
-
         >
           <!-- hidden -->
           <input
