@@ -456,9 +456,14 @@ select {
   height: 2rem;
   position: absolute;
   top: 10px;
+  z-index: 100;
 }
 .whatsapp img {
   width: 40px;
+}
+
+.phoneid {
+  cursor: pointer;
 }
 
 .header-content {

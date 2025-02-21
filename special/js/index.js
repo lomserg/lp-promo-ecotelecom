@@ -1,3 +1,4 @@
+console.log("sdfsd");
 function validateForm(event, form) {
   var isValid = true; // Track if the form is valid
   var name = form.querySelector("input[name='name']");
@@ -90,7 +91,7 @@ tippy("#video1", {
 
 tippy("#video2", {
   content:
-    "Видеосервис Amediateka, START или more.tv на выбор. Онлайн-кинотеатр PREMIER до 31 декабря 2022 года бесплатно!",
+    "Видеосервис AMEDIATEKA или START — на выбор. Онлайн-кинотеатр PREMIER в подарок.",
   theme: "light",
   placement: "bottom",
 });
@@ -174,59 +175,59 @@ let whatsapp = document.getElementById("whatsapp-link");
 //     modal_container.classList.remove('show');
 // })
 
-const queryString = window.location.search;
+// const  = window.location.search;
 
-//console.log(queryString);
+//console.log();
 
-let paramString = queryString.split("=")[3];
+// let paramString = .split("=")[3];
 // let paramSource = paramString.split('=')[1];
 
-console.log(typeof paramString);
-console.log(typeof queryString);
+// console.log(typeof paramString);
+// console.log(typeof );
 
-let utmOpm = paramString.split("&");
-console.log(utmOpm[0]);
+// let utmOpm = paramString.split("&");
+// console.log(utmOpm[0]);
 
-let watsapp_7850 = "https://api.whatsapp.com/send/?phone=79166063084";
-let watsapp_7851 = "https://api.whatsapp.com/send/?phone=79778373538";
+// let watsapp_7850 = "https://api.whatsapp.com/send/?phone=79166063084";
+// let watsapp_7851 = "https://api.whatsapp.com/send/?phone=79778373538";
 
-let opm_7850 = "opm_7850";
-let opm_7851 = "opm_7851";
+// let opm_7850 = "opm_7850";
+// let opm_7851 = "opm_7851";
 
-let opm_7852 = "opm_7852";
-let opm_7853 = "opm_7853";
+// let opm_7852 = "opm_7852";
+// let opm_7853 = "opm_7853";
 
-let opm_7854 = "opm_7854";
-let opm_7855 = "opm_7855";
+// let opm_7854 = "opm_7854";
+// let opm_7855 = "opm_7855";
 
-let opm_7856 = "opm_7856";
-let opm_7857 = "opm_7857";
+// let opm_7856 = "opm_7856";
+// let opm_7857 = "opm_7857";
 
-let opm_7859 = "opm_7859";
-let opm_7860 = "opm_7860";
+// let opm_7859 = "opm_7859";
+// let opm_7860 = "opm_7860";
 
-if (utmOpm[0].includes(opm_7850)) {
-  phone.innerHTML = content7850;
-  whatsapp.href = watsapp_7850;
-} else if (utmOpm[0].includes(opm_7851)) {
-  phone.innerHTML = content7851;
-} else if (utmOpm[0].includes(opm_7852)) {
-  phone.innerHTML = content7852;
-} else if (utmOpm[0].includes(opm_7853)) {
-  phone.innerHTML = content7853;
-} else if (utmOpm[0].includes(opm_7854)) {
-  phone.innerHTML = content7854;
-} else if (utmOpm[0].includes(opm_7855)) {
-  phone.innerHTML = content7855;
-} else if (utmOpm[0].includes(opm_7856)) {
-  phone.innerHTML = content7856;
-} else if (utmOpm[0].includes(opm_7857)) {
-  phone.innerHTML = content7857;
-} else if (utmOpm[0].includes(opm_7859)) {
-  phone.innerHTML = content7859;
-} else if (utmOpm[0].includes(opm_7860)) {
-  phone.innerHTML = content7860;
-}
+// if (utmOpm[0].includes(opm_7850)) {
+//   phone.innerHTML = content7850;
+//   whatsapp.href = watsapp_7850;
+// } else if (utmOpm[0].includes(opm_7851)) {
+//   phone.innerHTML = content7851;
+// } else if (utmOpm[0].includes(opm_7852)) {
+//   phone.innerHTML = content7852;
+// } else if (utmOpm[0].includes(opm_7853)) {
+//   phone.innerHTML = content7853;
+// } else if (utmOpm[0].includes(opm_7854)) {
+//   phone.innerHTML = content7854;
+// } else if (utmOpm[0].includes(opm_7855)) {
+//   phone.innerHTML = content7855;
+// } else if (utmOpm[0].includes(opm_7856)) {
+//   phone.innerHTML = content7856;
+// } else if (utmOpm[0].includes(opm_7857)) {
+//   phone.innerHTML = content7857;
+// } else if (utmOpm[0].includes(opm_7859)) {
+//   phone.innerHTML = content7859;
+// } else if (utmOpm[0].includes(opm_7860)) {
+//   phone.innerHTML = content7860;
+// }
 
 tippy("#tooltip1", {
   content:

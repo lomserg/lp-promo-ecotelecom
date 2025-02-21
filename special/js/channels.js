@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((response) => response.json())
       .then((data) => {
         let block = "";
-
+        console.log(data);
         data.channels.forEach(function (item) {
           channels.forEach((el) => {
             if (item.id === el.channelId) {

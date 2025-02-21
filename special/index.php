@@ -8,8 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
-    <meta property="og:url" content="https://intet.ru.net" />
-    <meta property="og:image" content="https://intet.ru.net/img/logo.svg" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins&family=Roboto&display=swap"
       rel="stylesheet"
@@ -21,11 +20,12 @@
       defer
     ></script>
 
-    <script src="https://unpkg.com/@popperjs/core@2" defer></script>
-    <script src="https://unpkg.com/tippy.js@6" defer></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
 
     <script defer src="./js/channels.js"></script>
     <script defer src="./js/modal.js"></script>
+    <script defer src="./js/index.js"></script>
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
@@ -69,14 +69,15 @@
         webvisor: true,
       });
     </script>
-    <noscript
-      ><div>
+    <noscript>
+      <div>
         <img
           src="https://mc.yandex.ru/watch/47175648"
           style="position: absolute; left: -9999px"
           alt=""
-        /></div
-    ></noscript>
+        />
+      </div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
 
     <section class="hero__bg">
@@ -98,11 +99,12 @@
           </div>
           <div class="phone text-dark">
             <a
-              style="text-decoration: none"
               class="phoneid"
-              href="tel:+74998017799"
-              >+7 499 801-77-99</a
+              href="tel:+74958017799"
+              style="text-decoration: none; color: inherit"
             >
+              +7 495 801-77-99
+            </a>
           </div>
         </div>
       </header>
@@ -243,7 +245,7 @@
                     data-package="5b504edcb2de77e82f591f1a"
                   >
                     <a class="channels_link link trigger" href="#channels"
-                      >130 ТВ-каналов</a
+                      >95 ТВ-каналов</a
                     >
                   </div>
                   <p class="tarif-movie">
@@ -276,7 +278,7 @@
                     data-package="630f5b1c944a765510046e89"
                   >
                     <a class="channels_link link trigger" href="#channels"
-                      >250 ТВ-каналов</a
+                      >275 ТВ-каналов</a
                     >
                   </div>
                   <p class="tarif-movie" id="video1">PREMIER</p>
@@ -306,7 +308,7 @@
                     data-package="5e7b7e70acb10bd8ce882ef1"
                   >
                     <a class="channels_link link trigger" href="#channels"
-                      >300 ТВ-каналов</a
+                      >320 ТВ-каналов</a
                     >
                   </div>
                   <p class="tarif-movie" id="video2">2 из 3 видеосервисов</p>
@@ -504,7 +506,7 @@
                 <div class="feature-description fs-300">
                   Всё летает: скорость 500 Мбит/сек подходит для домашних и
                   рабочих задач — игр, видеосвязи, просмотра фильмов, работы с
-                  офисными приложениями
+                  офисными приложениями.
                 </div>
               </div>
             </div>
@@ -739,9 +741,12 @@
             ><i class="fab fa-vk"></i
           ></a>
         </li>
-        <!--   <li class="social-item"><a href="https://www.facebook.com/ecotelecom" class="social-link"><i
-                            class="fab fa-facebook-square"></i></a></li>
-                <li class="social-item"><a href="https://www.instagram.com/ecotelecom_official/" class="social-link"><i
+        <li class="social-item">
+          <a href="https://t.me/ecotelecom_msk" class="social-link"
+            ><i class="fab fa-telegram"></i
+          ></a>
+        </li>
+        <!--    <li class="social-item"><a href="https://www.instagram.com/ecotelecom_official/" class="social-link"><i
                             class="fab fa-instagram"></i></a></li>-->
       </ul>
     </footer>
@@ -751,9 +756,7 @@
       src="//tagmanager.andata.ru/api/v1/container/9b91d137-d2ac-4f60-8303-e5be7e7bbb96/published/code.js"
     ></script>
     <!-- End Andata Tag Manager Code -->
-    <script src="https://unpkg.com/@popperjs/core@2" defer></script>
-    <script src="https://unpkg.com/tippy.js@6" defer></script>
-    <script src="js/index.js" defer></script>
+
     <script src="js/phoneinput.js"></script>
     <script src="slider.js"></script>
   </body>
