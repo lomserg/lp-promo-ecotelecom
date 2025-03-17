@@ -1,5 +1,7 @@
 import "./card.css";
 import { backgroundModal } from "./modal/modal";
+import { createTarifPage } from "../createTarifPage";
+// import { createTarifPage, loadTariffPage } from "../tarifsDetail";
 // <div class="swiper-slide tarif-option">
 // <div class="tarif-slider-description">
 //   <!-- <div class="tarif-promo">Акция</div> -->
@@ -111,7 +113,13 @@ const makeCardItemElement = (cardItem: Tariff) => {
     textContent: "Выбрать",
   });
   button.addEventListener("click", () => {
-    redirect(id);
+    // Update the URL query string
+    // const newUrl = `${window.location.pathname}?id=${id}`;
+    // window.history.pushState({ id }, "", newUrl);
+    console.log("click", id);
+    // Load the detail dynamically
+    history.pushState({}, "", `?id=${id}`);
+    createTarifPage(id);
   });
   swiperSlideWraper.appendChild(button);
   return swiperSlide;
@@ -146,11 +154,6 @@ function showChannels() {
   }
 }
 
-function redirect(id) {
-  if (id) {
-    window.location.href = `./detail.html?id=${id}`;
-  }
-}
 // listItem.addEventListener("click", async () => {
 //   const success = await fetchPpokemon(pokemonID);
 //   if (success) {

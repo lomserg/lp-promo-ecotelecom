@@ -10,7 +10,7 @@ section.classList.add("tarifs__section");
 const appElement = document.querySelector<HTMLDivElement>("#app");
 appElement?.appendChild(section);
 
-interface Tariff {
+export interface Tariff {
   id: number;
   name: string;
   promo?: boolean;
@@ -44,8 +44,8 @@ const makeTarif = (parenElement: HTMLElement, tarifData: Tariff[]) => {
   // wrapper.classList.add("container");
   // console.log(wrapper);
   tarifData.forEach((item) => {
-    const faqItemElement = makeCardItemElement(item);
-    container.append(faqItemElement);
+    const tarifItemElement = makeCardItemElement(item);
+    container.append(tarifItemElement);
   });
 
   // console.log(wrapper.classList[1]);
