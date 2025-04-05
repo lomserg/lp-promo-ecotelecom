@@ -576,15 +576,54 @@ select {
   transition: 0.3s;
 }
 
+.button-63 {
+  align-items: center;
+  background: #ff8a00;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 15px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: var(--ff-normal);
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.button-63:active,
+.button-63:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .button-63 {
+    font-size: 18px;
+    min-width: 196px;
+  }
+}
 /* ------------------- */
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background: rgb(207, 123, 40);
+  background: rgb(175, 110, 174);
   background: linear-gradient(
-    90deg,
-    rgba(207, 123, 40, 1) 31%,
-    rgba(253, 195, 21, 1) 100%
+    122deg,
+    rgba(175, 110, 174, 1) 0%,
+    rgba(97, 135, 196, 1) 35%,
+    rgba(163, 212, 234, 1) 100%
   );
   /* background: rgb(201, 87, 0);
   background: linear-gradient(
@@ -618,15 +657,12 @@ select {
   display: none;
 }
 .hero-img {
-  background-image: url(./img/01_1.png);
+  background-image: url(./img/gifts.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   width: 100%;
-  min-height: 575px;
-  align-self: end;
-  position: relative;
-  bottom: -58px;
+  min-height: 450px;
 }
 .hero-img img {
   display: block;
@@ -691,7 +727,8 @@ html {
   width: 50%;
   margin-top: 4rem;
   align-self: center;
-  /* gap: 1rem; */
+  align-items: self-start;
+  gap: 1.25rem;
 }
 /* .hero-txt-cta h1 {
   font-size: 3.5rem;
@@ -714,12 +751,6 @@ html {
     height: auto;
 
     align-items: center;
-    background: rgb(207, 123, 40);
-    background: linear-gradient(
-      180deg,
-      rgba(207, 123, 40, 1) 31%,
-      rgba(253, 195, 21, 1) 100%
-    );
   }
   .hero__bg-container {
     margin-top: 5rem;
@@ -741,12 +772,12 @@ html {
     justify-content: center;
   }
   .hero-img {
-    background-image: url(./img/01_1.png);
+    background-image: url(./img/gifts.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     width: 100%;
-    min-height: 394px;
+    min-height: 273px;
     align-self: end;
   }
   .hero__title--sub {
@@ -925,6 +956,15 @@ html {
   line-height: 1;
   align-items: center;
   justify-content: center;
+}
+
+.tarif-price-old {
+  position: absolute;
+  top: -10px;
+  font-size: 16px;
+  right: 32%;
+  color: #afafaf;
+  text-decoration-line: line-through;
 }
 .tarif-price-container {
   display: flex;
@@ -1349,6 +1389,8 @@ html {
 .tarif-price {
   font-weight: bold;
   font-size: 2.7rem;
+  position: relative;
+  margin-top: 1.25rem;
   /* margin-bottom: 1rem; */
 }
 .swiper-container {
@@ -1459,7 +1501,7 @@ html {
   display: flex;
   margin-top: 2rem;
   justify-content: start;
-  align-items: start;
+  align-items: center;
 }
 
 .info-block {
@@ -1489,6 +1531,8 @@ html {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  justify-content: center;
+  align-self: center;
 }
 
 @media (max-width: 1100px) {
