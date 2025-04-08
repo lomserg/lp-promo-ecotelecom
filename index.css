@@ -1092,9 +1092,12 @@ html {
 .feature-txt {
     width: 45%;
 } */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .feature {
     padding: 0rem;
+  }
+  .feature-advantage-item img {
+    width: 15%;
   }
 }
 
