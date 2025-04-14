@@ -1679,13 +1679,14 @@ input {
   .feature {
     height: 650px;
   }
-
+  .feature-advantage-item img {
+    width: 15%;
+  }
   .feature-container {
     flex-direction: column;
     height: 600px;
   }
-
-  .feature-img,
+  promo-03-25 .feature-img,
   .feature-txt {
     width: 90%;
   }
