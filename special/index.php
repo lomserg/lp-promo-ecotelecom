@@ -109,14 +109,16 @@
         </div>
       </header>
       <div class="hero__bg-container container">
-        <div class="hero-txt-cta flow">
-          <h1 class="hero__bg-title">СЕКРЕТНЫЕ ТАРИФЫ</h1>
-          <p class="hero__bg-subtitle">ДЛЯ ВАШЕГО ДОМА</p>
-          <a href="#tarif_block" class="btn">Подробнее</a>
-        </div>
+        <div class="hero__bg-container container">
+          <div class="hero-txt-cta flow">
+            <h1 class="hero__bg-title">ВЫГОДА ОЧЕВИДНА</h1>
+            <p class="hero__bg-subtitle">CЕКРЕТНЫЕ ТАРИФЫ ДЛЯ ВАШЕГО ДОМА</p>
+            <a href="#tarif_block" class="btn">Подробнее</a>
+          </div>
 
-        <div class="hero-img">
-          <img src="./img/hero.png" alt="" />
+          <div class="hero-img">
+            <!-- <img src="./img/giraffe_.png" alt="" /> -->
+          </div>
         </div>
       </div>
     </section>
@@ -479,7 +481,7 @@
             <div class="feature-advantage-item">
               <img
                 style="align-self: flex-start"
-                src="img/emoticon-happy.svg"
+                src="img/star-icon.png"
                 alt=""
               />
               <div class="adv-content">
@@ -494,11 +496,7 @@
               </div>
             </div>
             <div class="feature-advantage-item">
-              <img
-                style="align-self: flex-start"
-                src="img/emoticon-happy.svg"
-                alt=""
-              />
+              <img style="align-self: flex-start" src="img/rocket-icon.png" />
               <div class="adv-content">
                 <div class="feature-title fs-400 text-white ff-main fw-bold">
                   Стабильный интернет
@@ -513,7 +511,7 @@
             <div class="feature-advantage-item">
               <img
                 style="align-self: flex-start"
-                src="img/emoticon-happy.svg"
+                src="img/piggy-bank-icon.png"
                 alt=""
               />
               <div class="adv-content">

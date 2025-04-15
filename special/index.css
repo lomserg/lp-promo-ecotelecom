@@ -652,11 +652,43 @@ html {
   text-decoration: none;
   color: #fff;
 }
-/* hero */
+
+html {
+  height: -webkit-fill-available;
+}
+
+.header-menu {
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+.logo-white {
+  height: 100px;
+  width: 120px;
+  background-image: url(./img/logo_eco_w.svg);
+  background-repeat: no-repeat;
+}
+.phone {
+  align-self: center;
+  justify-self: end;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+}
+.nav-list {
+  list-style-type: none;
+}
+.nav-list li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ------------------- */
+/* hero         */
+/* ------------------- */
 .hero__bg {
   /* background-image: url(./img/dog.jpg); */
   height: auto;
-
+  position: relative;
   display: flex;
   /* align-items: center; */
   justify-content: center;
@@ -667,16 +699,18 @@ html {
     rgba(56, 124, 44, 1) 31%,
     rgba(125, 187, 39, 1) 100%
   );
+  overflow: hidden;
 }
+
 .hero__bg::before {
   content: "";
-  background-image: url(./img/bg_1.png);
+  background-image: url(./img/giraffe_.png);
   width: 100%;
   height: 100%;
   position: absolute;
-  left: 0;
-  top: 0;
-  background-position: center;
+  right: 64px;
+  bottom: -18px;
+  background-position: bottom right;
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 0;
@@ -684,13 +718,14 @@ html {
 .hero__bg-container {
   display: flex;
   align-items: center;
-  flex-direction: column;
+
   justify-content: center;
   width: 1000px;
   gap: 1.5rem;
 }
 .hero-img {
-  width: 60%;
+  width: 90%;
+  align-self: center;
 }
 
 .hero-img img {
@@ -706,10 +741,20 @@ html {
   font-family: "GilroyExtraBold";
   color: #fff;
   text-transform: uppercase;
+  overflow: hidden;
 }
 .hero__bg-subtitle {
-  color: #fff;
+  color: #f1d200;
   font-family: "GilroyExtraBold";
+}
+
+@media (max-width: 1300px) {
+  .hero__bg::before {
+    content: "";
+    background-image: url(./img/giraffe_.png);
+    width: 75%;
+    height: 75%;
+  }
 }
 @media (max-width: 1100px) {
   .hero__bg-container {
@@ -721,8 +766,9 @@ html {
     text-align: center;
   }
   .hero-img {
-    width: 100%;
+    width: 90%;
     align-self: center;
+    height: 300px;
   }
   .hero-img img {
     max-width: 100%;
@@ -734,6 +780,20 @@ html {
     align-items: center;
     justify-content: center;
     background-color: #6d5652;
+  }
+  .hero__bg::before {
+    content: "";
+    background-image: url(./img/giraffe_2.png);
+    width: 87%;
+    height: 56%;
+    position: absolute;
+    right: 0;
+    bottom: -16px;
+    background-position: bottom center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0;
+    overflow: hidden;
   }
 }
 html {
@@ -768,13 +828,16 @@ html {
 .hero-txt-cta {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  align-items: flex-start;
   gap: 1rem;
-  margin-top: 7rem;
+  margin-top: 12rem;
   width: 50%;
+  text-align: left;
+  margin-bottom: 12rem;
 }
 .hero-txt-cta h1 {
-  font-size: 5.5rem;
+  font-size: 6.5rem;
+  text-align: left;
   line-height: 1;
 }
 @media (max-width: 1100px) {
@@ -782,12 +845,14 @@ html {
     margin-top: 5rem;
     text-align: center;
     margin-bottom: 0px;
+    align-items: center;
   }
   .btn {
     align-self: center;
   }
   .hero-txt-cta h1 {
     font-size: 3.5rem;
+    text-align: center;
   }
 }
 @media (max-width: 500px) {
@@ -804,9 +869,6 @@ html {
   .btn {
     align-self: center;
   }
-  /* .flow > * + * {
-    margin-top: 1rem;
-  } */
 }
 /* ------------------- */
 /* tabs         */
@@ -910,9 +972,12 @@ html {
 .feature-txt {
     width: 45%;
 } */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .feature {
     padding: 0rem;
+  }
+  .feature-advantage-item img {
+    width: 15%;
   }
 }
 
