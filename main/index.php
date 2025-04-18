@@ -367,7 +367,7 @@
 
         <div class="modal-bg">
             <div class="modal">
-                <form action="./php/form1.php" method="post" id="form2" name="call-form"
+                <form action="./php/telegram.php" method="post" id="form2" name="call-form"
                     onsubmit="return validateForm();">
                     <p style="font-weight: bold; margin-bottom: 1rem; text-align: center">
                         Заявка на подключение
