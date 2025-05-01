@@ -1,8 +1,8 @@
 <?php 
 
-$name = $_POST['name'];
-$number = $_POST['number'];
-$address = $_POST['address'];
+$name = (string)($_POST['name'] ?? '');
+$number = ($_POST['number'] ?? '');
+$address = (string) ($_POST['address'] ?? '');
 /* Принимаем значения UTM-меток */
 $utm_source = $_POST['utm_source'];
 $utm_medium = $_POST['utm_medium'];
