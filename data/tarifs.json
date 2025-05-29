@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "name": "СТАРТ",
+    "promo": true,
+    "speed": "100 Мбит/с",
+    "price": 549,
+    "price2": 1000,
+    "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    "tv": false,
+    "dataPackage": null,
+    "channels": null,
+    "movie": null
+  },
+  {
+    "id": 2,
+    "name": "ХИТ",
+    "promo": true,
+    "speed": "300 Мбит/с",
+    "price": 649,
+    "price2": 1000,
+    "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    "tv": false,
+    "dataPackage": null,
+    "channels": null,
+    "movie": null
+  },
+  {
+    "id": 3,
+    "name": "МЕГА",
+    "promo": true,
+    "speed": "500 Мбит/с",
+    "price": 555,
+    "price2": null,
+    "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    "tv": false,
+    "dataPackage": null,
+    "channels": null,
+    "movie": null
+  },
+  {
+    "id": 4,
+    "name": "старт+тв",
+    "promo": true,
+    "speed": "100 Мбит/с",
+    "price": 649,
+    "price2": null,
+    "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    "tv": true,
+    "dataPackage": "630f5b1c944a765510046e89",
+    "channels": 180,
+    "movie": null
+  },
+  {
+    "id": 5,
+    "name": "старт+кино",
+    "promo": true,
+    "speed": "100 Мбит/с",
+    "price": 729,
+    "price2": null,
+    "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    "tv": true,
+    "dataPackage": "630f5b1c944a765510046e89",
+    "channels": 120,
+    "movie": null
+  },
+  {
+    "id": 6,
+    "name": "ХИТ+ТВ",
+    "promo": true,
+    "speed": "100 Мбит/с",
+    "price": 799,
+    "price2": null,
+    "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    "tv": true,
+    "dataPackage": "630f5b1c944a765510046e89",
+    "channels": 260,
+    "movie": "PREMIER"
+  },
+  {
+    "id": 7,
+    "name": "УЛЬТРА+КИНО",
+    "promo": true,
+    "speed": "100 Мбит/с",
+    "price": 799,
+    "price2": null,
+    "description": "Fragrant black coffee with Jameson Irish whiskey and whipped milk",
+    "tv": true,
+    "dataPackage": "630f5b1c944a765510046e89",
+    "channels": 315,
+    "movie": "2 из 3 онлайн-кинотеатров"
+  }
+]
