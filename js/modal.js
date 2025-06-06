@@ -4,7 +4,6 @@ modal.addEventListener("click", () => {
   modal.classList.remove("active");
   document.querySelector("body").classList.remove("my-body-noscroll-class");
 });
-const ultaKino = [];
 
 chanelBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {

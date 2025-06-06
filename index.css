@@ -451,8 +451,14 @@ select {
 .header {
   height: 2rem;
   position: absolute;
-  top: 10px;
+  top: 0;
   z-index: 500;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .header-content {
@@ -461,6 +467,7 @@ select {
       1em,
       1fr
     );
+  max-width: 80rem;
 }
 
 .logo-header {
@@ -618,36 +625,35 @@ select {
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background: rgb(175, 110, 174);
+  background: #318f6d;
   background: linear-gradient(
-    122deg,
-    rgba(175, 110, 174, 1) 0%,
-    rgba(97, 135, 196, 1) 35%,
-    rgba(163, 212, 234, 1) 100%
+    133deg,
+    rgba(49, 143, 109, 1) 0%,
+    rgba(154, 218, 200, 1) 100%
   );
-  /* background: rgb(201, 87, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(201, 87, 0, 1) 0%,
-    rgba(218, 121, 0, 1) 35%,
-    rgba(251, 186, 3, 1) 100%
-    ); */
-  /* 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 95% 86%; */
-  height: 77vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  position: relative;
+  height: 90vh;
 }
-
+.hero__bg::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 56%; /* можно изменить под нужный размер */
+  height: auto;
+  aspect-ratio: 1 / 1; /* для правильной пропорции, если нужно */
+  background-image: url("./img/summer2025_promo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  pointer-events: none; /* чтобы не мешала кликам */
+  z-index: 1;
+}
 .hero__bg-container {
   display: flex;
   /* flex-direction: column; */
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   width: 1200px;
   gap: 2rem;
   height: 100%;
@@ -657,7 +663,7 @@ select {
   display: none;
 }
 .hero-img {
-  background-image: url(./img/gifts.png);
+  background-image: url(./img/summer2025_promo.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -668,28 +674,25 @@ select {
   display: block;
 }
 
-.hero__bg-title {
-  font-size: 75px;
-  font-family: "GilroyExtraBold";
+.hero__title {
+  font-family: "Gilroy";
+  font-size: 79px;
+  white-space: nowrap;
   color: #fff;
-  text-transform: uppercase;
   line-height: 1;
+  font-family: "GilroyExtraBold";
+}
+.hero__title-sub {
+  display: block;
+  font-size: 120px;
+  font-family: "GilroyExtraBold";
 }
 
-.hero__bg-bigtitle {
-  font-size: 5rem;
+.hero__title-second {
+  font-size: 32px;
+  font-family: "Gilroy";
+  color: #ecc700;
   font-family: "GilroyExtraBold";
-  color: #fff;
-  text-transform: uppercase;
-  line-height: 1;
-}
-
-.hero__title--sub {
-  font-size: 24px;
-  font-family: "GilroyExtraBold";
-  color: #fdcf0a;
-  font-weight: 700;
-  width: 88%;
 }
 
 html {
@@ -735,58 +738,51 @@ html {
   line-height: 1;
 } */
 @media (max-width: 1100px) {
-  .hero__bg-bigtitle {
-    font-size: 5rem;
+  .hero__title-sub {
+    font-size: 78px;
+  }
+  .hero__title {
+    font-size: 57px;
+  }
+  .hero__title-second {
+    font-size: 30px;
   }
   .hero-txt-cta {
-    margin-top: 1rem;
     align-items: center;
     justify-content: center;
     width: 90%;
+    margin-top: 5rem;
   }
   .btn {
     align-self: center;
   }
   .hero__bg {
-    height: auto;
-
+    height: 700px;
     align-items: center;
+    display: flex;
   }
   .hero__bg-container {
-    margin-top: 5rem;
     flex-direction: column;
   }
-  .hero__bg-title {
-    font-size: 4.5rem;
-    text-align: center;
-  }
+
   .info-block img {
     max-width: 100%;
   }
-
-  .hero-img {
-    margin-top: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-img {
-    background-image: url(./img/gifts.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 100%;
-    min-height: 273px;
-    align-self: end;
-  }
-  .hero__title--sub {
-    width: 100%;
-    text-align: center;
-  }
 }
 @media (max-width: 500px) {
-  .hero-img {
+  .hero__bg {
+    height: 600px;
+  }
+  .hero__title-sub {
+    font-size: 58px;
+  }
+  .hero__title {
+    font-size: 37px;
+  }
+  .hero__title-second {
+    font-size: 16px;
+  }
+  .hero__bg::before {
     width: 100%;
   }
   .hero-txt-cta {
@@ -1291,11 +1287,15 @@ html {
 }
 
 .choose-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background: #8dc63f;
   height: 40px;
   font-size: 1.2rem;
   text-transform: uppercase;
-
+  text-decoration: none;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -1325,6 +1325,7 @@ html {
 }
 .swiper-wrapper {
   padding-top: 2rem;
+  height: unset !important;
 }
 
 .tarif-option {
@@ -1386,6 +1387,9 @@ html {
   width: 100%;
 }
 
+.channels-amount {
+  display: none;
+}
 .tarif-price {
   font-weight: bold;
   font-size: 2.7rem;

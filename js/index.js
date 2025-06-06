@@ -88,39 +88,6 @@ tippy("#video3", {
   placement: "bottom",
 });
 
-// Example functions for modal handling (commented out as they may not be relevant to the error)
-// function noScroll() {
-//     window.scrollTo(0, 0)
-// }
-
-// function openForm() {
-//     window.scrollTo(0, 0)
-//     modal_container.classList.add('show');
-//     modal.classList.add('open')
-//     overlay.classList.add('open')
-// }
-
-// closeX.addEventListener('click', e => {
-//     modal.classList.remove('open')
-//     overlay.classList.remove('open')
-// })
-
-// overlay.addEventListener('click', e => {
-//     modal.classList.remove('open')
-//     overlay.classList.remove('open')
-//     modal_container.classList.remove('show');
-// });
-
-// function sayHello() {
-//     console.log("Darth Vader");
-// }
-
-// buttons.forEach(e => e.addEventListener("click", openForm, false));
-
-// Bonus features for modal handling
-// TODO: 4. Create a click event listener for the close-modal-btn that removes the class "open" from the modal
-// BONUS: Also remove the class "open" from the overlay
-
 // Phone number setup based on URL query string
 let phone = document.querySelector(".phone");
 let contentY =
