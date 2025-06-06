@@ -181,3 +181,20 @@ a {
 .shawcace__header-text {
   font-size: 20px;
 }
+
+/* tarifs */
+.tarif-card {
+  max-width: 410px;
+  background: #fff;
+}
+
+.tarif-name {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.tarif-description {
+  font-size: 18px;
+  font-weight: 900;
+}
