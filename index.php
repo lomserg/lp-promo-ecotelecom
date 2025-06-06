@@ -18,8 +18,10 @@ if (file_exists($file)) {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title"><span class="hero__title-sub ">КАНИКУЛЫ</span> ПО-ВЗРОСЛОМУ</h1>
-            <h3 class="hero__title-second">ИНТЕРНЕТ БЕСПЛАТНО НА ВСЕ ЛЕТО</h3>
+            <h1 class="hero__title"><span class="hero__title-sub ">ЛОВИ ВОЛНУ
+                </span> ВЫГОДЫ</h1>
+            <h3 class="hero__title-second">Специальная цена
+                на интернет</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -41,8 +43,8 @@ if (file_exists($file)) {
             </div> -->
             </div>
         </div>
-        <div class="">
-            <!-- <img src="./img/1839143497_1b.png" alt="" /> -->
+        <div class="hero__img">
+            <img src="./img/dog.png" alt="" />
         </div>
     </div>
 

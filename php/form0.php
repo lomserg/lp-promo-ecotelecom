@@ -1,11 +1,14 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<META HTTP-EQUIV="Refresh" CONTENT="2; URL=http://site.ru">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <META HTTP-EQUIV="Refresh" CONTENT="2; URL=http://site.ru">
 </head>
+
 <body>
-<?php
+    <?php
 $myaddr = "op@ecotelecom.ru, lomov@ecotelecom.ru";
 
 
@@ -27,7 +30,7 @@ $myaddr = "op@ecotelecom.ru, lomov@ecotelecom.ru";
 	$headers = "MIME-Version: 1.0\r\n";
 	$headers = "Content-Type: text/plain;charset=utf-8";
   	$headers = "From: promo@ecotelecom.ru";
-	$subj = "=?utf-8?b?".base64_encode('Заявка с лэндинга Акция "Улетное предложение"')."?=";
+	$subj = "=?utf-8?b?".base64_encode('Заявка с лэндинга спец')."?=";
 	$text = "Тариф: ".$vacancy."\nИмя: ".$name." \nТелефон: ".$number." \nГород: ".$city." \nАдрес: ".$address;
 	if (!empty($utm_source)) $text .= "\nИсточник перехода по ссылке:".$utm_source;
 
@@ -41,4 +44,6 @@ $myaddr = "op@ecotelecom.ru, lomov@ecotelecom.ru";
 	
 
 	?>
-	</body></html>
+</body>
+
+</html>
