@@ -11,11 +11,13 @@
 /* Reset margins */
 * {
   margin: 0;
+  padding: 0;
 }
 
 /* set up the body */
 body {
   line-height: 1.5;
+  background-color: #f4f4f4;
 }
 
 /* make images easier to work with */
@@ -32,7 +34,39 @@ textarea,
 select {
   font: inherit;
 }
+@font-face {
+  font-family: "Sora";
+  src: url("/fonts/Sora-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "Sora";
+  src: url("/fonts/Sora-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/fonts/Sora-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Sora";
+  src: url("/fonts/Sora-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
 /* remove animations for people who've turned them off */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -183,18 +217,95 @@ a {
 }
 
 /* tarifs */
+
+.tarifs_container {
+  display: flex;
+  gap: 1.2rem;
+}
+
 .tarif-card {
   max-width: 410px;
   background: #fff;
+  border-radius: 2rem;
 }
 
 .tarif-name {
   font-size: 2rem;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 600;
+  font-family: "Sora", sans-serif;
 }
 
 .tarif-description {
   font-size: 18px;
   font-weight: 900;
+  margin-top: 1rem;
+  color: #157361;
+  line-height: 1;
+  font-weight: 800;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.tarif-price {
+  font-size: 5.5rem;
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+}
+.tarif-price span {
+  font-size: 1.5rem;
+
+  display: inline-flex;
+  font-weight: 300;
+  margin-left: -14px;
+}
+.tarif_wrapper {
+  padding: 2.65rem 2rem;
+}
+
+.tarif-button {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 13px 62px;
+  outline: none;
+  margin: 3px;
+  color: #fff;
+  border: none;
+  background: #01b4f5;
+  background: linear-gradient(
+    90deg,
+    rgba(1, 180, 245, 1) 0%,
+    rgba(0, 250, 120, 1) 88%
+  );
+  width: 100%;
+}
+
+.tarif_wrapper {
+  padding: 2.65rem 2rem 0 2rem; /* Removed bottom padding */
+}
+
+.tarif-params-wrapper {
+  padding: 2rem 2rem 2.65rem 2rem; /* Removed top padding */
+}
+
+.tarif-params {
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 10px;
+}
+.tarif-params span {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.tarif-params::before {
+  content: "";
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.285 2.857l-11.418 11.418-4.285-4.285-2.143 2.143 6.428 6.428 13.561-13.561z"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
