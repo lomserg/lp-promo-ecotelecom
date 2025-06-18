@@ -1,311 +1,630 @@
 /* ------------------- */
 /* Reset               */
 /* ------------------- */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Reset margins */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-/* set up the body */
-body {
-  line-height: 1.5;
-  background-color: #f4f4f4;
-}
-
-/* make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* make form elements easier to work with */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-@font-face {
-  font-family: "Sora";
-  src: url("/fonts/Sora-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Sora";
-  src: url("/fonts/Sora-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Sora";
-  src: url("/fonts/Sora-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Sora";
-  src: url("/fonts/Sora-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter-ExtraBold.ttf") format("truetype");
-  font-weight: 800;
-  font-style: normal;
-}
-/* remove animations for people who've turned them off */
-@media (prefers-reduced-motion: reduce) {
+@layer reset {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-.container {
-  /* padding-inline: 1em; */
-  margin-inline: auto;
-  max-width: 1440px;
-  padding: 0 82px;
-  position: relative;
-}
-
-/* set up the body */
-body {
-  font-family: "Jost", serif;
-  font-size: 16px;
-
-  /* background-color: hsl(var(--clr-white)); */
-  line-height: 1.5;
-}
-ul {
-  list-style-type: none;
-}
-a {
-  text-decoration: none;
-}
-
-.btn-primary {
-  display: inline-block;
-  border-radius: 5px;
-  padding: 13px 42px;
-  outline: none;
-  margin: 3px;
-  color: #fff;
-  border: none;
-}
-.btn-secondary:hover,
-.btn-primary:hover {
-  -webkit-transform: scale(0.98);
-  transform: scale(0.98);
-}
-
-.btn-primary {
-  background-color: #abd167;
-}
-/* ////// */
-/* HEADER */
-/* ////// */
-.top__nav {
-  height: 24px;
-  background-color: blue;
-}
-
-.header__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-logo__wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-left: 20px;
-}
-
-.header__nav-list {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.header__nav-item {
-  padding: 20px 0px;
-}
-.header__nav-item a {
-  font-size: 12px;
-  line-height: 130%;
-  padding: 12px 20px;
-  text-decoration: none;
-  color: hsl(var(--clr-dark));
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: var(--fw-bold);
-  line-height: 130%;
-  letter-spacing: 0.05em;
-  cursor: pointer;
-}
-.header__nav-item a.active {
-  color: hsl(var(--clr-primary));
-  background: hsla(var(--clr-primary), 20%);
-  border-radius: 12px;
-}
-
-.header__nav-item a:hover {
-  color: hsl(var(--clr-primary));
-  background: hsla(var(--clr-primary), 20%);
-  border-radius: 12px;
-}
-@media (hover: none) and (pointer: coarse) {
-  .header__nav-item a:hover {
-    color: inherit;
-    background: transparent;
-    border-radius: 0;
+    box-sizing: border-box;
   }
 
+  /* Reset margins */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* set up the body */
+  body {
+    line-height: 1.5;
+    background-color: #f4f4f4;
+  }
+
+  /* make images easier to work with */
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* make form elements easier to work with */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  @font-face {
+    font-family: "Sora";
+    src: url("/fonts/Sora-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sora";
+    src: url("/fonts/Sora-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sora";
+    src: url("/fonts/Sora-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Sora";
+    src: url("/fonts/Sora-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+    font-style: normal;
+  }
+  /* remove animations for people who've turned them off */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer base {
+  .container {
+    /* padding-inline: 1em; */
+    margin-inline: auto;
+    max-width: 1440px;
+    padding: 0 82px;
+    position: relative;
+  }
+  .section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+  /* set up the body */
+  body {
+    font-family: "Jost", serif;
+    font-size: 16px;
+
+    /* background-color: hsl(var(--clr-white)); */
+    line-height: 1.5;
+  }
+  ul {
+    list-style-type: none;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 13px 42px;
+    outline: none;
+    margin: 3px;
+    color: #fff;
+    border: none;
+  }
+  .btn-secondary:hover,
+  .btn-primary:hover {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+  }
+
+  .btn-primary {
+    background-color: #abd167;
+  }
+  @media (width < 960px) {
+    .container {
+      padding: 0 16px;
+    }
+  }
+}
+@layer layout {
+  /* ////// */
+  /* HEADER */
+  /* ////// */
+  .top__nav {
+    height: 24px;
+    background-color: blue;
+  }
+
+  .header__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-logo__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 20px;
+  }
+
+  .header__nav-list {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .header__nav-item {
+    padding: 20px 0px;
+  }
   .header__nav-item a {
-    pointer-events: auto;
+    font-size: 12px;
+    line-height: 130%;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: hsl(var(--clr-dark));
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: var(--fw-bold);
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+  }
+  .header__nav-item a.active {
+    color: hsl(var(--clr-primary));
+    background: hsla(var(--clr-primary), 20%);
+    border-radius: 12px;
+  }
+
+  .header__nav-item a:hover {
+    color: hsl(var(--clr-primary));
+    background: hsla(var(--clr-primary), 20%);
+    border-radius: 12px;
+  }
+  @media (hover: none) and (pointer: coarse) {
+    .header__nav-item a:hover {
+      color: inherit;
+      background: transparent;
+      border-radius: 0;
+    }
+
+    .header__nav-item a {
+      pointer-events: auto;
+    }
+  }
+  .humburger__menu {
+    display: none;
+  }
+
+  /* showcase */
+  .shawcace__header {
+    background: #1e1e1e;
+    height: 400px;
+  }
+
+  .shawcace__header-container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .shawcace__header-info {
+    color: #fff;
+    width: 50%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+  }
+
+  .shawcace__header-header {
+    font-size: 42px;
+  }
+
+  .shawcace__header-text {
+    font-size: 20px;
+  }
+
+  /* tarifs */
+
+  .tarifs_container {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .tarif-card {
+    max-width: 410px;
+    background: #fff;
+    border-radius: 2rem;
+  }
+
+  .tarif-name {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Sora", sans-serif;
+  }
+
+  .tarif-description {
+    font-size: 18px;
+    font-weight: 900;
+    margin-top: 1rem;
+    color: #157361;
+    line-height: 1;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .tarif-price {
+    font-size: 5.5rem;
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+  }
+  .tarif-price span {
+    font-size: 1.5rem;
+
+    display: inline-flex;
+    font-weight: 300;
+    margin-left: -14px;
+  }
+  .tarif_wrapper {
+    padding: 2.65rem 2rem;
+  }
+
+  .tarif-button {
+    display: inline-block;
+    border-radius: 12px;
+    padding: 13px 62px;
+    outline: none;
+    margin: 3px;
+    color: #fff;
+    border: none;
+    background: #01b4f5;
+    background: linear-gradient(
+      90deg,
+      rgba(1, 180, 245, 1) 0%,
+      rgba(0, 250, 120, 1) 88%
+    );
+    width: 100%;
+  }
+
+  .tarif_wrapper {
+    padding: 2.65rem 2rem 0 2rem; /* Removed bottom padding */
+  }
+
+  .tarif-params-wrapper {
+    padding: 2rem 2rem 2.65rem 2rem; /* Removed top padding */
+  }
+
+  .tarif-params {
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 10px;
+  }
+  .tarif-params span {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .tarif-params::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.285 2.857l-11.418 11.418-4.285-4.285-2.143 2.143 6.428 6.428 13.561-13.561z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  /* intetnet tv advantage grid */
+  /* Internet TV Advantage Grid */
+  .advantages-tv-container {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four";
+
+    @media (width > 660px) {
+      grid-template-columns: 1fr 1fr; /* ← равные колонки */
+      grid-template-areas:
+        "one two"
+        "three four";
+    }
+
+    @media (width > 960px) {
+      grid-template-columns: 1fr 1fr 1fr 1fr; /* ← равные колонки */
+      grid-template-areas:
+        "one two two two"
+        "three three three four ";
+    }
+  }
+  .advantages-tv-container img {
+    max-width: var(--bento-card-image-width, 100%);
+    width: var(--bento-card-image-width, 100%);
+    order: var(--bento-card-image-order);
+  }
+  .advantages-tv-container > * {
+    color: var(--bento-card-color, var(--black));
+    background-color: var(--bento-card-bg, var(--white));
+    padding: var(--bento-card-padding, 32px);
+    border-radius: var(--bento-card-border-radius, 21px);
+    align-content: var(--bento-card-vertical-alignment, start);
+    align-items: var(--bento-card-vertical-alignment, start);
+    justify-items: var(--bento-card-horizontal-alignment, start);
+    text-align: var(--bento-card-horizontal-alignment, start);
+    gap: 20px;
+    overflow: clip;
+    display: grid;
+    align-content: start;
+    justify-items: start;
+    text-align: start;
+    @media (width > 960px) {
+      height: 260px;
+    }
+  }
+  .advantages-tv-container > * h3 {
+    font-size: var(--bento-card-title, 36px);
+  }
+  .advantages-tv-container > .advantages-tv-card h3 {
+    font-size: var(--bento-card-title, 36px);
+  }
+
+  .advantages-tv-container > .advantages-tv-card p {
+    font-size: var(--bento-card-text, 13px);
+    line-height: 1.1;
+  }
+  .advantages-tv-container > :nth-child(1) {
+    --bento-card-bg: #fedf6f;
+    grid-area: one;
+    @media (width > 960px) {
+      display: grid;
+
+      --bento-card-title: 28px;
+    }
+  }
+  .advantages-tv-container > :nth-child(2) {
+    /* --bento-card-bg: #00cbca; */
+    --bento-card-bg: #fff;
+    --bento-card-image-width: 20%;
+    --bento-card-horizontal-alignment: center;
+    --bento-card-vertical-alignment: center;
+    display: grid;
+    place-items: center; /* Центрирует и по горизонтали, и по вертикали */
+    text-align: center;
+    grid-area: two;
+    @media (width > 960px) {
+      align-content: center;
+      grid-template-columns: 1fr 1fr;
+      --bento-card-image-width: 83%;
+      --bento-card-horizontal-alignment: center;
+      --bento-card-vertical-alignment: center;
+      --bento-card-title: 36px;
+      text-align: start;
+    }
+  }
+  .advantages-tv-container > :nth-child(3) {
+    /* --bento-card-bg: #ae6eae; */
+    --bento-card-bg: #7651dc;
+    /* height: 300px; */
+    overflow: hidden;
+    position: relative;
+    --bento-card-color: #fff;
+    --bento-card-image-order: -1;
+    line-height: 1.1;
+    grid-area: three;
+
+    @media (width > 960px) {
+      display: grid;
+      grid-template-columns: 0.7fr 1fr;
+      --bento-card-image-width: 148%;
+      --bento-card-horizontal-alignment: start;
+      --bento-card-vertical-alignment: center;
+      --bento-card-title: 44px;
+      --bento-card-image-order: 1;
+      --bento-card-padding: 16px;
+      align-content: center;
+    }
+    @media (width > 660px) {
+      --bento-card-title: 36px;
+    }
+  }
+  .advantages-tv-container > :nth-child(3) img {
+    margin-top: -12px;
+  }
+  /* .advantages-tv-container > :nth-child(3) img {
+    transform: rotate(-10deg) !important;
+    width: 62%;
+    height: auto;
+    display: block;
+    left: 54%;
+    position: absolute;
+    top: -135px;
+  } */
+  .advantages-tv-container > :nth-child(4) {
+    --bento-card-bg: #b8cedc;
+    grid-area: four;
+    @media (width > 960px) {
+      display: grid;
+      --bento-card-title: 23px;
+      --bento-card-padding: 16px;
+      --bento-card-image-width: 75%;
+    }
+  }
+  @media (width > 960px) {
+    .advantages-tv-container > .advantages-tv-card h3 {
+      /* font-size: 23px; */
+      line-height: 1.2;
+    }
+    .advantages-tv-container > :nth-child(3) p {
+      display: none;
+    }
+    .advantages-tv-container > :nth-child(2) p {
+      display: none;
+    }
+    .advantages-tv-container > :nth-child(3) img {
+      transform: rotate(-18deg);
+      margin-top: -96px;
+    }
+  }
+
+  /* ✅ Mobile fix */
+  @media (max-width: 960px) {
+    .advantages-tv-container > .advantages-tv-card h3 {
+      font-size: 23px;
+    }
+
+    .advantages-tv-container > * {
+      --bento-card-bg: #fedf6f;
+      --bento-card-padding: 11px;
+      font-size: 12px;
+      line-height: 1.1;
+      text-align: left;
+    }
+
+    .advantages-tv-container > :nth-child(2) {
+      --bento-card-bg: #00cbca;
+      --bento-card-image-width: 70%;
+    }
+  }
+  /**************************
+        accordion
+***************************/
+  .faq {
+    padding: 2em 0;
+    background: #fe7f10;
+    background: linear-gradient(
+      313deg,
+      rgba(254, 127, 16, 1) 0%,
+      rgba(177, 53, 183, 1) 40%,
+      rgba(150, 27, 240, 1) 71%
+    );
+    border-radius: 48px;
+  }
+
+  .faq .section-title {
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+  }
+
+  .accordion {
+    max-width: 1100px;
+    margin: 4rem auto;
+    border-radius: 36px;
+  }
+
+  .accordion-item {
+    background-color: #fff;
+    color: #111;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    border-radius: 15px;
+  }
+
+  .accordion-item-header {
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    min-height: 4.5rem;
+    line-height: 1.4rem;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .accordion-item-header::after {
+    content: "\002B";
+    font-size: 3rem;
+    position: absolute;
+    right: 1rem;
+  }
+
+  .accordion-item-header.active::after {
+    content: "\2212";
+  }
+
+  .accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .accordion-item-body-content {
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent)
+      0.5;
+  }
+
+  .accordion-title {
+    position: relative;
+    text-align: center;
+    padding: 0 0 10px;
+    margin-bottom: 10px;
+  }
+  .accordion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .accordion-item.active .accordion-item-body {
+    max-height: 1000px; /* достаточно большого значения */
+    transition: max-height 0.3s ease-in-out;
+  }
+  @media (max-width: 960px) {
+    .accordion-grid {
+      display: block;
+    }
+  }
+  @media (width < 960px) {
+    .faq {
+      padding: 2em 1rem;
+    }
+
+    html {
+      font-size: 16px;
+    }
+
+    .accordion-title {
+      font-size: 2.5vw;
+    }
   }
 }
-.humburger__menu {
-  display: none;
-}
 
-/* showcase */
-.shawcace__header {
-  background: #1e1e1e;
-  height: 400px;
-}
-
-.shawcace__header-container {
+/* advantage */
+.advantage-container {
   display: flex;
-  align-self: center;
-  justify-content: center;
-  gap: 2rem;
+  gap: 24px;
 }
-
-.shawcace__header-info {
+.advantage-card {
+  padding: 32px;
+  background: #2d7a73;
   color: #fff;
-  width: 50%;
+  border-radius: 32px;
+
+  display: flex;
   flex-direction: column;
-  display: flex;
-  justify-content: center;
+  gap: 5rem;
+}
+.advantage-card-wrapper h3 {
+  font-size: 24px;
+}
+.advantage-card-wrapper p {
+  font-size: 14px;
 }
 
-.shawcace__header-header {
-  font-size: 42px;
-}
-
-.shawcace__header-text {
-  font-size: 20px;
-}
-
-/* tarifs */
-
-.tarifs_container {
-  display: flex;
-  gap: 1.2rem;
-}
-
-.tarif-card {
-  max-width: 410px;
-  background: #fff;
-  border-radius: 2rem;
-}
-
-.tarif-name {
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-family: "Sora", sans-serif;
-}
-
-.tarif-description {
-  font-size: 18px;
-  font-weight: 900;
-  margin-top: 1rem;
-  color: #157361;
-  line-height: 1;
-  font-weight: 800;
-  font-family: "Inter", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.tarif-price {
-  font-size: 5.5rem;
-  font-family: "Sora", sans-serif;
-  font-weight: 700;
-}
-.tarif-price span {
-  font-size: 1.5rem;
-
-  display: inline-flex;
-  font-weight: 300;
-  margin-left: -14px;
-}
-.tarif_wrapper {
-  padding: 2.65rem 2rem;
-}
-
-.tarif-button {
-  display: inline-block;
-  border-radius: 12px;
-  padding: 13px 62px;
-  outline: none;
-  margin: 3px;
-  color: #fff;
-  border: none;
-  background: #01b4f5;
-  background: linear-gradient(
-    90deg,
-    rgba(1, 180, 245, 1) 0%,
-    rgba(0, 250, 120, 1) 88%
-  );
-  width: 100%;
-}
-
-.tarif_wrapper {
-  padding: 2.65rem 2rem 0 2rem; /* Removed bottom padding */
-}
-
-.tarif-params-wrapper {
-  padding: 2rem 2rem 2.65rem 2rem; /* Removed top padding */
-}
-
-.tarif-params {
-  font-size: 1.5rem;
-  font-weight: 900;
-  padding: 10px;
-}
-.tarif-params span {
-  font-size: 1rem;
-  font-weight: 400;
-}
-.tarif-params::before {
-  content: "";
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  vertical-align: middle;
-  background-image: url('data:image/svg+xml;utf8,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.285 2.857l-11.418 11.418-4.285-4.285-2.143 2.143 6.428 6.428 13.561-13.561z"/></svg>');
-  background-repeat: no-repeat;
-  background-size: contain;
+.advantage-card img {
+  align-self: flex-end;
 }
