@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function getAll(channels, box) {
-    fetch("//fe.smotreshka.tv/channels")
+    fetch("https://fe.smotreshka.tv/channels")
       .then((response) => response.json())
       .then((data) => {
         let block = "";
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       box = options.box,
       block = options.block;
 
-    fetch(`//fe.smotreshka.tv/offers/v3/${id}/showcase-channels`)
+    fetch(`https://fe.smotreshka.tv/offers/v3/${id}/showcase-channels`)
       .then((response) => response.json())
       .then((data) => {
         if (box) {

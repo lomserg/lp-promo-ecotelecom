@@ -1,0 +1,142 @@
+body {
+  background: #fff;
+}
+
+.tarif-option {
+  border: 1px solid grey;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border: none;
+  color: #fff;
+  background-color: #0056b3;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.button-genre {
+  padding: 3px 3px;
+  font-size: 12px;
+  background-color: grey;
+}
+button:hover {
+  background-color: #051e98;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  display: flex;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  color: #333;
+  cursor: pointer;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 60%; /* Adjust width */
+  max-height: 80vh; /* Set max height to control scrolling */
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  align-items: center;
+}
+
+.genre {
+  gap: 3px;
+  /* align-items: flex-start;
+  flex-wrap: wrap; */
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.channels {
+  overflow-y: auto; /* Make only channels scrollable */
+  max-height: 300px; /* Set a reasonable height for scrolling */
+  width: 100%;
+  padding: 10px;
+  overflow-x: hidden;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+}
+
+.child {
+  width: 100px;
+}
+
+/* loader */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+}
+.circle {
+  height: 1.5rem;
+  width: 1.5rem;
+  background: #000;
+  margin: 0.5rem;
+  border-radius: 50%;
+  animation: pulse infinite alternate 1s;
+}
+
+@keyframes pulse {
+  from {
+    background: darkgray;
+  }
+  to {
+    background: lightgray;
+    height: 1.6rem;
+    width: 1.6rem;
+  }
+}
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 60%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  align-items: center;
+  overflow: hidden; /* Prevents content from overflowing */
+}
+
+.genre {
+  gap: 3px;
+  justify-content: center; /* Center buttons */
+  max-width: 100%; /* Prevents overflow */
+  overflow-y: auto; /* Enables scrolling if needed */
+  max-height: 150px; /* Limits height for scrolling */
+  padding: 5px;
+  width: 100%;
+}

@@ -1,7 +1,10 @@
 /* ------------------- */
 /* Custom properties   */
 /* ------------------- */
-
+@font-face {
+  font-family: "GilroyExtraBold";
+  src: url("./fonts/Gilroy.ttf");
+}
 :root {
   /* colors */
   --clr-dark-blue: 200, 95%, 14%;
@@ -33,8 +36,8 @@
   /* 12px */
   /* font-families */
   --ff-normal: "Montserrat";
-  --ff-tarif-header: "Poppins";
-  --ff-tarif-option: "Roboto";
+
+  --ff-tarif-option: "GilroyExtraBold";
 
   --fw-bold: 700;
   --fw-medium: 500;
@@ -42,10 +45,6 @@
 
 body {
   height: 100%;
-}
-@font-face {
-  font-family: "GilroyExtraBold";
-  src: url("./fonts/Gilroy.ttf");
 }
 
 @media (min-width: 35em) {
@@ -625,12 +624,8 @@ select {
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background: #318f6d;
-  background: linear-gradient(
-    133deg,
-    rgba(49, 143, 109, 1) 0%,
-    rgba(154, 218, 200, 1) 100%
-  );
+  background: rgba(154, 218, 200, 1) 100%;
+
   position: relative;
   height: 90vh;
 }
@@ -642,7 +637,7 @@ select {
   width: 56%; /* можно изменить под нужный размер */
   height: auto;
   aspect-ratio: 1 / 1; /* для правильной пропорции, если нужно */
-  background-image: url("./img/summer2025_promo.png");
+  background-image: url("./img/summer2025_promo2.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom right;
@@ -691,7 +686,7 @@ select {
 .hero__title-second {
   font-size: 32px;
   font-family: "Gilroy";
-  color: #ecc700;
+  color: #5dadff;
   font-family: "GilroyExtraBold";
 }
 
