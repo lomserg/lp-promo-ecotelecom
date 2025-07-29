@@ -53,6 +53,7 @@ export function createPopup(genreObjects, channels) {
       popup.remove();
     }
   });
+  console.log(popup);
   return popup;
 }
 function filterChannelsByGenre(e, genre, channels, divChannels) {

@@ -18,9 +18,11 @@ button {
   transition: background-color 0.3s;
 }
 .button-genre {
-  padding: 3px 3px;
+  padding: 7px 5px;
   font-size: 12px;
-  background-color: grey;
+  background-color: rgb(128, 12, 112);
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
 button:hover {
   background-color: #051e98;
@@ -55,16 +57,17 @@ button:hover {
   text-align: center;
   position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 60%; /* Adjust width */
+
   max-height: 80vh; /* Set max height to control scrolling */
   display: flex;
   flex-direction: column;
   min-height: 300px;
   align-items: center;
+  max-width: 500px;
 }
 
 .genre {
-  gap: 3px;
+  gap: 6px;
   /* align-items: flex-start;
   flex-wrap: wrap; */
   overflow-x: auto;
@@ -129,6 +132,7 @@ button:hover {
   min-height: 300px;
   align-items: center;
   overflow: hidden; /* Prevents content from overflowing */
+  padding-top: 30px;
 }
 
 .genre {

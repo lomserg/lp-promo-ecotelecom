@@ -25,18 +25,18 @@
     ></script> -->
 
     <script src="./js/phoneinput.js" defer></script>
-    <script src="./js/index.js" defer></script>
-    <script src="./js/modal.js" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
+    <!-- <script src="./js/modal.js" defer></script> -->
 
 
 
     <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
     <script src="./js/swiper-bundle.min.js" defer></script>
     <script src="slider.js" defer></script>
-    <!-- <script src="https://unpkg.com/@popperjs/core@2" defer></script>
-    <script src="https://unpkg.com/tippy.js@6" defer></script> -->
+    <script src="https://unpkg.com/@popperjs/core@2" defer></script>
+    <script src="https://unpkg.com/tippy.js@6" defer></script>
 
-    <script src="./js/channels.js" defer></script>
+    <!-- <script src="./js/channels.js" defer></script> -->
 
 </head>
 

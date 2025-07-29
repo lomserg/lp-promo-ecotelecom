@@ -2,6 +2,7 @@ import { fetchData, countGenres } from "./channels.js";
 import { createPopup } from "./popup.js";
 
 const tarifElements = document.querySelectorAll(".tarif");
+console.log(tarifElements);
 const body = document.querySelector("body");
 tarifElements.forEach((element) => {
   element.addEventListener("click", function () {
