@@ -1,0 +1,98 @@
+* {
+    box-sizing: border - box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #ddfff7;
+    overflow: hidden;
+}
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container h3 {
+    color: #861657;
+    padding-top: 2rem;
+
+}
+
+.option-container {
+    width: 100%;
+    height: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.price-option {
+    background: #93e1d8;
+    width: 20%;
+    height: 75%;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.price-option i {
+    color: #ffa69e;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    height: 4rem;
+    margin-top: 2rem;
+}
+
+.price-option h2 {
+    margin: 2rem 0 1rem 0;
+}
+
+.price-option.selected {
+    background-color: #fff;
+    color: #93e1d8;
+}
+
+.price-option .price {
+    font-size: 3rem;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.price-option .price {
+    font-size: 3rem;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.price-option .info {
+    height: 140px;
+    margin-top: 2rem;
+}
+
+.price-option .choose-btn {
+    height: 70px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: #861657;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.price-option .choose-btn:hover {
+    background-color: #aa4465;
+}
+
+/* checkout */

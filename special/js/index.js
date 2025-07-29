@@ -1,4 +1,3 @@
-console.log("sdfsd");
 function validateForm(event, form) {
   var isValid = true; // Track if the form is valid
   var name = form.querySelector("input[name='name']");
@@ -91,7 +90,7 @@ tippy("#video1", {
 
 tippy("#video2", {
   content:
-    "Видеосервис AMEDIATEKA или START — на выбор. Онлайн-кинотеатр PREMIER в подарок.",
+    "Видеосервис Amediateka, START или more.tv на выбор. Онлайн-кинотеатр PREMIER до 31 декабря 2022 года бесплатно!",
   theme: "light",
   placement: "bottom",
 });
@@ -175,15 +174,15 @@ let whatsapp = document.getElementById("whatsapp-link");
 //     modal_container.classList.remove('show');
 // })
 
-// const  = window.location.search;
+// const queryString = window.location.search;
 
-//console.log();
+//console.log(queryString);
 
-// let paramString = .split("=")[3];
+// let paramString = queryString.split("=")[3];
 // let paramSource = paramString.split('=')[1];
 
 // console.log(typeof paramString);
-// console.log(typeof );
+// console.log(typeof queryString);
 
 // let utmOpm = paramString.split("&");
 // console.log(utmOpm[0]);
