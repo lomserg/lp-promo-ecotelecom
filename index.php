@@ -18,8 +18,8 @@ if (file_exists($file)) {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title"><span class="hero__title-sub ">КАНИКУЛЫ</span> ПО-ВЗРОСЛОМУ</h1>
-            <h3 class="hero__title-second">ИНТЕРНЕТ БЕСПЛАТНО НА ВСЕ ЛЕТО</h3>
+            <h1 class="hero__title">ЗАПАСАЙ ИНТЕРНЕТ</h1>
+            <h3 class="hero__title-second">ПОЛУЧИ СКИДКУ НА 12 МЕСЯЦЕВ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -35,14 +35,14 @@ if (file_exists($file)) {
                     <!-- <img src="./img/logo_start.svg" alt="" />
                     <img src="./img/Amediateka_full_white.png" alt="" /> -->
                 </div>
-                <!-- <div class="info-block">
-              <div class="info-block-feature fs-300 uppercase fw-bold">777</div>
-              <div class="info-block-text">₽/мес</div>
-            </div> -->
+                <div class="info-block">
+                    <div class="info-block-feature fs-300 uppercase fw-bold">800</div>
+                    <div class="info-block-text">₽/мес</div>
+                </div>
             </div>
         </div>
-        <div class="">
-            <!-- <img src="./img/1839143497_1b.png" alt="" /> -->
+        <div class="hero-img">
+            <img src="./img/zapas.png" alt="" />
         </div>
     </div>
 
