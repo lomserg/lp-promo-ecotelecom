@@ -625,7 +625,7 @@ select {
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background: #9bcbe1;
+  background: #00030e;
 
   position: relative;
 }
@@ -668,7 +668,7 @@ select {
 .hero__title-second {
   font-size: 32px;
   font-family: "Gilroy";
-  color: #ecc700;
+  color: #05cd48;
   font-family: "GilroyExtraBold";
 }
 

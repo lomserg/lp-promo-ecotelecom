@@ -18,8 +18,8 @@ if (file_exists($file)) {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title"><span class="hero__title-sub ">ЛОВИ ВОЛНУ
-                </span> ВЫГОДЫ</h1>
+            <h1 class="hero__title"><span class="hero__title-sub ">НАШ С ТОБОЙ
+                </span> СЕКРЕТ</h1>
             <h3 class="hero__title-second">Специальная цена
                 на интернет</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
@@ -44,7 +44,7 @@ if (file_exists($file)) {
             </div>
         </div>
         <div class="hero__img">
-            <img src="./img/dog.png" alt="" />
+            <img src="./img/9PIrNJFKZR.png" alt="" />
         </div>
     </div>
 
