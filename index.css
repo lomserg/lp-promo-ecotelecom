@@ -734,6 +734,7 @@ html {
     font-size: 57px;
     text-align: center;
     white-space: normal;
+    text-shadow: none;
   }
   .hero__title-second {
     font-size: 30px;
@@ -774,6 +775,7 @@ html {
   }
   .hero__title-second {
     font-size: 16px;
+    text-shadow: none;
   }
   .hero__bg::before {
     width: 100%;
