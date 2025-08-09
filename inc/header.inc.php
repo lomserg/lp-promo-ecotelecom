@@ -23,7 +23,7 @@
       defer
       src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
     ></script> -->
-
+    <script src="./js/cookie.js" defer></script>
     <script src="./js/phoneinput.js" defer></script>
     <script type="module" src="./js/index.js" defer></script>
     <!-- <script src="./js/modal.js" defer></script> -->

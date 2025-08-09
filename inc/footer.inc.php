@@ -77,6 +77,16 @@ _tmr.push({
 <!-- /Top.Mail.Ru counter -->
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
+<?
+
+$file = __DIR__ . '/banner.inc.php';
+if (file_exists($file)) {
+    include $file;
+} else {
+    echo "Include file not found: $file";
+}
+?>
+
 </body>
 
 </html>
