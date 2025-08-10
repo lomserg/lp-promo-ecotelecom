@@ -1,0 +1,56 @@
+$main-font: Arial;
+$light-clr: #f4f4f4;
+$primary-clr: #95C540;
+$accent-clr: #ff9100;
+:root {
+ // --size: clamp(10rem, 1rem + 40vmin, 30rem);
+  --size: clamp(5rem, 1rem + 30vmin, 20rem);
+  --gap: calc(var(--size) / 14);
+  --duration: 50s;
+  --scroll-start: 0;
+  --scroll-end: calc(-100% - var(--gap));
+}
+
+// margin
+
+$spaceamounts: (1,2,3,4,5,6);
+
+@each $space in $spaceamounts {
+    .m-#{$space} {
+			margin: #{$space}rem;
+    }
+    .my-#{$space} {
+			margin: #{$space}rem 0;
+    }
+
+		.p-#{$space} {
+			padding: #{$space}rem;
+    }
+    .py-#{$space} {
+			padding: #{$space}rem 0;
+    }
+
+}
+
+.flex-2-col {
+  display: flex;
+}
+
+.col {
+  width: 50%;
+}
+
+.section__head {
+  margin-bottom: 3rem;
+  p {
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+    color: #767676;
+  }
+  
+  h3 {
+    font-family: 'Roboto';
+    font-size: 2rem;
+  }
+}
+

@@ -47,60 +47,79 @@ function validateForm(event, form) {
 
 // })
 
-// document.addEventListener('click', e => {
-//     console.log(e)
-// })
+document.addEventListener("DOMContentLoaded", () => {
+  const headers = document.querySelectorAll(".accordion-header");
+  headers.forEach((header) => {
+    header.addEventListener("click", () => {
+      const isActive = header.classList.contains("active");
 
-const accordionItemHeaders = document.querySelectorAll(
-  ".accordion-item-header"
-);
+      // Если нужно закрыть все, чтобы был открыт только один:
+      // headers.forEach(h => {
+      //   h.classList.remove('active');
+      //   h.nextElementSibling.style.maxHeight = null;
+      // });
 
-accordionItemHeaders.forEach((accordionItemHeader) => {
-  accordionItemHeader.addEventListener("click", (event) => {
-    // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
-
-    // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
-    // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
-    //   currentlyActiveAccordionItemHeader.classList.toggle("active");
-    //   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-    // }
-
-    accordionItemHeader.classList.toggle("active");
-    const accordionItemBody = accordionItemHeader.nextElementSibling;
-    if (accordionItemHeader.classList.contains("active")) {
-      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-    } else {
-      accordionItemBody.style.maxHeight = 0;
-    }
+      if (!isActive) {
+        header.classList.add("active");
+        const body = header.nextElementSibling;
+        body.style.maxHeight = body.scrollHeight + "px";
+      } else {
+        header.classList.remove("active");
+        header.nextElementSibling.style.maxHeight = null;
+      }
+    });
   });
 });
+// document.addEventListener("DOMContentLoaded", function () {
+//   const headers = document.querySelectorAll(".accordion-item-header");
 
-tippy("#video0", {
-  content:
-    "Онлайн-кинотеатр START, PREMIER или more.tv на выбор: эксклюзивные премьеры, кино и сериалы",
-  theme: "light",
-  placement: "bottom",
-});
+//   headers.forEach((header) => {
+//     header.addEventListener("click", function () {
+//       headers.forEach((h) => {
+//         if (h !== this) {
+//           h.classList.remove("active");
+//           h.nextElementSibling.style.maxHeight = null;
+//         }
+//       });
 
-tippy("#video1", {
-  content: "Онлайн-кинотеатр PREMIER",
-  theme: "light",
-  placement: "bottom",
-});
+//       this.classList.toggle("active");
+//       const body = this.nextElementSibling;
 
-tippy("#video2", {
-  content:
-    "Видеосервис Amediateka, START или more.tv на выбор. Онлайн-кинотеатр PREMIER до 31 декабря 2022 года бесплатно!",
-  theme: "light",
-  placement: "bottom",
-});
+//       if (this.classList.contains("active")) {
+//         body.style.maxHeight = body.scrollHeight + "px";
+//       } else {
+//         body.style.maxHeight = null;
+//       }
+//     });
+//   });
+// });
 
-tippy("#video3", {
-  content:
-    "Amediateka, START, more.tv и PREMIER: видео на любой вкус. Все популярные онлайн-кинотеатры в высоком качестве, без рекламы",
-  theme: "light",
-  placement: "bottom",
-});
+// tippy("#video0", {
+//   content:
+//     "Онлайн-кинотеатр START, PREMIER или more.tv на выбор: эксклюзивные премьеры, кино и сериалы",
+//   theme: "light",
+//   placement: "bottom",
+// });
+
+// tippy("#video1", {
+//   content: "Онлайн-кинотеатр PREMIER",
+//   theme: "light",
+//   placement: "bottom",
+// });
+
+// tippy("#video2", {
+//   content:
+//     "Видеосервис Amediateka, START или more.tv на выбор. Онлайн-кинотеатр PREMIER до 31 декабря 2022 года бесплатно!",
+//   theme: "light",
+//   placement: "bottom",
+// });
+
+// tippy("#video3", {
+//   content:
+//     "Amediateka, START, more.tv и PREMIER: видео на любой вкус. Все популярные онлайн-кинотеатры в высоком качестве, без рекламы",
+//   theme: "light",
+//   placement: "bottom",
+// });
 
 // function noScroll() {
 //     window.scrollTo(0, 0)
@@ -164,7 +183,6 @@ let content7860 =
 
 console.log(phone);
 
-let whatsapp = document.getElementById("whatsapp-link");
 //.getAttribute("href").split("=")
 // let whatsappNumber = parseInt(whatsapp[1])
 
@@ -228,13 +246,13 @@ let whatsapp = document.getElementById("whatsapp-link");
 //   phone.innerHTML = content7860;
 // }
 
-tippy("#tooltip1", {
-  content:
-    "Видеосервис AMEDIATEKA, START, PREMIER или «Лучшее от more.tv» на выбор: горячие новинки и классика",
-  arrow: true,
-});
+// tippy("#tooltip1", {
+//   content:
+//     "Видеосервис AMEDIATEKA, START, PREMIER или «Лучшее от more.tv» на выбор: горячие новинки и классика",
+//   arrow: true,
+// });
 
-tippy("#tooltip2", {
-  content:
-    "Онлайн-кинотеатр START, IVI или PREMIER на выбор: эксклюзивные премьеры, кино и сериалы",
-});
+// tippy("#tooltip2", {
+//   content:
+//     "Онлайн-кинотеатр START, IVI или PREMIER на выбор: эксклюзивные премьеры, кино и сериалы",
+// });

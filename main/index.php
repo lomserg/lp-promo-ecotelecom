@@ -18,8 +18,8 @@ if (file_exists($file)) {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title"><span class="hero__title-sub ">КАНИКУЛЫ</span> ПО-ВЗРОСЛОМУ</h1>
-            <h3 class="hero__title-second">ИНТЕРНЕТ БЕСПЛАТНО НА ВСЕ ЛЕТО</h3>
+            <h1 class="hero__title">ЗАПАСАЙ ИНТЕРНЕТ</h1>
+            <h3 class="hero__title-second">ПОЛУЧИ СКИДКУ НА 12 МЕСЯЦЕВ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -35,14 +35,14 @@ if (file_exists($file)) {
                     <!-- <img src="./img/logo_start.svg" alt="" />
                     <img src="./img/Amediateka_full_white.png" alt="" /> -->
                 </div>
-                <!-- <div class="info-block">
-              <div class="info-block-feature fs-300 uppercase fw-bold">777</div>
-              <div class="info-block-text">₽/мес</div>
-            </div> -->
+                <div class="info-block">
+                    <div class="info-block-feature fs-300 uppercase fw-bold">800</div>
+                    <div class="info-block-text">₽/мес</div>
+                </div>
             </div>
         </div>
-        <div class="">
-            <!-- <img src="./img/1839143497_1b.png" alt="" /> -->
+        <div class="hero-img">
+            <img src="./img/zapas.png" alt="" />
         </div>
     </div>
 
@@ -65,76 +65,48 @@ if (file_exists($file)) {
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
+            <?php foreach($tarifs_json AS $tarif): ?>
+
+            <?php if($tarif['tv'] == false): ?>
             <div class="swiper-slide tarif-option">
                 <div class="tarif-slider-description">
-                    <div class="tarif-promo">Акция</div>
+                    <?php if($tarif['promo']) : ?><div class="tarif-promo">Акция</div>
+                    <?php endif?>
                     <!-- <div class="tarif-icon"></div> -->
-                    <p class="tarif-name">МЕГА</p>
-                    <p class="tarif-price">
-                        0 <span style="font-size: 0.75rem">₽/мес</span>
-                        <span class="tarif-price-old">770 <span style="font-size: 0.75rem">₽/мес</span></span>
+                    <p class="tarif-name"><?php echo $tarif["name"]?></p>
+                    <?php if($tarif['promo']) : ?>
+                    <p class="tarif-price"> <?php echo $tarif['price2']  ?> <span
+                            style="font-size: 0.75rem">₽/мес</span>
+                        <span class="tarif-price-old"><?php echo $tarif["price"]?>
+                            <span style="font-size: 0.75rem">₽/мес</span></span>
                     </p>
-
+                    <?php else : ?>
+                    <p class="tarif-price">
+                        <?php echo $tarif["price"]?><span style="font-size: 0.75rem">₽/мес</span>
+                    </p>
+                    <?php endif?>
                     <div class="tarif-param">
-                        <p class="tarif-speed">500 Мбит/с</p>
+                        <p class="tarif-speed"><?php echo $tarif["speed"]?> Мбит/c</p>
+                        <div class="tarif channels-item" data-package="<?php echo $tarif["dataPackage"] ?>">
+                            <a class="channels_link link trigger" href="#channels"><?php echo $tarif["channels"] ?>
+                                ТВ-каналов</a>
+                        </div>
                     </div>
 
                     <div class="tarif-options-description">
                         <ul class="tarif-options-list">
-                            <!-- <li>"Раздаем интернет всем" на 6 месяцев</li> -->
-                            <!-- <li>-20% при оплате на 12 месяцев</li>
-                  <li>Максимум скорости. Всё летает</li> -->
+
                         </ul>
                     </div>
-                    <button class="choose-btn">Выбрать</button>
+                    <a href="tarif.php?id=<?php echo $tarif["id"] ?>" class="choose-btn">Выбрать</a>
                 </div>
+
             </div>
-            <div class="swiper-slide tarif-option">
-                <div class="tarif-slider-description">
-                    <!-- <div class="tarif-promo">Акция</div> -->
-                    <!-- <div class="tarif-icon"></div> -->
-                    <p class="tarif-name">СТАРТ</p>
-                    <p class="tarif-price">
-                        610 <span style="font-size: 0.75rem">₽/мес</span>
-                    </p>
+            <?php endif; ?>
+            <?php endforeach; ?>
 
-                    <div class="tarif-param">
-                        <p class="tarif-speed">100 Мбит/с</p>
-                    </div>
 
-                    <div class="tarif-options-description">
-                        <ul class="tarif-options-list">
-                            <!-- <li>-20% при оплате на 12 месяцев</li>
-                  <li>Стартовый тариф для повседневных задач</li> -->
-                        </ul>
-                    </div>
-                    <button class="choose-btn">Выбрать</button>
-                </div>
-            </div>
 
-            <div class="swiper-slide tarif-option">
-                <div class="tarif-slider-description">
-                    <!-- <div class="tarif-promo">Акция</div> -->
-                    <!-- <div class="tarif-icon"></div> -->
-                    <p class="tarif-name">ХИТ</p>
-                    <p class="tarif-price">
-                        710 <span style="font-size: 0.75rem">₽/мес</span>
-                    </p>
-
-                    <div class="tarif-param">
-                        <p class="tarif-speed">300 Мбит/с</p>
-                    </div>
-
-                    <div class="tarif-options-description">
-                        <ul class="tarif-options-list">
-                            <!-- <li>Акция "Новогодние хиты"</li>
-                  <li>Бесплатный доступ к услугам до 29.02.24</li> -->
-                            <!-- <li>Оптимальный интернет для работы и отдыха</li> -->
-                        </ul>
-                    </div>
-                    <button class="choose-btn">Выбрать</button>
-                </div>
-            </div>
         </div>
 
         <!-- If we need pagination -->
@@ -151,141 +123,59 @@ if (file_exists($file)) {
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-
+                <?php foreach($tarifs_json AS $tarif): ?>
+                <?php if($tarif['tv'] == true): ?>
                 <div class="swiper-slide tarif-option">
                     <div class="tarif-slider-description">
-                        <div class="tarif-promo">Акция</div>
-                        <!-- <div class="tarif-icon"></div> -->
-                        <p class="tarif-name">УЛЬТРА+КИНО</p>
-                        <p class="tarif-price">
-                            0 <span style="font-size: 0.75rem">₽/мес</span>
-                            <span class="tarif-price-old">990 <span style="font-size: 0.75rem">₽/мес</span></span>
+                        <?php if($tarif['promo']) : ?><div class="tarif-promo">Акция</div>
+                        <?php endif?>
+                        <p class="tarif-name"><?php echo $tarif["name"]?></p>
+                        <?php if($tarif['promo']) : ?>
+                        <p class="tarif-price"> <?php echo $tarif['price2']  ?> <span
+                                style="font-size: 0.75rem">₽/мес</span>
+                            <span class="tarif-price-old"><?php echo $tarif["price"]?>
+                                <span style="font-size: 0.75rem">₽/мес</span></span>
                         </p>
-
+                        <?php else : ?>
+                        <p class="tarif-price">
+                            <?php echo $tarif["price"]?><span style="font-size: 0.75rem">₽/мес</span>
+                        </p>
+                        <?php endif?>
                         <div class="tarif-param">
-                            <p class="tarif-speed">350 Мбит/с</p>
-                            <div class="tarif channels-item" data-package="5e7b7e70acb10bd8ce882ef1">
-                                <a class="channels_link link trigger" href="#channels">320 ТВ-каналов</a>
+                            <p class="tarif-speed"><?php echo $tarif["speed"] ?> Мбит/с</p>
+                            <div class="tarif channels-item" data-package="<?php echo $tarif["dataPackage"] ?>">
+                                <a class="channels_link link trigger" href="#channels"><?php echo $tarif["channels"] ?>
+                                    ТВ-каналов</a>
                             </div>
-                            <p class="tarif-movie" id="video2">2 из 3 видеосервисов</p>
+                            <?php if(!empty($tarif["movie"])): ?>
+                            <p class="tarif-movie" id="video2"><?php echo $tarif["movie"] ?></p>
+                            <?php else : ?>
+                            <p class="tarif-movie" id="video2">-</p>
+                            <?php endif ?>
                         </div>
                         <div class="tarif-options-description">
                             <ul class="tarif-options-list">
                                 <!-- <li>"Раздаем интернет всем" на 6 месяцев</li>
 
-                    <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
+                                <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
                             </ul>
                         </div>
-                        <button class="choose-btn">Выбрать</button>
+                        <a href="tarif.php?id=<?php echo $tarif["id"] ?>" class="choose-btn">Выбрать</a>
                     </div>
                 </div>
                 <!-- end tarif-->
-                <div class="swiper-slide tarif-option">
-                    <div class="tarif-slider-description">
-                        <!-- <div class="tarif-promo">Акция</div> -->
-                        <!-- <div class="tarif-icon"></div> -->
-                        <p class="tarif-name">ХИТ+ТВ</p>
-                        <p class="tarif-price">
-                            860<span style="font-size: 0.75rem">₽/мес</span>
-                        </p>
-                        <div class="tarif-param">
-                            <p class="tarif-speed">300 Мбит/с</p>
-                            <div class="tarif channels-item" data-package="630f5b1c944a765510046e89">
-                                <a class="channels_link link trigger" href="#channels">275 ТВ-каналов</a>
-                            </div>
-                            <p class="tarif-movie" id="video1">PREMIER</p>
-                        </div>
-                        <div class="tarif-options-description">
-                            <ul class="tarif-options-list">
-                                <!-- <li>Акция "Новогодние хиты"</li>
-                    <li>Бесплатный доступ к услугам до 29.02.24</li> -->
-                            </ul>
-                        </div>
-                        <button class="choose-btn">Выбрать</button>
-                    </div>
-                </div>
-                <!-- end tarif -->
-                <div class="swiper-slide tarif-option">
-                    <div class="tarif-slider-description" data-package="5b504edcb2de77e82f591f1a">
-                        <!-- <div class="tarif-promo" style="display: none;">
-                                  Выгодно
-                              </div> -->
-                        <!-- <div class="tarif-icon"></div> -->
-                        <p class="tarif-name">СТАРТ+ТВ</p>
-                        <p class="tarif-price">
-                            710 <span style="font-size: 0.75rem">₽/мес</span>
-                        </p>
-                        <div class="tarif-param">
-                            <p class="tarif-speed">100 Мбит/с</p>
-                            <div class="tarif channels-item" data-package="5b504edcb2de77e82f591f1a">
-                                <a class="channels_link link trigger" href="#channels">180 ТВ-каналов</a>
-                            </div>
-                            <p class="tarif-movie">
-                                <span style="font-size: 1.1rem; font-weight: 900">- </span>
-                            </p>
-                        </div>
-                        <div class="tarif-options-description">
-                            <ul class="tarif-options-list">
-                                <!-- <li>-20% при оплате на 12 месяцев</li>
+                <?php endif; ?>
+                <?php endforeach; ?>
 
-                    <li>Интернет и стартовый пакет ТВ-каналов</li> -->
-                            </ul>
-                        </div>
-                        <button class="choose-btn">Выбрать</button>
-                    </div>
-                </div>
-                <!-- end tarif -->
-                <div class="swiper-slide tarif-option">
-                    <div class="tarif-slider-description">
-                        <!-- <div class="tarif-promo">
-                                  Выгодно
-                              </div> -->
-                        <!-- <div class="tarif-icon"></div> -->
-                        <p class="tarif-name">СТАРТ+КИНО</p>
-                        <p class="tarif-price">
-                            810 <span style="font-size: 0.75rem">₽/мес</span>
-                        </p>
 
-                        <div class="tarif-param">
-                            <p class="tarif-speed">100 Мбит/с</p>
-                            <div class="tarif channels-item" data-package="5b504edcb2de77e82f591f1a">
-                                <a class="channels_link link trigger" href="#channels">115 ТВ-каналов</a>
-                            </div>
-                            <p class="tarif-movie" id="video0">1 видеосервисов из 3</p>
-                        </div>
-                        <div class="tarif-options-description">
-                            <ul class="tarif-options-list">
-                                <!-- <li>-20% при оплате на 12 месяцев</li>
 
-                    <li>Всё под рукой: интернет, ТВ и онлайн-кинотеатр</li> -->
-                            </ul>
-                        </div>
-                        <button class="choose-btn">Выбрать</button>
-                    </div>
-                </div>
 
-                <!-- end tarif -->
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
         </div>
     </div>
 
-    <div class="checkout">
-        <h3>Вы выбрали</h3>
-        <div class="total-price">
-            <div class="selection"><span>sample </span> <span>9.98</span></div>
-            <div class="selection">
-                <span>Delivery </span> <span>select type</span>
-            </div>
-            <div class="total"><span>Total</span>848</div>
-            <input id="myCheckbox" type="checkbox" />
-            <button class="btn checkout-btn">Checkout</button>
-        </div>
-        <a href="javascript:void(0);" class="close-btn">
-            <i class="fas fa-times"></i>
-        </a>
-    </div>
 
     <div class="modal-bg-tv">
         <div class="modal-tv">
@@ -297,29 +187,6 @@ if (file_exists($file)) {
         </div>
     </div>
 
-    <div class="modal-bg">
-        <div class="modal">
-            <form action="./php/telegram.php" method="post" id="form2" name="call-form"
-                onsubmit="return validateForm();">
-                <p style="font-weight: bold; margin-bottom: 1rem; text-align: center">
-                    Заявка на подключение
-                </p>
-                <label class="fs-200" for="name1">Имя</label>
-                <input type="text" name="name" id="name1" class="field" required />
-                <label class="fs-200" for="phone1">Телефон</label>
-                <input type="tel" class="field" data-tel-input maxlength="18" name="number" id="phone1" required />
-                <label class="fs-200" for="adr11">Адрес</label>
-                <input type="text" class="field" name="address" id="adr11" required />
-                <button type="submit bg-violet" class="btn bg-violet" style="width: 80%; margin-left: 2rem"
-                    name="call-submit"
-                    onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(49966909, 'reachGoal', 'form-submit'); } return false;">
-                    Отправить
-                </button>
-                <input autocomplete="off" type="hidden" name="call-control" class="call-control" value="0" />
-            </form>
-            <span id="closeForm" class="modal-close">X</span>
-        </div>
-    </div>
 </section>
 
 <div class="wrapper flow container">
@@ -431,30 +298,23 @@ if (file_exists($file)) {
     </section>
 </div>
 
+
 <section class="faq container">
     <h2 class="section-title fs-600">Дополнительная информация:</h2>
 
     <div class="accordion">
-        <?php foreach($faqData_json AS $faq) : ?>
-
-
+        <?php foreach ($faqData_json as $item): ?>
         <div class="accordion-item">
-            <div class="accordion-item-header fs-400">
-                <?php echo $faq["question"] ?>
+            <div class="accordion-header">
+                <?= htmlspecialchars($item['question']) ?>
             </div>
-            <div class="accordion-item-body">
-                <div class="accordion-item-body-content">
-                    <p>
-                        <?php  echo nl2br($faq["answer"]) ?>
-                    </p>
+            <div class="accordion-body">
+                <div class="accordion-body-content">
+                    <?= nl2br(htmlspecialchars($item['answer'])) ?>
                 </div>
             </div>
         </div>
-
-
-        <?php endforeach ?>
-        <!-- next -->
-
+        <?php endforeach; ?>
     </div>
 </section>
 <section class="form container">
@@ -491,3 +351,15 @@ if (file_exists($file)) {
         </form>
     </div>
 </section>
+
+
+
+
+<?php
+$file = __DIR__ . '/inc/footer.inc.php';
+if (file_exists($file)) {
+    include $file;
+} else {
+    echo "Include file not found: $file";
+}
+?>

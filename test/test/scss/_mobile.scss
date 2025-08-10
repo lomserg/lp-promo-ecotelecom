@@ -1,0 +1,22 @@
+@media (max-width: 1200px) {
+    .tv__image,
+    .tv__txt {
+        width: 100%;
+    }
+
+    .tv__wrapper,
+    .flex-2-col,
+    .advantages__items {
+        flex-direction: column;
+    }
+    .advantages__items {
+        flex-wrap: wrap;
+    }
+
+    .wrapper__slider {
+        max-width: 90vw;
+    }
+    .advantages__item {
+        max-width: 100%;
+    }
+}

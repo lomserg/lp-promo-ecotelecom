@@ -467,6 +467,7 @@ select {
       1fr
     );
   max-width: 80rem;
+  margin-top: 10px;
 }
 
 .logo-header {
@@ -624,58 +625,47 @@ select {
 /* hero         */
 /* ------------------- */
 .hero__bg {
-  background: rgba(154, 218, 200, 1) 100%;
-
+  background: #8ac7ca;
+  background: #40949c;
+  background: linear-gradient(
+    180deg,
+    rgba(64, 148, 156, 1) 0%,
+    rgba(179, 226, 232, 1) 100%
+  );
   position: relative;
-  height: 90vh;
-}
-.hero__bg::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 56%; /* можно изменить под нужный размер */
-  height: auto;
-  aspect-ratio: 1 / 1; /* для правильной пропорции, если нужно */
-  background-image: url("./img/summer2025_promo2.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  pointer-events: none; /* чтобы не мешала кликам */
-  z-index: 1;
 }
 .hero__bg-container {
   display: flex;
   /* flex-direction: column; */
   align-items: center;
   justify-content: start;
-  width: 1200px;
+  max-width: 80rem;
   gap: 2rem;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .primary-navigation {
   display: none;
 }
 .hero-img {
-  background-image: url(./img/summer2025_promo.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 100%;
+  width: 50%;
   min-height: 450px;
+  display: flex;
+  justify-content: center;
 }
 .hero-img img {
   display: block;
+  width: 69%;
 }
 
 .hero__title {
   font-family: "Gilroy";
-  font-size: 79px;
-  white-space: nowrap;
+  font-size: 59px;
   color: #fff;
   line-height: 1;
   font-family: "GilroyExtraBold";
+  white-space: nowrap;
+  text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan;
 }
 .hero__title-sub {
   display: block;
@@ -686,8 +676,10 @@ select {
 .hero__title-second {
   font-size: 32px;
   font-family: "Gilroy";
-  color: #5dadff;
+  color: #fee751;
   font-family: "GilroyExtraBold";
+
+  text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan;
 }
 
 html {
@@ -727,6 +719,8 @@ html {
   align-self: center;
   align-items: self-start;
   gap: 1.25rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 /* .hero-txt-cta h1 {
   font-size: 3.5rem;
@@ -738,44 +732,50 @@ html {
   }
   .hero__title {
     font-size: 57px;
+    text-align: center;
+    white-space: normal;
+    text-shadow: none;
   }
   .hero__title-second {
     font-size: 30px;
+    text-align: center;
   }
   .hero-txt-cta {
     align-items: center;
     justify-content: center;
     width: 90%;
     margin-top: 5rem;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .btn {
     align-self: center;
   }
   .hero__bg {
-    height: 700px;
     align-items: center;
     display: flex;
   }
   .hero__bg-container {
     flex-direction: column;
   }
-
+  .hero-img {
+    display: contents;
+  }
   .info-block img {
     max-width: 100%;
   }
 }
 @media (max-width: 500px) {
-  .hero__bg {
-    height: 600px;
-  }
   .hero__title-sub {
     font-size: 58px;
   }
   .hero__title {
     font-size: 37px;
+    text-align: center;
   }
   .hero__title-second {
     font-size: 16px;
+    text-shadow: none;
   }
   .hero__bg::before {
     width: 100%;

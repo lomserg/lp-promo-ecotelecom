@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/slider/swiper-bundle.min.css">
+    <script src="assets/slider/swiper-bundle.min.js" defer></script>
+    <script src="swiper.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+.swiper {
+    max-width: 1100px;
+    height: 300px;
+  }
+
+.sllder {
+    max-width: 1230px;
+    margin: 0 auto;
+}
+.swiper-slide {
+    background: purple;
+}
+
+.swiper__container2 {
+  margin-top: 2rem;
+}
+
+.swiper__container2,
+.swiper__container1 {
+  position: relative;
+}
+
+.slider__nav {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+.slider__nav2 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 1200px) {
+    .slider__nav {
+      display: none;
+    }
+  }
+
+    .swiper__navBtn {
+    color: #111;
+    height: 40px !important;
+    width: 40px !important;
+    background-color: grey;
+    border-radius: 50%;
+    opacity: 0.33;
+  }
+
+  .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+    font-size: 16px !important;
+    color: #fff;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after  {
+    font-size: 16px !important;
+    color: #fff;
+}
+    </style>
+    <section class="sllder">
+        <div class="swiper__container1">
+          <div class="swiper swiper1">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+              </div>
+              <!-- If we need pagination -->
+              <!-- If we need scrollbar -->
+              <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="slider__nav">
+                          <!-- If we need navigation buttons -->
+                          <div class="swiper-button-prev swiper__navBtn swiper-button-next1"></div>
+                          <div class="swiper-button-next swiper__navBtn swiper-button-next1"></div>
+            </div>
+        </div>
+          <div class="swiper__container2">
+            <div class="swiper swiper2">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+              </div>
+              <!-- If we need pagination -->
+              <!-- If we need scrollbar -->
+              <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="slider__nav2">
+                          <!-- If we need navigation buttons -->
+                          <div class="swiper-button-prev swiper-button-prev2"></div>
+                          <div class="swiper-button-next swiper-button-prev2"></div>
+            </div>
+          </div>
+    </section>
+</body>
+</html>

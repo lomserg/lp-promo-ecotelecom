@@ -19,13 +19,13 @@
     <script src="https://kit.fontawesome.com/4af22d591d.js" crossorigin="anonymous" defer></script>
     <script src="https://unpkg.com/@popperjs/core@2" defer></script>
     <script src="https://unpkg.com/tippy.js@6" defer></script>
-
-    <script type="module" src="./js/index.js" defer></script>
+    <script src="./js/phoneinput.js" defer></script>
+    <script defer src="./js/index.js"></script>
     <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
     <script src="./js/swiper-bundle.min.js" defer></script>
-    <script src="slider.js" defer></script>
     <script defer src="./js/channels.js"></script>
     <script defer src="./js/modal.js"></script>
+    <script src="./slider.js" defer></script>
 </head>
 
 <body>
@@ -58,15 +58,11 @@
     </noscript>
     <!-- /Yandex.Metrika -->
 
-    <header class="header container">
+    <header class="header container"
+        <?php if (strpos($_SERVER['REQUEST_URI'], '/tarif.php') !== false) echo 'style="background: #1b8607; width: 100%"'; ?>>
         <div class="header-content">
             <a class="logo-header" href="#"></a>
-            <div class="whatsapp">
-                <a id="whatsapp-link" href="https://api.whatsapp.com/send/?phone=79912256610">
-                    <img src="https://i.1.creatium.io/84/76/1c/1fb6a2b7eec23669fcb0131c6057dc770c/whatsapp_icon_png_1.png"
-                        alt="" />
-                </a>
-            </div>
+
             <div class="phone text-dark">
                 <a style="text-decoration: none" class="phoneid" href="tel:+74998017799">+7 499 801-77-99</a>
             </div>

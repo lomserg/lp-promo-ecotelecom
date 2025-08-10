@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/icons/favicon.ico" />
+    <link rel="stylesheet" href="assets/slider/swiper-bundle.min.css" />
+    <script src="assets/slider/swiper-bundle.min.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      defer
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+    ></script>
+    <script defer src="./js/channels.js"></script>
+    <script src="./swiper.js" defer></script>
+    <script src="./js/form.js" defer></script>
+    <script src="./js/modal.js" defer></script>
+    <script src="./js/phoneinput.js" defer></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+      defer
+    ></script>
+    <script src="index.js" defer></script>
+    <title>«Теле.ру» интернет провайдер</title>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        "script",
+        "https://mc.yandex.ru/metrika/tag.js",
+        "ym"
+      );
+
+      ym(47792392, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+      });
+    </script>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/47792392"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <script src="//code.jivo.ru/widget/zOxVgIwJCE" async></script>
+  </head>
+  <body>
+    <section class="hero-new fixed-wrapper bg-hero">
+      <header class="header-home">
+        <div class="header-menu flex container">
+          <a class="logo-white" href="#"></a>
+          <nav class="primary-navigation">
+            <ul role="list" class="nav-list flex">
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Вакансии</a></li>
+              <li><a href="#">Отзывы</a></li>
+            </ul>
+          </nav>
+          <div class="phone">
+            <a
+              style="text-decoration: none"
+              class="phoneid"
+              href="tel:+74995055551"
+              >+7 499 505-55-51</a
+            >
+          </div>
+        </div>
+      </header>
+      <div class="hero__wrapper container">
+        <div class="hero__left">
+          <div style="text-align: center">
+            <h1 class="hero__title">СОБЕРИ УРОЖАЙ СКИДОК</h1>
+            <h3 class="clr-white" style="margin-top: 2rem">
+              2 ОНЛАЙН-КИНОТЕАТРА
+            </h3>
+          </div>
+          <div class="hero__description">
+            <div class="hero__description-left">
+              <img src="./images/logo_Premier_w.png" alt="" />
+              <img src="./images/logo_start.png" alt="" />
+              <img src="./images/logo_amediateka.png" alt="" />
+              <img src="./images/logo_moretv.png" alt="" />
+            </div>
+            <div class="hero__description-left" style="margin-top: 2rem">
+              <div class="hero__description-props circle">
+                <p class="hero__description__first">350</p>
+                <p class="hero__description__second">МБИТ/С</p>
+              </div>
+              <div class="hero__description-props circle">
+                <p class="hero__description__first">270</p>
+                <p class="hero__description__second">КАНАЛОВ</p>
+              </div>
+              <div class="hero__description-props">
+                <p class="hero__description__first">600</p>
+                <p class="hero__description__second">РУБ/МЕС</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <a href="#tarifs__section" class="btn bg-orange btn-primary"
+              >Подробнее</a
+            >
+          </div>
+        </div>
+        <div class="hero__right">
+          <img src="./images/man.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- <section class="hero hero-bg p-relative">
+      <header class="header">
+        <div class="header__content">
+          <div class="header__logo">
+            <img src="./images/logo2_teleru.png" alt="" />
+          </div>
+          <a class="header__phone">+74995055557</a>
+        </div>
+      </header>
+
+      <div class="container hero__container">
+        <div class="hero__description">
+          <h1>БОЛЬШЕ, ЧЕМ ИНТЕРНЕТ</h1>
+          <p>
+            Вы можете подключить популярные видеосервисы и онлайн-кинотеатры
+          </p>
+          <a class="btn btn-secondary">Подробнее</a>
+        </div>
+        <div class="hero__img">
+          <img src="./images/dsdc.png" alt="" />
+        </div>
+      </div>
+    </section> -->
+
+    <section>
+      <!-- modals -->
+
+      <!-- старт+кино -->
+      <div class="bg-modal" id="pack-5b504edcb2de77e82f591f1a">
+        <div class="modal-content">
+          <div class="modal-box">
+            <button class="modal-btn">X</button>
+            <div class="channels_list"></div>
+          </div>
+        </div>
+      </div>
+      <!-- хит+тв -->
+      <div class="bg-modal" id="pack-630f5b1c944a765510046e89">
+        <div class="modal-content">
+          <div class="modal-box">
+            <button class="modal-btn">X</button>
+            <div class="channels_list"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Ультра+кино -->
+      <div class="bg-modal" id="pack-5e7b7e70acb10bd8ce882ef1">
+        <div class="modal-content">
+          <div class="modal-box">
+            <button class="modal-btn">X</button>
+            <div class="channels_list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sllder" id="tarifs__section">
+      <div class="section__head" style="text-align: center">
+        <p class="section__subtitle">Тарифы</p>
+        <h3 class="section__title">Интернет</h3>
+      </div>
+      <div class="swiper__container1">
+        <div class="swiper swiper1">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <!-- first tarif -->
+            <div class="swiper-slide">
+              <div class="tarif__item">
+                <img src="./images/Intersect.png" class="tarif__bg" alt="" />
+                <h4 class="tarif__name">Старт</h4>
+                <h4 class="tarif__price">
+                  385 <span class="tarif__small-text">₽/мес</span>
+                </h4>
+                <div class="tarif__icons">
+                  <div class="tarif__icon">
+                    <img src="./images/icons/internet.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img
+                      src="./images/icons/tv.svg"
+                      alt=""
+                      style="opacity: 0.33"
+                    />
+                  </div>
+                  <div class="tarif__icon">
+                    <img
+                      src="./images/icons/movie.svg"
+                      alt=""
+                      style="opacity: 0.33"
+                    />
+                  </div>
+                </div>
+                <!-- tarif spec -->
+                <div class="tarif__spec">
+                  <p class="tarif__speed">
+                    100 <span class="tarif__small-text">Мбит/с</span>
+                  </p>
+                </div>
+                <p class="tarif__description">
+                  Стартовый тариф для повседневных задач
+                </p>
+                <button type="button" class="btn-tarif">Подключить</button>
+              </div>
+            </div>
+            <!-- end first tarif -->
+            <!-- first tarif -->
+            <div class="swiper-slide">
+              <div class="tarif__item">
+                <img src="./images/Intersect.png" class="tarif__bg" alt="" />
+                <h4 class="tarif__name">Хит</h4>
+                <h4 class="tarif__price">
+                  650 <span class="tarif__small-text">₽/мес</span>
+                </h4>
+                <div class="tarif__icons">
+                  <div class="tarif__icon">
+                    <img src="./images/icons/internet.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img
+                      src="./images/icons/tv.svg"
+                      alt=""
+                      style="opacity: 0.33"
+                    />
+                  </div>
+                  <div class="tarif__icon">
+                    <img
+                      src="./images/icons/movie.svg"
+                      alt=""
+                      style="opacity: 0.33"
+                    />
+                  </div>
+                </div>
+                <!-- tarif spec -->
+                <div class="tarif__spec">
+                  <p class="tarif__speed">
+                    300 <span class="tarif__small-text">Мбит/с</span>
+                  </p>
+                </div>
+                <p class="tarif__description">
+                  Стартовый тариф для повседневных задач
+                </p>
+                <button type="button" class="btn-tarif">Подключить</button>
+              </div>
+            </div>
+            <!-- end first tarif -->
+            <!-- first tarif -->
+            <div class="swiper-slide">
+              <div class="tarif__item">
+                <img src="./images/Intersect.png" class="tarif__bg" alt="" />
+                <h4 class="tarif__name">МЕГА</h4>
+                <h4 class="tarif__price">
+                  740 <span class="tarif__small-text">₽/мес</span>
+                </h4>
+                <div class="tarif__icons">
+                  <div class="tarif__icon">
+                    <img src="./images/icons/internet.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img
+                      src="./images/icons/tv.svg"
+                      alt=""
+                      style="opacity: 0.33"
+                    />
+                  </div>
+                  <div class="tarif__icon">
+                    <img
+                      src="./images/icons/movie.svg"
+                      alt=""
+                      style="opacity: 0.33"
+                    />
+                  </div>
+                </div>
+                <!-- tarif spec -->
+                <div class="tarif__spec">
+                  <p class="tarif__speed">
+                    500 <span class="tarif__small-text">Мбит/с</span>
+                  </p>
+                </div>
+                <p class="tarif__description">
+                  Стартовый тариф для повседневных задач
+                </p>
+                <button type="button" class="btn-tarif">Подключить</button>
+              </div>
+            </div>
+            <!-- end first tarif -->
+          </div>
+          <!-- If we need pagination -->
+          <!-- If we need scrollbar -->
+          <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="slider__nav">
+          <!-- If we need navigation buttons -->
+          <div
+            class="swiper-button-prev swiper-button-prev1 swiper__navBtn"
+          ></div>
+          <div
+            class="swiper-button-next swiper-button-next1 swiper__navBtn"
+          ></div>
+        </div>
+      </div>
+      <div class="section__head" style="text-align: center">
+        <h3 class="section__title">Интернет + ТВ</h3>
+      </div>
+      <div class="swiper__container2">
+        <div class="swiper swiper2">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <!-- first tarif -->
+            <div class="swiper-slide">
+              <div class="tarif__item">
+                <img src="./images/Intersect.png" class="tarif__bg" alt="" />
+                <h4 class="tarif__name">СТАРТ+ТВ</h4>
+                <h4 class="tarif__price">
+                  750 <span class="tarif__small-text">₽/мес</span>
+                </h4>
+                <div class="tarif__icons">
+                  <div class="tarif__icon">
+                    <img src="./images/icons/internet.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img src="./images/icons/tv.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img
+                      src="./images/icons/movie.svg"
+                      alt=""
+                      style="opacity: 0.33"
+                    />
+                  </div>
+                </div>
+                <!-- tarif spec -->
+                <div class="tarif__spec">
+                  <p class="tarif__speed">
+                    100 <span class="tarif__small-text">Мбит/с</span>
+                  </p>
+                  <p
+                    class="tarif__speed"
+                    data-package="5b504edcb2de77e82f591f1a"
+                  >
+                    <script>
+                      idPackages.push("5b504edcb2de77e82f591f1a");
+                    </script>
+                    <a
+                      class="channels_link"
+                      data-target="pack-5b504edcb2de77e82f591f1a"
+                      href="#pack-5b504edcb2de77e82f591f1a"
+                      >122
+                      <span
+                        data-target="pack-5b504edcb2de77e82f591f1a"
+                        class="tarif__small-text"
+                        >ТВ-каналов</span
+                      ></a
+                    >
+                  </p>
+                </div>
+
+                <p class="tarif__description">
+                  Стартовый тариф для повседневных задач
+                </p>
+                <button type="button" class="btn-tarif">Подключить</button>
+              </div>
+            </div>
+            <!-- end first tarif -->
+            <!-- first tarif -->
+            <div class="swiper-slide">
+              <div class="tarif__item">
+                <img src="./images/Intersect.png" class="tarif__bg" alt="" />
+                <h4 class="tarif__name">СТАРТ+КИНО</h4>
+                <h4 class="tarif__price">
+                  800 <span class="tarif__small-text">₽/мес</span>
+                </h4>
+                <div class="tarif__icons">
+                  <div class="tarif__icon">
+                    <img src="./images/icons/internet.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img src="./images/icons/tv.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img src="./images/icons/movie.svg" alt="" />
+                  </div>
+                </div>
+                <!-- tarif spec -->
+                <div class="tarif__spec">
+                  <p class="tarif__speed">
+                    100 <span class="tarif__small-text">Мбит/с</span>
+                  </p>
+                  <p
+                    class="tarif__speed"
+                    data-package="5b504edcb2de77e82f591f1a"
+                  >
+                    <script>
+                      idPackages.push("5b504edcb2de77e82f591f1a");
+                    </script>
+                    <a
+                      class="channels_link"
+                      data-target="pack-5b504edcb2de77e82f591f1a"
+                      href="#pack-5b504edcb2de77e82f591f1a"
+                      >122
+                      <span
+                        data-target="pack-5b504edcb2de77e82f591f1a"
+                        class="tarif__small-text"
+                        >ТВ-каналов</span
+                      ></a
+                    >
+                  </p>
+                  <p class="tarif__speed">
+                    1 из 3 <span class="tarif__small-text">видеосервисов </span>
+                  </p>
+                </div>
+                <p class="tarif__description">
+                  Стартовый тариф для повседневных задач
+                </p>
+                <button type="button" class="btn-tarif">Подключить</button>
+              </div>
+            </div>
+            <!-- end first tarif -->
+            <!-- first tarif -->
+            <div class="swiper-slide">
+              <div class="tarif__item">
+                <img src="./images/Intersect.png" class="tarif__bg" alt="" />
+                <h4 class="tarif__name">ХИТ +ТВ</h4>
+                <h4 class="tarif__price">
+                  870 <span class="tarif__small-text">Р/мес</span>
+                </h4>
+                <div class="tarif__icons">
+                  <div class="tarif__icon">
+                    <img src="./images/icons/internet.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img src="./images/icons/tv.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img src="./images/icons/movie.svg" alt="" />
+                  </div>
+                </div>
+                <!-- tarif spec -->
+                <div class="tarif__spec">
+                  <p class="tarif__speed">
+                    300 <span class="tarif__small-text">Мбит/с</span>
+                  </p>
+                  <p
+                    class="tarif__speed"
+                    data-package="630f5b1c944a765510046e89"
+                  >
+                    <script>
+                      idPackages.push("630f5b1c944a765510046e89");
+                    </script>
+                    <a
+                      class="channels_link"
+                      data-target="pack-630f5b1c944a765510046e89"
+                      href="#pack-630f5b1c944a765510046e89"
+                      >216
+                      <span
+                        data-target="pack-630f5b1c944a765510046e89"
+                        class="tarif__small-text"
+                        >ТВ-каналов</span
+                      ></a
+                    >
+                  </p>
+                  <p class="tarif__speed">PREMIER</p>
+                </div>
+                <p class="tarif__description">
+                  Стартовый тариф для повседневных задач
+                </p>
+                <button type="button" class="btn-tarif">Подключить</button>
+              </div>
+            </div>
+            <!-- end first tarif -->
+            <!-- first tarif -->
+            <div class="swiper-slide">
+              <div class="tarif__item">
+                <img src="./images/Intersect.png" class="tarif__bg" alt="" />
+                <h4 class="tarif__name">УЛЬТРА +КИНО</h4>
+                <h4 class="tarif__price">
+                  970 <span class="tarif__small-text">Р/мес</span>
+                </h4>
+                <div class="tarif__icons">
+                  <div class="tarif__icon">
+                    <img src="./images/icons/internet.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img src="./images/icons/tv.svg" alt="" />
+                  </div>
+                  <div class="tarif__icon">
+                    <img src="./images/icons/movie.svg" alt="" />
+                  </div>
+                </div>
+                <!-- tarif spec -->
+                <div class="tarif__spec">
+                  <p class="tarif__speed">
+                    350 <span class="tarif__small-text">Мбит/с</span>
+                  </p>
+                  <p
+                    class="tarif__speed"
+                    data-package="5e7b7e70acb10bd8ce882ef1"
+                  >
+                    <script>
+                      idPackages.push("5e7b7e70acb10bd8ce882ef1");
+                    </script>
+                    <a
+                      class="channels_link"
+                      data-target="pack-5e7b7e70acb10bd8ce882ef1"
+                      href="#pack-5e7b7e70acb10bd8ce882ef1"
+                      >270
+                      <span
+                        data-target="pack-5e7b7e70acb10bd8ce882ef1"
+                        class="tarif__small-text"
+                        >ТВ-каналов</span
+                      >
+                    </a>
+                  </p>
+                  <p class="tarif__speed">
+                    2 из 4 <span class="tarif__small-text">видеосервисов </span>
+                  </p>
+                </div>
+                <p class="tarif__description">
+                  Стартовый тариф для повседневных задач
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-secondary btn-tarif btn-tarif"
+                >
+                  Подключить
+                </button>
+              </div>
+            </div>
+            <!-- end first tarif -->
+          </div>
+          <!-- If we need pagination -->
+          <!-- If we need scrollbar -->
+          <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="slider__nav2">
+          <!-- If we need navigation buttons -->
+          <div
+            class="swiper-button-prev swiper-button-prev2 swiper__navBtn"
+          ></div>
+          <div
+            class="swiper-button-next swiper-button-next2 swiper__navBtn"
+          ></div>
+        </div>
+      </div>
+      <div class="modal__overlay">
+        <div class="modal">
+          <span id="closeForm" class="modal-close">X</span>
+          <form
+            class="form"
+            id="form1"
+            action="./"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <p
+              style="font-weight: bold; margin-bottom: 1rem; text-align: center"
+            >
+              Заявка на подключение
+            </p>
+            <div class="form__item">
+              <label for="name" class="form__label">Имя</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="form__input input-name"
+                placeholder="Напишите ваше имя"
+                required
+              />
+              <span class="form__error">A sample error message</span>
+            </div>
+            <div class="form__item">
+              <label for="tel" class="form__label">Номер телефона</label>
+              <input
+                type="tel"
+                class="form__input input-tel"
+                data-tel-input
+                maxlength="18"
+                name="tel"
+                id="phone1"
+                placeholder="Напишите ваш номер"
+                required
+              />
+              <span class="form__error">A sample error message</span>
+            </div>
+            <div class="form__item">
+              <label for="adres" class="form__label">Адрес</label>
+              <input
+                type="text"
+                name="adres"
+                id="adres"
+                class="form__input input-adres"
+                placeholder="Напишите ваш адрес"
+                required
+              />
+              <span class="form__error">A sample error message</span>
+            </div>
+
+            <button class="form__btn" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="about py-5">
+      <div class="container flex-2-col">
+        <div class="about__img col">
+          <img src="./images/about.png" alt="">
+        </div>
+        <div class="about__txt col">
+          <div class="section__head">
+            <p>О нас</p>
+            <h3>Наш принцип — делать хорошо</h3>
+          </div>
+          <p class="about_info">Оператор «Экотелеком» предоставляет услуги высокоскоростного доступа в интернет, услуги интерактивного телевидения, кабельного ТВ, телефонии, домофонии в Москве и Московской области. Вы можете подключить популярные видеосервисы и онлайн-кинотеатры (Amediateka, Start, PREMIER и more.tv), взять в аренду или купить оборудование: Wi-Fi маршрутизаторы («роутеры») и ТВ-приставки, подключить умный домофон.</p>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="advantages py-6">
+      <div class="container">
+        <div class="section__head">
+          <p class="clr-white">Преимущества</p>
+          <h3 class="clr-white">4 причины нас выбрать</h3>
+        </div>
+        <!-- item 1 -->
+        <div class="advantages__items">
+          <div class="advantages__item">
+            <div class="advantages__img">
+              <img src="./images/icons/wifi.svg" alt="" />
+            </div>
+            <h3 class="advantages__title">ИНТНЕТ БЕЗ ХЛОПОТ</h3>
+            <p class="advantages__txt">
+              Работай удаленно, смотри видео в 4К, играй в онлайн-игры,
+              передавай "тяжелые" файлы и управляй устройствами без обрывов и
+              "зависаний".
+            </p>
+          </div>
+          <div class="advantages__item">
+            <div class="advantages__img">
+              <img src="./images/icons/tarifs.svg" alt="" />
+            </div>
+            <h3 class="advantages__title">ТАРИФЫ+КИНО</h3>
+            <p class="advantages__txt">
+              Плати за один онлайн-кинотеатр, пользуйся всеми. Меняй кинотеатры
+              каждый день.
+            </p>
+          </div>
+          <div class="advantages__item">
+            <div class="advantages__img">
+              <img src="./images/icons/play.svg" alt="" />
+            </div>
+            <h3 class="advantages__title">ИНТЕРАКТИВНОЕ ТВ</h3>
+            <p class="advantages__txt">
+              Смотри в HD и 4K, ставь ТВ на паузу, перематывай, продолжай
+              просмотр в любое время, выбирай фильмы, мультфильмы и сериалы.
+            </p>
+          </div>
+          <div class="advantages__item">
+            <div class="advantages__img">
+              <img src="./images/icons/abon.svg" alt="" />
+            </div>
+            <h3 class="advantages__title">АБОНЕМЕНТ</h3>
+            <p class="advantages__txt">
+              Заплати один раз* со скидкой 20% (при оплате на год) или 15% (при
+              оплате на полгода) и пользуйся без хлопот.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="tv py-6">
+      <div class="container tv__wrapper">
+        <div class="tv__image">
+          <img src="./images/tv.png" alt="interactive tv image" />
+        </div>
+        <div class="tv__txt">
+          <div
+            class="section__head"
+            style="text-align: center; line-height: 1.2"
+          >
+            <p class="section__subtitle" style="text-align: left">
+              Интерактивное ТВ
+            </p>
+            <h3 class="section__title" style="text-align: left">
+              Что и когда смотреть — выбираешь ты
+            </h3>
+          </div>
+          <p>
+            Большой выбор телеканалов, тысячи фильмов, сериалов в одном
+            приложении. Пользоваться телевидением можно везде, где захочется ;)
+            Смотри ТВ на большом экране с телеприставкой или Smart TV, на
+            мобильных устройствах, на ноутбуках и компьютерах.
+          </p>
+          <ul>
+            <li>Более 300 телеканалов</li>
+            <li>Архив передач до 14 дней</li>
+            <li>Пауза и перемотка</li>
+            <li>5 онлайн-кинотеатров</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="movies py-4">
+      <div class="movies__container">
+        <div class="section__head py-4 container">
+          <p class="clr-white">Онлайн-кинотеатр</p>
+          <h3 class="clr-white">Фильмы и сериалы на всех устройствах</h3>
+        </div>
+        <div class="movies__wrapper p-relative">
+          <div class="movies__slider">
+            <div class="wrapper__slider">
+              <div class="marquee">
+                <div class="marquee__content">
+                  <img src="./images/movies/1.jpeg" alt="" />
+                  <img src="./images/movies/2.jpeg" alt="" />
+                  <img src="./images/movies/3.jpeg" alt="" />
+                  <img src="./images/movies/4.jpeg" alt="" />
+                  <img src="./images/movies/5.jpeg" alt="" />
+                  <img src="./images/movies/6.jpg" alt="" />
+                  <img src="./images/movies/7.jpg" alt="" />
+                  <img src="./images/movies/9.jpeg" alt="" />
+                </div>
+                <div aria-hidden="true" class="marquee__content">
+                  <img src="./images/movies/1.jpeg" alt="" />
+                  <img src="./images/movies/2.jpeg" alt="" />
+                  <img src="./images/movies/3.jpeg" alt="" />
+                  <img src="./images/movies/4.jpeg" alt="" />
+                  <img src="./images/movies/5.jpeg" alt="" />
+                  <img src="./images/movies/6.jpg" alt="" />
+                  <img src="./images/movies/7.jpg" alt="" />
+                  <img src="./images/movies/9.jpeg" alt="" />
+                </div>
+              </div>
+              <div class="movies__title">
+                <h3>
+                  Вы можете подключить популярные онлайн-кинотеатры (Amediateka,
+                  Start, PREMIER и more.tv).
+                </h3>
+              </div>
+              <div class="marquee marquee__reverse">
+                <div class="marquee__content">
+                  <img src="./images/movies/1.jpeg" alt="" />
+                  <img src="./images/movies/2.jpeg" alt="" />
+                  <img src="./images/movies/3.jpeg" alt="" />
+                  <img src="./images/movies/4.jpeg" alt="" />
+                  <img src="./images/movies/5.jpeg" alt="" />
+                  <img src="./images/movies/6.jpg" alt="" />
+                  <img src="./images/movies/7.jpg" alt="" />
+                  <img src="./images/movies/8.jpg" alt="" />
+                </div>
+
+                <div aria-hidden="true" class="marquee__content">
+                  <img src="./images/movies/1.jpeg" alt="" />
+                  <img src="./images/movies/2.jpeg" alt="" />
+                  <img src="./images/movies/3.jpeg" alt="" />
+                  <img src="./images/movies/4.jpeg" alt="" />
+                  <img src="./images/movies/5.jpeg" alt="" />
+                  <img src="./images/movies/6.jpg" alt="" />
+                  <img src="./images/movies/7.jpg" alt="" />
+                  <img src="./images/movies/8.jpg" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq container">
+      <h2 class="section-title fs-600">Дополнительная информация:</h2>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-item-header fs-400">
+            Сколько стоит подключение интернета?
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              <p>
+                Подключение осуществляется бесплатно. Мастер протягивает кабель
+                до вашего этажа, заводит его в квартиру, подключает к компьютеру
+                и настраивает сеть
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-item-header fs-400">
+            Списание денежных средств со счета
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content fs-400">
+              <p>
+                Сумма с абонентского лицевого счета списывается ежедневно
+                равными частями, пропорционально количеству дней в месяце.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-item-header fs-400">
+            Условия подключения по акции «Урожай скидок»
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              <ul class="flow">
+                <li>
+                  Заявки на подключение по акции принимаются до 13.10.23,
+                  подключение проводится до 20.10.23 включительно.
+                </li>
+
+                <li>
+                  Доступ к просмотру ТВ и онлайн-кинотеатрам START, Amediateka,
+                  more.tv и PREMIER осуществляется в приложении «Смотрёшка».
+                </li>
+                <li>
+                  Оборудование и дополнительные услуги при подключении по акции
+                  предоставляются на стандартных условиях.
+                </li>
+                <li>
+                  При подключении по акции на лицевой счет необходимо внести
+                  авансовый платеж в размере не менее 1000 рублей.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- next -->
+        <div class="accordion-item">
+          <div class="accordion-item-header fs-400">
+            Возможны ограничение по скорости на определенных адресах
+          </div>
+          <div class="accordion-item-body">
+            <div class="accordion-item-body-content">
+              <p>
+                В связи с техническими ограничениями скорость по некоторым
+                адресам может быть временно ограничена до
+                модернизации оборудования.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="form__section py-5">
+      <div class="section__head my-3" style="text-align: center">
+        <p class="clr-white">Оставьте заявку на подключение</p>
+        <h3 class="clr-white">Мы свяжемся с вами в ближайшее время</h3>
+      </div>
+      <div class="form__container container">
+        <form
+          class="form"
+          id="form2"
+          action="./"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="form__item">
+            <label for="name" class="form__label">Имя</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form__input input-name"
+              placeholder="Напишите ваше имя"
+              required
+            />
+            <span class="form__error">A sample error message</span>
+          </div>
+          <div class="form__item">
+            <label for="tel" class="form__label">Номер телефона</label>
+            <input
+              type="tel"
+              class="form__input input-tel"
+              data-tel-input
+              maxlength="18"
+              name="tel"
+              id="phone1"
+              placeholder="Напишите ваш номер"
+              required
+            />
+            <span class="form__error">A sample error message</span>
+          </div>
+          <div class="form__item">
+            <label for="adres" class="form__label">Адрес</label>
+            <input
+              type="text"
+              name="adres"
+              id="adres"
+              class="form__input input-adres"
+              placeholder="Напишите ваш адрес"
+              required
+            />
+            <span class="form__error">A sample error message</span>
+          </div>
+
+          <button class="form__btn" type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
+    <section class="footer">
+      <div class="footer-main">
+        <img src="./images/logo2_teleru.png" alt="" class="footer-logo" />
+        <p class="footer-text fs-100">
+          ТЕЛЕ.РУ — провайдер в Москве и Московской области
+        </p>
+
+        <p class="footer-fineprint fs-100" style="font-size: 0.7rem">
+          Продолжая использовать наш сайт, вы даете согласие на обработку файлов
+          Cookies и других пользовательских данных
+        </p>
+        <p class="footer-fineprint fs-100" style="font-size: 0.7rem">
+          © ТЕЛЕ.РУ 2023
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
