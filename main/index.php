@@ -87,7 +87,7 @@ if (file_exists($file)) {
                     <?php endif?>
                     <div class="tarif-param">
                         <p class="tarif-speed"><?php echo $tarif["speed"]?> Мбит/c</p>
-                        <div class="tarif channels-item ntv_channels" >
+                        <div class="tarif channels-item ntv_channels">
                             <a class="channels_link link trigger" href="#channels"><?php echo $tarif["channels"] ?>
                                 ТВ-каналов</a>
                         </div>
