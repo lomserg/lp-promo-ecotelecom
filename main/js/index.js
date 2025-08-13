@@ -1,3 +1,9 @@
+fetch('./data/ntv_light.json')
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(console.error);
+
+
 function validateForm(event, form) {
   var isValid = true; // Track if the form is valid
   var name = form.querySelector("input[name='name']");
