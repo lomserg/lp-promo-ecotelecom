@@ -105,7 +105,11 @@ if (file_exists($file)) {
 
                         </ul>
                     </div>
-                    <a href="tarif.php?id=<?php echo $tarif["id"] ?>" class="choose-btn">Выбрать</a>
+                    <?php
+                    $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
+                    ?>
+                    <a href="tarif.php?id=<?php echo $tarif["id"] . $utm ?>" class="choose-btn">Выбрать</a>
+
                 </div>
 
             </div>
@@ -167,7 +171,10 @@ if (file_exists($file)) {
                                 <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
                             </ul>
                         </div>
-                        <a href="tarif.php?id=<?php echo $tarif["id"] ?>" class="choose-btn">Выбрать</a>
+                        <?php
+                            $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
+                            ?>
+                        <a href="tarif.php?id=<?php echo $tarif["id"] . $utm ?>" class="choose-btn">Выбрать</a>
                     </div>
                 </div>
                 <!-- end tarif-->
@@ -357,3 +364,12 @@ if (file_exists($file)) {
         </form>
     </div>
 </section>
+
+<?php
+$file = __DIR__ . '/inc/footer.inc.php';
+if (file_exists($file)) {
+    include $file;
+} else {
+    echo "Include file not found: $file";
+}
+?>
