@@ -87,7 +87,7 @@ if (file_exists($file)) {
                     <?php endif?>
                     <div class="tarif-param">
                         <p class="tarif-speed"><?php echo $tarif["speed"]?> Мбит/c</p>
-                        <div class="tarif channels-item" data-package="<?php echo $tarif["dataPackage"] ?>">
+                        <div class="tarif channels-item ntv_channels">
                             <a class="channels_link link trigger" href="#channels"><?php echo $tarif["channels"] ?>
                                 ТВ-каналов</a>
                             <p style=" color: black; font-size: 12px;">НТВ-ПЛЮС ТВ в подарок 🎁</p>
@@ -99,7 +99,10 @@ if (file_exists($file)) {
 
                         </ul>
                     </div>
-                    <a href="tarif.php?id=<?php echo $tarif["id"] ?>" class="choose-btn">Выбрать</a>
+                    <?php
+                    $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
+                    ?>
+                    <a href="tarif.php?id=<?php echo $tarif["id"] . $utm ?>" class="choose-btn">Выбрать</a>
                 </div>
 
             </div>
@@ -161,7 +164,10 @@ if (file_exists($file)) {
                                 <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
                             </ul>
                         </div>
-                        <a href="tarif.php?id=<?php echo $tarif["id"] ?>" class="choose-btn">Выбрать</a>
+                        <?php
+                    $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
+                    ?>
+                        <a href="tarif.php?id=<?php echo $tarif["id"] . $utm ?>" class="choose-btn">Выбрать</a>
                     </div>
                 </div>
                 <!-- end tarif-->

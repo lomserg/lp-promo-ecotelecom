@@ -1941,7 +1941,7 @@ input {
 
 .channels-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr ;
   gap: 1rem;
   font-size: 1rem;
 }
@@ -2014,4 +2014,10 @@ input {
 }
 .my-body-noscroll-class {
   overflow: hidden;
+}
+
+.channels_item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }

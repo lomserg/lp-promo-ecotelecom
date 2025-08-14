@@ -1,4 +1,4 @@
-var swiper = new Swiper(".tarifs-slider-container2", {
+var swiper = new Swiper(".tarifs-slider-container", {
   loop: true,
   grabCursor: true,
   spaceBetween: 10,
