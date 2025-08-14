@@ -315,7 +315,11 @@ select {
 /* colors */
 
 .bg-tarif {
-  background-color: hsl(var(--clr-dark-blue));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--clr-dark-blue)),
+    hsl(268, 75%, 38%)
+  );
 }
 
 .bg-tarif-title {
@@ -326,18 +330,29 @@ select {
   background-color: hsl(var(--clr-blue));
 }
 
+.bg-blue {
+  background: linear-gradient(135deg, hsl(var(--clr-blue)), hsl(190, 73%, 62%));
+}
+
 .bg-white {
   background-color: hsl(var(--clr-white));
 }
 
 .bg-violet {
-  background-color: hsl(var(--clr-violet));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--clr-violet)),
+    hsl(220, 80%, 60%)
+  );
 }
 
 .bg-green {
   background-color: hsl(var(--clr-green));
 }
 
+.bg-orange {
+  background-color: #ff8a00;
+}
 .text-dark {
   color: hsl(var(--clr-dark));
 }
@@ -1325,6 +1340,7 @@ html {
   border-radius: 15px;
   color: #fff;
   background: #222d38;
+  background: linear-gradient(135deg, #009ffd, #2a2a72);
 }
 .swiper-wrapper {
   padding-top: 2rem;
@@ -1449,6 +1465,14 @@ html {
 .swiper {
   overflow: visible !important;
 }
+
+@media (max-width: 1100px) {
+  .tarifs-slider-container2,
+  .swiper-container,
+  .swiper {
+    overflow: hidden !important;
+  }
+}
 /* ------------------- */
 /*  info blocks        */
 /* ------------------- */
@@ -1517,13 +1541,13 @@ html {
 
 .form {
   background-color: #fff;
+  margin-bottom: 3rem;
 }
 
 .contact-box {
   padding: 2rem 0;
   margin-inline: auto;
   max-width: 450px;
-  margin-bottom: 3rem;
 }
 
 label {
@@ -1619,13 +1643,14 @@ input {
   .feature {
     height: 650px;
   }
-
+  .feature-advantage-item img {
+    width: 15%;
+  }
   .feature-container {
     flex-direction: column;
     height: 600px;
   }
-
-  .feature-img,
+  promo-03-25 .feature-img,
   .feature-txt {
     width: 90%;
   }
@@ -1635,6 +1660,76 @@ input {
   }
 }
 
+.form.container {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Заголовок */
+.form.container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Поля формы */
+.form.container .field {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+/* Фокус на поле */
+.form.container .field:focus {
+  border-color: hsl(224, 73%, 62%);
+  box-shadow: 0 0 0 4px hsla(224, 73%, 62%, 0.15);
+  outline: none;
+  background-color: #fff;
+}
+
+/* Лейблы */
+.form.container label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Кнопка */
+.form.container .btn {
+  background: linear-gradient(135deg, hsl(224, 73%, 62%), hsl(268, 65%, 60%));
+  color: #fff;
+  border: none;
+  padding: 0.85rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Ховер на кнопке */
+.form.container .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+  .form.container {
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+}
 /**************************
         accordion
 ***************************/

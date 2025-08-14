@@ -368,3 +368,11 @@ if (file_exists($file)) {
         </form>
     </div>
 </section>
+<?php
+$file = __DIR__ . '/inc/footer.inc.php';
+if (file_exists($file)) {
+    include $file;
+} else {
+    echo "Include file not found: $file";
+}
+?>
