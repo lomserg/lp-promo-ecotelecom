@@ -1459,73 +1459,26 @@ html {
   margin-right: 1em;
   text-align: right;
 }
+.swiper-slide.tarif-option .tarif-slider-description {
+  box-shadow: 0 4px 12px rgba(14, 0, 0, 0.34);
 
-/* checkout */
-
-.checkout {
-  display: none;
-  background-color: #23262b;
-  color: #fff;
-  justify-content: center;
-  transform: translateY(100%);
-  transition: all 0.6s ease-in-out;
-  z-index: 500;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  will-change: transform;
+  transform-origin: center;
 }
 
-.checkout-active {
-  display: flex;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  position: fixed;
+/* Ховер/фокус: поднимаем и слегка увеличиваем */
+.swiper-slide.tarif-option:hover .tarif-slider-description,
+.swiper-slide.tarif-option:focus-within .tarif-slider-description {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 14px rgba(14, 0, 0, 0.66);
 }
 
-.total-price {
-  width: 600px;
-  height: 100%;
-  margin: 1rem;
+.tarifs-slider-container2,
+.swiper-container,
+.swiper {
+  overflow: visible !important;
 }
-.selection,
-.total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@media (max-width: 700px) {
-  .selection,
-  .total {
-    flex-direction: column;
-    align-items: start;
-  }
-}
-/* .total {
-    margin-top: 1rem;
-    border-top: 1px solid #861657;
-    padding: 1rem 0;
-}
-*/
-.checkout-btn {
-  font-size: 1rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  background: #362ac2;
-  border: none;
-  padding: 10px 15px;
-  color: #fff;
-  outline: none;
-  cursor: pointer;
-}
-.checkout-btn:hover {
-  background: hsl(var(--clr-royal-blue));
-}
-
-.close-btn {
-  color: #861657;
-  font-size: 1.2rem;
-  padding: 10px;
-}
-
 /* ------------------- */
 /*  info blocks        */
 /* ------------------- */
