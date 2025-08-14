@@ -328,32 +328,8 @@ if (file_exists($file)) {
     </section>
 </div>
 
-<section class="faq container">
-    <h2 class="section-title fs-600">Дополнительная информация:</h2>
-
-    <div class="accordion">
-        <?php foreach($faqData_json AS $faq) : ?>
-
-
-        <div class="accordion-item">
-            <div class="accordion-item-header fs-400">
-                <?php echo $faq["question"] ?>
-            </div>
-            <div class="accordion-item-body">
-                <div class="accordion-item-body-content">
-                    <p>
-                        <?php  echo nl2br($faq["answer"]) ?>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-        <?php endforeach ?>
-        <!-- next -->
-
-    </div>
 </section>
+
 <section class="form container">
     <h2 style="text-align: center" class="fs-600">Заявка на подключение</h2>
     <div class="contact-box">
@@ -365,7 +341,7 @@ if (file_exists($file)) {
             <input type="tel" class="field" data-tel-input maxlength="18" name="number" id="phone1" required />
             <label class="fs-200" for="adr11">Адрес</label>
             <input type="text" class="field" name="address" id="adr11" required />
-            <button type="submit bg-violet" class="button-63" style="width: 80%; margin-left: 2rem" name="call-submit"
+            <button type="submit" class="btn" style="width: 80%; margin-left: 2rem" name="call-submit"
                 onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(49966909, 'reachGoal', 'form-submit'); } return false;">
                 Отправить
             </button>
