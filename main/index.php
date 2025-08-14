@@ -90,6 +90,7 @@ if (file_exists($file)) {
                         <div class="tarif channels-item" data-package="<?php echo $tarif["dataPackage"] ?>">
                             <a class="channels_link link trigger" href="#channels"><?php echo $tarif["channels"] ?>
                                 ТВ-каналов</a>
+                            <p style=" color: black; font-size: 12px;">НТВ-ПЛЮС ТВ в подарок 🎁</p>
                         </div>
                     </div>
 
