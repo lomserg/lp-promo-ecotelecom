@@ -1960,9 +1960,15 @@ input {
   text-decoration: none;
 }
 
+.channels_link {
+  color: #404040;
+  border-bottom: solid 1px hsl(var(--clr-dark-blue));
+  text-decoration: none;
+}
+
 .channels-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
   font-size: 1rem;
 }
@@ -1986,9 +1992,7 @@ input {
   display: flex;
   gap: 2rem;
 }
-.my-body-noscroll-class {
-  overflow: hidden;
-}
+
 .bg-modal {
   background: rgba(0, 0, 0, 0.5);
   top: 0;
@@ -2194,4 +2198,13 @@ button:hover {
     padding-top: 30px;
     max-width: 337px;
   }
+}
+.my-body-noscroll-class {
+  overflow: hidden;
+}
+
+.channels_item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }

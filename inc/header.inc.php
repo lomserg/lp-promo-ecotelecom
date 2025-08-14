@@ -36,7 +36,7 @@
     <script src="https://unpkg.com/@popperjs/core@2" defer></script>
     <script src="https://unpkg.com/tippy.js@6" defer></script>
 
-    <!-- <script src="./js/channels.js" defer></script> -->
+    <script src="./js/channels.js" defer></script>
 
 </head>
 

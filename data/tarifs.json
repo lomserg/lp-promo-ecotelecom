@@ -9,7 +9,7 @@
     "description": "Комфортная скорость для повседневных задач",
     "tv": false,
     "dataPackage": null,
-    "channels": null,
+    "channels": 70,
     "movie": null
   },
   {
@@ -22,7 +22,7 @@
     "description": "Оптимальный интернет для работы и отдыха",
     "tv": false,
     "dataPackage": null,
-    "channels": null,
+    "channels": 70,
     "movie": null
   },
   {
@@ -35,7 +35,7 @@
     "description": "Максимум скорости. Всё летает!",
     "tv": false,
     "dataPackage": null,
-    "channels": null,
+    "channels": 70,
     "movie": null
   },
   {
