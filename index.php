@@ -55,9 +55,7 @@ if (file_exists($file)) {
 
 </section>
 
-
 <section>
-
     <div class="bg-modal" id="pack-5b504edcb2de77e82f591f1a">
         <button class="modal-btn">X</button>
         <div id="modal" class="modal-content">
@@ -75,6 +73,7 @@ if (file_exists($file)) {
         <div class="swiper-wrapper">
             <!-- Slides -->
             <?php foreach($tarifs_json AS $tarif): ?>
+
             <?php if($tarif['tv'] == false): ?>
             <div class="swiper-slide tarif-option">
                 <div class="tarif-slider-description">
@@ -95,6 +94,15 @@ if (file_exists($file)) {
                     <?php endif?>
                     <div class="tarif-param">
                         <p class="tarif-speed"><?php echo $tarif["speed"]?> Мбит/c</p>
+                        <div class="tarif channels-item ntv_channels">
+                            <a class="channels_link link trigger" href="#channels"><?php echo $tarif["channels"] ?>
+                                ТВ-каналов</a>
+                        </div>
+                        <p style="
+    color: black;
+    font-size: 12px;
+">НТВ-ПЛЮС ТВ в подарок 🎁
+                        </p>
                     </div>
 
                     <div class="tarif-options-description">
@@ -102,7 +110,10 @@ if (file_exists($file)) {
 
                         </ul>
                     </div>
-                    <a href="tarif.php?id=<?php echo $tarif["id"] ?>" class="choose-btn">Выбрать</a>
+                    <?php
+                            $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
+                            ?>
+                    <a href="tarif.php?id=<?php echo $tarif["id"] . $utm ?>" class="choose-btn">Выбрать</a>
                 </div>
 
             </div>
@@ -164,7 +175,10 @@ if (file_exists($file)) {
                                 <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
                             </ul>
                         </div>
-                        <a href="tarif.php?id=<?php echo $tarif["id"] ?>" class="choose-btn">Выбрать</a>
+                        <?php
+                            $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
+                            ?>
+                        <a href="tarif.php?id=<?php echo $tarif["id"] . $utm ?>" class="choose-btn">Выбрать</a>
                     </div>
                 </div>
                 <!-- end tarif-->
@@ -191,28 +205,6 @@ if (file_exists($file)) {
         </div>
     </div>
 
-    <div class="modal-bg">
-        <div class="modal">
-            <form action="./php/form1.php" method="post" id="form2" name="call-form" onsubmit="return validateForm();">
-                <p style="font-weight: bold; margin-bottom: 1rem; text-align: center">
-                    Заявка на подключение
-                </p>
-                <label class="fs-200" for="name1">Имя</label>
-                <input type="text" name="name" id="name1" class="field" required />
-                <label class="fs-200" for="phone1">Телефон</label>
-                <input type="tel" class="field" data-tel-input maxlength="18" name="number" id="phone1" required />
-                <label class="fs-200" for="adr11">Адрес</label>
-                <input type="text" class="field" name="address" id="adr11" required />
-                <button type="submit bg-violet" class="btn bg-violet" style="width: 80%; margin-left: 2rem"
-                    name="call-submit"
-                    onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(49966909, 'reachGoal', 'form-submit'); } return false;">
-                    Отправить
-                </button>
-                <input autocomplete="off" type="hidden" name="call-control" class="call-control" value="0" />
-            </form>
-            <span id="closeForm" class="modal-close">X</span>
-        </div>
-    </div>
 </section>
 <div class="wrapper flow container">
     <h2 class="section-title" style="position: sticky">Преимущества</h2>

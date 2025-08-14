@@ -6,10 +6,11 @@
     "speed": 100,
     "price": 400,
     "price2": 0,
-    "description": "Комфортная скорость для повседневных задач",
+    "description": "Комфортная скорость интернета и телеканалы на любой вкус",
+    "description2": "НТВ-ПЛЮС ТВ в подарок 🎁",
     "tv": false,
     "dataPackage": null,
-    "channels": null,
+    "channels": 70,
     "movie": null
   },
   {
@@ -20,9 +21,10 @@
     "price": 500,
     "price2": 0,
     "description": "Оптимальный интернет для работы и отдыха",
+    "description2": "НТВ-ПЛЮС ТВ в подарок 🎁",
     "tv": false,
     "dataPackage": null,
-    "channels": null,
+    "channels": 70,
     "movie": null
   },
   {
@@ -33,9 +35,10 @@
     "price": 770,
     "price2": 0,
     "description": "Максимум скорости. Всё летает!",
+    "description2": "НТВ-ПЛЮС ТВ в подарок 🎁",
     "tv": false,
     "dataPackage": null,
-    "channels": null,
+    "channels": 70,
     "movie": null
   },
   {

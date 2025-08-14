@@ -1,106 +1,115 @@
-document.addEventListener("DOMContentLoaded", function () {
-  function declOfNum(n) {
-    return n % 10 === 1 && n % 100 !== 11
-      ? "канал"
-      : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)
-      ? "канала"
-      : "каналов";
-  }
+function fetchChannels() {
+  return fetch("https://fe.smotreshka.tv/channels")
+    .then((res) => res.json())
+    .then((data) => data.channels)
+    .catch((err) => {
+      console.error("Error fetching all channels:", err);
+      return [];
+    });
+}
 
-  function getAll(channels, box) {
-    fetch("//fe.smotreshka.tv/channels")
-      .then((response) => response.json())
-      .then((data) => {
-        let block = "";
+// Функция получения списка channelId пакета по id
+function getPackage(id) {
+  return fetch(`https://fe.smotreshka.tv/offers/v3/${id}/showcase-channels`)
+    .then((res) => res.json())
+    .catch((err) => {
+      console.error("Error fetching package:", err);
+      return { channels: [] };
+    });
+}
 
-        data.channels.forEach(function (item) {
-          channels.forEach((el) => {
-            if (item.id === el.channelId) {
-              block += `<div class="channels_item" data-name="${item.info.metaInfo.title.slice(
-                4
-              )}">
-                <img src="${
-                  item.info.mediaInfo.thumbnails[0].url
-                }?width=70&height=40" 
-                     title="${item.info.metaInfo.title.slice(4)}" 
-                     alt="${item.info.metaInfo.title.slice(4)}" 
-                     data-id="${item.id}" />
-              </div>`;
-            }
-          });
-        });
-
-        if (box) {
-          box.innerHTML += block;
-        } else {
-          console.warn("Box element is null or undefined.");
-        }
-      })
-      .catch((error) => console.error("Error fetching channels:", error));
-  }
-
-  function getPack(options) {
-    const id = options.id,
-      box = options.box,
-      block = options.block;
-
-    fetch(`//fe.smotreshka.tv/offers/v3/${id}/showcase-channels`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (box) {
-          getAll(data.channels, box);
-        } else if (block) {
-          let num;
-          if (block.textContent.length === 0) {
-            num = data.channels.length;
-          } else {
-            num = block.textContent;
-          }
-          block.innerHTML = `<strong>${num}</strong> ${declOfNum(num)}`;
-        } else {
-          console.warn("Block element is null. Skipping update.");
-        }
-      })
-      .catch((error) => console.error("Error fetching pack:", error));
-  }
-
-  const channelsItems = document.querySelectorAll(".channels-item");
-  channelsItems.forEach(function (item) {
-    let blockElement = item.querySelector(".channels-amount");
-
-    // If .channels-amount doesn't exist, create it dynamically
-    if (!blockElement) {
-      blockElement = document.createElement("div");
-      blockElement.className = "channels-amount";
-      item.appendChild(blockElement);
+// Основная функция загрузки и фильтрации каналов пакета
+function fetchData(id) {
+  return Promise.all([getPackage(id), fetchChannels()]).then(
+    ([packageData, allChannels]) => {
+      const packageChannelIds = new Set(
+        packageData.channels.map((c) => c.channelId)
+      );
+      const filteredChannels = allChannels.filter((ch) =>
+        packageChannelIds.has(ch.id)
+      );
+      return filteredChannels;
     }
+  );
+}
 
-    getPack({
-      id: item.dataset.package,
-      block: blockElement,
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.querySelector(".bg-modal");
+  const modalContent = modal.querySelector(".modal-content");
+  const closeBtn = modal.querySelector(".modal-btn");
+  function openModal(html) {
+    modalContent.innerHTML = html;
+    document.body.classList.add("my-body-noscroll-class");
+    modal.classList.add("active");
+  }
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+    document.body.classList.remove("my-body-noscroll-class");
+  });
+
+  // Клик по локальным NTV каналам
+  document.querySelectorAll(".ntv_channels .channels_link").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      fetch("./data/ntv_light.json")
+        .then((res) => res.json())
+        .then((ntvChannels) => {
+          const listHtml = `<ul class="channels-list">
+            ${ntvChannels.map((ch) => `<li>${ch}</li>`).join("")}
+          </ul>`;
+          openModal(listHtml);
+        })
+        .catch((err) => {
+          openModal("<p>Ошибка загрузки НТВ каналов</p>");
+          console.error("Ошибка загрузки ntv_light.json:", err);
+        });
     });
   });
 
-  document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("trigger")) {
-      const item = event.target.closest(".channels-item");
-      if (!item) {
-        console.warn("No .channels-item found for trigger click.");
-        return;
-      }
+  // Клик по каналам пакета (Смотрёшка API)
+  document
+    .querySelectorAll(".channels-item[data-package] .channels_link.trigger")
+    .forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
 
-      const packageId = item.dataset.package;
-      const channelsList = document.querySelector(".channels-list");
-      if (!channelsList) {
-        console.warn(".channels-list element not found.");
-        return;
-      }
+        const packageId = btn.closest(".channels-item").dataset.package;
+        if (!packageId) return;
 
-      channelsList.innerHTML = "";
-      getPack({
-        id: packageId,
-        box: channelsList,
+        openModal("<p>Загрузка каналов...</p>");
+
+        fetchData(packageId)
+          .then((channels) => {
+            if (channels.length === 0) {
+              openModal("<p>Каналы не найдены.</p>");
+              return;
+            }
+            const block = channels
+              .map((item) => {
+                const rawTitle = item.info?.metaInfo?.title || "Канал";
+                const title = rawTitle.replace(/^\d+_/, "");
+                const thumb = item.info?.mediaInfo?.thumbnails?.[0]?.url || "";
+                return `<div class="channels_item" data-name="${title}">
+              <img src="${thumb}?width=70&height=40" title="${title}" alt="${title}" data-id="${item.id}" />
+              <p>${title}</p>
+            </div>`;
+              })
+              .join("");
+            openModal(block);
+          })
+          .catch((err) => {
+            openModal("<p>Ошибка загрузки каналов с API.</p>");
+            console.error(err);
+          });
       });
+    });
+
+  // Закрытие модалки по клику на фон
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+      document.body.classList.remove("my-body-noscroll-class");
     }
   });
 });
