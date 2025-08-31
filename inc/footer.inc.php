@@ -20,6 +20,7 @@
                             class="fab fa-instagram"></i></a></li>-->
     </ul>
 </footer>
+
 <!-- Andata Tag Manager Code -->
 <script type="application/javascript"
     src="https://tagmanager.hrke.andata.ru/api/v1/container/9b91d137-d2ac-4f60-8303-e5be7e7bbb96/published/code.js">

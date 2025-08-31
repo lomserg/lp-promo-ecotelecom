@@ -61,10 +61,7 @@
 </head>
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NX2BBNR" height="0" width="0"
-            style="display: none; visibility: hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
     (function(m, e, t, r, i, k, a) {

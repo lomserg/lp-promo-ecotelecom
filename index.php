@@ -319,26 +319,18 @@ if (file_exists($file)) {
     <h2 class="section-title fs-600">Дополнительная информация:</h2>
 
     <div class="accordion">
-        <?php foreach($faqData_json AS $faq) : ?>
-
-
+        <?php foreach ($faqData_json as $item): ?>
         <div class="accordion-item">
-            <div class="accordion-item-header fs-400">
-                <?php echo $faq["question"] ?>
+            <div class="accordion-header">
+                <?= htmlspecialchars($item['question']) ?>
             </div>
-            <div class="accordion-item-body">
-                <div class="accordion-item-body-content">
-                    <p>
-                        <?php  echo nl2br($faq["answer"]) ?>
-                    </p>
+            <div class="accordion-body">
+                <div class="accordion-body-content">
+                    <?= nl2br(htmlspecialchars($item['answer'])) ?>
                 </div>
             </div>
         </div>
-
-
-        <?php endforeach ?>
-        <!-- next -->
-
+        <?php endforeach; ?>
     </div>
 </section>
 <section class="form container">

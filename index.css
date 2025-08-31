@@ -308,7 +308,11 @@ select {
 /* colors */
 
 .bg-tarif {
-  background-color: hsl(var(--clr-dark-blue));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--clr-dark-blue)),
+    hsl(268, 75%, 38%)
+  );
 }
 
 .bg-tarif-title {
@@ -319,12 +323,20 @@ select {
   background-color: hsl(var(--clr-blue));
 }
 
+.bg-blue {
+  background: linear-gradient(135deg, hsl(var(--clr-blue)), hsl(190, 73%, 62%));
+}
+
 .bg-white {
   background-color: hsl(var(--clr-white));
 }
 
 .bg-violet {
-  background-color: hsl(var(--clr-violet));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--clr-violet)),
+    hsl(220, 80%, 60%)
+  );
 }
 
 .bg-green {
@@ -1459,6 +1471,7 @@ html {
   margin-right: 1em;
   text-align: right;
 }
+
 .swiper-slide.tarif-option .tarif-slider-description {
   box-shadow: 0 4px 12px rgba(14, 0, 0, 0.34);
 
@@ -1478,6 +1491,25 @@ html {
 .swiper-container,
 .swiper {
   overflow: visible !important;
+}
+
+.tarif-slider-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 15px;
+  color: #fff;
+  background: linear-gradient(135deg, #009ffd, #2a2a72);
+}
+
+@media (max-width: 1100px) {
+  .tarifs-slider-container2,
+  .swiper-container,
+  .swiper {
+    overflow: hidden !important;
+  }
 }
 /* ------------------- */
 /*  info blocks        */
@@ -1569,7 +1601,7 @@ html {
   padding: 2rem 0;
   margin-inline: auto;
   max-width: 450px;
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
 }
 
 label {
@@ -1682,65 +1714,129 @@ input {
   }
 }
 
+.form.container {
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Заголовок */
+.form.container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Поля формы */
+.form.container .field {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+/* Фокус на поле */
+.form.container .field:focus {
+  border-color: hsl(224, 73%, 62%);
+  box-shadow: 0 0 0 4px hsla(224, 73%, 62%, 0.15);
+  outline: none;
+  background-color: #fff;
+}
+
+/* Лейблы */
+.form.container label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Кнопка */
+.form.container .btn {
+  background: linear-gradient(135deg, hsl(224, 73%, 62%), hsl(268, 65%, 60%));
+  color: #fff;
+  border: none;
+  padding: 0.85rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Ховер на кнопке */
+.form.container .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Адаптив */
+@media (max-width: 600px) {
+  .form.container {
+    padding: 1.5rem;
+    margin: 2rem 1rem;
+  }
+}
 /**************************
         accordion
 ***************************/
-.faq {
-  padding: 2em 0;
-}
 
+.faq {
+  margin: 5rem auto;
+}
 .accordion {
-  max-width: 1100px;
-  margin: 2rem auto;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .accordion-item {
-  background-color: #f4f3f6;
-  color: #111;
-  margin: 1rem 0;
-  padding: 1rem 0;
-  border-radius: 15px;
+  border-bottom: 1px solid #ddd;
 }
 
-.accordion-item-header {
-  padding: 0.5rem 2.5rem 0.5rem 1rem;
-  min-height: 4.5rem;
-  line-height: 1.4rem;
-
-  display: flex;
-  align-items: center;
-  position: relative;
+.accordion-header {
+  background-color: #f7f7f7;
+  padding: 15px 20px;
   cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  user-select: none;
 }
 
-.accordion-item-header::after {
-  content: "\002B";
-  font-size: 3rem;
+.accordion-header::after {
+  content: "+";
   position: absolute;
-  right: 1rem;
+  right: 20px;
+  font-size: 24px;
+  line-height: 1;
+  transition: transform 0.3s ease;
 }
 
-.accordion-item-header.active::after {
-  content: "\2212";
+.accordion-header.active::after {
+  content: "−";
+  transform: rotate(180deg);
 }
 
-.accordion-item-body {
+.accordion-body {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  background: #fff;
+  padding: 0 20px;
+  transition: max-height 0.3s ease;
 }
 
-.accordion-item-body-content {
-  padding: 1rem;
-  line-height: 1.5rem;
-  border-image: linear-gradient(to right, transparent, #34495e, transparent) 0.5;
-}
-
-.accordion-title {
-  position: relative;
-  text-align: center;
-  padding: 0 0 10px;
-  margin-bottom: 10px;
+.accordion-body-content {
+  padding: 15px 0;
+  line-height: 1.4;
+  color: #333;
 }
 
 @media (min-width: 600px) {
@@ -1908,6 +2004,24 @@ input {
   position: relative;
 }
 
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* smotreshka chanel list */
+
+/* .tarif {
+    border: 1px black solid;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
 .modal-content {
   max-width: 50ch;
   height: 550px;
@@ -1954,9 +2068,7 @@ input {
   display: flex;
   gap: 2rem;
 }
-.my-body-noscroll-class {
-  overflow: hidden;
-}
+
 .bg-modal {
   background: rgba(0, 0, 0, 0.5);
   top: 0;
@@ -2003,12 +2115,19 @@ input {
     right: 20px;
   }
 }
-
 .my-body-noscroll-class {
   overflow: hidden;
 }
+
 .channels_item {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+/* Доступность: меньше анимаций */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
 }

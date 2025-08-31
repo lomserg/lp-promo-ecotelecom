@@ -34,59 +34,58 @@ function validateForm(event, form) {
   return isValid; // Submit form only if isValid is true
 }
 
-// Query the accordion item headers
-const accordionItemHeaders = document.querySelectorAll(
-  ".accordion-item-header"
-);
+document.addEventListener("DOMContentLoaded", () => {
+  const headers = document.querySelectorAll(".accordion-header");
+  headers.forEach((header) => {
+    header.addEventListener("click", () => {
+      console.log("accordion");
+      const isActive = header.classList.contains("active");
 
-// Add click event listeners to each accordion item header
-accordionItemHeaders.forEach((accordionItemHeader) => {
-  accordionItemHeader.addEventListener("click", (event) => {
-    // Uncomment if you want only one item open at a time
-    // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
-    // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader !== accordionItemHeader) {
-    //   currentlyActiveAccordionItemHeader.classList.toggle("active");
-    //   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
-    // }
+      // Если нужно закрыть все, чтобы был открыт только один:
+      // headers.forEach(h => {
+      //   h.classList.remove('active');
+      //   h.nextElementSibling.style.maxHeight = null;
+      // });
 
-    // Toggle active class and adjust max-height
-    accordionItemHeader.classList.toggle("active");
-    const accordionItemBody = accordionItemHeader.nextElementSibling;
-    if (accordionItemHeader.classList.contains("active")) {
-      accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
-    } else {
-      accordionItemBody.style.maxHeight = 0;
-    }
+      if (!isActive) {
+        header.classList.add("active");
+        const body = header.nextElementSibling;
+        body.style.maxHeight = body.scrollHeight + "px";
+      } else {
+        header.classList.remove("active");
+        header.nextElementSibling.style.maxHeight = null;
+      }
+    });
   });
 });
 
 // Initialize tooltips with Tippy.js
-tippy("#video0", {
-  content:
-    "Онлайн-кинотеатр AMEDIATEKA, START или PREMIER на выбор: эксклюзивные премьеры, кино и сериалы",
-  theme: "light",
-  placement: "bottom",
-});
+// tippy("#video0", {
+//   content:
+//     "Онлайн-кинотеатр AMEDIATEKA, START или PREMIER на выбор: эксклюзивные премьеры, кино и сериалы",
+//   theme: "light",
+//   placement: "bottom",
+// });
 
-tippy("#video1", {
-  content: "Онлайн-кинотеатр PREMIER",
-  theme: "light",
-  placement: "bottom",
-});
+// tippy("#video1", {
+//   content: "Онлайн-кинотеатр PREMIER",
+//   theme: "light",
+//   placement: "bottom",
+// });
 
-tippy("#video2", {
-  content:
-    "Онлайн-кинотеатр PREMIER включен в тариф. Видеосервис Amediateka или START — на выбор.",
-  theme: "light",
-  placement: "bottom",
-});
+// tippy("#video2", {
+//   content:
+//     "Онлайн-кинотеатр PREMIER включен в тариф. Видеосервис Amediateka или START — на выбор.",
+//   theme: "light",
+//   placement: "bottom",
+// });
 
-tippy("#video3", {
-  content:
-    "Amediateka, START и PREMIER: видео на любой вкус. Все популярные онлайн-кинотеатры в высоком качестве, без рекламы",
-  theme: "light",
-  placement: "bottom",
-});
+// tippy("#video3", {
+//   content:
+//     "Amediateka, START и PREMIER: видео на любой вкус. Все популярные онлайн-кинотеатры в высоком качестве, без рекламы",
+//   theme: "light",
+//   placement: "bottom",
+// });
 
 // Phone number setup based on URL query string
 let phone = document.querySelector(".phone");
@@ -112,13 +111,13 @@ if (queryStringUrl.includes(ourSubstring)) {
 }
 
 // Additional tooltips
-tippy("#tooltip1", {
-  content:
-    "Видеосервис AMEDIATEKA, START, IVI, PREMIER или «Лучшее от more.tv» на выбор: горячие новинки и классика",
-  arrow: true,
-});
+// tippy("#tooltip1", {
+//   content:
+//     "Видеосервис AMEDIATEKA, START, IVI, PREMIER или «Лучшее от more.tv» на выбор: горячие новинки и классика",
+//   arrow: true,
+// });
 
-tippy("#tooltip2", {
-  content:
-    "Онлайн-кинотеатр START, IVI или PREMIER на выбор: эксклюзивные премьеры, кино и сериалы",
-});
+// tippy("#tooltip2", {
+//   content:
+//     "Онлайн-кинотеатр START, IVI или PREMIER на выбор: эксклюзивные премьеры, кино и сериалы",
+// });
