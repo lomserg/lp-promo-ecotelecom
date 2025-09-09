@@ -36,37 +36,22 @@
   }
   @font-face {
     font-family: "Sora";
-    src: url("/fonts/Sora-Regular.ttf") format("truetype");
+    src: url("./fonts/Sora-Regular.woff2") format("woff2"),
+      url("./fonts/Sora-Regular.woff") format("woff"),
+      url("./fonts/Sora-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
   }
 
   @font-face {
-    font-family: "Sora";
-    src: url("/fonts/Sora-SemiBold.ttf") format("truetype");
-    font-weight: 600;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sora";
-    src: url("/fonts/Sora-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: "Sora";
-    src: url("/fonts/Sora-ExtraBold.ttf") format("truetype");
-    font-weight: 800;
-    font-style: normal;
-  }
-  @font-face {
     font-family: "Inter";
-    src: url("/fonts/Inter-ExtraBold.ttf") format("truetype");
+    src: url("/fonts/Inter-ExtraBold.woff2") format("woff2"),
+      url("/fonts/Inter-ExtraBold.woff") format("woff"),
+      url("/fonts/Inter-ExtraBold.ttf") format("truetype");
     font-weight: 800;
     font-style: normal;
   }
+
   /* remove animations for people who've turned them off */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -242,6 +227,9 @@
     max-width: 410px;
     background: #fff;
     border-radius: 2rem;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
   }
 
   .tarif-name {
@@ -498,9 +486,10 @@
       --bento-card-image-width: 70%;
     }
   }
+
   /**************************
         accordion
-***************************/
+  ***************************/
   .faq {
     padding: 2em 0;
     background: #fe7f10;
@@ -601,30 +590,141 @@
       font-size: 2.5vw;
     }
   }
-}
 
-/* advantage */
-.advantage-container {
-  display: flex;
-  gap: 24px;
-}
-.advantage-card {
-  padding: 32px;
-  background: #2d7a73;
-  color: #fff;
-  border-radius: 32px;
+  /* advantage */
+  .advantage-container {
+    display: flex;
+    gap: 24px;
+  }
+  .advantage-card {
+    padding: 32px;
+    background: #2d7a73;
+    color: #fff;
+    border-radius: 32px;
 
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-}
-.advantage-card-wrapper h3 {
-  font-size: 24px;
-}
-.advantage-card-wrapper p {
-  font-size: 14px;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .advantage-card-wrapper h3 {
+    font-size: 24px;
+  }
+  .advantage-card-wrapper p {
+    font-size: 14px;
+  }
 
-.advantage-card img {
-  align-self: flex-end;
+  .advantage-card img {
+    align-self: flex-end;
+  }
+
+  /* ************ */
+  /* new tarif */
+  /* ********** */
+
+  .new__tarifs {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .tarif-item {
+    font-family: "Sora";
+    max-width: 357px;
+    padding: 22px;
+    background: #fff;
+    border-radius: 24px;
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  }
+
+  .tarif-title {
+    font-size: 32px;
+    font-weight: 800;
+    font-family: "Inter";
+    text-transform: uppercase;
+  }
+
+  .tarif__description {
+    font-size: 14px;
+
+    margin-top: 1rem;
+    color: #157361;
+    line-height: 1;
+
+    font-family: "Inter", sans-serif;
+
+    font-style: normal;
+  }
+
+  .tarif__features {
+    padding: 14px 18px;
+    background-color: #f0f0f0;
+    border-radius: 24px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tarif__price {
+    font-size: 40px;
+    padding: 14px 18px;
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    font-weight: 800;
+    border-radius: 24px;
+    margin-bottom: 20px;
+  }
+  .tarif__price span {
+    font-weight: 400;
+    font-size: 24px;
+  }
+  .tarif__btn-green {
+    background: #7acd0d;
+    background: linear-gradient(
+      147deg,
+      rgba(122, 205, 13, 1) 26%,
+      rgba(23, 182, 57, 1) 70%
+    );
+  }
+
+  .tarif__features .tarif__params {
+    position: relative;
+    padding-left: 2rem; /* отступ для иконки */
+  }
+
+  .tarif__features .tarif__params {
+    position: relative;
+    padding-left: 2rem; /* отступ для иконки */
+    display: flex;
+    align-items: center; /* вертикальное выравнивание */
+  }
+
+  .tarif__features .tarif__params::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 1.2rem;
+    height: 1.2rem;
+
+    border-radius: 50%;
+    background-color: #6bc605; /* цвет кружка */
+
+    /* галочка */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M20.285 6.709l-11.418 11.418-4.285-4.285 1.414-1.414 2.871 2.871 10.004-10.004z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+  }
+  .tarif__features .tarif__params {
+    position: relative;
+    padding-left: 2rem; /* отступ для иконки */
+    display: flex;
+    align-items: center; /* вертикальное выравнивание */
+  }
 }
