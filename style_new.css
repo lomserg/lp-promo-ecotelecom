@@ -728,3 +728,100 @@
     align-items: center; /* вертикальное выравнивание */
   }
 }
+
+.tarif-card {
+  font-family: "Inter", sans-serif;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarif-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Заголовок */
+.tarif-card__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Подзаголовок */
+.tarif-card__desc {
+  font-size: 14px;
+  color: #157361;
+  margin-bottom: 1.5rem;
+}
+
+/* Список преимуществ */
+.tarif-card__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.tarif-card__feature {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.tarif-card__feature::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #6bc605;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M20.285 6.709l-11.418 11.418-4.285-4.285 1.414-1.414 2.871 2.871 10.004-10.004z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+
+/* Цена */
+.tarif-card__price {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+.tarif-card__price span {
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+/* Кнопка */
+.tarif-card__btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(147deg, #7acd0d 26%, #17b639 70%);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.tarif-card__btn:hover {
+  opacity: 0.9;
+}
