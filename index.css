@@ -678,7 +678,7 @@ select {
 }
 .hero-img img {
   display: block;
-  width: 69%;
+  width: 80%;
 }
 
 .hero__title {
@@ -688,7 +688,8 @@ select {
   line-height: 1;
   font-family: "GilroyExtraBold";
   white-space: nowrap;
-  text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan;
+  /* text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan; */
+  text-shadow: 1px 1px 2px #565757;
 }
 .hero__title-sub {
   display: block;
@@ -701,8 +702,10 @@ select {
   font-family: "Gilroy";
   color: #fee751;
   font-family: "GilroyExtraBold";
-
-  text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan;
+  text-shadow: 1px 1px 2px #565757;
+  line-height: 1;
+  /* 
+  text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan; */
 }
 
 html {
@@ -745,6 +748,13 @@ html {
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
+
+.info-block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 /* .hero-txt-cta h1 {
   font-size: 3.5rem;
   line-height: 1;
@@ -782,7 +792,8 @@ html {
     flex-direction: column;
   }
   .hero-img {
-    display: contents;
+    width: 80%;
+    min-height: 100%;
   }
   .info-block img {
     max-width: 100%;
@@ -791,6 +802,10 @@ html {
 @media (max-width: 500px) {
   .hero__title-sub {
     font-size: 58px;
+  }
+  .hero-img {
+    width: 80%;
+    min-height: 100%;
   }
   .hero__title {
     font-size: 37px;
@@ -2069,4 +2084,69 @@ input {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.hero-img {
+  position: relative;
+}
+.hero-img img {
+  z-index: 34;
+}
+.anim-1 {
+  width: 148px;
+  height: 146px;
+  background-image: url(./img/dekor-1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -20px;
+  left: 2px;
+  animation: key1 10s ease infinite;
+  z-index: 4;
+}
+.anim-2 {
+  width: 116px;
+  height: 123px;
+  background-image: url(./img/Color.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 245px;
+  right: 157px;
+  animation: float 10s ease-in-out infinite, spin 30s linear infinite;
+  z-index: 4;
+  opacity: 0.4;
+}
+
+@keyframes key1 {
+  0% {
+    transform: rotate(0);
+    zoom: 1;
+  }
+  50% {
+    transform: rotate(-20deg);
+    zoom: 1.2;
+  }
+  100% {
+    transform: rotate(0deg);
+    zoom: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
