@@ -604,30 +604,47 @@ select {
 }
 
 .button-63 {
+  display: inline-flex;
   align-items: center;
-  background: #ff8a00;
-  border: 0;
-  border-radius: 8px;
-  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-  box-sizing: border-box;
-  color: #ffffff;
-  display: flex;
-  font-family: Phantomsans, sans-serif;
-  font-size: 20px;
   justify-content: center;
-  line-height: 1em;
-  max-width: 100%;
-  min-width: 140px;
-  padding: 15px 24px;
+
+  padding: 12px 42px;
+
+  background: linear-gradient(135deg, #31c96b 0%, #1ea856 100%);
+  color: #ffffff;
   text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  cursor: pointer;
-  font-family: var(--ff-normal);
+  font-family: "Inter", sans-serif;
   font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
+
+  border: 2px solid rgba(255, 255, 255, 0.35); /* тонкая премиальная обводка */
+  border-radius: 14px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(255, 130, 0, 0.35);
+}
+
+/* Hover */
+.button-63:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #40d77b 0%, #26c067 100%);
+  border-color: rgba(255, 255, 255, 0.8);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12),
+    0 14px 32px rgba(40, 180, 90, 0.45);
+}
+
+/* Active (клик) */
+.button-63:active {
+  transform: translateY(0);
+  background: linear-gradient(135deg, #28ad5d 0%, #1a9d4e 100%);
+  border-color: rgba(255, 255, 255, 0.5);
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12), 0 8px 18px rgba(40, 180, 90, 0.3);
 }
 
 .button-63:active,
@@ -647,7 +664,7 @@ select {
 /* ------------------- */
 /* hero         */
 /* ------------------- */
-.hero__bg {
+/* .hero__bg {
   background: #8ac7ca;
   background: #40949c;
   background: linear-gradient(
@@ -656,6 +673,32 @@ select {
     rgba(179, 226, 232, 1) 100%
   );
   position: relative;
+} */
+
+.hero__bg {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    64deg,
+    rgba(228, 167, 74, 1) 26%,
+    rgba(214, 150, 56, 1) 70%
+  );
+}
+
+/* Картинка */
+.hero__bg::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%; /* можно подобрать */
+  height: 100%; /* можно подобрать */
+  background-image: url("img/dropp_price2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right bottom;
+  pointer-events: none; /* чтобы не мешала кликам */
 }
 .hero__bg-container {
   display: flex;
@@ -683,12 +726,13 @@ select {
 
 .hero__title {
   font-family: "Gilroy";
-  font-size: 59px;
+  font-size: 85px;
   color: #fff;
   line-height: 1;
   font-family: "GilroyExtraBold";
   white-space: nowrap;
-  text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.15);
+  /* text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan; */
 }
 .hero__title-sub {
   display: block;
@@ -699,10 +743,8 @@ select {
 .hero__title-second {
   font-size: 32px;
   font-family: "Gilroy";
-  color: #fee751;
+  color: #161616;
   font-family: "GilroyExtraBold";
-
-  text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan;
 }
 
 html {
@@ -751,12 +793,12 @@ html {
 } */
 @media (max-width: 1100px) {
   .hero__title-sub {
-    font-size: 78px;
+    font-size: 35px;
   }
   .hero__title {
-    font-size: 57px;
+    font-size: 45px;
     text-align: center;
-    white-space: normal;
+    /* white-space: normal; */
     text-shadow: none;
   }
   .hero__title-second {
@@ -791,6 +833,7 @@ html {
 @media (max-width: 500px) {
   .hero__title-sub {
     font-size: 58px;
+    white-space: nowrap;
   }
   .hero__title {
     font-size: 37px;
@@ -799,6 +842,7 @@ html {
   .hero__title-second {
     font-size: 16px;
     text-shadow: none;
+    white-space: nowrap;
   }
   .hero__bg::before {
     width: 100%;
@@ -806,12 +850,17 @@ html {
   .hero-txt-cta {
     align-items: center;
     justify-content: center;
+    margin-bottom: 12rem;
   }
   .hero__bg-bigtitle {
     font-size: 2rem;
   }
   .hero__bg-title {
     font-size: 2.3rem;
+  }
+
+  .info-blocks {
+    margin-top: 0;
   }
 
   .btn {
@@ -1065,7 +1114,7 @@ html {
   z-index: 1;
 }
 
-.tarif-title {
+/* .tarif-title {
   height: 65px;
   font-size: 1.2rem;
   position: absolute;
@@ -1077,7 +1126,7 @@ html {
   border-radius: 24px 24px 0 0;
 
   line-height: 1.2rem;
-}
+} */
 
 .tarif-speed,
 .tarif-movie {
@@ -1460,11 +1509,11 @@ html {
   box-shadow: 0 8px 14px rgba(14, 0, 0, 0.66);
 }
 
-.tarifs-slider-container2,
+/* .tarifs-slider-container2,
 .swiper-container,
 .swiper {
   overflow: visible !important;
-}
+} */
 
 @media (max-width: 1100px) {
   .tarifs-slider-container2,
@@ -1506,6 +1555,9 @@ html {
 }
 
 @media (max-width: 600px) {
+  .info-blocks {
+    margin-top: 0rem;
+  }
   .info-block {
     text-align: left;
   }
@@ -2069,4 +2121,256 @@ input {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+/* ************ */
+/* new tarif */
+/* ********** */
+
+.new__tarifs {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.tarif-item {
+  font-family: "Sora";
+  max-width: 361px;
+  padding: 22px;
+  background: #fff;
+  border-radius: 24px;
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.tarif-title {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: "Inter";
+  text-transform: uppercase;
+}
+
+.tarif__description {
+  font-size: 14px;
+
+  margin-top: 1rem;
+  color: #157361;
+  line-height: 1;
+
+  font-family: "Inter", sans-serif;
+
+  font-style: normal;
+}
+
+.tarif__features {
+  padding: 14px 18px;
+  background-color: #f0f0f0;
+  border-radius: 24px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tarif__price {
+  font-size: 40px;
+  padding: 14px 18px;
+  background-color: #f0f0f0;
+  margin-top: 20px;
+  font-weight: 800;
+  border-radius: 24px;
+  margin-bottom: 20px;
+}
+.tarif__price span {
+  font-weight: 400;
+  font-size: 24px;
+}
+.tarif__btn-green {
+  background: #7acd0d;
+  background: linear-gradient(
+    147deg,
+    rgba(122, 205, 13, 1) 26%,
+    rgba(23, 182, 57, 1) 70%
+  );
+}
+
+.tarif__features .tarif__params {
+  position: relative;
+  padding-left: 2rem; /* отступ для иконки */
+}
+
+.tarif__features .tarif__params {
+  position: relative;
+  padding-left: 2rem; /* отступ для иконки */
+  display: flex;
+  align-items: center; /* вертикальное выравнивание */
+}
+
+.tarif__features .tarif__params::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 1.2rem;
+  height: 1.2rem;
+
+  border-radius: 50%;
+  background-color: #6bc605; /* цвет кружка */
+
+  /* галочка */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M20.285 6.709l-11.418 11.418-4.285-4.285 1.414-1.414 2.871 2.871 10.004-10.004z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+.tarif__features .tarif__params {
+  position: relative;
+  padding-left: 2rem; /* отступ для иконки */
+  display: flex;
+  align-items: center; /* вертикальное выравнивание */
+}
+
+.tarif-card {
+  font-family: "Inter", sans-serif;
+  max-width: 360px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarif-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Заголовок */
+.tarif-card__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Подзаголовок */
+.tarif-card__desc {
+  font-size: 14px;
+  color: #157361;
+  margin-bottom: 1.5rem;
+}
+
+/* Список преимуществ */
+.tarif-card__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.tarif-card__feature {
+  position: relative;
+  padding-left: 2rem;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.tarif-card__feature::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #6bc605;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M20.285 6.709l-11.418 11.418-4.285-4.285 1.414-1.414 2.871 2.871 10.004-10.004z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+
+/* Цена */
+.tarif-card__price {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+.tarif-card__price span {
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+/* Кнопка */
+.tarif-card__btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(147deg, #7acd0d 26%, #17b639 70%);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.tarif-card__btn:hover {
+  opacity: 0.9;
+}
+.tarif-button {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 13px 62px;
+  outline: none;
+  margin: 3px;
+  color: #fff;
+  border: none;
+  background: #01b4f5;
+  background: linear-gradient(
+    90deg,
+    rgba(1, 180, 245, 1) 0%,
+    rgba(0, 250, 120, 1) 88%
+  );
+  width: 100%;
+}
+.tarif__btn-green {
+  background: #7acd0d;
+  background: linear-gradient(
+    147deg,
+    rgba(122, 205, 13, 1) 26%,
+    rgba(23, 182, 57, 1) 70%
+  );
+}
+.tab_btn {
+  padding: 10px 20px;
+  /* border: 2px solid #1b8607; */
+  border: 1px solid #979797;
+  border-radius: 30px;
+  background: #fff;
+  color: #1b8607;
+  color: #979797;
+  font-family: "Sora", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tab_btn.active {
+  background: #1b8607;
+  background: #8dc63f;
+  border-color: #8dc63f;
+  color: #fff;
+  /* box-shadow: 0 4px 10px rgba(27, 134, 7, 0.3); */
 }
