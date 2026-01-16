@@ -8,7 +8,8 @@
             Продолжая использовать наш сайт, вы даете согласие на обработку файлов
             Cookies и других пользовательских данных
         </p>
-        <p class="footer-fineprint fs-100">© Экотелеком 2025</p>
+        <p class="footer-fineprint fs-100">© Экотелеком <?php echo  date("Y")?>
+        </p>
     </div>
     <ul class="social-list">
         <li class="social-item">

@@ -575,6 +575,18 @@ select {
 }
 
 /* ------------------- */
+/* header new */
+/* ------------------- */
+
+.logo {
+  width: 90px;
+}
+
+.hero__container {
+  background: #000a23;
+  border-radius: 24px;
+}
+/* ------------------- */
 /* Compontents         */
 /* ------------------- */
 

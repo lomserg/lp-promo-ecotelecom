@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
             <h1 class="hero__title">УРОНИЛИ ЦЕНЫ</h1>
-            <h3 class="hero__title-second">ПОЛГОЛА ИНТЕРНЕТА СО СКИДКОЙ</h3>
+            <h3 class="hero__title-second">ПОЛГОДА ИНТЕРНЕТА СО СКИДКОЙ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -364,6 +364,24 @@ document.addEventListener("DOMContentLoaded", function() {
     </section>
 </div>
 
+</section>
+<section class="faq container">
+    <h2 class="section-title fs-600">Дополнительная информация:</h2>
+
+    <div class="accordion">
+        <?php foreach ($faqData_json as $item): ?>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <?= htmlspecialchars($item['question']) ?>
+            </div>
+            <div class="accordion-body">
+                <div class="accordion-body-content">
+                    <?= nl2br(htmlspecialchars($item['answer'])) ?>
+                </div>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
 </section>
 
 <section class="form container">
