@@ -475,10 +475,9 @@ select {
 
 .header-content {
   display: grid;
-  grid-template-columns: minmax(1em, 1fr) minmax(2em, 1fr) minmax(0px, 500px) minmax(
-      1em,
-      1fr
-    );
+  grid-template-columns:
+    minmax(1em, 1fr) minmax(2em, 1fr) minmax(0px, 500px)
+    minmax(1em, 1fr);
   max-width: 80rem;
 }
 
@@ -545,10 +544,9 @@ select {
     /* max-width: 1000px; */
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(0px, 1000px)) minmax(
-        1em,
-        1fr
-      );
+    grid-template-columns:
+      minmax(1em, 1fr) repeat(2, minmax(0px, 1000px))
+      minmax(1em, 1fr);
   }
 
   .phone a {
@@ -633,55 +631,25 @@ select {
     min-width: 196px;
   }
 }
+
 /* ------------------- */
 /* hero         */
 /* ------------------- */
 .hero__bg {
   position: relative;
-
-  /* Градиент */
-  background: linear-gradient(
-    175deg,
-    rgba(4, 0, 1, 1) 34%,
-    rgba(85, 87, 95, 1) 100%,
-    rgba(72, 76, 88, 1) 72%
-  );
-  overflow: hidden;
-}
-
-.hero__bg::before {
-  content: "";
-
-  position: absolute;
-  right: 0;
-  bottom: 0;
-
-  /* Картинка */
-  background-image: url("./img/santa-2.png");
+  min-height: 90vh;
+  background: url("./img/sleep_bg.webp");
   background-repeat: no-repeat;
-  background-position: right bottom;
-
-  width: auto;
-  height: 150%; /* растяжение по высоте блока */
-
-  aspect-ratio: 1 / 1; /* чтобы сохранить пропорции картинки */
-  background-size: contain;
-
-  pointer-events: none;
-  z-index: 1;
-}
-.hero__bg-container {
-  display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: start;
-  width: 1200px;
-  gap: 2rem;
-  height: 100%;
+  background-position: top center;
+  background-size: cover;
 }
 
 .primary-navigation {
   display: none;
+}
+.hero__bg {
+  display: flex;
+  justify-content: center; /* центр по горизонтали */
 }
 .hero-img {
   width: 100%;
@@ -690,7 +658,14 @@ select {
 .hero-img img {
   display: block;
 }
-
+.hero__bg-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: start;
+  /* background-color: red; */
+  width: 100%;
+}
 /* 
 .hero__img video {
   width: 100%;
@@ -726,7 +701,7 @@ select {
 } */
 .hero__title {
   font-family: "Gilroy";
-  font-size: 56px;
+  font-size: 76px;
   white-space: nowrap;
   color: #fff;
   line-height: 1;
@@ -734,7 +709,7 @@ select {
 }
 
 .hero__title-second {
-  font-size: 32px;
+  font-size: 26px;
   font-family: "Gilroy";
   color: #05cd48;
   font-family: "GilroyExtraBold";
@@ -769,6 +744,7 @@ html {
   color: #fff;
 }
 /* hero */
+
 .hero-txt-cta {
   display: flex;
   flex-direction: column;
@@ -825,7 +801,7 @@ html {
   .hero-txt-cta {
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 70%;
     margin-top: 5rem;
     margin-bottom: 23rem;
   }
@@ -836,9 +812,7 @@ html {
     align-items: center;
     display: flex;
   }
-  .hero__bg::before {
-    height: 110%;
-  }
+
   .hero__bg-container {
     flex-direction: column;
   }
@@ -850,6 +824,14 @@ html {
   }
 }
 @media (max-width: 500px) {
+  .hero__bg {
+    position: relative;
+    min-height: 70vh;
+    background: url("./img/sleep_bg2.webp");
+    background-position: top right;
+    background-size: cover;
+  }
+
   .hero__title {
     font-size: 30px;
   }
@@ -858,9 +840,7 @@ html {
     text-align: center;
     white-space: normal;
   }
-  .hero__bg::before {
-    width: 100%;
-  }
+
   .hero-txt-cta {
     align-items: center;
     justify-content: center;
@@ -1511,7 +1491,9 @@ html {
 .swiper-slide.tarif-option .tarif-slider-description {
   box-shadow: 0 4px 12px rgba(14, 0, 0, 0.34);
 
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
   will-change: transform;
   transform-origin: center;
 }
@@ -1590,9 +1572,6 @@ html {
 }
 
 @media (max-width: 1100px) {
-  .info-blocks {
-    display: none;
-  }
 }
 
 @media (max-width: 600px) {
@@ -1609,9 +1588,9 @@ html {
     font-size: 36px;
     text-align: center;
   }
-  .info-blocks {
+  /* .info-blocks {
     display: none;
-  }
+  } */
   .info-block-text {
     margin-top: 5px;
     font-size: 14px;
@@ -1775,7 +1754,9 @@ input {
   border-radius: 12px;
   border: 1px solid #ddd;
   font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   background-color: #f9f9f9;
 }
 
@@ -1804,7 +1785,9 @@ input {
   font-size: 1rem;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 /* Ховер на кнопке */

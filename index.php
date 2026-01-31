@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title">ЗАФИКСИРОВАЛИ ЦЕНЫ</h1>
-            <h3 class="hero__title-second">ПРАЗДНИКИ ПРОЙДУТ, ВЫГОДА ОСТАНЕТСЯ</h3>
+            <h1 class="hero__title">ЭТО НЕ СОН</h1>
+            <h3 class="hero__title-second">РЕАЛЬНЫЕ ТАРИФЫ БЕЗ СКРЫТЫХ УСЛОВИЙ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
