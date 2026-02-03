@@ -844,7 +844,7 @@ html {
   .hero-txt-cta {
     align-items: center;
     justify-content: center;
-    margin-bottom: 12rem;
+    margin-bottom: 0rem;
   }
   .hero__bg-bigtitle {
     font-size: 2rem;
