@@ -7,7 +7,10 @@
   *::after {
     box-sizing: border-box;
   }
-
+  @font-face {
+    font-family: "GilroyExtraBold";
+    src: url("./fonts/Gilroy.ttf");
+  }
   /* Reset margins */
   * {
     margin: 0;
@@ -17,9 +20,34 @@
   /* set up the body */
   body {
     line-height: 1.5;
-    background-color: #f4f4f4;
+    background-color: #01061d;
+    margin: 0;
+    background: radial-gradient(ellipse at bottom, #0b1d3a 0%, #020111 100%);
+    /* overflow: hidden; */
+  }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    /* background: #020111; */
+    /* overflow: hidden; */
+    position: relative;
   }
 
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(2px 2px at 20% 30%, white, transparent),
+      radial-gradient(1px 1px at 40% 70%, white, transparent),
+      radial-gradient(2px 2px at 60% 20%, white, transparent),
+      radial-gradient(1px 1px at 80% 50%, white, transparent),
+      radial-gradient(2px 2px at 90% 90%, white, transparent);
+    background-repeat: repeat;
+    background-size: 400px 400px;
+    opacity: 0.6;
+    z-index: -1;
+  }
   /* make images easier to work with */
   img,
   picture {
@@ -36,7 +64,8 @@
   }
   @font-face {
     font-family: "Sora";
-    src: url("./fonts/Sora-Regular.woff2") format("woff2"),
+    src:
+      url("./fonts/Sora-Regular.woff2") format("woff2"),
       url("./fonts/Sora-Regular.woff") format("woff"),
       url("./fonts/Sora-Regular.ttf") format("truetype");
     font-weight: 400;
@@ -45,7 +74,8 @@
 
   @font-face {
     font-family: "Inter";
-    src: url("/fonts/Inter-ExtraBold.woff2") format("woff2"),
+    src:
+      url("/fonts/Inter-ExtraBold.woff2") format("woff2"),
       url("/fonts/Inter-ExtraBold.woff") format("woff"),
       url("/fonts/Inter-ExtraBold.ttf") format("truetype");
     font-weight: 800;
@@ -74,6 +104,7 @@
     position: relative;
   }
   .section-title {
+    color: #fff;
     text-align: center;
     font-size: 32px;
     margin-top: 3rem;
@@ -85,8 +116,10 @@
     font-size: 16px;
 
     /* background-color: hsl(var(--clr-white)); */
+    /* background: #01061d; */
     line-height: 1.5;
   }
+
   ul {
     list-style-type: none;
   }
@@ -186,8 +219,88 @@
   .humburger__menu {
     display: none;
   }
+  /* header */
+
+  .header {
+    height: 4rem;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 3rem;
+  }
+
+  .logo-header {
+    background-image: url(img/logo_eco_w.svg);
+    height: 50px;
+    width: 90px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+  }
+
+  .phone {
+    align-self: center;
+    justify-self: end;
+    grid-column: 3;
+    display: flex;
+  }
+
+  .phone {
+    align-self: center;
+    justify-self: end;
+    grid-column: 3;
+    display: flex;
+  }
+
+  .phone a {
+    font-family: "Roboto";
+    color: #fff;
+    font-size: 0.9rem;
+  }
 
   /* showcase */
+  .showcase__info {
+    position: relative;
+    /* min-height: 90vh; */
+    background: url("./img/sleep_bg.webp");
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    max-width: 1440px;
+    margin: 0 auto;
+    border-radius: 32px;
+    height: 600px;
+    position: relative;
+  }
+  .showcase__info::before,
+  .showcase__info::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(
+      from 0deg at center,
+      #00c3ff,
+      #4d0199,
+      #6300c6,
+      #00c3ff
+    );
+    border-radius: inherit;
+    z-index: -2;
+    inset: -2px;
+  }
+  .showcase__info::after {
+    filter: blur(10px);
+  }
   .shawcace__header {
     background: #1e1e1e;
     height: 400px;
@@ -215,7 +328,83 @@
   .shawcace__header-text {
     font-size: 20px;
   }
+  .hero-txt-cta {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-top: 7rem;
+    align-self: center;
+    align-items: self-start;
+    gap: 1.25rem;
+    margin-bottom: 5rem;
+  }
+  .hero__title {
+    font-family: "Gilroy";
+    font-size: 96px;
+    white-space: nowrap;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    font-family: "GilroyExtraBold";
+  }
 
+  .hero__title-second {
+    font-size: 22px;
+    letter-spacing: 0.08em;
+    font-family: "Gilroy";
+    color: #05cd48;
+    font-family: "GilroyExtraBold";
+  }
+
+  .button-63 {
+    align-items: center;
+    background: #ff8a00;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 15px 24px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    font-family: var(--ff-normal);
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  .info-blocks {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .info-block {
+    width: 120px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .info-block-feature {
+    font-size: 56px;
+  }
+  .info-block-feature,
+  .info-block-text {
+    color: #fff;
+    font-family: "GilroyExtraBold";
+    line-height: 1;
+  }
   /* tarifs */
 
   .tarifs_container {
@@ -225,7 +414,7 @@
 
   .tarif-card {
     max-width: 410px;
-    background: #fff;
+    background: #1c2340;
     border-radius: 2rem;
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -622,23 +811,123 @@
   /* ********** */
 
   .new__tarifs {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin: 3rem 0;
     display: flex;
     gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2rem;
+    justify-content: center;
+    padding-top: 2rem;
+    /* background: radial-gradient(circle at top, #0b112b 0%, #050814 100%); */
   }
+  .new__tarifs::before {
+    content: "";
+    position: absolute;
 
+    width: 1400px;
+    height: 1400px;
+
+    left: 50%;
+    bottom: -1100px;
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+      circle at 50% 40%,
+      rgba(0, 195, 255, 0.9) 0%,
+      rgba(77, 1, 153, 0.7) 30%,
+      rgba(10, 15, 40, 1) 60%,
+      rgba(5, 8, 20, 1) 75%
+    );
+
+    filter: blur(30px);
+    opacity: 0.9;
+
+    pointer-events: none;
+    z-index: 1;
+  }
+  .new__tarifs::after {
+    content: "";
+    position: absolute;
+
+    width: 1000px;
+    height: 400px;
+
+    left: 50%;
+    bottom: -120px;
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 195, 255, 0.5),
+      rgba(120, 0, 255, 0.3),
+      transparent 70%
+    );
+
+    filter: blur(80px);
+
+    pointer-events: none;
+    z-index: 1;
+  }
+  .new__tarifs-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
   .tarif-item {
     font-family: "Sora";
     max-width: 357px;
     padding: 22px;
-    background: #fff;
+    color: #fff;
     border-radius: 24px;
-    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  }
+    position: relative;
 
+    background: rgba(11, 17, 43, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+      0 10px 40px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+  .tarif-item {
+    position: relative;
+    z-index: 2;
+  }
+  .tarif-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+
+    background: linear-gradient(
+      135deg,
+      rgba(0, 195, 255, 0.7),
+      rgba(99, 0, 198, 0.6)
+    );
+
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+
+    pointer-events: none;
+  }
+  .tarif-item:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.6),
+      0 0 40px rgba(0, 195, 255, 0.25);
+  }
   .tarif-title {
     font-size: 32px;
     font-weight: 800;
@@ -659,24 +948,85 @@
   }
 
   .tarif__features {
+    position: relative;
     padding: 14px 18px;
-    background-color: #f0f0f0;
     border-radius: 24px;
     margin-top: 20px;
+
+    background: rgba(11, 17, 43, 0.45); /* цвет карточки, но прозрачный */
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
 
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+  .tarif__features::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.05)
+    );
+
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+
+    pointer-events: none;
+  }
   .tarif__price {
     font-size: 40px;
     padding: 14px 18px;
-    background-color: #f0f0f0;
     margin-top: 20px;
+    margin-bottom: 20px;
     font-weight: 800;
     border-radius: 24px;
-    margin-bottom: 20px;
+    position: relative;
+
+    background: rgba(11, 17, 43, 0.45); /* цвет карточки, но прозрачный */
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.06),
+      0 6px 24px rgba(0, 0, 0, 0.25);
   }
+  .tarif__price::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.05)
+    );
+
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+
+    pointer-events: none;
+  }
+
   .tarif__price span {
     font-weight: 400;
     font-size: 24px;
@@ -739,7 +1089,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .tarif-card:hover {

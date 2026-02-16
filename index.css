@@ -446,6 +446,7 @@ select {
 .t-center {
   text-align: center;
 }
+
 /* header */
 
 .header {
@@ -457,10 +458,9 @@ select {
 
 .header-content {
   display: grid;
-  grid-template-columns: minmax(1em, 1fr) minmax(2em, 1fr) minmax(0px, 500px) minmax(
-      1em,
-      1fr
-    );
+  grid-template-columns:
+    minmax(1em, 1fr) minmax(2em, 1fr) minmax(0px, 500px)
+    minmax(1em, 1fr);
 }
 
 .logo-header {
@@ -526,10 +526,9 @@ select {
     /* max-width: 1000px; */
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(0px, 1000px)) minmax(
-        1em,
-        1fr
-      );
+    grid-template-columns:
+      minmax(1em, 1fr) repeat(2, minmax(0px, 1000px))
+      minmax(1em, 1fr);
   }
 
   .phone a {
