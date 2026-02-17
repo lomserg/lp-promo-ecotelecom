@@ -264,6 +264,9 @@
   }
 
   /* showcase */
+  .showcase {
+    padding-inline: 1rem;
+  }
   .showcase__info {
     position: relative;
     /* min-height: 90vh; */
@@ -334,11 +337,12 @@
     width: 50%;
     padding-top: 7rem;
     align-self: center;
-    align-items: self-start;
+    align-items: flex-start;
     gap: 0.25rem;
     margin-bottom: 5rem;
     position: relative;
   }
+
   .hero__title {
     font-family: "Gilroy";
     font-size: 96px;
@@ -443,6 +447,27 @@
     letter-spacing: 2px;
     line-height: 0.85; /* или 0.9 */
   }
+  @media (max-width: 1100px) {
+    .promocode {
+      right: -100px;
+    }
+  }
+  @media (max-width: 768px) {
+    .promocode {
+      width: 290px;
+      left: 50%;
+      right: auto;
+      bottom: -100px;
+      transform: translateX(-50%);
+    }
+    .promocode h5 {
+      font-size: 13px;
+    }
+
+    .promocode p {
+      font-size: 40px;
+    }
+  }
   @media (max-width: 600px) {
     .showcase {
       padding: 0 1rem;
@@ -452,6 +477,8 @@
       background-position-x: right;
     }
     .hero-txt-cta {
+      align-self: center;
+      align-items: center;
       width: 100%;
       padding-top: 23rem;
     }
@@ -459,7 +486,7 @@
       font-size: 57px;
     }
     .hero__title-second {
-      font-size: 28px;
+      font-size: 26px;
     }
     .button-63 {
       align-self: center;
@@ -944,6 +971,12 @@
     gap: 1rem;
     align-items: center;
     justify-content: center;
+  }
+
+  @media (max-width: 800px) {
+    .new__tarifs-container {
+      flex-direction: column;
+    }
   }
   .tarif-item {
     font-family: "Sora";
