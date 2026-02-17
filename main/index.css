@@ -482,10 +482,10 @@ select {
 
 .header-content {
   display: grid;
-  grid-template-columns: minmax(1em, 1fr) minmax(2em, 1fr) minmax(0px, 500px) minmax(
-      1em,
-      1fr
-    );
+  grid-template-columns: minmax(1em, 1fr) minmax(2em, 1fr) minmax(
+      0px,
+      500px
+    ) minmax(1em, 1fr);
   max-width: 80rem;
   margin-top: 10px;
 }
@@ -553,10 +553,10 @@ select {
     /* max-width: 1000px; */
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(1em, 1fr) repeat(2, minmax(0px, 1000px)) minmax(
-        1em,
-        1fr
-      );
+    grid-template-columns: minmax(1em, 1fr) repeat(
+        2,
+        minmax(0px, 1000px)
+      ) minmax(1em, 1fr);
   }
 
   .phone a {
@@ -647,7 +647,7 @@ select {
 /* ------------------- */
 /* hero         */
 /* ------------------- */
-.hero__bg {
+/* .hero__bg {
   background: #8ac7ca;
   background: #40949c;
   background: linear-gradient(
@@ -656,7 +656,19 @@ select {
     rgba(179, 226, 232, 1) 100%
   );
   position: relative;
+} */
+
+.hero__bg {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    64deg,
+    rgba(228, 167, 74, 1) 26%,
+    rgba(214, 150, 56, 1) 70%
+  );
 }
+
 .hero__bg-container {
   display: flex;
   /* flex-direction: column; */
@@ -676,19 +688,49 @@ select {
   display: flex;
   justify-content: center;
 }
+.hero__bg {
+  /* min-height: 100vh;  */
+  position: relative;
+  overflow: hidden;
+}
+.hero__bg-container {
+  display: flex;
+  align-items: flex-start; /* текст сверху */
+  height: 100%;
+}
+
+.hero-txt-cta {
+  max-width: 600px;
+  z-index: 2;
+}
+
+/* картинка */
+.hero-img {
+  position: absolute;
+  right: 0;
+  bottom: 0; /* 👈 прижали к низу */
+  z-index: 1;
+}
+.hero-img img {
+  max-height: 90vh; /* чтобы не вылезала */
+  width: auto;
+}
 .hero-img img {
   display: block;
-  width: 69%;
+  width: 100%;
 }
 
 .hero__title {
   font-family: "Gilroy";
-  font-size: 59px;
+  font-size: 70px;
   color: #fff;
   line-height: 1;
   font-family: "GilroyExtraBold";
-  white-space: nowrap;
-  text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan;
+  /* white-space: nowrap; */
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.15),
+    0 4px 6px rgba(0, 0, 0, 0.15);
+  /* text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan; */
 }
 .hero__title-sub {
   display: block;
@@ -699,10 +741,8 @@ select {
 .hero__title-second {
   font-size: 32px;
   font-family: "Gilroy";
-  color: #fee751;
+  color: #161616;
   font-family: "GilroyExtraBold";
-
-  text-shadow: 1px 1px 2px #6cb7bb, 0 0 1em white, 0 0 0.2em darkcyan;
 }
 
 html {
@@ -751,12 +791,12 @@ html {
 } */
 @media (max-width: 1100px) {
   .hero__title-sub {
-    font-size: 78px;
+    font-size: 35px;
   }
   .hero__title {
-    font-size: 57px;
+    font-size: 45px;
     text-align: center;
-    white-space: normal;
+    /* white-space: normal; */
     text-shadow: none;
   }
   .hero__title-second {
@@ -789,16 +829,21 @@ html {
   }
 }
 @media (max-width: 500px) {
+  .hero__bg-container {
+    align-items: center;
+  }
   .hero__title-sub {
     font-size: 58px;
+    white-space: nowrap;
   }
   .hero__title {
-    font-size: 37px;
+    font-size: 33px;
     text-align: center;
   }
   .hero__title-second {
     font-size: 16px;
     text-shadow: none;
+    white-space: nowrap;
   }
   .hero__bg::before {
     width: 100%;
@@ -806,6 +851,12 @@ html {
   .hero-txt-cta {
     align-items: center;
     justify-content: center;
+    /* margin-bottom: 19rem; */
+  }
+
+  .hero-img img {
+    display: block;
+    width: 300px;
   }
   .hero__bg-bigtitle {
     font-size: 2rem;
@@ -814,6 +865,16 @@ html {
     font-size: 2.3rem;
   }
 
+  .info-blocks {
+    margin-top: 0;
+  }
+  .hero-img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
   .btn {
     align-self: center;
   }
@@ -1448,7 +1509,9 @@ html {
 .swiper-slide.tarif-option .tarif-slider-description {
   box-shadow: 0 4px 12px rgba(14, 0, 0, 0.34);
 
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
   will-change: transform;
   transform-origin: center;
 }
@@ -1685,7 +1748,9 @@ input {
   border-radius: 12px;
   border: 1px solid #ddd;
   font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   background-color: #f9f9f9;
 }
 
@@ -1714,7 +1779,9 @@ input {
   font-size: 1rem;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 /* Ховер на кнопке */

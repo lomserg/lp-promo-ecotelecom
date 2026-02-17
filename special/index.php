@@ -18,9 +18,8 @@ if (file_exists($file)) {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title">НАШ С ТОБОЙ СЕКРЕТ</h1>
-            <h3 class="hero__title-second">Специальная цена
-                на интернет</h3>
+            <h1 class="hero__title">ЭТО НЕ СОН</h1>
+            <h3 class="hero__title-second">РЕАЛЬНЫЕ ТАРИФЫ БЕЗ СКРЫТЫХ УСЛОВИЙ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -46,10 +45,10 @@ if (file_exists($file)) {
             <img src="./img/9PIrNJFKZR.png" alt="" />
         </div> -->
         <div class="hero__img">
-            <video autoplay muted loop playsinline>
+            <!-- <video autoplay muted loop playsinline>
                 <source src="./img/kling_20250805_Image_to_Video__5335_0.mp4" type="video/mp4">
                 Ваш браузер не поддерживает видео.
-            </video>
+            </video> -->
         </div>
     </div>
 

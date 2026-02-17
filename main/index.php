@@ -18,23 +18,24 @@ if (file_exists($file)) {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title">ЗАПАСАЙ ИНТЕРНЕТ</h1>
+            <h1 class="hero__title">Цена сказочная
+                - выгода реальная</h1>
             <h3 class="hero__title-second">ПОЛУЧИ СКИДКУ НА 12 МЕСЯЦЕВ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">350</div>
+                    <div class="info-block-feature fs-300 uppercase fw-bold">300</div>
                     <div class="info-block-text">Мбит/с</div>
                 </div>
                 <div class="info-block">
                     <div class="info-block-feature fs-300 uppercase fw-bold">320</div>
                     <div class="info-block-text">каналов</div>
                 </div>
-                <div class="info-block img">
+                <!-- <div class="info-block img">
                     <img src="./img/logo_Premier_w.png" alt="" />
-                    <!-- <img src="./img/logo_start.svg" alt="" />
-                    <img src="./img/Amediateka_full_white.png" alt="" /> -->
-                </div>
+                    <img src="./img/logo_start.svg" alt="" />
+                    <img src="./img/Amediateka_full_white.png" alt="" />
+                </div> -->
                 <div class="info-block">
                     <div class="info-block-feature fs-300 uppercase fw-bold">800</div>
                     <div class="info-block-text">₽/мес</div>
@@ -42,7 +43,7 @@ if (file_exists($file)) {
             </div>
         </div>
         <div class="hero-img">
-            <img src="./img/zapas.png" alt="" />
+            <img src="./img/Q2z718W0sG1.png" alt="" />
         </div>
     </div>
 
