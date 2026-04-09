@@ -13,54 +13,13 @@ if (file_exists($file)) {
     echo "Include file not found: $file";
 }
 ?>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const snowContainer = document.createElement("div");
-    snowContainer.style.position = "fixed";
-    snowContainer.style.top = "0";
-    snowContainer.style.left = "0";
-    snowContainer.style.width = "100%";
-    snowContainer.style.height = "100%";
-    snowContainer.style.pointerEvents = "none";
-    snowContainer.style.overflow = "hidden";
-    snowContainer.style.zIndex = "999999";
-    document.body.appendChild(snowContainer);
-
-    function createSnowflake() {
-        const flake = document.createElement("div");
-        flake.innerHTML = "❆";
-        flake.style.position = "absolute";
-        flake.style.color = "white";
-        flake.style.fontSize = Math.random() * 10 + 10 + "px";
-        flake.style.left = Math.random() * window.innerWidth + "px";
-        flake.style.top = "-20px";
-        flake.style.opacity = Math.random();
-        flake.style.animation = `snowFall ${5 + Math.random() * 5}s linear forwards`;
-        snowContainer.appendChild(flake);
-
-        setTimeout(() => flake.remove(), 10000);
-    }
-
-    setInterval(createSnowflake, 150);
-
-    const style = document.createElement("style");
-    style.innerHTML = `
-    @keyframes snowFall {
-      to {
-        transform: translateY(110vh);
-      }
-    }
-  `;
-    document.head.appendChild(style);
-});
-</script>
 
 <section class="hero__bg">
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title">ЭТО НЕ СОН</h1>
-            <h3 class="hero__title-second">РЕАЛЬНЫЕ ТАРИФЫ БЕЗ СКРЫТЫХ УСЛОВИЙ</h3>
+            <h1 class="hero__title">ЧЕСТНАЯ ИГРА</h1>
+            <h3 class="hero__title-second">ИНТЕРНЕТ БЕЗ СКРЫТЫХ УСЛОВИЙ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -77,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <img src="./img/Amediateka_full_white.png" alt="" /> -->
                 <!-- </div> -->
                 <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">500</div>
+                    <div class="info-block-feature fs-300 uppercase fw-bold">550</div>
                     <div class="info-block-text">₽/мес</div>
                 </div>
             </div>
@@ -86,10 +45,8 @@ document.addEventListener("DOMContentLoaded", function() {
             <img src="./img/9PIrNJFKZR.png" alt="" />
         </div> -->
         <div class="hero__img">
-            <!-- <video autoplay muted loop playsinline>
-                <source src="./img/kling_20250805_Image_to_Video__5335_0.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video> -->
+            <img class="hero__img-main" src="./img/chess.png" alt="">
+            <img class="hero__img-elipse" src="./img/Ellipse.png" alt="">
         </div>
     </div>
 
