@@ -693,11 +693,11 @@ select {
 .hero__bg {
   position: relative;
   overflow: hidden;
-
-  background: linear-gradient(
-    64deg,
-    rgba(228, 167, 74, 1) 26%,
-    rgba(214, 150, 56, 1) 70%
+  background: #8dd7fb;
+  background: radial-gradient(
+    circle,
+    rgba(141, 215, 251, 1) 0%,
+    rgba(62, 187, 245, 1) 100%
   );
 }
 
@@ -705,7 +705,7 @@ select {
   display: flex;
   /* flex-direction: column; */
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   max-width: 80rem;
   gap: 2rem;
   /* height: 100%; */
@@ -715,7 +715,7 @@ select {
   display: none;
 }
 .hero-img {
-  width: 50%;
+  width: 70%;
   min-height: 450px;
   display: flex;
   justify-content: center;
@@ -727,7 +727,7 @@ select {
 }
 .hero__bg-container {
   display: flex;
-  align-items: flex-start; /* текст сверху */
+  align-items: center; /* текст сверху */
   height: 100%;
 }
 
@@ -738,10 +738,10 @@ select {
 
 /* картинка */
 .hero-img {
-  position: absolute;
+  /* position: absolute;
   right: 0;
-  bottom: 0; /* 👈 прижали к низу */
-  z-index: 1;
+  bottom: 0;
+  z-index: 1; */
 }
 .hero-img img {
   max-height: 90vh; /* чтобы не вылезала */
@@ -901,11 +901,11 @@ html {
     margin-top: 0;
   }
   .hero-img {
-    position: absolute;
+    /* position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 1; */
   }
   .btn {
     align-self: center;
@@ -1580,6 +1580,9 @@ html {
 }
 
 .info-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 120px;
 }
 .info-block-feature,

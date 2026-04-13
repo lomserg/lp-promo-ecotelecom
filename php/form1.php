@@ -6,7 +6,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <META HTTP-EQUIV="Refresh" CONTENT="2; URL=http://site.ru">
 </head>
+<?php
+// 🚫 Принимаем только POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    exit('Invalid request');
+}
 
+// 🚫 Honeypot (скрытое поле от ботов)
+if (!empty($_POST['hidden_field'])) {
+    exit('Bot detected');
+}
+
+// 🚫 Проверка обязательных полей
+if (empty($_POST['name']) || empty($_POST['number']) || empty($_POST['address'])) {
+    exit('Empty fields');
+}
+?>
 <?php
 $myaddr = "op@ecotelecom.ru, lomov@ecotelecom.ru";
 
@@ -37,7 +52,7 @@ if (!empty($utm_term))     $text .= "\nКлючевые слова: $utm_term";
 mail($myaddr, $subj, $text, $headers);
 
 // Перенаправление
-header("Location: thank_you.html");
+header("Location: thank_you.php");
 exit;
 ?>
 

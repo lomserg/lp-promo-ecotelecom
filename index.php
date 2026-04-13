@@ -19,9 +19,8 @@ if (file_exists($file)) {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title">Цена сказочная
-                - выгода реальная</h1>
-            <h3 class="hero__title-second">ПОЛУЧИ СКИДКУ НА 12 МЕСЯЦЕВ</h3>
+            <h1 class="hero__title">лови скидку</h1>
+            <h3 class="hero__title-second">НА 3 МЕСЯЦА</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -38,13 +37,13 @@ if (file_exists($file)) {
                     <img src="./img/Amediateka_full_white.png" alt="" />
                 </div> -->
                 <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">800</div>
+                    <div class="info-block-feature fs-300 uppercase fw-bold">495</div>
                     <div class="info-block-text">₽/мес</div>
                 </div>
             </div>
         </div>
         <div class="hero-img">
-            <img src="./img/Q2z718W0sG1.png" alt="" />
+            <img src="./img/sky.png" alt="" />
         </div>
     </div>
 
