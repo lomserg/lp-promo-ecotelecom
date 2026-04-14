@@ -18,8 +18,8 @@ if (file_exists($file)) {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title">ЭТО НЕ СОН</h1>
-            <h3 class="hero__title-second">РЕАЛЬНЫЕ ТАРИФЫ БЕЗ СКРЫТЫХ УСЛОВИЙ</h3>
+            <h1 class="hero__title">ЧЕСТНАЯ ИГРА</h1>
+            <h3 class="hero__title-second">ИНТЕРНЕТ БЕЗ СКРЫТЫХ УСЛОВИЙ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -36,7 +36,7 @@ if (file_exists($file)) {
                     <img src="./img/Amediateka_full_white.png" alt="" /> -->
                 <!-- </div> -->
                 <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">500</div>
+                    <div class="info-block-feature fs-300 uppercase fw-bold">550</div>
                     <div class="info-block-text">₽/мес</div>
                 </div>
             </div>
@@ -45,10 +45,8 @@ if (file_exists($file)) {
             <img src="./img/9PIrNJFKZR.png" alt="" />
         </div> -->
         <div class="hero__img">
-            <!-- <video autoplay muted loop playsinline>
-                <source src="./img/kling_20250805_Image_to_Video__5335_0.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video> -->
+            <img class="hero__img-main" src="./img/chess.png" alt="">
+            <img class="hero__img-elipse" src="./img/Ellipse.png" alt="">
         </div>
     </div>
 

@@ -1,5 +1,21 @@
 <?php 
 
+
+// 🚫 Принимаем только POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    exit('Invalid request');
+}
+
+// 🚫 Honeypot (скрытое поле от ботов)
+if (!empty($_POST['hidden_field'])) {
+    exit('Bot detected');
+}
+
+// 🚫 Проверка обязательных полей
+if (empty($_POST['name']) || empty($_POST['number']) || empty($_POST['address'])) {
+    exit('Empty fields');
+}
+
 $name = (string)($_POST['name'] ?? '');
 $number = ($_POST['number'] ?? '');
 $address = (string) ($_POST['address'] ?? '');

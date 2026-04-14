@@ -112,14 +112,7 @@ input[type="tel"] {
                     <?php if ($tarif['movie']): ?>
                     <li><strong>Кино:</strong> <?php echo $tarif['movie']; ?></li>
                     <?php endif; ?>
-                    <?php if($tarif["promo"]) :?>
-
-                    <li><strong>Цена:</strong> <?php echo $tarif['price2']; ?> ₽/мес <span style="font-size: 0.9rem;"> с
-                            4 месяца
-                            <?php echo $tarif['price']; ?> ₽/мес</span></li>
-                    <?php else :?>
                     <li><strong>Цена:</strong> <?php echo $tarif['price']; ?> ₽/мес</li>
-                    <?php endif ?>
                 </ul>
                 <?php
                     if (is_array($tarif['description'])) {

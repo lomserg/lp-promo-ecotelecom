@@ -18,8 +18,8 @@ if (file_exists($file)) {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title">лови скидку</h1>
-            <h3 class="hero__title-second">НА 3 МЕСЯЦА</h3>
+            <h1 class="hero__title">ЧЕСТНАЯ ИГРА</h1>
+            <h3 class="hero__title-second">ИНТЕРНЕТ БЕЗ СКРЫТЫХ УСЛОВИЙ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -27,22 +27,26 @@ if (file_exists($file)) {
                     <div class="info-block-text">Мбит/с</div>
                 </div>
                 <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">320</div>
+                    <div class="info-block-feature fs-300 uppercase fw-bold">70</div>
                     <div class="info-block-text">каналов</div>
                 </div>
-                <!-- <div class="info-block img">
-                    <img src="./img/logo_Premier_w.png" alt="" />
-                    <img src="./img/logo_start.svg" alt="" />
-                    <img src="./img/Amediateka_full_white.png" alt="" />
-                </div> -->
+                <!-- <div class="info-block img"> -->
+                <!-- <img src="./img/logo_Premier_w.png" alt="" /> -->
+                <!-- <img src="./img/logo_start.svg" alt="" />
+                    <img src="./img/Amediateka_full_white.png" alt="" /> -->
+                <!-- </div> -->
                 <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">495</div>
+                    <div class="info-block-feature fs-300 uppercase fw-bold">550</div>
                     <div class="info-block-text">₽/мес</div>
                 </div>
             </div>
         </div>
-        <div class="hero-img">
-            <img src="./img/sky.png" alt="" />
+        <!-- <div class="hero__img">
+            <img src="./img/9PIrNJFKZR.png" alt="" />
+        </div> -->
+        <div class="hero__img">
+            <img class="hero__img-main" src="./img/chess.png" alt="">
+            <img class="hero__img-elipse" src="./img/Ellipse.png" alt="">
         </div>
     </div>
 
@@ -90,8 +94,12 @@ if (file_exists($file)) {
                         <div class="tarif channels-item ntv_channels">
                             <a class="channels_link link trigger" href="#channels"><?php echo $tarif["channels"] ?>
                                 ТВ-каналов</a>
-                            <p style=" color: black; font-size: 12px;">НТВ-ПЛЮС ТВ в подарок 🎁</p>
                         </div>
+                        <p style="
+    color: black;
+    font-size: 12px;
+">НТВ-ПЛЮС ТВ в подарок 🎁
+                        </p>
                     </div>
 
                     <div class="tarif-options-description">
@@ -100,8 +108,8 @@ if (file_exists($file)) {
                         </ul>
                     </div>
                     <?php
-                    $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
-                    ?>
+                            $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
+                            ?>
                     <a href="tarif.php?id=<?php echo $tarif["id"] . $utm ?>" class="choose-btn">Выбрать</a>
                 </div>
 
@@ -165,8 +173,8 @@ if (file_exists($file)) {
                             </ul>
                         </div>
                         <?php
-                    $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
-                    ?>
+                            $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
+                            ?>
                         <a href="tarif.php?id=<?php echo $tarif["id"] . $utm ?>" class="choose-btn">Выбрать</a>
                     </div>
                 </div>
@@ -195,7 +203,6 @@ if (file_exists($file)) {
     </div>
 
 </section>
-
 <div class="wrapper flow container">
     <h2 class="section-title" style="position: sticky">Преимущества</h2>
     <section class="card">
@@ -273,7 +280,7 @@ if (file_exists($file)) {
                             Стабильный интернет
                         </div>
                         <div class="feature-description fs-300">
-                            Всё летает: скорость 500 Мбит/сек подходит для домашних и
+                            Всё летает: скорость до 500 Мбит/с подходит для домашних и
                             рабочих задач — игр, видеосвязи, просмотра фильмов, работы с
                             офисными приложениями
                         </div>
@@ -305,7 +312,6 @@ if (file_exists($file)) {
     </section>
 </div>
 
-
 <section class="faq container">
     <h2 class="section-title fs-600">Дополнительная информация:</h2>
 
@@ -327,41 +333,22 @@ if (file_exists($file)) {
 <section class="form container">
     <h2 style="text-align: center" class="fs-600">Заявка на подключение</h2>
     <div class="contact-box">
-        <form action="./php/telegram2.php" method="post" id="form1" name="call-form"
-            onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(47175648, 'reachGoal', 'order'); } return false;">
-
-            <!-- безопасно передаём UTM-метки -->
-            <input type="hidden" name="utm_source"
-                value="<?= isset($_GET['utm_source']) ? $_GET['utm_source'] : '' ?>" />
-            <input type="hidden" name="utm_medium"
-                value="<?= isset($_GET['utm_medium']) ? $_GET['utm_medium'] : '' ?>" />
-            <input type="hidden" name="utm_campaign"
-                value="<?= isset($_GET['utm_campaign']) ? $_GET['utm_campaign'] : '' ?>" />
-            <input type="hidden" name="utm_content"
-                value="<?= isset($_GET['utm_content']) ? $_GET['utm_content'] : '' ?>" />
-            <input type="hidden" name="utm_term" value="<?= isset($_GET['utm_term']) ? $_GET['utm_term'] : '' ?>" />
-
+        <!-- <h2 class="fs-600" style="margin: 2rem 0;">Заявка на подключение</h2> -->
+        <form action="./php/form1.php" method="post" id="form1" name="call-form">
             <label class="fs-200" for="name1">Имя</label>
             <input type="text" name="name" id="name1" class="field" required />
-
             <label class="fs-200" for="phone1">Телефон</label>
             <input type="tel" class="field" data-tel-input maxlength="18" name="number" id="phone1" required />
-
             <label class="fs-200" for="adr11">Адрес</label>
             <input type="text" class="field" name="address" id="adr11" required />
-
-            <button type="submit" class="btn" style="width: 80%; margin-left: 2rem" name="call-submit">
+            <button type="submit bg-violet" class="button-63" style="width: 80%; margin-left: 2rem" name="call-submit"
+                onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(49966909, 'reachGoal', 'form-submit'); } return false;">
                 Отправить
             </button>
-
             <input autocomplete="off" type="hidden" name="call-control" class="call-control" value="0" />
         </form>
     </div>
 </section>
-
-
-
-
 <?php
 $file = __DIR__ . '/inc/footer.inc.php';
 if (file_exists($file)) {
