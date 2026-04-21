@@ -130,7 +130,7 @@ input[type="tel"] {
         <?php endforeach; ?>
         <section class="form-section">
             <h2>Заявка на подключение</h2>
-            <form action="./php/telegram2.php" method="post" id="form1" name="call-form"
+            <form action="mail.php" method="post" id="form1" name="call-form"
                 onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(47175648, 'reachGoal', 'order'); } return false;">
 
                 <!-- безопасно передаём UTM-метки -->

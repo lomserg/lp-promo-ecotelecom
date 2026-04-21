@@ -333,8 +333,11 @@ if (file_exists($file)) {
 <section class="form container">
     <h2 style="text-align: center" class="fs-600">Заявка на подключение</h2>
     <div class="contact-box">
-        <form action="./php/telegram2.php" method="post" id="form1" name="call-form"
-            onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(47175648, 'reachGoal', 'order'); } return false;">
+        <form action="mail.php" method="post" id="form1" name="call-form" onsubmit="if (validateForm(event, this)) { 
+    ym(47175648, 'reachGoal', 'order'); 
+    return true;
+} 
+return false;">
 
             <!-- hidden -->
             <input type="hidden" name="utm_source"
