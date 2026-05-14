@@ -61,148 +61,123 @@ if (file_exists($file)) {
     </div>
 </section>
 
-<section class="tarifs__section" id="tarifs__section">
+<section class="new__tarifs">
     <h2 id="tarif_block" class="section-title fs-600">Тарифы</h2>
-    <h3 class="t-center fs-400">Интернет</h3>
-    <!--tab section-->
-    <div class="swiper tarifs-slider-container2 container">
-        <!-- Additional required wrapper -->
+    <!-- ТАБЫ -->
+    <div class="tab-box">
+        <button class="tab_btn active" data-category="internet">
+            Интернет
+        </button>
+        <button class="tab_btn" data-category="internet-tv">
+            Интернет + ТВ
+        </button>
+    </div>
+
+    <!-- СЛАЙДЕР -->
+    <div class="swiper tarifs-swiper">
         <div class="swiper-wrapper">
-            <!-- Slides -->
-            <?php foreach($tarifs_json AS $tarif): ?>
 
-            <?php if($tarif['tv'] == false): ?>
-            <div class="swiper-slide tarif-option">
-                <div class="tarif-slider-description">
-                    <?php if($tarif['promo']) : ?><div class="tarif-promo">Акция</div>
-                    <?php endif?>
-                    <!-- <div class="tarif-icon"></div> -->
-                    <p class="tarif-name"><?php echo $tarif["name"]?></p>
-                    <?php if($tarif['promo']) : ?>
-                    <p class="tarif-price"> <?php echo $tarif['price2']  ?> <span
-                            style="font-size: 0.75rem">₽/мес</span>
-                        <span class="tarif-price-old"><?php echo $tarif["price"]?>
-                            <span style="font-size: 0.75rem">₽/мес</span></span>
+            <?php foreach($tarifs_json as $tarif): ?>
+            <?php
+$params = $_GET;
+unset($params['id']);
+
+$url = 'tarif.php?id=' . (int)$tarif['id'];
+
+if (!empty($params)) {
+    $url .= '&' . http_build_query($params);
+}
+?>
+            <div class="swiper-slide tarif-item" data-category="<?= $tarif['tv'] ? 'internet-tv' : 'internet'; ?>">
+                <h3 class="tarif-title"><?= htmlspecialchars($tarif["name"]) ?></h3>
+
+                <p class="tarif__description">
+                    <?= htmlspecialchars($tarif["description"]) ?>
+                </p>
+
+
+
+                <ul class="tarif__features">
+                    <li class="tarif__params">
+                        <?= htmlspecialchars($tarif["speed"]) ?> <span>Мбит/сек</span>
+                    </li>
+                    <!-- <li class="tarif__params channels_link link trigger">-->
+                    <!-- <?php /*htmlspecialchars($tarif["channels"])*/ ?> -->
+                    <!--  <span>ТВ-каналов</span>
+                    </li> -->
+                    <li class="tarif tarif__params channels-item <?php echo !empty($tarif["dataPackage"]) ? 'data-package' : 'ntv_channels'; ?>"
+                        <?php if (!empty($tarif["dataPackage"])): ?>
+                        data-package="<?php echo htmlspecialchars($tarif["dataPackage"]); ?>" <?php endif; ?>>
+                        <a class="channels_link link trigger" href="#channels"><?php echo $tarif["channels"] ?>
+                            ТВ-каналов</a>
+
+                        <!-- Второе описание если есть -->
+
+                    </li>
+                    <?php if (!empty($tarif["description2"])): ?>
+                    <p class="tarif__description" style="color: #7acd0d; margin-top: 0.5rem;">
+                        <?= htmlspecialchars($tarif["description2"]) ?>
                     </p>
+                    <?php elseif (!empty($tarif["movie"])): ?>
+                    <p class="tarif-movie" id="video2"><?php echo $tarif["movie"] ?></p>
                     <?php else : ?>
-                    <p class="tarif-price">
-                        <?php echo $tarif["price"]?><span style="font-size: 0.75rem">₽/мес</span>
-                    </p>
-                    <?php endif?>
-                    <div class="tarif-param">
-                        <p class="tarif-speed"><?php echo $tarif["speed"]?> Мбит/c</p>
-                        <div class="tarif channels-item ntv_channels">
-                            <a class="channels_link link trigger" href="#channels"><?php echo $tarif["channels"] ?>
-                                ТВ-каналов</a>
-                        </div>
-                        <p style="
-    color: black;
-    font-size: 12px;
-">НТВ-ПЛЮС ТВ в подарок 🎁
-                        </p>
-                    </div>
+                    <p class="tarif-movie" id="video2">-</p>
+                    <?php endif ?>
+                </ul>
 
-                    <div class="tarif-options-description">
-                        <ul class="tarif-options-list">
+                <p class="tarif__price">
+                    <?= htmlspecialchars($tarif["price"]) ?> <span>₽/мес</span>
+                </p>
 
-                        </ul>
-                    </div>
-                    <?php
-                            $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
-                            ?>
-                    <a href="tarif.php?id=<?php echo $tarif["id"] . $utm ?>" class="choose-btn">Выбрать</a>
-                </div>
+                <!-- Если есть старая цена, показываем обе -->
+                <?php if (!empty($tarif["price2"]) && $tarif["price2"] != 0): ?>
+                <p class="tarif__price"
+                    style="font-size: 14px; text-decoration: line-through; opacity: 0.7; margin-top: -10px;">
+                    <?= htmlspecialchars($tarif["price2"]) ?> <span>₽/мес</span>
+                </p>
+                <?php endif; ?>
+                <a href="<?= htmlspecialchars($url, ENT_QUOTES) ?>" class="tarif-button tarif__btn-green" onclick="
+      event.preventDefault();
 
+      let url = event.currentTarget.href;
+
+      console.log('CLICK');
+
+      if (typeof ym !== 'undefined') {
+
+          console.log('YM EXISTS');
+
+          ym(49966909, 'reachGoal', 'tarif_click', {
+              tariff_id: '<?= (int)$tarif['id'] ?>',
+              tariff_name: '<?= htmlspecialchars($tarif['name'], ENT_QUOTES) ?>'
+          });
+
+          console.log('GOAL SENT');
+
+      } else {
+          console.log('YM UNDEFINED');
+      }
+
+      setTimeout(() => {
+          window.location.href = url;
+      }, 300);
+
+      return false;
+   ">
+                    ПОДКЛЮЧИТЬ
+                </a>
             </div>
-            <?php endif; ?>
             <?php endforeach; ?>
 
-
-
         </div>
 
-        <!-- If we need pagination -->
-
-        <!-- <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>-->
+        <!-- PAGINATION -->
         <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-container">
-        <h2 class="t-center fs-400">Интернет+ТВ</h2>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper tarifs-slider-container2 container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <?php foreach($tarifs_json AS $tarif): ?>
-                <?php if($tarif['tv'] == true): ?>
-                <div class="swiper-slide tarif-option">
-                    <div class="tarif-slider-description">
-                        <?php if($tarif['promo']) : ?><div class="tarif-promo">Акция</div>
-                        <?php endif?>
-                        <p class="tarif-name"><?php echo $tarif["name"]?></p>
-                        <?php if($tarif['promo']) : ?>
-                        <p class="tarif-price"> <?php echo $tarif['price2']  ?> <span
-                                style="font-size: 0.75rem">₽/мес</span>
-                            <span class="tarif-price-old"><?php echo $tarif["price"]?>
-                                <span style="font-size: 0.75rem">₽/мес</span></span>
-                        </p>
-                        <?php else : ?>
-                        <p class="tarif-price">
-                            <?php echo $tarif["price"]?><span style="font-size: 0.75rem">₽/мес</span>
-                        </p>
-                        <?php endif?>
-                        <div class="tarif-param">
-                            <p class="tarif-speed"><?php echo $tarif["speed"] ?> Мбит/с</p>
-                            <div class="tarif channels-item" data-package="<?php echo $tarif["dataPackage"] ?>">
-                                <a class="channels_link link trigger" href="#channels"><?php echo $tarif["channels"] ?>
-                                    ТВ-каналов</a>
-                            </div>
-                            <?php if(!empty($tarif["movie"])): ?>
-                            <p class="tarif-movie" id="video2"><?php echo $tarif["movie"] ?></p>
-                            <?php else : ?>
-                            <p class="tarif-movie" id="video2">-</p>
-                            <?php endif ?>
-                        </div>
-                        <div class="tarif-options-description">
-                            <ul class="tarif-options-list">
-                                <!-- <li>"Раздаем интернет всем" на 6 месяцев</li>
-
-                                <li>Интернет, ультра ТВ и кинотеатр на выбор</li> -->
-                            </ul>
-                        </div>
-                        <?php
-                            $utm = $_SERVER['QUERY_STRING'] ? '&' . $_SERVER['QUERY_STRING'] : '';
-                            ?>
-                        <a href="tarif.php?id=<?php echo $tarif["id"] . $utm ?>" class="choose-btn">Выбрать</a>
-                    </div>
-                </div>
-                <!-- end tarif-->
-                <?php endif; ?>
-                <?php endforeach; ?>
-
-
-
-
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-
-
-    <div class="modal-bg-tv">
-        <div class="modal-tv">
-            <div class="modal-header"></div>
-            <div class="channels_list"></div>
-            <div class="output"></div>
-
-            <span id="close-tv" class="modal-close">X</span>
-        </div>
-    </div>
-
 </section>
+
+
+
 <div class="wrapper flow container">
     <h2 class="section-title" style="position: sticky">Преимущества</h2>
     <section class="card">
@@ -331,24 +306,161 @@ if (file_exists($file)) {
     </div>
 </section>
 <section class="form container">
-    <h2 style="text-align: center" class="fs-600">Заявка на подключение</h2>
+    <h2 style="text-align: center" class="fs-600">
+        Заявка на подключение
+    </h2>
+
     <div class="contact-box">
-        <!-- <h2 class="fs-600" style="margin: 2rem 0;">Заявка на подключение</h2> -->
-        <form action="./php/form1.php" method="post" id="form1" name="call-form">
+        <form action="./php/form1.php" method="post" id="form1" name="call-form" autocomplete="off">
+
             <label class="fs-200" for="name1">Имя</label>
-            <input type="text" name="name" id="name1" class="field" required />
+            <input type="text" name="name" id="name1" class="field" placeholder="Например: Сергей" required />
+
             <label class="fs-200" for="phone1">Телефон</label>
-            <input type="tel" class="field" data-tel-input maxlength="18" name="number" id="phone1" required />
-            <label class="fs-200" for="adr11">Адрес</label>
-            <input type="text" class="field" name="address" id="adr11" required />
-            <button type="submit bg-violet" class="button-63" style="width: 80%; margin-left: 2rem" name="call-submit"
-                onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(49966909, 'reachGoal', 'form-submit'); } return false;">
+            <input type="tel" class="field" data-tel-input maxlength="18" name="number" id="phone1"
+                placeholder="+7 (999) 123-45-67" required />
+
+            <label class="fs-200" for="adr11">Адрес подключения</label>
+            <input type="hidden" name="utm_source" id="utm_source">
+            <input type="hidden" name="utm_medium" id="utm_medium">
+            <input type="hidden" name="utm_campaign" id="utm_campaign">
+            <input type="hidden" name="utm_term" id="utm_term">
+            <div class="address-wrapper">
+                <input type="text" class="field" name="address" id="adr11" placeholder="Начните вводить адрес..."
+                    autocomplete="off" required>
+
+                <div class="address-suggestions" id="addressSuggestions"></div>
+            </div>
+
+            <button type="submit" class="button-63 bg-violet" name="call-submit">
                 Отправить
             </button>
+
             <input autocomplete="off" type="hidden" name="call-control" class="call-control" value="0" />
         </form>
     </div>
 </section>
+
+
+<script>
+// function handleTarifClick(event, url, tariffId, tariffName) {
+//     event.preventDefault();
+
+//     // Проверка наличия Yandex Metrica
+//     if (typeof ym === 'undefined') {
+//         console.warn('Yandex Metrica не загружена');
+//         window.location.href = url;
+//         return;
+//     }
+
+//     // Отправка цели
+//     ym(49966909, 'reachGoal', 'tarif_click', {
+//         tariff_id: tariffId,
+//         tariff_name: tariffName
+//     });
+
+//     // Редирект с задержкой (для гарантии отправки)
+//     setTimeout(() => {
+//         window.location.href = url;
+//     }, 2000);
+// }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const input = document.getElementById("adr11");
+    const suggestionsBox = document.getElementById("addressSuggestions");
+
+    let debounce;
+    let addressLocked = false;
+    input.addEventListener("input", () => {
+
+        if (addressLocked) return;
+
+        clearTimeout(debounce);
+
+        const value = input.value.trim();
+
+        const hasHouse = /(?:\bд\.?\s*\d+)/i.test(value);
+
+        if (hasHouse) {
+            suggestionsBox.innerHTML = "";
+            suggestionsBox.classList.remove("active");
+
+            // ❗ блокируем дальнейшие запросы
+            addressLocked = true;
+
+            return;
+        }
+
+        if (value.length < 3) {
+            suggestionsBox.innerHTML = "";
+            suggestionsBox.classList.remove("active");
+            return;
+        }
+
+        debounce = setTimeout(async () => {
+
+            const response = await fetch(
+                `./dadata.php?query=${encodeURIComponent(value)}`
+            );
+
+            const data = await response.json();
+
+            suggestionsBox.innerHTML = "";
+
+            if (!data.suggestions?.length) {
+                suggestionsBox.classList.remove("active");
+                return;
+            }
+
+            data.suggestions.forEach(item => {
+
+                const div = document.createElement("div");
+
+                div.className = "suggestion-item";
+                div.textContent = item.value;
+
+                div.addEventListener("click", () => {
+
+                    const val = item.value;
+
+                    input.value = val + ", ";
+
+                    suggestionsBox.innerHTML = "";
+                    suggestionsBox.classList.remove("active");
+
+                    input.focus();
+                    const len = input.value.length;
+                    input.setSelectionRange(len, len);
+
+                    const hasHouseAfterClick = /(?:\bд\.?\s*\d+)/i.test(
+                        input.value);
+
+                    if (hasHouseAfterClick) {
+                        addressLocked = true;
+                    }
+                });
+
+                suggestionsBox.appendChild(div);
+
+            });
+
+            suggestionsBox.classList.add("active");
+
+        }, 300);
+    });
+
+    document.addEventListener("click", (e) => {
+
+        if (!e.target.closest(".address-wrapper")) {
+            suggestionsBox.innerHTML = "";
+            suggestionsBox.classList.remove("active");
+        }
+
+    });
+
+});
+</script>
 <?php
 $file = __DIR__ . '/inc/footer.inc.php';
 if (file_exists($file)) {

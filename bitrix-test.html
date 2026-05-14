@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Тест формы Bitrix24</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        padding: 40px;
+      }
+      .field {
+        display: block;
+        margin-bottom: 12px;
+        padding: 10px;
+        width: 300px;
+      }
+      button {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+      #status {
+        margin-top: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Тест отправки в Bitrix24</h2>
+
+    <form id="form1">
+      <input type="text" name="name" placeholder="Имя" class="field" required />
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Телефон"
+        class="field"
+        required
+      />
+      <input
+        type="text"
+        name="address"
+        placeholder="Адрес"
+        class="field"
+        required
+      />
+
+      <button type="submit">Отправить</button>
+    </form>
+
+    <div id="status"></div>
+
+    <script>
+      const WEBHOOK =
+        "https://b24-0s53hu.bitrix24.ru/rest/1/s7ur4vqcmer5js9o/crm.lead.add.json";
+
+      document
+        .getElementById("form1")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const form = e.target;
+
+          const data = {
+            fields: {
+              TITLE: "Заявка с сайта (test)",
+              NAME: form.name.value,
+              PHONE: [{ VALUE: form.phone.value, VALUE_TYPE: "WORK" }],
+              ADDRESS: form.address.value,
+              SOURCE_ID: "WEB",
+            },
+            params: { REGISTER_SONET_EVENT: "Y" },
+          };
+
+          document.getElementById("status").innerText = "Отправка...";
+
+          try {
+            const response = await fetch(WEBHOOK, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (result.result) {
+              document.getElementById("status").innerText =
+                "✅ Успешно отправлено в Bitrix24";
+              form.reset();
+            } else {
+              document.getElementById("status").innerText =
+                "❌ Ошибка отправки";
+              console.log(result);
+            }
+          } catch (err) {
+            document.getElementById("status").innerText = "❌ Ошибка сети";
+            console.error(err);
+          }
+        });
+    </script>
+  </body>
+</html>

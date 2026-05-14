@@ -1,0 +1,4 @@
+<?php
+
+define('DADATA_TOKEN', 'cdc5d88b785716d0a3a5855720dab85be73d4a6d');
+define('DADATA_SECRET', '27efd44cc2756feedf123c7d24e7e6421216a621');

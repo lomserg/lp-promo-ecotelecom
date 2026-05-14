@@ -87,7 +87,7 @@
     </div>
 
     <footer class="site-footer" id="footer">
-        <p class="site-footer__fineprint" id="fineprint">© Экотелеком 2025</p>
+        <p class="site-footer__fineprint" id="fineprint">© Экотелеком 2026</p>
     </footer>
     <!-- Andata Tag Manager Code -->
     <script type="application/javascript"

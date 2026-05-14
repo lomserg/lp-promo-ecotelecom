@@ -8,88 +8,237 @@ $tarifs_json = json_decode($tarifs, true);
 <style>
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #f8f9fa;
+    background:
+        radial-gradient(circle at top, rgba(120, 0, 255, 0.15), transparent 35%),
+        radial-gradient(circle at bottom, rgba(0, 195, 255, 0.12), transparent 35%),
+        #0b0b12;
+
+    color: #f3f4f6;
     margin: 0;
     padding: 0;
 }
 
-
 .tarif-main {
-    /* margin-top: 7rem; */
-    background: #F2F1F1;
+    background: transparent;
     margin: 0 auto;
+
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+
     padding: 1rem;
+    min-height: 100vh;
 }
 
 .tarif-container {
     padding-top: 7rem;
-    border-radius: 26px;
+
     display: flex;
-    margin: 0 auto;
-    align-items: start;
-    justify-content: center;
-    gap: 2rem;
     flex-direction: column;
+    gap: 2rem;
+
+    width: 100%;
     max-width: 500px;
 }
 
-.tarif-info {
-    background: #fff;
-    width: 50%;
+.tarif-info,
+.form-section {
+    position: relative;
+
+    background: rgba(18, 18, 28, 0.78);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
     border-radius: 26px;
+
     padding: 2rem;
-    width: 100%;
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    overflow: hidden;
 }
 
-.form-section {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 26px;
-    width: 100%;
+.tarif-info::before,
+.form-section::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.08),
+            transparent 35%);
+
+    pointer-events: none;
+}
+
+h1,
+h2 {
+    margin-top: 0;
+    color: #fff;
+    font-weight: 700;
 }
 
 .tarif-features {
     padding: 0;
-    list-style-type: none;
+    margin: 1.5rem 0;
+    list-style: none;
 }
 
-.header {
-    border-bottom-left-radius: 26px;
-    border-bottom-right-radius: 26px;
-    height: 4rem;
+.tarif-features li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 1rem;
+
+    padding: 1rem 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    color: #d1d5db;
 }
 
-
-.back-link {
-    display: block;
-    text-align: center;
-    margin: 2rem 0;
-    color: #6c5ce7;
-    text-decoration: none;
-}
-
-.submit-btn {
-    padding: 0.75rem 2.75rem;
-    font-size: 1rem;
-    background-color: #6c5ce7;
+.tarif-features li strong {
     color: #fff;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+}
+
+.tarif-description-list {
+    margin-top: 2rem;
+    padding-left: 1.25rem;
+}
+
+.tarif-description-list li {
+    margin-bottom: 0.75rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+.tarif-description {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+label {
     display: block;
-    text-align: center;
-    margin: 2rem auto;
+    margin-bottom: 0.5rem;
+    margin-top: 1.25rem;
+
+    color: #e5e7eb;
+    font-size: 0.95rem;
 }
 
 input[type="text"],
 input[type="tel"] {
-    padding: 0.5rem;
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 0.95rem 1rem;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: #fff;
+
     font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 15px;
+
+    transition:
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+    outline: none;
+
+    border-color: rgba(120, 0, 255, 0.8);
+
+    background: rgba(255, 255, 255, 0.06);
+
+    box-shadow:
+        0 0 0 4px rgba(120, 0, 255, 0.15);
+}
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+.submit-btn,
+.button-63 {
+    margin-top: 2rem !important;
+
+    width: 100% !important;
+    margin-left: 0 !important;
+
+    border: none;
+
+    border-radius: 18px;
+
+    padding: 1rem 1.5rem;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(135deg,
+            #7c3aed,
+            #06b6d4);
+
+    box-shadow:
+        0 10px 30px rgba(124, 58, 237, 0.35);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.submit-btn:hover,
+.button-63:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 36px rgba(124, 58, 237, 0.45);
+}
+
+.back-link {
+    margin: 2rem 0;
+
+    color: #a78bfa;
+
+    text-decoration: none;
+
+    transition: opacity 0.2s ease;
+}
+
+.back-link:hover {
+    opacity: 0.8;
+}
+
+.header {
+    height: 4rem;
+
+    background: rgba(15, 15, 25, 0.85);
+
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
+
+    backdrop-filter: blur(12px);
 }
 </style>
 
@@ -136,7 +285,12 @@ input[type="tel"] {
                 <label class="fs-200" for="phone1">Телефон</label>
                 <input type="tel" class="field" data-tel-input maxlength="18" name="number" id="phone1" required />
                 <label class="fs-200" for="adr11">Адрес</label>
-                <input type="text" class="field" name="address" id="adr11" required />
+                <div class="address-wrapper">
+                    <input type="text" class="field" name="address" id="adr11" placeholder="Начните вводить адрес..."
+                        autocomplete="off" required>
+
+                    <div class="address-suggestions" id="addressSuggestions"></div>
+                </div>
                 <button type="submit" class="button-63 bg-violet" style="width: 80%; margin-left: 2rem"
                     name="call-submit"
                     onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(49966909, 'reachGoal', 'form-submit'); } return false;">
@@ -150,6 +304,96 @@ input[type="tel"] {
 </main>
 
 
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const input = document.getElementById("adr11");
+    const suggestionsBox = document.getElementById("addressSuggestions");
+
+    let debounce;
+
+    input.addEventListener("input", () => {
+
+        clearTimeout(debounce);
+
+        const value = input.value.trim();
+
+        if (value.length < 3) {
+            suggestionsBox.innerHTML = "";
+            suggestionsBox.classList.remove("active");
+            return;
+        }
+
+        debounce = setTimeout(async () => {
+
+            try {
+
+                const response = await fetch(
+                    `./dadata.php?query=${encodeURIComponent(value)}`
+                );
+
+                const data = await response.json();
+
+                suggestionsBox.innerHTML = "";
+
+                if (!data.suggestions?.length) {
+                    suggestionsBox.classList.remove("active");
+                    return;
+                }
+
+                data.suggestions.forEach(item => {
+
+                    const div = document.createElement("div");
+
+                    div.className = "suggestion-item";
+
+                    div.textContent = item.value;
+
+                    div.addEventListener("click", () => {
+                        input.value = item.value;
+                        suggestionsBox.innerHTML = "";
+                        suggestionsBox.classList.remove("active");
+                    });
+
+                    suggestionsBox.appendChild(div);
+
+                });
+
+                suggestionsBox.classList.add("active");
+
+            } catch (e) {
+                console.error(e);
+            }
+
+        }, 300);
+
+    });
+
+    document.addEventListener("click", (e) => {
+
+        if (!e.target.closest(".address-wrapper")) {
+            suggestionsBox.innerHTML = "";
+            suggestionsBox.classList.remove("active");
+        }
+
+    });
+
+});
+document.getElementById('form1').addEventListener('submit', function() {
+
+    const btn = this.querySelector('button');
+
+    btn.disabled = true;
+    btn.innerText = 'Отправка...';
+
+    ym(49966909, 'reachGoal', 'form_submit', {
+        tariff_id: window.analytics.tariff_id,
+        tariff_name: window.analytics.tariff_name,
+        source: window.analytics.source
+    });
+});
+</script>
 
 <?php
 $file = __DIR__ . '/inc/footer.inc.php';

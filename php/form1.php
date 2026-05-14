@@ -3,15 +3,15 @@
 $myaddr = "op@ecotelecom.ru, lomov@ecotelecom.ru";
 
 // Получаем данные из POST
-$name = isset($_POST['name']) ? trim($_POST['name']) : '';
-$city = isset($_POST['city']) ? trim($_POST['city']) : '';
-$number = isset($_POST['number']) ? trim($_POST['number']) : '';
-$address = isset($_POST['address']) ? trim($_POST['address']) : '';
+$name = trim($_POST['name'] ?? '');
+$city = trim($_POST['city'] ?? '');
+$number = trim($_POST['number'] ?? '');
+$address = trim($_POST['address'] ?? '');
 
-$utm_source = isset($_POST['utm_source']) ? trim($_POST['utm_source']) : '';
-$utm_medium = isset($_POST['utm_medium']) ? trim($_POST['utm_medium']) : '';
-$utm_campaign = isset($_POST['utm_campaign']) ? trim($_POST['utm_campaign']) : '';
-$utm_term = isset($_POST['utm_term']) ? trim($_POST['utm_term']) : '';
+$utm_source = trim($_POST['utm_source'] ?? '');
+$utm_medium = trim($_POST['utm_medium'] ?? '');
+$utm_campaign = trim($_POST['utm_campaign'] ?? '');
+$utm_term = trim($_POST['utm_term'] ?? '');
 
 // Формируем заголовки письма
 $headers = "MIME-Version: 1.0\r\n";
