@@ -30,6 +30,7 @@ if ($utm_medium !== '') $text .= "\nКлючевой запрос: " . $utm_medi
 if ($utm_term !== '') $text .= "\nКлючевые слова: " . $utm_term;
 
 // Отправляем письмо и перенаправляем
+
 if (mail($myaddr, $subj, $text, $headers)) {
     header("Location: thank_you.html");
     exit;
