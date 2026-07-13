@@ -621,6 +621,7 @@ select {
   padding: 12px 42px;
 
   background: linear-gradient(135deg, #31c96b 0%, #1ea856 100%);
+  background: linear-gradient(135deg, hsl(224, 73%, 62%), hsl(268, 65%, 60%));
   color: #ffffff;
   text-decoration: none;
   font-family: "Inter", sans-serif;
@@ -644,6 +645,7 @@ select {
 .button-63:hover {
   transform: translateY(-3px);
   background: linear-gradient(135deg, #40d77b 0%, #26c067 100%);
+  background: linear-gradient(135deg, hsl(224, 73%, 62%), hsl(268, 65%, 60%));
   border-color: rgba(255, 255, 255, 0.8);
 
   box-shadow:
@@ -693,11 +695,12 @@ select {
 .hero__bg {
   position: relative;
   overflow: hidden;
-  background: #8dd7fb;
+
+  background: #5a9844;
   background: radial-gradient(
     circle,
-    rgba(141, 215, 251, 1) 0%,
-    rgba(62, 187, 245, 1) 100%
+    rgba(90, 152, 68, 1) 42%,
+    rgba(49, 114, 56, 1) 100%
   );
 }
 
