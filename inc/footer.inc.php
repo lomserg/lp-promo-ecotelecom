@@ -81,7 +81,12 @@ _tmr.push({
 <!-- /Top.Mail.Ru counter -->
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
-
+<script>
+window.addEventListener('load', () => {
+    const video = document.querySelector('.hero__video');
+    video.play().catch(console.error);
+});
+</script>
 </body>
 
 </html>

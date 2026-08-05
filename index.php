@@ -15,8 +15,14 @@ if (file_exists($file)) {
 ?>
 
 <section class="hero__bg">
-
+    <video class="hero__video" class="hero__video" autoplay muted loop playsinline preload="auto">
+        <source src="./video/797800d8.mp4" type="video/mp4">
+    </video>
+    <div class="hero__overlay"></div>
     <div class="hero__bg-container container">
+
+
+
         <div class="hero-txt-cta">
             <h1 class="hero__title">ЦЕНЫ НА КАНИКУЛАХ</h1>
             <h3 class="hero__title-second">ОТКРЫЛИ ДОСТУП К ЭКСКЛЮЗИВНЫМ ТАРИФАМ</h3>
@@ -44,9 +50,9 @@ if (file_exists($file)) {
         <!-- <div class="hero__palm ">
             <img src="./img/palm.png" alt="" />
         </div> -->
-        <div class="hero__img">
+        <!-- <div class="hero__img">
             <img class="hero__img-main" src="./img/panda_2.png" alt="">
-        </div>
+        </div> -->
     </div>
 
 </section>
