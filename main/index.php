@@ -14,39 +14,66 @@ if (file_exists($file)) {
 }
 ?>
 
-<section class="hero__bg">
 
-    <div class="hero__bg-container container">
-        <div class="hero-txt-cta">
-            <h1 class="hero__title">лови скидку</h1>
-            <h3 class="hero__title-second">НА 3 МЕСЯЦА</h3>
-            <a href="#tarif_block" class="button-63">Подробнее</a>
-            <div class="info-blocks">
-                <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">300</div>
-                    <div class="info-block-text">Мбит/с</div>
+
+<section class="hero">
+
+    <video class="hero__video" autoplay muted loop playsinline>
+        <source src="./video/hero.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero__overlay"></div>
+
+    <div class="hero-content container">
+
+        <div class="hero-left">
+
+            <h1 class="hero__title">
+                ЛЕТАЙ В СЕТИ
+            </h1>
+
+            <p class="hero__subtitle">
+                Со скидкой на 12 месяцев
+            </p>
+
+            <a href="#tarif_block" class="button-63">
+                Подробнее
+            </a>
+
+            <div class="hero-stats">
+
+                <div class="stat">
+                    <span class="number">500</span>
+                    <span>Мбит/с</span>
                 </div>
-                <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">320</div>
-                    <div class="info-block-text">каналов</div>
+
+                <div class="divider"></div>
+
+                <div class="stat">
+                    <span class="number">70</span>
+                    <span>каналов</span>
                 </div>
-                <!-- <div class="info-block img">
-                    <img src="./img/logo_Premier_w.png" alt="" />
-                    <img src="./img/logo_start.svg" alt="" />
-                    <img src="./img/Amediateka_full_white.png" alt="" />
-                </div> -->
-                <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">495</div>
-                    <div class="info-block-text">₽/мес</div>
+
+                <div class="divider"></div>
+
+                <div class="stat">
+                    <span class="number">600</span>
+                    <span>₽/мес</span>
                 </div>
+
             </div>
+
         </div>
-        <div class="hero-img">
-            <img src="./img/sky.png" alt="" />
-        </div>
+
     </div>
+    <a href="#tarif_block" class="hero-scroll">
+        <span class="hero-scroll__arrow"></span>
+        <span class="hero-scroll__text">Узнайте больше</span>
+    </a>
 
 </section>
+
+
 
 <section>
     <div class="bg-modal" id="pack-5b504edcb2de77e82f591f1a">

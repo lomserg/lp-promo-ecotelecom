@@ -15,11 +15,17 @@ if (file_exists($file)) {
 ?>
 
 <section class="hero__bg">
-
+    <video class="hero__video" class="hero__video" autoplay muted loop playsinline preload="auto">
+        <source src="./video/797800d8.mp4" type="video/mp4">
+    </video>
+    <div class="hero__overlay"></div>
     <div class="hero__bg-container container">
+
+
+
         <div class="hero-txt-cta">
-            <h1 class="hero__title">ЧЕСТНАЯ ИГРА</h1>
-            <h3 class="hero__title-second">ИНТЕРНЕТ БЕЗ СКРЫТЫХ УСЛОВИЙ</h3>
+            <h1 class="hero__title">ЦЕНЫ НА КАНИКУЛАХ</h1>
+            <h3 class="hero__title-second">ОТКРЫЛИ ДОСТУП К ЭКСКЛЮЗИВНЫМ ТАРИФАМ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -41,16 +47,16 @@ if (file_exists($file)) {
                 </div>
             </div>
         </div>
-        <!-- <div class="hero__img">
-            <img src="./img/9PIrNJFKZR.png" alt="" />
+        <!-- <div class="hero__palm ">
+            <img src="./img/palm.png" alt="" />
         </div> -->
-        <div class="hero__img">
-            <img class="hero__img-main" src="./img/chess.png" alt="">
-            <img class="hero__img-elipse" src="./img/Ellipse.png" alt="">
-        </div>
+        <!-- <div class="hero__img">
+            <img class="hero__img-main" src="./img/panda_2.png" alt="">
+        </div> -->
     </div>
 
 </section>
+
 
 <section>
     <div class="bg-modal" id="pack-5b504edcb2de77e82f591f1a">
