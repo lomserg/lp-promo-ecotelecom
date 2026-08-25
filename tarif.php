@@ -300,7 +300,9 @@ input::placeholder {
             </form>
         </section>
     </div>
-    <a href="index.php" class="back-link">← Назад</a>
+    <a href="/special/<?= htmlspecialchars($_GET['region'] ?? '') ?>/" class="back-link">
+        ← Назад
+    </a>
 </main>
 
 

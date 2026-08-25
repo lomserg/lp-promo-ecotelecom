@@ -1,22 +1,54 @@
-<?php 
+<?php
+
+
+// Базовый путь
+$basePath = '/lp-promo-php';
+
+if (strpos($_SERVER['HTTP_HOST'], 'promo.ecotelecom.ru') !== false) {
+    $basePath = '/special';
+}
+
+// Определяем регион
+$region = $_GET['region'] ?? 'default';
+
+$allowedRegions = [
+    'default',
+    'odintsovo',
+];
+
+if (!in_array($region, $allowedRegions, true)) {
+    $region = 'default';
+}
+
+// Конфигурация региона
+if ($region === 'odintsovo') {
+    $config = require __DIR__ . '/data/odintsovo.php';
+} else {
+    $config = [
+        'city' => '',
+        'seo' => [
+            'title' => 'Экотелеком интернет провайдер',
+            'description' => '',
+        ],
+        'h1' => 'Интернет для дома',
+    ];
+}
+
+// Данные тарифов
 $tarifs = file_get_contents(__DIR__ . '/data/tarifs.json');
 $tarifs_json = json_decode($tarifs, true);
+
+// FAQ
 $faqData = file_get_contents(__DIR__ . '/data/faq.json');
 $faqData_json = json_decode($faqData, true);
 
-?>
-<?php
-$file = __DIR__ . '/inc/header.inc.php';
-if (file_exists($file)) {
-    include $file;
-} else {
-    echo "Include file not found: $file";
-}
-?>
 
+// Подключаем header ПОСЛЕ создания $config
+include __DIR__ . '/inc/header.inc.php';
+?>
 <section class="hero__bg">
     <video class="hero__video" class="hero__video" autoplay muted loop playsinline preload="auto">
-        <source src="./video/797800d8.mp4" type="video/mp4">
+        <source src="<?= $basePath ?>/video/797800d8.mp4" type="video/mp4">
     </video>
     <div class="hero__overlay"></div>
     <div class="hero__bg-container container">
@@ -67,7 +99,9 @@ if (file_exists($file)) {
 </section>
 
 <section class="new__tarifs">
-    <h2 id="tarif_block" class="section-title fs-600">Тарифы</h2>
+    <h1 id="tarif_block" class="section-title fs-600">
+        <?= htmlspecialchars($config['tarifs_title']) ?>
+    </h1>
     <!-- ТАБЫ -->
     <div class="tab-box">
         <button class="tab_btn active" data-category="internet">
@@ -87,7 +121,8 @@ if (file_exists($file)) {
 $params = $_GET;
 unset($params['id']);
 
-$url = 'tarif.php?id=' . (int)$tarif['id'];
+$url = '/special/tarif.php?id=' . (int)$tarif['id'];
+
 
 if (!empty($params)) {
     $url .= '&' . http_build_query($params);
@@ -326,10 +361,14 @@ if (!empty($params)) {
                 placeholder="+7 (999) 123-45-67" required />
 
             <label class="fs-200" for="adr11">Адрес подключения</label>
+
+            <!-- Данные для аналитики -->
             <input type="hidden" name="utm_source" id="utm_source">
             <input type="hidden" name="utm_medium" id="utm_medium">
             <input type="hidden" name="utm_campaign" id="utm_campaign">
             <input type="hidden" name="utm_term" id="utm_term">
+            <input type="hidden" name="page_url" id="page_url">
+
             <div class="address-wrapper">
                 <input type="text" class="field" name="address" id="adr11" placeholder="Начните вводить адрес..."
                     autocomplete="off" required>
@@ -342,6 +381,7 @@ if (!empty($params)) {
             </button>
 
             <input autocomplete="off" type="hidden" name="call-control" class="call-control" value="0" />
+
         </form>
     </div>
 </section>

@@ -87,6 +87,38 @@ window.addEventListener('load', () => {
     video.play().catch(console.error);
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const pageUrl = document.getElementById('page_url');
+
+    if (pageUrl) {
+        pageUrl.value = window.location.href;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+
+    const utmSource = document.getElementById('utm_source');
+    const utmMedium = document.getElementById('utm_medium');
+    const utmCampaign = document.getElementById('utm_campaign');
+    const utmTerm = document.getElementById('utm_term');
+
+    if (utmSource) {
+        utmSource.value = params.get('utm_source') || '';
+    }
+
+    if (utmMedium) {
+        utmMedium.value = params.get('utm_medium') || '';
+    }
+
+    if (utmCampaign) {
+        utmCampaign.value = params.get('utm_campaign') || '';
+    }
+
+    if (utmTerm) {
+        utmTerm.value = params.get('utm_term') || '';
+    }
+});
+</script>
 </body>
 
 </html>
