@@ -15,19 +15,19 @@
     <meta name="description" content="<?= htmlspecialchars($config['seo']['description']) ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins&family=Roboto&display=swap"
         rel="stylesheet" />
 
     <script src="https://kit.fontawesome.com/4af22d591d.js" crossorigin="anonymous" defer></script>
     <script src="//code-ya.jivosite.com/widget/dIrCWbDFXD" async></script>
-    <link rel="stylesheet" href="index.css">
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-    <script src="slider.js" defer></script>
-    <script defer src="./js/channels.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- <script src="https://unpkg.com/@popperjs/core@2" defer></script>
   <script src="https://unpkg.com/tippy.js@6" defer></script> -->

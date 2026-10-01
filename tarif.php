@@ -279,7 +279,7 @@ input::placeholder {
         <?php endforeach; ?>
         <section class="form-section">
             <h2>Заявка на подключение</h2>
-            <form action="./php/form1.php" method="post" id="form1" name="call-form">
+            <form action="<?= $basePath ?>/php/form1.php" method="post" id="form1" name="call-form">
                 <label class="fs-200" for="name1">Имя</label>
                 <input type="text" name="name" id="name1" class="field" required />
                 <label class="fs-200" for="phone1">Телефон</label>
@@ -291,6 +291,16 @@ input::placeholder {
 
                     <div class="address-suggestions" id="addressSuggestions"></div>
                 </div>
+                <label class="privacy-consent">
+                    <input type="checkbox" name="privacy_consent" required>
+                    <span>
+                        Я согласен на обработку персональных данных
+                        в соответствии с
+                        <a href="/1a29086c87fc0aac5a1b3fd5b398891b.pdf" target="_blank" rel="noopener">
+                            Политикой обработки персональных данных
+                        </a>
+                    </span>
+                </label>
                 <button type="submit" class="button-63 bg-violet" style="width: 80%; margin-left: 2rem"
                     name="call-submit"
                     onsubmit="if (validateForm(event, this.form)) { this.disabled=true; this.value='Sending, please wait...'; ym(49966909, 'reachGoal', 'form-submit'); } return false;">
@@ -332,7 +342,7 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
 
                 const response = await fetch(
-                    `./dadata.php?query=${encodeURIComponent(value)}`
+                    `<?= $basePath ?>/dadata.php?query=${encodeURIComponent(value)}`
                 );
 
                 const data = await response.json();

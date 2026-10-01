@@ -3,7 +3,6 @@
 
 // Базовый путь
 $basePath = '/lp-promo-php';
-
 if (strpos($_SERVER['HTTP_HOST'], 'promo.ecotelecom.ru') !== false) {
     $basePath = '/special';
 }
@@ -30,7 +29,8 @@ if ($region === 'odintsovo') {
             'title' => 'Экотелеком интернет провайдер',
             'description' => '',
         ],
-        'h1' => 'Интернет для дома',
+         'h1' => 'Интернет для дома',
+    'tarifs_title' => 'Тарифы',
     ];
 }
 
@@ -239,7 +239,7 @@ if (!empty($params)) {
                     </div>
                 </div>
                 <div class="feature-img feature-img-1">
-                    <img src="./img/devices_1.png" alt="" />
+                    <img src="<?= $basePath ?>/img/devices_1.png" alt="" />
                 </div>
             </div>
         </div>
@@ -264,7 +264,7 @@ if (!empty($params)) {
                 </div>
 
                 <div class="feature-img feature-img-1">
-                    <img src="./img/optimal_entertainment.png" alt="" />
+                    <img src="<?= $basePath ?>/img/optimal_entertainment.png" alt="" />
                 </div>
             </div>
         </div>
@@ -276,7 +276,7 @@ if (!empty($params)) {
             <div class="feature grid-container-advantages bg-blue text-white">
                 <!--  <h2 class="fs-700">Преимущества</h2>-->
                 <div class="feature-advantage-item">
-                    <img style="align-self: flex-start" src="img/star-icon.png" alt="" />
+                    <img style="align-self: flex-start" src="<?= $basePath ?>/img/star-icon.png" alt="" />
                     <div class="adv-content">
                         <div class="feature-title fs-400 text-white ff-main fw-bold">
                             Тариф «всё в одном»
@@ -289,7 +289,7 @@ if (!empty($params)) {
                     </div>
                 </div>
                 <div class="feature-advantage-item">
-                    <img style="align-self: flex-start" src="img/rocket-icon.png" alt="" />
+                    <img style="align-self: flex-start" src="<?= $basePath ?>/img/rocket-icon.png" alt="" />
                     <div class="adv-content">
                         <div class="feature-title fs-400 text-white ff-main fw-bold">
                             Стабильный интернет
@@ -302,7 +302,7 @@ if (!empty($params)) {
                     </div>
                 </div>
                 <div class="feature-advantage-item">
-                    <img style="align-self: flex-start" src="img/piggy-bank-icon.png" alt="" />
+                    <img style="align-self: flex-start" src="<?= $basePath ?>/img/piggy-bank-icon.png" alt="" />
                     <div class="adv-content">
                         <div class="feature-title fs-400 text-white ff-main fw-bold">
                             Абонемент
@@ -351,7 +351,7 @@ if (!empty($params)) {
     </h2>
 
     <div class="contact-box">
-        <form action="./php/form1.php" method="post" id="form1" name="call-form" autocomplete="off">
+        <form action="<?= $basePath ?>/php/form1.php" method="post" id="form1" name="call-form" autocomplete="off">
 
             <label class="fs-200" for="name1">Имя</label>
             <input type="text" name="name" id="name1" class="field" placeholder="Например: Сергей" required />
@@ -375,7 +375,16 @@ if (!empty($params)) {
 
                 <div class="address-suggestions" id="addressSuggestions"></div>
             </div>
-
+            <label class="privacy-consent">
+                <input type="checkbox" name="privacy_consent" required>
+                <span>
+                    Я согласен на обработку персональных данных
+                    в соответствии с
+                    <a href="/1a29086c87fc0aac5a1b3fd5b398891b.pdf" target="_blank" rel="noopener">
+                        Политикой обработки персональных данных
+                    </a>
+                </span>
+            </label>
             <button type="submit" class="button-63 bg-violet" name="call-submit">
                 Отправить
             </button>
@@ -409,88 +418,132 @@ if (!empty($params)) {
 //         window.location.href = url;
 //     }, 2000);
 // }
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const input = document.getElementById("adr11");
     const suggestionsBox = document.getElementById("addressSuggestions");
 
     let debounce;
+    let controller = null;
     let addressLocked = false;
+
+    function hasHouse(value) {
+        return /\bд\.?\s*\d+/i.test(value);
+    }
+
+    function clearSuggestions() {
+        suggestionsBox.innerHTML = "";
+        suggestionsBox.classList.remove("active");
+    }
+
     input.addEventListener("input", () => {
 
-        if (addressLocked) return;
+        if (addressLocked) {
+            clearSuggestions();
+            return;
+        }
 
         clearTimeout(debounce);
 
         const value = input.value.trim();
 
-        const hasHouse = /(?:\bд\.?\s*\d+)/i.test(value);
-
-        if (hasHouse) {
-            suggestionsBox.innerHTML = "";
-            suggestionsBox.classList.remove("active");
-
-            // ❗ блокируем дальнейшие запросы
-            addressLocked = true;
-
+        if (value.length < 3) {
+            clearSuggestions();
             return;
         }
 
-        if (value.length < 3) {
-            suggestionsBox.innerHTML = "";
-            suggestionsBox.classList.remove("active");
+        if (hasHouse(value)) {
+            addressLocked = true;
+            clearSuggestions();
+
+            if (controller) {
+                controller.abort();
+            }
+
             return;
         }
 
         debounce = setTimeout(async () => {
 
-            const response = await fetch(
-                `./dadata.php?query=${encodeURIComponent(value)}`
-            );
+            if (addressLocked) return;
 
-            const data = await response.json();
-
-            suggestionsBox.innerHTML = "";
-
-            if (!data.suggestions?.length) {
-                suggestionsBox.classList.remove("active");
-                return;
+            if (controller) {
+                controller.abort();
             }
 
-            data.suggestions.forEach(item => {
+            controller = new AbortController();
 
-                const div = document.createElement("div");
+            try {
 
-                div.className = "suggestion-item";
-                div.textContent = item.value;
-
-                div.addEventListener("click", () => {
-
-                    const val = item.value;
-
-                    input.value = val + ", ";
-
-                    suggestionsBox.innerHTML = "";
-                    suggestionsBox.classList.remove("active");
-
-                    input.focus();
-                    const len = input.value.length;
-                    input.setSelectionRange(len, len);
-
-                    const hasHouseAfterClick = /(?:\bд\.?\s*\d+)/i.test(
-                        input.value);
-
-                    if (hasHouseAfterClick) {
-                        addressLocked = true;
+                const response = await fetch(
+                    `<?= $basePath ?>/dadata.php?query=${encodeURIComponent(value)}`, {
+                        signal: controller.signal
                     }
+                );
+
+                const data = await response.json();
+
+                // Пока запрос выполнялся, пользователь мог уже выбрать дом
+                if (addressLocked || hasHouse(input.value.trim())) {
+                    clearSuggestions();
+                    return;
+                }
+
+                suggestionsBox.innerHTML = "";
+
+                if (!data.suggestions?.length) {
+                    suggestionsBox.classList.remove("active");
+                    return;
+                }
+
+                data.suggestions.forEach(item => {
+
+                    const div = document.createElement("div");
+
+                    div.className = "suggestion-item";
+                    div.textContent = item.value;
+
+                    div.addEventListener("click", () => {
+
+                        input.value = item.value;
+
+                        clearSuggestions();
+
+                        // Если выбран адрес с домом —
+                        // полностью прекращаем поиск
+                        if (hasHouse(item.value)) {
+                            addressLocked = true;
+
+                            if (controller) {
+                                controller.abort();
+                            }
+
+                            return;
+                        }
+
+                        // Дома ещё нет — продолжаем поиск
+                        input.focus();
+
+                        const len = input.value.length;
+                        input.setSelectionRange(len, len);
+
+                        input.dispatchEvent(new Event("input", {
+                            bubbles: true
+                        }));
+                    });
+
+                    suggestionsBox.appendChild(div);
                 });
 
-                suggestionsBox.appendChild(div);
+                suggestionsBox.classList.add("active");
 
-            });
+            } catch (e) {
 
-            suggestionsBox.classList.add("active");
+                if (e.name !== "AbortError") {
+                    console.error(e);
+                }
+
+            }
 
         }, 300);
     });
@@ -498,8 +551,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", (e) => {
 
         if (!e.target.closest(".address-wrapper")) {
-            suggestionsBox.innerHTML = "";
-            suggestionsBox.classList.remove("active");
+            clearSuggestions();
         }
 
     });

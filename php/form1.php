@@ -1,4 +1,5 @@
 ﻿<?php
+
 // Адреса получателей
 $myaddr = "op@ecotelecom.ru, lomov@ecotelecom.ru";
 
