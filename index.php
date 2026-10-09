@@ -29,7 +29,7 @@ if ($region === 'odintsovo') {
             'title' => 'Экотелеком интернет провайдер',
             'description' => '',
         ],
-         'h1' => 'Интернет для дома',
+         'h1' => 'Интернет, который не подведет',
     'tarifs_title' => 'Тарифы',
     ];
 }
@@ -46,19 +46,14 @@ $faqData_json = json_decode($faqData, true);
 // Подключаем header ПОСЛЕ создания $config
 include __DIR__ . '/inc/header.inc.php';
 ?>
+
 <section class="hero__bg">
-    <video class="hero__video" class="hero__video" autoplay muted loop playsinline preload="auto">
-        <source src="<?= $basePath ?>/video/797800d8.mp4" type="video/mp4">
-    </video>
-    <div class="hero__overlay"></div>
+
     <div class="hero__bg-container container">
-
-
-
         <div class="hero-txt-cta">
-            <h1 class="hero__title">ЦЕНЫ НА КАНИКУЛАХ</h1>
-            <h3 class="hero__title-second">ОТКРЫЛИ ДОСТУП К ЭКСКЛЮЗИВНЫМ ТАРИФАМ</h3>
-            <a href="#tarif_block" class="button-63">Подробнее</a>
+            <h3 class="hero__title">ВЫБОР ОЧЕВИДЕН</h3>
+            <h1 class="hero__title-second"> <?= htmlspecialchars($config['h1']) ?></h1>
+
             <div class="info-blocks">
                 <div class="info-block">
                     <div class="info-block-feature fs-300 uppercase fw-bold">300</div>
@@ -68,23 +63,22 @@ include __DIR__ . '/inc/header.inc.php';
                     <div class="info-block-feature fs-300 uppercase fw-bold">70</div>
                     <div class="info-block-text">каналов</div>
                 </div>
-                <!-- <div class="info-block img"> -->
-                <!-- <img src="./img/logo_Premier_w.png" alt="" /> -->
-                <!-- <img src="./img/logo_start.svg" alt="" />
-                    <img src="./img/Amediateka_full_white.png" alt="" /> -->
-                <!-- </div> -->
+                <!-- <div class="info-block img">
+                    <img src="./img/logo_Premier_w.png" alt="" />
+                    <img src="./img/logo_start.svg" alt="" />
+                    <img src="./img/Amediateka_full_white.png" alt="" />
+                </div> -->
                 <div class="info-block">
                     <div class="info-block-feature fs-300 uppercase fw-bold">550</div>
                     <div class="info-block-text">₽/мес</div>
                 </div>
             </div>
+            <a href="#tarif_block" class="button-63">Подробнее</a>
         </div>
-        <!-- <div class="hero__palm ">
-            <img src="./img/palm.png" alt="" />
-        </div> -->
-        <!-- <div class="hero__img">
-            <img class="hero__img-main" src="./img/panda_2.png" alt="">
-        </div> -->
+        <div class="hero-img">
+            <img src="<?= $basePath ?>/img/stacks2.png" alt="" />
+        </div>
+
     </div>
 
 </section>
