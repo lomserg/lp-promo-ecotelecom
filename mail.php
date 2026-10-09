@@ -59,9 +59,8 @@ try {
     // Получатели
     $mail->addAddress('lomov@ecotelecom.ru');
     $mail->addAddress('v.simukhin@ecotelecom.ru');
-    $mail->addAddress('aleksandrapisareva7@gmail.com ');
     $mail->addAddress('b.gudov@ecotelecom.ru');
-    $mail->addAddress('artemkakhot@gmail.com');
+
 
     // Письмо
     $mail->isHTML(false);
