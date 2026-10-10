@@ -19,8 +19,9 @@ if (file_exists($file)) {
 
     <div class="hero__bg-container container">
         <div class="hero-txt-cta">
-            <h1 class="hero__title">ЛЕТАЙ В СЕТИ</h1>
-            <h3 class="hero__title-second">Со скидкой на 12 месяцев</h3>
+            <h1 class="hero__title">ИНТЕРНЕТУС
+                МАКСИМУС</h1>
+            <h3 class="hero__title-second">МАГИЯ СКИДКИ</h3>
             <a href="#tarif_block" class="button-63">Подробнее</a>
             <div class="info-blocks">
                 <div class="info-block">
@@ -28,7 +29,7 @@ if (file_exists($file)) {
                     <div class="info-block-text">Мбит/с</div>
                 </div>
                 <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">320</div>
+                    <div class="info-block-feature fs-300 uppercase fw-bold">70</div>
                     <div class="info-block-text">каналов</div>
                 </div>
                 <!-- <div class="info-block img">
@@ -37,13 +38,13 @@ if (file_exists($file)) {
                     <img src="./img/Amediateka_full_white.png" alt="" />
                 </div> -->
                 <div class="info-block">
-                    <div class="info-block-feature fs-300 uppercase fw-bold">495</div>
+                    <div class="info-block-feature fs-300 uppercase fw-bold">510</div>
                     <div class="info-block-text">₽/мес</div>
                 </div>
             </div>
         </div>
         <div class="hero-img">
-            <img src="./img/enot2.png" alt="" />
+            <img src="./img/magic.png" alt="" />
         </div>
     </div>
 

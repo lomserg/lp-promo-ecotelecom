@@ -622,6 +622,7 @@ select {
 
   background: linear-gradient(135deg, #31c96b 0%, #1ea856 100%);
   background: linear-gradient(135deg, hsl(224, 73%, 62%), hsl(268, 65%, 60%));
+  background: linear-gradient(135deg, #e9831e, #c23322);
   color: #ffffff;
   text-decoration: none;
   font-family: "Inter", sans-serif;
@@ -630,7 +631,7 @@ select {
   letter-spacing: 0.4px;
   text-transform: uppercase;
 
-  border: 2px solid rgba(255, 255, 255, 0.35); /* тонкая премиальная обводка */
+  /*border: 2px solid rgba(255, 255, 255, 0.35);  тонкая премиальная обводка */
   border-radius: 14px;
 
   cursor: pointer;
@@ -696,19 +697,19 @@ select {
   position: relative;
   overflow: hidden;
 
-  background: #5a9844;
-  background: radial-gradient(
-    circle,
-    rgba(90, 152, 68, 1) 42%,
-    rgba(49, 114, 56, 1) 100%
+  background: #144f36;
+  background: linear-gradient(
+    2deg,
+    rgba(20, 79, 54, 1) 0%,
+    rgba(3, 34, 24, 1) 71%
   );
 }
 
 .hero__bg-container {
   display: flex;
   /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   max-width: 80rem;
   gap: 2rem;
   /* height: 100%; */
@@ -722,6 +723,9 @@ select {
   min-height: 450px;
   display: flex;
   justify-content: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .hero__bg {
   /* min-height: 100vh;  */
@@ -778,6 +782,9 @@ select {
   font-family: "Gilroy";
   color: #161616;
   font-family: "GilroyExtraBold";
+  background-image: linear-gradient(#e9831e, #c23322);
+  color: transparent;
+  background-clip: text;
 }
 
 html {
