@@ -13,6 +13,7 @@ $region = $_GET['region'] ?? 'default';
 $allowedRegions = [
     'default',
     'odintsovo',
+     'nekrasovka',
 ];
 
 if (!in_array($region, $allowedRegions, true)) {
@@ -22,7 +23,11 @@ if (!in_array($region, $allowedRegions, true)) {
 // Конфигурация региона
 if ($region === 'odintsovo') {
     $config = require __DIR__ . '/data/odintsovo.php';
-} else {
+} elseif($region === 'nekrasovka') {
+    $config = require __DIR__ . '/data/nekrasovka.php';
+}
+
+else {
     $config = [
         'city' => '',
         'seo' => [
@@ -33,7 +38,7 @@ if ($region === 'odintsovo') {
     'tarifs_title' => 'Тарифы',
     ];
 }
-
+//var_dump($region);
 // Данные тарифов
 $tarifs = file_get_contents(__DIR__ . '/data/tarifs.json');
 $tarifs_json = json_decode($tarifs, true);
