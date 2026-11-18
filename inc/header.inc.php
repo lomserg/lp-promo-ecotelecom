@@ -1,41 +1,46 @@
-<!DOCTYPE html>
-<html lang="ru">
+<?php
+/** @var array $config */
+/** @var string $basePath */
+?>
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Экотелеком интернет провайдер" />
+    <meta property="og:title" content="<?= htmlspecialchars($config['seo']['title']) ?>" />
     <meta property="og:url" content="https://promo.ecotelecom.ru" />
     <meta property="og:image" content="https://promo.ecotelecom.ru/img/logo_ecotelecom_g.png" />
-    <title>Экотелеком интернет провайдер</title>
+    <title><?= htmlspecialchars($config['seo']['title']) ?></title>
 
-
+    <meta name="description" content="<?= htmlspecialchars($config['seo']['description']) ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins&family=Roboto&display=swap"
         rel="stylesheet" />
 
     <script src="https://kit.fontawesome.com/4af22d591d.js" crossorigin="anonymous" defer></script>
     <script src="//code-ya.jivosite.com/widget/dIrCWbDFXD" async></script>
-    <link rel="stylesheet" href="index.css">
-    <!-- <script
-      defer
-      src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
-    ></script> -->
 
-    <script src="js/phoneinput.js" defer></script>
-    <script src="js/index.js" defer></script>
-    <script defer src="./js/modal.js"></script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 
-    <script src="slider.js" defer></script>
-    <script defer src="./js/channels.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <!-- <script src="https://unpkg.com/@popperjs/core@2" defer></script>
   <script src="https://unpkg.com/tippy.js@6" defer></script> -->
+    <link rel="icon" href="<?= $basePath ?>/img/favicon.ico">
+
+    <link rel="stylesheet" href="<?= $basePath ?>/index.css">
+
+    <script src="<?= $basePath ?>/js/phoneinput.js" defer></script>
+    <script src="<?= $basePath ?>/js/index.js" defer></script>
+    <script src="<?= $basePath ?>/js/modal.js" defer></script>
+
+    <script src="<?= $basePath ?>/slider.js" defer></script>
+    <script src="<?= $basePath ?>/js/channels.js" defer></script>
     <!-- получаем ip адрес -->
     <script type="text/javascript">
     var userip;
@@ -60,8 +65,7 @@
     <!-- End Google Tag Manager -->
 </head>
 
-<body>
-
+<body class="campaign-<?= htmlspecialchars($campaign) ?>">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
     (function(m, e, t, r, i, k, a) {

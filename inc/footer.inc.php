@@ -82,6 +82,38 @@ _tmr.push({
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const pageUrl = document.getElementById('page_url');
+
+    if (pageUrl) {
+        pageUrl.value = window.location.href;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+
+    const utmSource = document.getElementById('utm_source');
+    const utmMedium = document.getElementById('utm_medium');
+    const utmCampaign = document.getElementById('utm_campaign');
+    const utmTerm = document.getElementById('utm_term');
+
+    if (utmSource) {
+        utmSource.value = params.get('utm_source') || '';
+    }
+
+    if (utmMedium) {
+        utmMedium.value = params.get('utm_medium') || '';
+    }
+
+    if (utmCampaign) {
+        utmCampaign.value = params.get('utm_campaign') || '';
+    }
+
+    if (utmTerm) {
+        utmTerm.value = params.get('utm_term') || '';
+    }
+});
+</script>
 </body>
 
 </html>

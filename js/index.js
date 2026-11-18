@@ -33,20 +33,12 @@ function validateForm(event, form) {
 
   return isValid; // Submit form only if isValid is true
 }
-
 document.addEventListener("DOMContentLoaded", () => {
+  // ============ ACCORDION ============
   const headers = document.querySelectorAll(".accordion-header");
   headers.forEach((header) => {
     header.addEventListener("click", () => {
-      console.log("accordion");
       const isActive = header.classList.contains("active");
-
-      // Если нужно закрыть все, чтобы был открыт только один:
-      // headers.forEach(h => {
-      //   h.classList.remove('active');
-      //   h.nextElementSibling.style.maxHeight = null;
-      // });
-
       if (!isActive) {
         header.classList.add("active");
         const body = header.nextElementSibling;
@@ -57,8 +49,107 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-});
 
+  // ============ SWIPER & FILTER ============
+  let swiper;
+  const wrapper = document.querySelector(".tarifs-swiper .swiper-wrapper");
+  let allSlides = Array.from(wrapper.querySelectorAll(".tarif-item"));
+  let currentCategory = "internet";
+
+  function initSwiper() {
+    // Уничтожаем старый swiper если существует
+    if (swiper) {
+      swiper.destroy(true, true);
+    }
+
+    swiper = new Swiper(".tarifs-swiper", {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      observer: true,
+      observeParents: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+    });
+  }
+
+  function filter(category) {
+    currentCategory = category;
+
+    // Показываем/скрываем слайды с помощью CSS
+    allSlides.forEach((slide) => {
+      if (slide.dataset.category === category) {
+        slide.style.display = ""; // Показываем
+      } else {
+        slide.style.display = "none"; // Скрываем
+      }
+    });
+
+    // Пересчитываем слайды в Swiper
+    if (swiper) {
+      swiper.update();
+    }
+  }
+
+  // ============ ОБРАБОТЧИКИ ТАБОВ ============
+  const tabs = document.querySelectorAll(".tab_btn");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Удаляем активный класс со всех табов
+      tabs.forEach((t) => t.classList.remove("active"));
+
+      // Добавляем активный класс на текущий таб
+      tab.classList.add("active");
+
+      // Получаем категорию и фильтруем
+      const category = tab.dataset.category;
+      filter(category);
+    });
+  });
+
+  // Инициализация при загрузке
+  initSwiper();
+
+  // Показываем первую категорию
+  const defaultCategory = tabs[0]?.dataset.category || "internet";
+  filter(defaultCategory);
+
+  // Пересчитываем при изменении размера окна
+  window.addEventListener("resize", () => {
+    if (swiper) {
+      swiper.update();
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+
+  document.getElementById("utm_source").value = params.get("utm_source") || "";
+  document.getElementById("utm_medium").value = params.get("utm_medium") || "";
+  document.getElementById("utm_campaign").value =
+    params.get("utm_campaign") || "";
+  document.getElementById("utm_term").value = params.get("utm_term") || "";
+});
+document.getElementById("form1").addEventListener("submit", function () {
+  const btn = this.querySelector('button[type="submit"]');
+
+  btn.disabled = true;
+  btn.innerText = "Отправка...";
+
+  ym(49966909, "reachGoal", "form-submit");
+});
 // Initialize tooltips with Tippy.js
 // tippy("#video0", {
 //   content:

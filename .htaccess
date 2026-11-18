@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteBase /
+
+# Специальная кампания
+RewriteRule ^special/?$ index.php?region=special [L,QSA]
+
+# Территории
+RewriteRule ^odintsovo/?$ index.php?region=odintsovo [L,QSA]
+RewriteRule ^nekrasovka/?$ index.php?region=nekrasovka [L,QSA]
